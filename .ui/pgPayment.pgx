@@ -1,0 +1,1180 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"props": {
+				"width": 375,
+				"height": 603,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"rootLayout"
+				],
+				"name": "pgPayment",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"direction": 0,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"props": {
+				"height": 20,
+				"name": "statusBar",
+				"parent": "pgPayment",
+				"flexProps": {},
+				"style": {
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 20
+				},
+				"flex": {},
+				"visibility": true,
+				"color": "rgba( 194, 56, 42, 1 )",
+				"_style": "LIGHTCONTENT"
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"props": {
+				"height": 44,
+				"title": "Payment",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"name": "headerBar",
+				"parent": "pgPayment",
+				"flexProps": {},
+				"style": {
+					"backgroundColor": "rgba( 194, 56, 42, 1 )",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 44
+				},
+				"flex": {},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "39320f45",
+			"props": {
+				"left": -2.8521728515625,
+				"top": 235.35797119140625,
+				"right": 0,
+				"bottom": 0,
+				"children": [
+					"stepLayout",
+					"labelDescription",
+					"line",
+					"fieldLayout",
+					"buttonPayCredit",
+					"buttonPayPaypal"
+				],
+				"usePageVariable": true,
+				"name": "rootLayout",
+				"parent": "pgPayment",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 1,
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": -2.8521728515625,
+					"top": 235.35797119140625
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexGrow": 1,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "d73eca10",
+			"props": {
+				"left": 99.1478271484375,
+				"top": 123.35797119140625,
+				"right": 0,
+				"bottom": 0,
+				"height": 65,
+				"children": [
+					"imageview1"
+				],
+				"usePageVariable": true,
+				"name": "stepLayout",
+				"parent": "rootLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"alignSelf": "STRETCH"
+				},
+				"style": {
+					"backgroundColor": "rgba( 194, 56, 42, 1 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 99.1478271484375,
+					"top": 123.35797119140625,
+					"height": 65
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0,
+					"alignSelf": 4
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "fa031ed8",
+			"props": {
+				"left": 20,
+				"top": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "imageview1",
+				"parent": "stepLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 20,
+					"bottom": 0
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"right": 20,
+					"bottom": 0,
+					"left": 20,
+					"top": 0
+				},
+				"flex": {
+					"positionType": 1,
+					"right": 20,
+					"bottom": 0
+				},
+				"visibility": true,
+				"image": "steps3.png",
+				"imageFillType": "ASPECTFIT"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "5b2c624d",
+			"props": {
+				"left": 99.1478271484375,
+				"top": 123.35797119140625,
+				"right": 0,
+				"bottom": 0,
+				"height": 250,
+				"children": [
+					"cardLayout",
+					"line_2",
+					"cardDetailLayout",
+					"line_2_1",
+					"cardOwnerLayout",
+					"line_2_1_1",
+					"saveCardLayout"
+				],
+				"usePageVariable": true,
+				"name": "fieldLayout",
+				"parent": "rootLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 189, 16, 224, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 99.1478271484375,
+					"top": 123.35797119140625,
+					"height": 250
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "Label",
+			"id": "5db39f24",
+			"props": {
+				"left": 60.05115509033203,
+				"top": 405.2414855957031,
+				"right": 0,
+				"bottom": 0,
+				"height": 40,
+				"usePageVariable": true,
+				"name": "labelDescription",
+				"parent": "rootLayout",
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "#000000",
+					"textAlign": "MIDCENTER",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "#000000",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {
+					"left": 60.05115509033203,
+					"top": 405.2414855957031,
+					"height": 40
+				},
+				"flex": {
+					"positionType": 0
+				},
+				"visibility": true,
+				"text": "Pay with Credit Card or PayPal"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "e5b07ab0",
+			"props": {
+				"left": 80.0511474609375,
+				"top": 400.2414741516113,
+				"right": 0,
+				"bottom": 0,
+				"height": 1,
+				"usePageVariable": true,
+				"name": "line",
+				"parent": "rootLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 0, 0, 0, 1 )",
+					"opacity": 0.2,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 80.0511474609375,
+					"top": 400.2414741516113,
+					"height": 1
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ae395b1b",
+			"props": {
+				"left": 104.0511474609375,
+				"top": 29.241500854492188,
+				"right": 0,
+				"bottom": 0,
+				"height": 55,
+				"children": [
+					"cardLogo",
+					"label1",
+					"textboxCardNumber"
+				],
+				"usePageVariable": true,
+				"name": "cardLayout",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 104.0511474609375,
+					"top": 29.241500854492188,
+					"height": 55
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "1022e6fd",
+			"props": {
+				"top": 0,
+				"right": -20,
+				"bottom": 0,
+				"width": 50,
+				"usePageVariable": true,
+				"name": "cardLogo",
+				"parent": "cardLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 20,
+					"bottom": 0
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"right": 20,
+					"bottom": 0,
+					"top": 0,
+					"width": 50
+				},
+				"flex": {
+					"positionType": 1,
+					"right": 20,
+					"bottom": 0
+				},
+				"visibility": true,
+				"image": "icon_payment_default.png",
+				"imageFillType": "ASPECTFIT"
+			}
+		},
+		{
+			"type": "Label",
+			"id": "f8aff567",
+			"props": {
+				"left": 20,
+				"top": 0,
+				"right": 20,
+				"bottom": 0,
+				"width": 100,
+				"height": 10,
+				"usePageVariable": true,
+				"name": "label1",
+				"parent": "cardLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"bottom": 0,
+					"marginTop": 5
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "#000000",
+					"textAlign": "TOPLEFT",
+					"font": {
+						"size": 10,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 0.5 )",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {
+					"bottom": 0,
+					"left": 20,
+					"top": 0,
+					"width": 100,
+					"height": 10
+				},
+				"flex": {
+					"positionType": 1,
+					"bottom": 0,
+					"marginTop": 5
+				},
+				"visibility": true,
+				"text": "Card Number"
+			}
+		},
+		{
+			"type": "TextBox",
+			"id": "1fc87f5c",
+			"props": {
+				"left": 0,
+				"top": 0,
+				"right": 80,
+				"bottom": 5,
+				"usePageVariable": true,
+				"name": "textboxCardNumber",
+				"parent": "cardLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"bottom": 0,
+					"right": 0,
+					"marginLeft": 20,
+					"marginTop": 15,
+					"marginRight": 80,
+					"marginBottom": 5
+				},
+				"style": {
+					"backgroundColor": "rgba( 126, 211, 33, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "rgba(0,0,0,1)",
+					"textAlign": "BOTTOMLEFT",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "rgba(0,0,0,1)",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"top": 0
+				},
+				"flex": {
+					"positionType": 1,
+					"bottom": 0,
+					"right": 0,
+					"marginLeft": 20,
+					"marginTop": 15,
+					"marginRight": 80,
+					"marginBottom": 5
+				},
+				"visibility": true,
+				"text": null
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "e99e8a86",
+			"props": {
+				"left": 104.0511474609375,
+				"top": 29.241500854492188,
+				"right": 0,
+				"bottom": 0,
+				"height": 55,
+				"children": [
+					"textboxExpireDate",
+					"flexlayout1",
+					"textboxSecurity"
+				],
+				"usePageVariable": true,
+				"name": "cardDetailLayout",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 104.0511474609375,
+					"top": 29.241500854492188,
+					"height": 55
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "TextBox",
+			"id": "541c9ba7",
+			"props": {
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "textboxExpireDate",
+				"parent": "cardDetailLayout",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1,
+					"marginLeft": 20,
+					"marginRight": 20
+				},
+				"style": {
+					"backgroundColor": "rgba( 126, 211, 33, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "rgba(0,0,0,1)",
+					"textAlign": "MIDLEFT",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 1 )",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": 1,
+					"marginLeft": 20,
+					"marginRight": 20
+				},
+				"visibility": true,
+				"text": null
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "f7560eb4",
+			"props": {
+				"left": 136.0511474609375,
+				"top": -73.75848388671875,
+				"right": 0,
+				"bottom": 0,
+				"width": 1,
+				"usePageVariable": true,
+				"name": "flexlayout1",
+				"parent": "cardDetailLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 0,
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 155, 155, 155, 1 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 136.0511474609375,
+					"top": -73.75848388671875,
+					"width": 1
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexGrow": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "TextBox",
+			"id": "c66928bb",
+			"props": {
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "textboxSecurity",
+				"parent": "cardDetailLayout",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1,
+					"marginRight": 20,
+					"marginLeft": 20
+				},
+				"style": {
+					"backgroundColor": "rgba( 126, 211, 33, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "rgba(0,0,0,1)",
+					"textAlign": "MIDLEFT",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 1 )",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": 1,
+					"marginRight": 20,
+					"marginLeft": 20
+				},
+				"visibility": true,
+				"text": null
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a0083a03",
+			"props": {
+				"left": -6.676116943359375,
+				"top": 88.24150085449219,
+				"right": 0,
+				"bottom": 0,
+				"height": 1,
+				"usePageVariable": true,
+				"name": "line_2",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 0,
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 0, 0, 0, 1 )",
+					"opacity": 0.2,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": -6.676116943359375,
+					"top": 88.24150085449219,
+					"height": 1
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexGrow": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "1345ad8f",
+			"props": {
+				"left": 104.0511474609375,
+				"top": 29.241500854492188,
+				"right": 0,
+				"bottom": 0,
+				"height": 55,
+				"children": [
+					"textboxCardOwner"
+				],
+				"usePageVariable": true,
+				"name": "cardOwnerLayout",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 104.0511474609375,
+					"top": 29.241500854492188,
+					"height": 55
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "TextBox",
+			"id": "a65c9688",
+			"props": {
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "textboxCardOwner",
+				"parent": "cardOwnerLayout",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"marginLeft": 20,
+					"marginRight": 20,
+					"flexGrow": 1
+				},
+				"style": {
+					"backgroundColor": "rgba( 126, 211, 33, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "rgba(0,0,0,1)",
+					"textAlign": "MIDLEFT",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 1 )",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {},
+				"flex": {
+					"positionType": 0,
+					"marginLeft": 20,
+					"marginRight": 20,
+					"flexGrow": 1
+				},
+				"visibility": true,
+				"text": null
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "b9db093f",
+			"props": {
+				"left": -6.676116943359375,
+				"top": 88.24150085449219,
+				"right": 0,
+				"bottom": 0,
+				"height": 1,
+				"usePageVariable": true,
+				"name": "line_2_1",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 0,
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 0, 0, 0, 1 )",
+					"opacity": 0.2,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": -6.676116943359375,
+					"top": 88.24150085449219,
+					"height": 1
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexGrow": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "f79cfe60",
+			"props": {
+				"left": 104.0511474609375,
+				"top": 29.241500854492188,
+				"right": 0,
+				"bottom": 0,
+				"height": 55,
+				"children": [
+					"switch1",
+					"label2"
+				],
+				"usePageVariable": true,
+				"name": "saveCardLayout",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 104.0511474609375,
+					"top": 29.241500854492188,
+					"height": 55
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "Switch",
+			"id": "605904cf",
+			"props": {
+				"left": 29.826725006103516,
+				"top": 5.744357109069824,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "switch1",
+				"parent": "saveCardLayout",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "CENTER",
+					"marginLeft": 20
+				},
+				"style": {
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 29.826725006103516,
+					"top": 5.744357109069824,
+					"minWidth": 51,
+					"minHeight": 31
+				},
+				"flex": {
+					"positionType": 0,
+					"alignSelf": 2,
+					"marginLeft": 20
+				},
+				"visibility": true,
+				"thumbOnColor": "#00e600",
+				"thumbOffColor": "#CCCCCC",
+				"toggleOnColor": "#CCCCCC",
+				"toggleOffColor": "#010101",
+				"toggle": false
+			}
+		},
+		{
+			"type": "Label",
+			"id": "708dcf69",
+			"props": {
+				"left": 29.323890686035156,
+				"top": -16.75848388671875,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "label2",
+				"parent": "saveCardLayout",
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"flexGrow": 1,
+					"marginLeft": 10
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 0 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"color": "#000000",
+					"textAlign": "MIDLEFT",
+					"font": {
+						"size": 14,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 0.5 )",
+						"italic": false,
+						"family": "Lato"
+					}
+				},
+				"layout": {
+					"left": 29.323890686035156,
+					"top": -16.75848388671875
+				},
+				"flex": {
+					"positionType": 0,
+					"flexGrow": 1,
+					"marginLeft": 10
+				},
+				"visibility": true,
+				"text": "Save for future purchases "
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "07424b13",
+			"props": {
+				"left": -6.676116943359375,
+				"top": 88.24150085449219,
+				"right": 0,
+				"bottom": 0,
+				"height": 1,
+				"usePageVariable": true,
+				"name": "line_2_1_1",
+				"parent": "fieldLayout",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 0,
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 0, 0, 0, 1 )",
+					"opacity": 0.2,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": -6.676116943359375,
+					"top": 88.24150085449219,
+					"height": 1
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexGrow": 0,
+					"flexDirection": 0,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		},
+		{
+			"type": "Button",
+			"id": "ec4a5dfb",
+			"props": {
+				"left": 0,
+				"right": 20,
+				"bottom": -70,
+				"height": 50,
+				"usePageVariable": true,
+				"name": "buttonPayCredit",
+				"parent": "rootLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"marginLeft": 20,
+					"marginRight": 20,
+					"right": 0,
+					"bottom": 70
+				},
+				"style": {
+					"backgroundColor": "#00A1F1",
+					"opacity": 1,
+					"borderColor": "rgba( 0, 0, 0, 0 )",
+					"borderWidth": 1,
+					"color": "#FFFFFF",
+					"textAlign": "MIDCENTER",
+					"font": {
+						"size": 16,
+						"bold": false,
+						"color": "#FFFFFF",
+						"italic": false,
+						"family": "Lato"
+					},
+					"borderRadius": 25
+				},
+				"layout": {
+					"right": 0,
+					"bottom": 70,
+					"left": 0,
+					"height": 50
+				},
+				"flex": {
+					"positionType": 1,
+					"marginLeft": 20,
+					"marginRight": 20,
+					"right": 0,
+					"bottom": 70
+				},
+				"visibility": true,
+				"text": null
+			}
+		},
+		{
+			"type": "Button",
+			"id": "a2b3b016",
+			"props": {
+				"left": 0,
+				"right": 39,
+				"bottom": 543,
+				"height": 50,
+				"usePageVariable": true,
+				"name": "buttonPayPaypal",
+				"parent": "rootLayout",
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"marginLeft": 20,
+					"marginRight": 20,
+					"right": 0,
+					"bottom": 10
+				},
+				"style": {
+					"backgroundColor": "rgba( 255, 255, 255, 1 )",
+					"opacity": 1,
+					"borderColor": "rgba( 0, 0, 0, 0.5 )",
+					"borderWidth": 1,
+					"color": "#FFFFFF",
+					"textAlign": "MIDCENTER",
+					"font": {
+						"size": 16,
+						"bold": false,
+						"color": "rgba( 0, 0, 0, 0.5 )",
+						"italic": false,
+						"family": "Lato"
+					},
+					"borderRadius": 25
+				},
+				"layout": {
+					"right": 0,
+					"bottom": 10,
+					"left": 0,
+					"height": 50
+				},
+				"flex": {
+					"positionType": 1,
+					"marginLeft": 20,
+					"marginRight": 20,
+					"right": 0,
+					"bottom": 10
+				},
+				"visibility": true,
+				"text": null
+			}
+		}
+	]
+}

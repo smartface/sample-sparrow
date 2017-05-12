@@ -1,0 +1,127 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"props": {
+				"width": 187.5,
+				"height": 301.5,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"rootLayout"
+				],
+				"name": "pgCategories",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"direction": 0,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"props": {
+				"height": 20,
+				"name": "statusBar",
+				"parent": "pgCategories",
+				"flexProps": {},
+				"style": {
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 10
+				},
+				"flex": {},
+				"visibility": true,
+				"color": "rgba( 65, 117, 10, 1 )",
+				"_style": "LIGHTCONTENT"
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"props": {
+				"height": 44,
+				"title": "Categories",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"name": "headerBar",
+				"parent": "pgCategories",
+				"flexProps": {},
+				"style": {
+					"backgroundColor": "rgba( 65, 117, 10, 1 )",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 22
+				},
+				"flex": {},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9ecf991a",
+			"props": {
+				"left": 173.14776611328125,
+				"top": 179.35797119140625,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "rootLayout",
+				"parent": "pgCategories",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"flexWrap": "NOWRAP",
+					"flexGrow": 1,
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"style": {
+					"backgroundColor": "rgba( 65, 117, 10, 1 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"left": 86.57388305664062,
+					"top": 89.67898559570312
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 2,
+					"justifyContent": 1,
+					"flexWrap": 0,
+					"flexGrow": 1,
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"visibility": true
+			}
+		}
+	]
+}

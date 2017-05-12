@@ -1,0 +1,131 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"props": {
+				"width": 187.5,
+				"height": 301.5,
+				"children": [
+					"statusBar",
+					"headerBar",
+					"rootLayout"
+				],
+				"name": "pgProductList",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"style": {
+					"backgroundColor": "#FFFFFF",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"width": 93.75,
+					"height": 150.75
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"direction": 0,
+					"flexDirection": 0,
+					"flexWrap": 0,
+					"justifyContent": 0
+				},
+				"orientation": "PORTRAIT"
+			}
+		},
+		{
+			"type": "StatusBar",
+			"props": {
+				"height": 20,
+				"name": "statusBar",
+				"parent": "pgProductList",
+				"flexProps": {},
+				"style": {
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 10
+				},
+				"flex": {},
+				"visibility": true,
+				"color": "rgba( 65, 117, 10, 1 )",
+				"_style": "LIGHTCONTENT"
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"props": {
+				"height": 44,
+				"title": "List",
+				"titleColor": "rgba( 255, 255, 255, 1 )",
+				"name": "headerBar",
+				"parent": "pgProductList",
+				"flexProps": {},
+				"style": {
+					"backgroundColor": "rgba( 65, 117, 10, 1 )",
+					"font": {}
+				},
+				"isRemovable": false,
+				"layout": {
+					"height": 22
+				},
+				"flex": {},
+				"visibility": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "71a3410d",
+			"props": {
+				"left": 0,
+				"top": 0,
+				"right": 0,
+				"bottom": 0,
+				"usePageVariable": true,
+				"name": "rootLayout",
+				"parent": "pgProductList",
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"style": {
+					"backgroundColor": "rgba( 65, 117, 10, 1 )",
+					"opacity": 1,
+					"borderColor": "rgba(0,0,0,1)",
+					"borderWidth": 0,
+					"font": {}
+				},
+				"layout": {
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"top": 0
+				},
+				"flex": {
+					"alignContent": 4,
+					"alignItems": 4,
+					"justifyContent": 0,
+					"flexWrap": 0,
+					"flexDirection": 0,
+					"positionType": 1,
+					"right": 0,
+					"bottom": 0
+				},
+				"visibility": true
+			}
+		}
+	]
+}

@@ -1,0 +1,22 @@
+SMF.i18n.defineLanguage('en', {
+	"appName"				: "Sparrow",
+	"ok"					: "OK",
+	"cancel"				: "Cancel",
+	"yes"					: "Yes",
+	"no"					: "No",
+	"underconstruction"		: "This feature will be implemented soon",
+	"pgLogin.title"			: "Sparrow",
+	"pgLogin.username"		: "Username",
+	"pgLogin.password"		: "Password",
+	"pgLogin.signin"		: "Sign In",
+	"pgCategories.title"	: "Categories",
+	"pgProductDetail.title"	: "Product Detail",
+	"pgProductList.title"	: "Product List",
+	"pgShipping.title"		: "Shipping",
+	"pgShoppingCart.title"	: "Shopping Cart",
+	"pgPayment.title"		: "Payments",
+	"pgSliderDrawer.signout"	  : "Sign out",
+	"pgProductDetail.addedToCart" : "ADDED",
+	"pgProductDetail.addToCart"   : "ADD PRODUCT",
+
+});
