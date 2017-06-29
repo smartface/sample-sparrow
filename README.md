@@ -3,9 +3,11 @@
 
 Sample e-commerce project with Shopify extension.
 
+<div style="display:flex;">
 <img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc1.png">
 <img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc2.png" hspace="30">
 <img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc3.png">
+</div>
 
 ## Getting the Project
 - Click on the button "New App Project" on the Cloud IDE
