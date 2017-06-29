@@ -6,432 +6,402 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
-const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
+const FlexLayout = require('sf-core/ui/flexlayout');
+const ImageView = require('sf-core/ui/imageview');
+const ImageFillType = require('sf-core/ui/imagefilltype');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const Font = require('sf-core/ui/font');
-const ImageView = require('sf-core/ui/imageview');
-const Image = require('sf-core/ui/image');
-const ImageFillType = require('sf-core/ui/imagefilltype');
-const Button = require('sf-core/ui/button');
-const ActivityIndicator = require('sf-core/ui/activityindicator');
-const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
+const CustomHeaderBar = require("../components/CustomHeaderBar");
+const BtnTransparent = require("../components/BtnTransparent");
+const HorizontalDivider = require("../components/HorizontalDivider");
+const ItemPickerSelector = require("../components/ItemPickerSelector");
+const LoaderContainer = require("../components/LoaderContainer");
+const VerticalDivider = require("../components/VerticalDivider");
+const ItemSmallThumb = require("../components/ItemSmallThumb");
 
+const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
 
-const PgDetail_ = extend(Page)(
+const PgProductDetail_ = extend(Page)(
 	//constructor
-	function(_super){
+	function(_super, props) {
 		// initalizes super class for this page scope
-		_super(this, {
-			onLoad: onLoad.bind(this),
-			orientation: Page.Orientation.PORTRAIT
-		});
+		_super(this, Object.assign({}, {
+			onShow: onShow.bind(this),
+			onLoad: onLoad.bind(this)
+		}, props || {}));
 
-		var topLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 17,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
+		const customHeaderBarStyle = getCombinedStyle(".flexLayout", {
+			left: null,
+			top: null,
+			width: null,
+			height: 44,
 			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		this.layout.addChild(topLayout);
-		this.topLayout = topLayout;
-		var divide = new FlexLayout({
-			height: 1,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(32, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		this.layout.addChild(divide);
-		this.divide = divide;
-		var bottomLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 13,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		this.layout.addChild(bottomLayout);
-		this.bottomLayout = bottomLayout;
-		var imageLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.CENTER,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 13,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		topLayout.addChild(imageLayout);
-		this.imageLayout = imageLayout;
-		var descriptionLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 9,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		bottomLayout.addChild(descriptionLayout);
-		this.descriptionLayout = descriptionLayout;
-		var priceAndOtherImages = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 4,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		topLayout.addChild(priceAndOtherImages);
-		this.priceAndOtherImages = priceAndOtherImages;
-		var divider1 = new FlexLayout({
-			height: 0,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(33, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: false
-		}); 
-		bottomLayout.addChild(divider1);
-		this.divider1 = divider1;
-		var pickersLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: false
-		}); 
-		bottomLayout.addChild(pickersLayout);
-		this.pickersLayout = pickersLayout;
-		var divider2 = new FlexLayout({
-			height: 1,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(32, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		bottomLayout.addChild(divider2);
-		this.divider2 = divider2;
-		var buttonLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.CENTER,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 4,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		bottomLayout.addChild(buttonLayout);
-		this.buttonLayout = buttonLayout;
-		var smallImagesLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 2,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			marginLeft: 10,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		priceAndOtherImages.addChild(smallImagesLayout);
-		this.smallImagesLayout = smallImagesLayout;
-		var labelDescription = new Label({
-			left: 10,
-			top: 5,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
-			right: 10,
-			bottom: 5,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			textColor: Color.create("#000000"),
-			textAlignment: TextAlignment.MIDLEFT,
-			visible: true,
-			multiline: true
-		});
-		labelDescription.font = Font.create("Lato", 14, Font.NORMAL); 
-		descriptionLayout.addChild(labelDescription);
-		this.labelDescription = labelDescription;
-		var optionLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
 			paddingLeft: 5,
+			paddingTop: 5,
 			paddingRight: 5,
 			paddingBottom: 5,
-			paddingTop: 5,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		pickersLayout.addChild(optionLayout);
-		this.optionLayout = optionLayout;
-		var saleImageView = new ImageView({
-			left: 305,
-			top: 10,
-			width: 60,
-			height: 60,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
-			right: 10,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: false,
-			image: Image.createFromFile("images://sale.png"),
-			imageFillType: ImageFillType.ASPECTFIT
-		}); 
-		imageLayout.addChild(saleImageView);
-		this.saleImageView = saleImageView;
-		var buttonAddCart = new Button({
-			width: 300,
-			height: 50,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(255, 65, 117, 10),
-			alpha: 1,
-			borderColor: Color.create(0, 0, 0, 0),
-			borderWidth: 1,
-			textColor: Color.create("#FFFFFF"),
-			textAlignment: TextAlignment.MIDCENTER,
-			borderRadius: 25,
-			visible: true,
-			text: "ADD TO CART"
-		});
-		buttonAddCart.font = Font.create("Lato", 16, Font.NORMAL); 
-		buttonLayout.addChild(buttonAddCart);
-		this.buttonAddCart = buttonAddCart;
-		var activityindicator1 = new ActivityIndicator({
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.CENTER,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true,
-			color: Color.create(255, 65, 117, 5)
-		}); 
-		imageLayout.addChild(activityindicator1);
-		this.activityindicator1 = activityindicator1;
-		var priceLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.AUTO,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
+			marginTop: 20,
+			marginRight: 5,
 			flexDirection: FlexLayout.FlexDirection.ROW,
 			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		priceAndOtherImages.addChild(priceLayout);
-		this.priceLayout = priceLayout;
-		var productImageBig = new ImageView({
+			flexGrow: null
+		});
+		var customHeaderBar = new CustomHeaderBar(customHeaderBarStyle, "pgProductDetail");
+		this.layout.addChild(customHeaderBar);
+		this.customHeaderBar = customHeaderBar;
+
+		const flexlayout3Style = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			marginTop: 10,
+			marginLeft: 10,
+			marginRight: 10,
+			marginBottom: 10,
+			borderRadius: 10,
+			borderWidth: 1,
+			borderColor: Color.create(0, 0, 0, 0),
+			flexGrow: 1
+		});
+		var flexlayout3 = new FlexLayout(flexlayout3Style);
+		this.layout.addChild(flexlayout3);
+		
+		const btnAddToCartStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			left: 0,
+			top: null,
+			width: 240,
+			height: 45,
+			borderColor: Color.create(77, 255, 255, 255),
+			borderWidth: null,
+			marginBottom: 20,
+			marginTop: 10,
+			positionType: FlexLayout.PositionType.RELATIVE,
+			alignSelf: FlexLayout.AlignSelf.CENTER
+		});
+		var btnAddToCart = new BtnTransparent(btnAddToCartStyle, "pgProductDetail");
+		this.layout.addChild(btnAddToCart);
+		this.btnAddToCart = btnAddToCart;
+
+		const effectImageStyle = getCombinedStyle(".imageView", {
+			imageFillType: ImageFillType.ASPECTFIT,
+			top: 70,
+			left: 0,
+			right: 0,
+			width: null,
+			height: 250,
+			visible: false,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var effectImage = new ImageView(effectImageStyle);
+		this.layout.addChild(effectImage);
+		this.effectImage = effectImage;
+
+		const flexlayout4Style = getCombinedStyle(".flexLayout", {
+			height: null,
+			width: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 4
+		});
+		var flexlayout4 = new FlexLayout(flexlayout4Style);
+		flexlayout3.addChild(flexlayout4);
+		
+		const flexlayout5Style = getCombinedStyle(".flexLayout", {
+			height: null,
+			width: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			paddingRight: 10,
+			flexGrow: 1,
+			flexDirection: FlexLayout.FlexDirection.ROW
+		});
+		var flexlayout5 = new FlexLayout(flexlayout5Style);
+		flexlayout3.addChild(flexlayout5);
+		
+		const horizontaldivider_1Style = getCombinedStyle(".flexLayout", {
 			left: 0,
 			top: 0,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
+			width: null,
+			height: 1,
+			backgroundColor: Color.create(255, 0, 0, 0),
+			alpha: 0.1,
+			flexGrow: null,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var horizontaldivider_1 = new HorizontalDivider(horizontaldivider_1Style, "pgProductDetail");
+		flexlayout3.addChild(horizontaldivider_1);
+		
+		const flexlayout5_1Style = getCombinedStyle(".flexLayout", {
+			height: null,
+			width: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			paddingLeft: 10,
+			paddingTop: 10,
+			flexGrow: 2
+		});
+		var flexlayout5_1 = new FlexLayout(flexlayout5_1Style);
+		flexlayout3.addChild(flexlayout5_1);
+		
+		const horizontalDividerStyle = getCombinedStyle(".flexLayout", {
+			left: 0,
+			top: 0,
+			width: null,
+			height: 1,
+			backgroundColor: Color.create(255, 0, 0, 0),
+			alpha: 0.1,
+			flexGrow: null,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var horizontalDivider = new HorizontalDivider(horizontalDividerStyle, "pgProductDetail");
+		flexlayout3.addChild(horizontalDivider);
+		
+		const pickerContainerStyle = getCombinedStyle(".flexLayout", {
+			height: null,
+			width: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1,
+			flexDirection: FlexLayout.FlexDirection.ROW
+		});
+		var pickerContainer = new FlexLayout(pickerContainerStyle);
+		flexlayout3.addChild(pickerContainer);
+		this.pickerContainer = pickerContainer;
+
+		const itemPicker1Style = getCombinedStyle(".flexLayout", {
+			left: 0,
+			top: 0,
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			paddingLeft: 10,
+			paddingRight: 10,
+			flexDirection: FlexLayout.FlexDirection.ROW,
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.CENTER,
+			alignContent: FlexLayout.AlignContent.CENTER,
+			positionType: FlexLayout.PositionType.RELATIVE,
+			flexGrow: 1
+		});
+		var itemPicker1 = new ItemPickerSelector(itemPicker1Style, "pgProductDetail");
+		pickerContainer.addChild(itemPicker1);
+		this.itemPicker1 = itemPicker1;
+
+		const bodyTextStyle = getCombinedStyle(".label", {
+			width: null,
+			height: null,
+			textAlignment: TextAlignment.TOPLEFT,
+			text: "",
+			multiline: true,
+			flexGrow: 1
+		});
+		var bodyText = new Label(bodyTextStyle);
+		flexlayout5_1.addChild(bodyText);
+		this.bodyText = bodyText;
+
+		const loaderContainerStyle = getCombinedStyle(".flexLayout", {
+			left: 0,
+			top: 0,
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
 			right: 0,
 			bottom: 0,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true,
-			imageFillType: ImageFillType.ASPECTFIT
-		}); 
-		imageLayout.addChild(productImageBig);
-		this.productImageBig = productImageBig;
-		var facebookShareImage = new ImageView({
-			top: 10,
-			width: 60,
-			height: 40,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
-			right: 10,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true,
-			image: Image.createFromFile("images://share_facebook.png"),
-			imageFillType: ImageFillType.ASPECTFIT
-		}); 
-		imageLayout.addChild(facebookShareImage);
-		this.facebookShareImage = facebookShareImage;
-		var labelPrice = new Label({
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			flexGrow: 1,
-			marginLeft: 3,
-			marginRight: 10,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			textColor: Color.create("#000000"),
-			textAlignment: TextAlignment.MIDRIGHT,
-			visible: true,
-			text: "0TL"
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.CENTER,
+			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
-		labelPrice.font = Font.create("Lato", 20, Font.BOLD); 
-		priceLayout.addChild(labelPrice);
-		this.labelPrice = labelPrice;
+		var loaderContainer = new LoaderContainer(loaderContainerStyle, "pgProductDetail");
+		flexlayout4.addChild(loaderContainer);
 		
+		const flexlayout6Style = getCombinedStyle(".flexLayout", {
+			height: null,
+			width: null,
+			paddingLeft: 10,
+			flexGrow: 1,
+			flexDirection: FlexLayout.FlexDirection.ROW,
+			alignContent: FlexLayout.AlignContent.STRETCH,
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.FLEX_START
+		});
+		var flexlayout6 = new FlexLayout(flexlayout6Style);
+		flexlayout5.addChild(flexlayout6);
+		
+		const priceTextStyle = getCombinedStyle(".label", {
+			width: 80,
+			textAlignment: TextAlignment.MIDRIGHT,
+			height: null,
+			text: "",
+			font: Font.create("Arial", 20, Font.NORMAL)
+		});
+		var priceText = new Label(priceTextStyle);
+		flexlayout5.addChild(priceText);
+		this.priceText = priceText;
+
+		const verticalDividerStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(255, 0, 0, 0),
+			alpha: 0.1,
+			left: 0,
+			top: 0,
+			width: 1,
+			height: null,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var verticalDivider = new VerticalDivider(verticalDividerStyle, "pgProductDetail");
+		pickerContainer.addChild(verticalDivider);
+		
+		const bigImageStyle = getCombinedStyle(".imageView", {
+			width: null,
+			height: null,
+			imageFillType: ImageFillType.ASPECTFIT,
+			flexGrow: 1
+		});
+		var bigImage = new ImageView(bigImageStyle);
+		flexlayout4.addChild(bigImage);
+		this.bigImage = bigImage;
+
+		const itemPicker2Style = getCombinedStyle(".flexLayout", {
+			left: 0,
+			top: 0,
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			paddingLeft: 10,
+			paddingRight: 10,
+			visible: false,
+			flexDirection: FlexLayout.FlexDirection.ROW,
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.CENTER,
+			alignContent: FlexLayout.AlignContent.CENTER,
+			positionType: FlexLayout.PositionType.RELATIVE,
+			flexGrow: 1
+		});
+		var itemPicker2 = new ItemPickerSelector(itemPicker2Style, "pgProductDetail");
+		pickerContainer.addChild(itemPicker2);
+		this.itemPicker2 = itemPicker2;
+
+		const itemSmallThumb1Style = getCombinedStyle(".flexLayout .flexLayout-smallThumb.inactive", {
+			left: 0,
+			top: 0,
+			width: 40,
+			height: 40,
+			borderColor: Color.create(26, 0, 0, 0),
+			marginRight: 10,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var itemSmallThumb1 = new ItemSmallThumb(itemSmallThumb1Style, "pgProductDetail");
+		flexlayout6.addChild(itemSmallThumb1);
+		this.itemSmallThumb1 = itemSmallThumb1;
+
+		const itemSmallThumb2Style = getCombinedStyle(".flexLayout .flexLayout-smallThumb.inactive", {
+			left: 0,
+			top: 0,
+			width: 40,
+			height: 40,
+			borderColor: Color.create(26, 0, 0, 0),
+			marginRight: 10,
+			visible: false,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var itemSmallThumb2 = new ItemSmallThumb(itemSmallThumb2Style, "pgProductDetail");
+		flexlayout6.addChild(itemSmallThumb2);
+		this.itemSmallThumb2 = itemSmallThumb2;
+
+		const itemSmallThumb3Style = getCombinedStyle(".flexLayout .flexLayout-smallThumb.inactive", {
+			left: 0,
+			top: 0,
+			width: 40,
+			height: 40,
+			borderColor: Color.create(26, 0, 0, 0),
+			marginRight: 10,
+			visible: false,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var itemSmallThumb3 = new ItemSmallThumb(itemSmallThumb3Style, "pgProductDetail");
+		flexlayout6.addChild(itemSmallThumb3);
+		this.itemSmallThumb3 = itemSmallThumb3;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
-			topLayout: topLayout,
-			divide: divide,
-			bottomLayout: bottomLayout
+			customHeaderBar: customHeaderBar,
+			flexlayout3: flexlayout3,
+			btnAddToCart: btnAddToCart,
+			effectImage: effectImage
 		});
 		
-		//assign the children of topLayout
-		topLayout.children =  Object.assign({}, {
-			imageLayout: imageLayout,
-			priceAndOtherImages: priceAndOtherImages
+		//assign the children of flexlayout3
+		flexlayout3.children = Object.assign({}, {
+			flexlayout4: flexlayout4,
+			flexlayout5: flexlayout5,
+			horizontaldivider_1: horizontaldivider_1,
+			flexlayout5_1: flexlayout5_1,
+			horizontalDivider: horizontalDivider,
+			pickerContainer: pickerContainer
 		});
 		
-		//assign the children of bottomLayout
-		bottomLayout.children =  Object.assign({}, {
-			descriptionLayout: descriptionLayout,
-			divider1: divider1,
-			pickersLayout: pickersLayout,
-			divider2: divider2,
-			buttonLayout: buttonLayout
+		//assign the children of flexlayout4
+		flexlayout4.children = Object.assign({}, {
+			loaderContainer: loaderContainer,
+			bigImage: bigImage
 		});
 		
-		//assign the children of imageLayout
-		imageLayout.children =  Object.assign({}, {
-			saleImageView: saleImageView,
-			activityindicator1: activityindicator1,
-			productImageBig: productImageBig,
-			facebookShareImage: facebookShareImage
+		//assign the children of flexlayout5
+		flexlayout5.children = Object.assign({}, {
+			flexlayout6: flexlayout6,
+			priceText: priceText
 		});
 		
-		//assign the children of descriptionLayout
-		descriptionLayout.children =  Object.assign({}, {
-			labelDescription: labelDescription
+		//assign the children of flexlayout5_1
+		flexlayout5_1.children = Object.assign({}, {
+			bodyText: bodyText
 		});
 		
-		//assign the children of priceAndOtherImages
-		priceAndOtherImages.children =  Object.assign({}, {
-			smallImagesLayout: smallImagesLayout,
-			priceLayout: priceLayout
+		//assign the children of pickerContainer
+		pickerContainer.children = Object.assign({}, {
+			itemPicker1: itemPicker1,
+			verticalDivider: verticalDivider,
+			itemPicker2: itemPicker2
 		});
 		
-		//assign the children of pickersLayout
-		pickersLayout.children =  Object.assign({}, {
-			optionLayout: optionLayout
+		//assign the children of flexlayout6
+		flexlayout6.children = Object.assign({}, {
+			itemSmallThumb1: itemSmallThumb1,
+			itemSmallThumb2: itemSmallThumb2,
+			itemSmallThumb3: itemSmallThumb3
 		});
 		
-		//assign the children of buttonLayout
-		buttonLayout.children =  Object.assign({}, {
-			buttonAddCart: buttonAddCart
-		});
-		
-		//assign the children of priceLayout
-		priceLayout.children =  Object.assign({}, {
-			labelPrice: labelPrice
-		});
+	});
 
-});
+// Page.onShow -> This event is called when a page appears on the screen (everytime).
+function onShow() {
+  //StatusBar props
+  const statusBarStyle = getCombinedStyle(".statusBar", {
+		color: Color.create(255, 157, 27, 85)
+	});
+	
+	Object.assign(this.statusBar, statusBarStyle);
+	
+	if(statusBarStyle.color)
+	  this.statusBar.android && (this.statusBar.android.color = statusBarStyle.color);
+	if(statusBarStyle.style)
+	  this.statusBar.ios && (this.statusBar.ios.style = statusBarStyle.style);
 
-function onLoad() { 
-
-  this.headerBar.titleColor = Color.create(255, 255, 255, 255);
-  this.headerBar.backgroundColor = Color.create(255, 65, 117, 10);
-  this.headerBar.visible = true;
-  this.statusBar.visible = true;this.statusBar.android && (this.statusBar.android.color = Color.create(255, 65, 117, 10));this.statusBar.ios && (this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT);
-  this.layout.flexWrap = FlexLayout.FlexWrap.NOWRAP;
-  this.layout.alignItems = FlexLayout.AlignItems.STRETCH;
-  this.layout.alignContent = FlexLayout.AlignContent.FLEX_START;
-  this.layout.justifyContent = FlexLayout.JustifyContent.FLEX_START;
-  this.layout.flexDirection = FlexLayout.FlexDirection.COLUMN;
-  this.layout.direction = FlexLayout.Direction.LTR;
-  this.layout.backgroundColor = Color.create(255, 255, 255, 255);
-
+  //HeaderBar props
+  const headerBarStyle = getCombinedStyle(".headerBar", {
+		title: "newPage001",
+		visible: false
+	});
+	
+	Object.assign(this.headerBar,	headerBarStyle);
+	
 }
 
-module && (module.exports = PgDetail_);
+// Page.onLoad -> This event is called once when page is created.
+function onLoad() { 
+
+  const pageStyle = getCombinedStyle(".page", {});
+	
+	Object.assign(this.layout, pageStyle);
+	
+}
+
+module && (module.exports = PgProductDetail_);

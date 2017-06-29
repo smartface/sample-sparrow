@@ -1,9 +1,11 @@
-# Sample Sparrow from Smartface
+# Sample E-Commerce Application from Smartface
 [![Twitter: @Smartface_io](https://img.shields.io/badge/contact-@Smartface_io-blue.svg?style=flat)](https://twitter.com/smartface_io)    [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/smartface/sf-extension-spriteview/master/LICENSE)
 
-Sample e-commerce project with Shopify extension and Facebook plugin.
+Sample e-commerce project with Shopify extension.
 
-<img src="https://github.com/smartface/sample-sparrow/blob/master/1.png?raw=true" width="150">  <img src="https://github.com/smartface/sample-sparrow/blob/master/2.png?raw=true" width="150">  <img src="https://github.com/smartface/sample-sparrow/blob/master/3.png?raw=true" width="150">  <img src="https://github.com/smartface/sample-sparrow/blob/master/4.png?raw=true" width="150">
+<img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc1.png">
+<img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc2.png" hspace="30">
+<img width=250 src="https://github.com/smartface/sample-sparrow/blob/master/temp/sc3.png">
 
 ## Getting the Project
 - Click on the button "New App Project" on the Cloud IDE
@@ -14,19 +16,14 @@ git@github.com:smartface/sample-sparrow.git
 ```
 - Open the terminal inside the project created and go under workspace/scripts.
 - Type 'npm install'
-- You have the project and you can now configure Shopify and Facebook.
-
-## Configuring Facebook
-- Go to https://developer.smartface.io/v1.1/docs/facebook-plugin and complete the steps there.
-- Fill the Facebook fields inside workspace/scripts/config.js
-- Do not forget you need a published player to use Facebook functions
+- You have the project and you can now configure Shopify.
 
 ## Configuring Shopify
 - Go to https://developers.shopify.com
 - Open a store in Shopify and create an app connected the store
 - Fill the Shopify fields inside workspace/scripts/config.js
 - Create Collections and Products with images
-  
+
 ## Need Help?
 Please [submit an issue](https://github.com/smartface/sample-sparrow/issues) on GitHub and provide information about your problem.
 ## Support & Documentation & Useful Links

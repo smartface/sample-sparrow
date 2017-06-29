@@ -1,8 +1,9 @@
 /* globals lang */
-require("i18n/i18n.js"); //generates global lang object
-const Application = require("sf-core/application");
-const Router = require("sf-core/ui/router");
-const Pages = require('sf-core/ui/pages');
+require("i18n/i18n.js"); // Generates global lang object
+
+const Application       = require("sf-core/application");
+const Router            = require("sf-core/ui/router");
+const Pages             = require('sf-core/ui/pages');
 const FlexLayout        = require('sf-core/ui/flexlayout');
 const Color             = require('sf-core/ui/color');
 const ImageView         = require('sf-core/ui/imageview');
@@ -15,34 +16,42 @@ const ListViewItem      = require("sf-core/ui/listviewitem");
 const SliderDrawer      = require('sf-core/ui/sliderdrawer');
 const PageConstants     = require('pages/PageConstants');
 const System            = require("sf-core/device/system");
+const Shopify           = require("sf-extension-shopify");
+const Config            = require("config.js");
+const AlertView         = require('sf-core/ui/alertview');
 
-const Shopify  = require("sf-extension-shopify");
-const Config = require("config.js");
 
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
-Application.onUnhandledError = function (e) {
+Application.onUnhandledError = function(e) {
     alert({
         title: lang.applicationError,
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
 
-Shopify.Authentication.setAPIKey   (Config.SHOPIFY_APIKey   );
-Shopify.Authentication.setPassword (Config.SHOPIFY_PASSWORD );
+
+const stylerBuilder = require("library/styler-builder");
+const settings = require("./settings.json");
+stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
+stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
+
+Shopify.Authentication.setAPIKey(Config.SHOPIFY_APIKey);
+Shopify.Authentication.setPassword(Config.SHOPIFY_PASSWORD);
 Shopify.Authentication.setStoreName(Config.SHOPIFY_STORENAME);
 
 // Define routes and go to initial page of application
-Router.add(PageConstants.PAGE_LOGIN         , require('pages/pgLogin'), true);
-Router.add(PageConstants.PAGE_CATEGORIES    , require('pages/pgCategories'), true);
-Router.add(PageConstants.PAGE_PRODUCT_LIST  , require('pages/pgProductList'));
-Router.add(PageConstants.PAGE_PRODUCT_DETAIL, require('pages/pgProductDetail'));
-Router.add(PageConstants.PAGE_SHOPPING_CART , require('pages/pgShoppingCart'));
-Router.add(PageConstants.PAGE_SHIPPING      , require('pages/pgShipping'), true);
-Router.add(PageConstants.PAGE_PAYMENT       , require('pages/pgPayment'));
+Router.add(PageConstants.PAGE_SHOPPING_CART, require("./pages/pgShoppingCart"));
+Router.add(PageConstants.PAGE_SHIPPING, require("./pages/pgShipping"));
+Router.add(PageConstants.PAGE_PAYMENT, require("./pages/pgPayment"));
+Router.add(PageConstants.PAGE_PAYMENT_RESULT, require("./pages/pgPaymentResult"));
+Router.add(PageConstants.PAGE_PRODUCT_DETAIL, require("./pages/pgProductDetail"));
+Router.add(PageConstants.PAGE_PRODUCT_LIST, require("./pages/pgProductList"));
+Router.add(PageConstants.PAGE_CATEGORIES, require("./pages/pgCategories"));
+Router.add(PageConstants.PAGE_LOGIN, require("./pages/pgLogin"));
 Router.go(PageConstants.PAGE_LOGIN);
 
-initSliderDrawer();
+initSliderDrawer()
 
 function initSliderDrawer()
 {
@@ -65,6 +74,14 @@ function initSliderDrawer()
         
     ]
     
+    var mainContainer = new FlexLayout();
+    mainContainer.left = 0;
+    mainContainer.right = 0;
+    mainContainer.bottom = 0;
+    mainContainer.top = 0;
+    mainContainer.positionType = FlexLayout.PositionType.ABSOLUTE;
+    //mainContainer.backgroundColor = Color.create("#FF9900")
+
     var topContainer = new FlexLayout();
     topContainer.flexGrow = 1;
     topContainer.flexBasis = 1;
@@ -101,6 +118,7 @@ function initSliderDrawer()
             var rowTitle = new Label();
             rowTitle.flexGrow = 1;
             rowTitle.flexBasis = 1;
+            rowTitle.minWidth = 150;
             rowTitle.id = 4;
             rowTitle.font =  Font.create("Lato",18,Font.NORMAL);
             rowTitle.backgroundColor = Color.TRANSPARENT;
@@ -143,6 +161,7 @@ function initSliderDrawer()
             {
                 try {
                     Router.go(myDataSet[index].tag,{},false);
+                    sliderDrawer.hide();
                 } catch(e) {
                     Router.goBack(myDataSet[index].tag, false);
                     sliderDrawer.hide();
@@ -169,13 +188,31 @@ function initSliderDrawer()
     btnSignOut.touchEnabled = true;
     
     btnSignOut.onTouchEnded = function () {
-        Router.goBack(PageConstants.PAGE_LOGIN);
-        Router.sliderDrawer.hide();
         
-        if (global.facebookEnabled) {
-            const Facebook = require("sf-plugin-facebook");
-            Facebook.logOut();
-        }
+        var myAlertView = new AlertView({
+            title: lang["appName"],
+            message: lang["quitConfirm"]
+        });
+        myAlertView.addButton({
+            index: AlertView.ButtonType.NEGATIVE,
+            text: lang["cancel"]
+        });
+        myAlertView.addButton({
+            index: AlertView.ButtonType.POSITIVE,
+            text: lang["ok"],
+            onClick: function() {
+                Router.goBack(PageConstants.PAGE_LOGIN);
+                Router.sliderDrawer.hide();
+                
+                if (global.facebookEnabled) {
+                    const Facebook = require("sf-plugin-facebook");
+                    Facebook.logOut();
+                }
+            }
+        });
+        
+        myAlertView.show();
+       
     }
    
     var sliderDrawer = new SliderDrawer();
@@ -195,14 +232,15 @@ function initSliderDrawer()
     
     sliderDrawer.onLoad = function()
     {
-        sliderDrawer.layout.justifyContent = FlexLayout.JustifyContent.CENTER;
-        sliderDrawer.layout.flexDirection =  FlexLayout.FlexDirection.COLUMN;
-        sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#41750A"), endColor:Color.create("#88AE12"), direction: Color.GradientDirection.DIAGONAL_LEFT});
-        sliderDrawer.layout.addChild(topContainer);      
-        sliderDrawer.layout.addChild(dividerTop)     
-        sliderDrawer.layout.addChild(listView);
-        sliderDrawer.layout.addChild(dividerBottom);   
-        sliderDrawer.layout.addChild(btnSignOut);
+        //Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer_layout", {}));
+        sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#9D1B55"), endColor:Color.create("#D9595B"), direction: Color.GradientDirection.DIAGONAL_LEFT});
+
+        mainContainer.addChild(topContainer);      
+        mainContainer.addChild(dividerTop)     
+        mainContainer.addChild(listView);
+        mainContainer.addChild(dividerBottom);   
+        mainContainer.addChild(btnSignOut);
+        sliderDrawer.layout.addChild(mainContainer);
     }
     Router.sliderDrawer = sliderDrawer;
     Router.sliderDrawer.enabled = false;

@@ -68,7 +68,7 @@
                         "active": true
                     }
                 },
-                "playerPath": "/home/ubuntu/workspace/ios.zip"
+                "playerPath": null
             },
             "android": {
                 "scripts": "scripts",
@@ -94,7 +94,7 @@
                         "active": true
                     }
                 },
-                "playerPath": "/home/ubuntu/workspace/android.zip"
+                "playerPath": null
             },
             "keys": {
                 "project3DesKey": "VGPSoPZiufzsFAQiL+a4QjGP/ZT+K2Oe",
@@ -104,11 +104,11 @@
         "output": {
             "ios": {
                 "outputFolder": "output/iOS",
-                "bundleIdentifier": "io.smartface.demo"
+                "bundleIdentifier": "io.smartface.sparrow"
             },
             "android": {
                 "outputFolder": "output/Android",
-                "packageName": "io.smartface.demo"
+                "packageName": "io.smartface.sparrow"
             }
         },
         "tempFolder": "output/.tmp"

@@ -6,63 +6,131 @@
 
 const extend = require('js-base/core/extend');
 const Page = require('sf-core/ui/page');
-const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
-const StatusBarStyle = require('sf-core/ui/statusbarstyle');
+const FlexLayout = require('sf-core/ui/flexlayout');
+const ListView = require('sf-core/ui/listview');
+const ListViewItem = require('sf-core/ui/listviewitem');
 
+const CustomHeaderBar = require("../components/CustomHeaderBar");
+const LoaderContainer = require("../components/LoaderContainer");
 
+const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
 
 const PgProductList_ = extend(Page)(
 	//constructor
-	function(_super){
+	function(_super, props) {
 		// initalizes super class for this page scope
-		_super(this, {
-			onLoad: onLoad.bind(this),
-			orientation: Page.Orientation.PORTRAIT
-		});
+		_super(this, Object.assign({}, {
+			onShow: onShow.bind(this),
+			onLoad: onLoad.bind(this)
+		}, props || {}));
 
-		var rootLayout = new FlexLayout({
+		const customHeaderBarStyle = getCombinedStyle(".flexLayout", {
+			left: null,
+			top: null,
+			width: null,
+			height: 44,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			paddingLeft: 5,
+			paddingTop: 5,
+			paddingRight: 5,
+			paddingBottom: 5,
+			marginTop: 20,
+			marginRight: 5,
+			flexDirection: FlexLayout.FlexDirection.ROW,
+			positionType: FlexLayout.PositionType.RELATIVE,
+			flexGrow: null,
+			alignSelf: FlexLayout.AlignSelf.AUTO
+		});
+		var customHeaderBar = new CustomHeaderBar(customHeaderBarStyle, "pgProductList");
+		this.layout.addChild(customHeaderBar);
+		this.customHeaderBar = customHeaderBar;
+
+		const listViewContainerStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			marginLeft: 10,
+			marginRight: 10,
+			marginTop: 5,
+			flexGrow: 1
+		});
+		var listViewContainer = new FlexLayout(listViewContainerStyle);
+		this.layout.addChild(listViewContainer);
+		
+		const loaderContainerStyle = getCombinedStyle(".flexLayout", {
 			left: 0,
 			top: 0,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
 			right: 0,
 			bottom: 0,
-			backgroundColor: Color.create(255, 65, 117, 10),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		this.layout.addChild(rootLayout);
-		this.rootLayout = rootLayout;
-		
+			alignItems: FlexLayout.AlignItems.CENTER,
+			justifyContent: FlexLayout.JustifyContent.CENTER,
+			positionType: FlexLayout.PositionType.ABSOLUTE,
+			flexGrow: null
+		});
+		var loaderContainer = new LoaderContainer(loaderContainerStyle, "pgProductList");
+		listViewContainer.addChild(loaderContainer);
+		this.loaderContainer = loaderContainer;
+
+		const listViewStyle = getCombinedStyle(".listView", {
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1
+		});
+		var listView = new ListView(listViewStyle);
+		listView.onRowCreate = function(){ return new ListViewItem(); };
+		listViewContainer.addChild(listView);
+		this.listView = listView;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
-			rootLayout: rootLayout
+			customHeaderBar: customHeaderBar,
+			listViewContainer: listViewContainer
 		});
+		
+		//assign the children of listViewContainer
+		listViewContainer.children = Object.assign({}, {
+			loaderContainer: loaderContainer,
+			listView: listView
+		});
+		
+	});
 
-});
+// Page.onShow -> This event is called when a page appears on the screen (everytime).
+function onShow() {
+  //StatusBar props
+  const statusBarStyle = getCombinedStyle(".statusBar", {
+		color: Color.create(255, 157, 27, 85)
+	});
+	
+	Object.assign(this.statusBar, statusBarStyle);
+	
+	if(statusBarStyle.color)
+	  this.statusBar.android && (this.statusBar.android.color = statusBarStyle.color);
+	if(statusBarStyle.style)
+	  this.statusBar.ios && (this.statusBar.ios.style = statusBarStyle.style);
 
+  //HeaderBar props
+  const headerBarStyle = getCombinedStyle(".headerBar", {
+		title: "newPage001",
+		visible: false
+	});
+	
+	Object.assign(this.headerBar,	headerBarStyle);
+	
+}
+
+// Page.onLoad -> This event is called once when page is created.
 function onLoad() { 
 
-  this.headerBar.title = "List";
-  this.headerBar.titleColor = Color.create(255, 255, 255, 255);
-  this.headerBar.backgroundColor = Color.create(255, 65, 117, 10);
-  this.headerBar.visible = true;
-  this.statusBar.visible = true;this.statusBar.android && (this.statusBar.android.color = Color.create(255, 65, 117, 10));this.statusBar.ios && (this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT);
-  this.layout.alignContent = FlexLayout.AlignContent.STRETCH;
-  this.layout.alignItems = FlexLayout.AlignItems.STRETCH;
-  this.layout.direction = FlexLayout.Direction.INHERIT;
-  this.layout.flexDirection = FlexLayout.FlexDirection.COLUMN;
-  this.layout.flexWrap = FlexLayout.FlexWrap.NOWRAP;
-  this.layout.justifyContent = FlexLayout.JustifyContent.FLEX_START;
-  this.layout.backgroundColor = Color.create("#FFFFFF");
-
+  const pageStyle = getCombinedStyle(".page", {});
+	
+	Object.assign(this.layout, pageStyle);
+	
 }
 
 module && (module.exports = PgProductList_);

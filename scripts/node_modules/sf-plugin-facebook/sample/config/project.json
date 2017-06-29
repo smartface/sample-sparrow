@@ -1,0 +1,33 @@
+{
+	...
+	"build": {
+		"input": {
+			"ios": {
+				"plugins": {
+				    ...
+					"facebookios": {
+						"url": "",
+						"path": "plugins/iOS/FacebookiOS.zip",
+						"active": true
+					},
+					...
+				},
+			},
+			"android": {
+				"plugins": {
+				    ...
+					"facebook": {
+						"url": "",
+						"path": "plugins/Android/FacebookAndroid.zip",
+						"active": true
+					},
+					...
+				},
+				...
+			},
+			...
+		},
+		...
+	}
+	...
+}

@@ -1,226 +1,219 @@
-const extend = require("js-base/core/extend");
+const extend         = require('js-base/core/extend');
+const Page           = require('sf-core/ui/page');
+const PageDesign     = require("../ui/ui_pgProductDetail");
+const Color          = require('sf-core/ui/color');
+const ListView       = require('sf-core/ui/listview');
+const ListViewItem   = require('sf-core/ui/listviewitem');
+const FlexLayout     = require('sf-core/ui/flexlayout');
+const Font           = require('sf-core/ui/font');
+const Image          = require('sf-core/ui/image');
+const ImageView      = require('sf-core/ui/imageview');
+const Label          = require('sf-core/ui/label');
+const HeaderBarItem  = require('sf-core/ui/headerbaritem');
+const Router         = require("sf-core/ui/router");
+const PageConstants  = require("pages/PageConstants");
+const Timer          = require("sf-core/timer");
+const Shopify		 = require("sf-extension-shopify");
+const Product  	     = require('../objects/Category');
+const ItemSmallThumb = require("../components/ItemSmallThumb");
+const Animator       = require('sf-core/ui/animator');
+const System         = require('sf-core/device/system');
+const Screen         = require('sf-core/device/screen');
+const ShoppingCart   = require("../objects/ShoppingCart");
+const TextAlignment  = require('sf-core/ui/textalignment');
 
-const Color         = require('sf-core/ui/color');
-const Label         = require('sf-core/ui/label');
-const Image         = require('sf-core/ui/image');
-const ImageView     = require('sf-core/ui/imageview');
-const HeaderBarItem = require('sf-core/ui/headerbaritem');
-const Router        = require("sf-core/ui/router");
-const Animator      = require('sf-core/ui/animator');
-const FlexLayout    = require("sf-core/ui/flexlayout");
-const Font          = require("sf-core/ui/font");
-const http          = require("sf-core/net/http");
 
-const Shopify = require("sf-extension-shopify");
-const PageConstants = require("pages/PageConstants");
-const AddedPopup = require("lib/added_popup");
-
-// Get generetad UI code
-var PageProductDetailDesign = require("../ui/ui_pgProductDetail");
-var ShoppingCart = require("../ShoppingCart");
-
-const PageProductDetail = extend(PageProductDetailDesign)(
-    function(_super) {
-        var self = this;
-        _super(self);
-        this._superOnLoad = this.onLoad;
-        
-        this.onShow = onShow.bind(this);
-        this.onLoad = onLoad.bind(this);
-        
-        initHeaderBar(this.headerBar);
-        initBackButton(self);
+const Page_ = extend(PageDesign)(
+	// Constructor
+	function(_super){
+		_super(this);
+		this.shownBefore = false;
+		this.onShow = onShow.bind(this, this.onShow.bind(this));
+		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+		//this.onHide = onHide(this);
 });
 
-function onLoad() {
-    this._superOnLoad();
-    
-    this.buttonAddCart.text = lang["pgProductDetail.addToCart"];
-    this.buttonAddCart.backgroundColor = Color.create("#579e0c"); // fix after AND-2790
-    this.facebookShareImage.visible = false;
+function initHeaderBar(headerBar) {
+	headerBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
+	headerBar.leftImage.onTouch = function()
+	{
+		Router.goBack();
+	}
+	headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
+	headerBar.rightContainer.onTouch = function()
+	{
+		Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
+	}
+	
+	headerBar.headerTitle.textAlignment = TextAlignment.MIDLEFT;
+	ShoppingCart.updateBasket(headerBar);
+
 }
 
-function onShow(params) {
-    var uiComponents = this;
+function onShow(parentOnShow,params) {
+    parentOnShow();
+    Router.sliderDrawer.enabled = false;
+    initHeaderBar(this.customHeaderBar);
 
-    Router.sliderDrawer.enabled = true;
-    
-    if (params && params.productID) {
-        Shopify.Product.getProduct(params.productID).exec(function(response) {
-            initProduct.call(this, response.product, uiComponents);
-            initShareButton.call(this, response.product);
+    if (params && params.id) {
+        Shopify.Product.getProduct(params.id).exec(function(response) {
+        	var productItem = new Product();
+            productItem = response.product;
+            initProduct(this,productItem);
             this.layout.applyLayout();
         }.bind(this));
+        
+        this.customHeaderBar.headerTitle.text = params.title;
+        this.btnAddToCart.button1.text = lang["pgProductDetail.addToCart"]
     }
+  
 }
 
-function initHeaderBar(headerBar) {
-    headerBar.title = lang["pgProductDetail.title"];
-    var leftItem = new HeaderBarItem({
-        color: Color.WHITE,
-        text: "",
-        image: Image.createFromFile("images://arrow_left.png"),
-        onPress: function() {
-            Router.goBack();
-        }
-    });
-    var shoppingCartItem = new HeaderBarItem({
-        image: Image.createFromFile("images://cart.png"),
-        color : Color.WHITE,
-        onPress: function() {
-            Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
-        }
-    });
-    headerBar.setLeftItem(leftItem);
-    headerBar.setItems([shoppingCartItem]);
-};
+function onLoad(parentOnLoad) {
+    parentOnLoad();
+}
 
-function initProduct(product, uiComponents) {
-    this.headerBar.title = product.title;
-    
-    var pageLayout = this.layout;
-    pageLayout.justifyContent = FlexLayout.JustifyContent.CENTER;
+// function onHide(page) {
+//     page.itemSmallThumb1.imageSmall.image = null;
+//     page.itemSmallThumb2.imageSmall.image = null;
+//     page.itemSmallThumb3.imageSmall.image = null;
+//     page.bigImage.image = null;
+//     page.layout.applyLayout();
+// }
 
-    uiComponents.labelDescription.htmlText = "<head><meta charset=\"UTF-8\"></head>" + product.body_html;
-    uiComponents.labelPrice.text = product.variants[0].price + " TL";
-    uiComponents.productImageBig.loadFromUrl(product.image.src);
+function initProduct(page,product) {
+    page.bodyText.htmlText = "<head><meta charset=\"UTF-8\"></head>" + product.body_html;
+    page.priceText.text = "$" + product.variants[0].price;
+    page.bigImage.loadFromUrl(product.image.src);
+    page.effectImage.loadFromUrl(product.image.src);
     
-    initSmallImages(product.images);
-    initOptions(product.options);
+    var smallImageContainers = [];
+    smallImageContainers.push(page.itemSmallThumb1);
+    smallImageContainers.push(page.itemSmallThumb2);
+    smallImageContainers.push(page.itemSmallThumb3);
     
-    uiComponents.buttonAddCart.onPress = function() {
+    initSmallImages(page,smallImageContainers,product.images);
+    
+    
+    var pickerContainers = [];
+    pickerContainers.push(page.itemPicker1);
+    pickerContainers.push(page.itemPicker2);
+    initOptions(page,pickerContainers,product.options);
+    
+    page.btnAddToCart.button1.onPress = function() {
         ShoppingCart.addProduct(product);
-        uiComponents.buttonAddCart.enabled = false;
-        uiComponents.buttonAddCart.backgroundColor = { // fix after AND-2790
-            disabled: Color.create("#77915d")
-        };
-        AddedPopup.show(pageLayout, function() {
-            uiComponents.buttonAddCart.enabled = true;
-            uiComponents.buttonAddCart.backgroundColor = Color.create("#579e0c");
-        });
+        resetEffectImage(page)
+        page.effectImage.visible = true;
+        var animationRootView = page.layout;//System.OS === "iOS" ? page.layout : page.image.parent;
+                Animator.animate(animationRootView, 200, function() {
+                    page.effectImage.height = 60;
+                    page.effectImage.top = 40;
+                    page.effectImage.left = Screen.width/2;
+                }).then(200, function() {
+                    page.effectImage.height = 30;
+                    page.effectImage.top = 20;
+                    page.effectImage.left = Screen.width;
+                    if (Device.deviceOS === "iOS") 
+                    {
+                        page.effectImage.alpha = 0;
+                    } else {
+                        page.effectImage.visible = false;
+                    }
+                }).then(200, function() {
+                    ShoppingCart.updateBasket(page.customHeaderBar);
+                    if (Device.deviceOS === "iOS") {
+                        Animator.animate(animationRootView, 200, function() {
+                            page.customHeaderBar.rightContainer.width = 40;
+                            page.customHeaderBar.rightContainer.height = 40;
+                            }).then(200, function() {
+                                page.customHeaderBar.rightContainer.width = 30;
+                                page.customHeaderBar.rightContainer.height = 30;
+                            })
+                    }
+                     
+                }).complete(function() {
+                    resetEffectImage(page);
+                });
     };
     
-    function initSmallImages(images) {
-        var selectedImage = null;
-        images.forEach(function(image) {
-            var smallImageLayout = new FlexLayout({
-                marginLeft:10,
-                height:50, width:50,
-                borderWidth: 1, borderRadius: 5,
-                borderColor: Color.create(210, 210, 210),
-                padding:2
-            });
-        
-            if (!selectedImage) {
-                selectedImage = smallImageLayout;
-                selectedImage.borderColor = Color.RED;
-            }
-        
-            var smallImage = new ImageView({
-                flexGrow: 1,
-                imageFillType: ImageView.FillType.ASPECTFIT,
-                onTouchEnded: function() {
-                    selectedImage.borderColor = Color.create(210, 210, 210);
-                    selectedImage = smallImageLayout;
-                    selectedImage.borderColor = Color.RED;
-        
-                    Animator.animate(pageLayout, 500, function() {
-                        if (Device.deviceOS === "iOS") {
-                            uiComponents.productImageBig.alpha = 0;
-                        } else {
-                            uiComponents.productImageBig.visible = false;
-                        }
-                    }).then(500, function() {
-                        uiComponents.productImageBig.image = smallImage.image;
-                        if (Device.deviceOS === "iOS") {
-                            uiComponents.productImageBig.alpha = 1;
-                        } else {
-                            uiComponents.productImageBig.visible = true;
-                        }
-                    });
-                }
-            });
-            smallImage.loadFromUrl(image.src);
-            smallImageLayout.addChild(smallImage);
-            uiComponents.smallImagesLayout.addChild(smallImageLayout);
-        });
-    }
+function resetEffectImage(page)   
+{
+    page.effectImage.visible = false;
+    page.effectImage.alpha = 1;
+    page.effectImage.height = 250;
+    page.effectImage.top = 70;
+    page.effectImage.left = 0;
+    page.effectImage.right = 0;
+    page.layout.applyLayout();
+}
     
-    function initOptions(options) {
+    
+function initSmallImages(page,containers,images) {
+        var selectedImage = null;
+        
+        for (var i = 0; i< images.length;i++ ) {
+            if (i === 3) { break; }
+                
+                containers[i].visible = true;
+                containers[i].imageSmall.loadFromUrl(images[i].src);
+                containers[i].onTouchEnded =  function(param) {
+                        Animator.animate(page.layout, 300, function() {
+                            if (Device.deviceOS === "iOS") {
+                                page.bigImage.alpha = 0;
+                                //page.bigImage.image = new Image();
+                                
+                            } else {
+                                page.bigImage.visible = false;
+                            }
+                        }).then(300, function() {
+                            
+                            page.bigImage.loadFromUrl(param.image.src);
+                            page.effectImage.loadFromUrl(param.image.src);
+                            if (Device.deviceOS === "iOS") {
+                                page.bigImage.alpha = 1;
+                            } else {
+                                page.bigImage.visible = true;
+                            }
+                        });
+                }.bind(this, {image:images[i], index: i});
+           
+        }
+
+}
+
+
+    
+    function initOptions(page,containers,options) {
         var actualOptionsCount = 0;
-        options.forEach(function(option) {
-            if (option.name != "Title") {
-                var optionLabel = new Label({
-                    marginLeft:10,
-                    width: 100,
-                    text: option.name,
-                    onTouchEnded: function() {
-                        const Picker = require("sf-core/ui/picker");
+        
+        for (var i =0; i< options.length;i++ ) {
+            if(i>1) break;
+            var option = options[i];
+            var pickerLayout = containers[i];
+            pickerLayout.visible = true;
+            pickerLayout.pickerLabel.text = option.name;
+            pickerLayout.onTouchEnded = function()
+            {
+                const Picker = require("sf-core/ui/picker");
                         var myPicker = new Picker({
-                            items: option.values,
+                            items: this.option.values,
                             index: 2
                         });
                         myPicker.show(function(e) {
-                            optionLabel.textColor = Color.BLACK;
-                            optionLabel.text = option.values[e.index];
-                            uiComponents.buttonAddCart.backgroundColor = Color.create("#579e0c"); // fix after AND-2790
-                            uiComponents.buttonAddCart.enabled = true;
+                            pickerLayout.pickerLabel.textColor = Color.BLACK;
+                            pickerLayout.pickerLabel.text = option.values[e.index];
+                            //uiComponents.buttonAddCart.backgroundColor = Color.create("#579e0c"); // fix after AND-2790
+                            //uiComponents.buttonAddCart.enabled = true;
                         },function() {});
-                    }
-                });
-                optionLabel.font = Font.create("Lato", 12, Font.NORMAL);
-                uiComponents.optionLayout.addChild(optionLabel);
-                uiComponents.optionLayout.addChild(new ImageView({
-                    width: 10,
-                    image: Image.createFromFile("images://arrows.png")
-                }));
-                uiComponents.buttonAddCart.enabled = false;
-                uiComponents.buttonAddCart.backgroundColor = { // fix after AND-2790
-                    disabled: Color.create("#77915d")
-                };
-                actualOptionsCount++;
-            }
-        });
+            }.bind({option:option})
+            actualOptionsCount++;
+        }
         
-        if (actualOptionsCount !== 0) {
-            uiComponents.descriptionLayout.flexGrow = 6;
-            uiComponents.pickersLayout.flexGrow = 3;
-            uiComponents.pickersLayout.visible = true;
-            uiComponents.divider1.height = 1;
-            uiComponents.divider1.visible = true;
+        if (actualOptionsCount == 0) {
+            page.pickerContainer.visible = false;
         }
     }
 };
 
-function initShareButton(product) {
-    var page = this;
-    if (global.facebookEnabled) {
-        const Facebook = require("sf-plugin-facebook");
-        if (Facebook.AccessToken.getCurrentToken()) {
-            page.facebookShareImage.visible = true;
-            page.facebookShareImage.touchEnabled = true;
-            page.facebookShareImage.onTouchEnded = function() {
-                Facebook.shareLinkContent({
-                    page: page,
-                        shareHashtag: new Facebook.ShareHashtag({
-                            hashTag: "#HashTag"
-                        }),
-                        contentUrl: product.image.src,
-                        onSuccess: function(data) {},
-                        onCancel: function() {},
-                        onFailure: function(error) {}
-                    });
-            };
-        } else {
-            page.facebookShareImage.visible = false;
-        }
-    }
-};
 
-function initBackButton(page) {
-	page.android.onBackButtonPressed = function() {
-		Router.goBack();
-	};
-};
-
-module && (module.exports = PageProductDetail);
+module && (module.exports = Page_);

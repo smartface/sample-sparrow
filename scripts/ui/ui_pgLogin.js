@@ -11,375 +11,255 @@ const Color = require('sf-core/ui/color');
 const ImageView = require('sf-core/ui/imageview');
 const Image = require('sf-core/ui/image');
 const ImageFillType = require('sf-core/ui/imagefilltype');
-const Button = require('sf-core/ui/button');
-const TextAlignment = require('sf-core/ui/textalignment');
-const Font = require('sf-core/ui/font');
 const TextBox = require('sf-core/ui/textbox');
 
+const BtnTransparent = require("../components/BtnTransparent");
+const HorizontalDivider = require("../components/HorizontalDivider");
 
+const getCombinedStyle = require("library/styler-builder").getCombinedStyle;
 
 const PgLogin_ = extend(Page)(
 	//constructor
-	function(_super){
+	function(_super, props) {
 		// initalizes super class for this page scope
-		_super(this, {
-			onLoad: onLoad.bind(this),
-			orientation: Page.Orientation.PORTRAIT
-		});
+		_super(this, Object.assign({}, {
+			onShow: onShow.bind(this),
+			onLoad: onLoad.bind(this)
+		}, props || {}));
 
-		var rootLayout = new FlexLayout({
+		const rootlayoutStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			width: null,
+			height: null,
+			flexGrow: 1
+		});
+		var rootlayout = new FlexLayout(rootlayoutStyle);
+		this.layout.addChild(rootlayout);
+		
+		const spriteLayoutStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
 			left: 0,
 			top: 0,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
 			right: 0,
 			bottom: 0,
-			backgroundColor: Color.create("#FFFFFF"),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		this.layout.addChild(rootLayout);
-		this.rootLayout = rootLayout;
-		var spriteLayout = new FlexLayout({
-			left: 0,
-			top: 0,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
-			right: 0,
-			bottom: 0,
-			backgroundColor: Color.create(255, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		rootLayout.addChild(spriteLayout);
+			width: null,
+			height: null,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var spriteLayout = new FlexLayout(spriteLayoutStyle);
+		rootlayout.addChild(spriteLayout);
 		this.spriteLayout = spriteLayout;
-		var mainLayout = new FlexLayout({
-			height: 200,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
+
+		const mainlayoutStyle = getCombinedStyle(".flexLayout", {
 			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(255, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		rootLayout.addChild(mainLayout);
-		this.mainLayout = mainLayout;
-		var imageLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
+			width: null,
+			height: null,
+			flexGrow: 1
+		});
+		var mainlayout = new FlexLayout(mainlayoutStyle);
+		rootlayout.addChild(mainlayout);
+		
+		const imagelayoutStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1,
 			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.CENTER,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		mainLayout.addChild(imageLayout);
-		this.imageLayout = imageLayout;
-		var inputLayout = new FlexLayout({
+			justifyContent: FlexLayout.JustifyContent.CENTER
+		});
+		var imagelayout = new FlexLayout(imagelayoutStyle);
+		mainlayout.addChild(imagelayout);
+		
+		const inputLayoutStyle = getCombinedStyle(".flexLayout", {
+			width: null,
 			height: 150,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.CENTER,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
+			backgroundColor: Color.create(0, 255, 255, 255),
 			marginLeft: 20,
 			marginRight: 20,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(0, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		mainLayout.addChild(inputLayout);
-		this.inputLayout = inputLayout;
-		var bottomLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		mainLayout.addChild(bottomLayout);
-		this.bottomLayout = bottomLayout;
-		var imageview1 = new ImageView({
-			width: 200,
-			height: 123,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true,
-			image: Image.createFromFile("images://sparrow_logo.png"),
-			imageFillType: ImageFillType.ASPECTFIT
-		}); 
-		imageLayout.addChild(imageview1);
-		this.imageview1 = imageview1;
-		var loginButton = new Button({
-			width: 180,
-			height: 50,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			marginTop: 40,
-			backgroundColor: Color.create(0, 0, 161, 241),
-			alpha: 1,
-			borderColor: Color.create(136, 255, 255, 255),
-			borderWidth: 1,
-			textColor: Color.create("#FFFFFF"),
-			textAlignment: TextAlignment.MIDCENTER,
-			borderRadius: 10,
-			visible: true,
-			text: "LOG IN"
+			flexGrow: null
 		});
-		loginButton.font = Font.create("Lato", 16, Font.BOLD); 
-		bottomLayout.addChild(loginButton);
-		this.loginButton = loginButton;
-		var flexlayout7 = new FlexLayout({
+		var inputLayout = new FlexLayout(inputLayoutStyle);
+		mainlayout.addChild(inputLayout);
+		this.inputLayout = inputLayout;
+
+		const bottomlayoutStyle = getCombinedStyle(".flexLayout", {
+			width: null,
+			height: null,
+			backgroundColor: Color.create(0, 255, 255, 255),
+			flexGrow: 1
+		});
+		var bottomlayout = new FlexLayout(bottomlayoutStyle);
+		mainlayout.addChild(bottomlayout);
+		this.bottomlayout = bottomlayout;
+
+		const imageview4Style = getCombinedStyle(".imageView", {
+			height: 150,
+			image: Image.createFromFile("images://sparrow_logo.png"),
+			imageFillType: ImageFillType.ASPECTFIT,
+			width: 200
+		});
+		var imageview4 = new ImageView(imageview4Style);
+		imagelayout.addChild(imageview4);
+		
+		const flexlayout3Style = getCombinedStyle(".flexLayout", {
 			left: 10,
 			top: 10,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.CENTER,
-			justifyContent: FlexLayout.JustifyContent.CENTER,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.COLUMN,
-			positionType: FlexLayout.PositionType.ABSOLUTE,
 			right: 10,
 			bottom: 10,
+			width: null,
+			height: null,
 			backgroundColor: Color.create(102, 255, 255, 255),
-			alpha: 1,
 			borderColor: Color.create(255, 255, 255, 255),
+			borderRadius: 10,
 			borderWidth: 1,
-			borderRadius: 10,
-			visible: true
-		}); 
-		inputLayout.addChild(flexlayout7);
-		this.flexlayout7 = flexlayout7;
-		var facebookButton = new Button({
-			width: 180,
-			height: 50,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			marginTop: 10,
-			backgroundColor: Color.create(255, 59, 89, 152),
-			alpha: 1,
-			borderColor: Color.create(255, 59, 89, 152),
-			borderWidth: 1,
-			textColor: Color.create("#FFFFFF"),
-			textAlignment: TextAlignment.MIDCENTER,
-			borderRadius: 10,
-			visible: true,
-			text: "Log in with Facebook"
+			positionType: FlexLayout.PositionType.ABSOLUTE
 		});
-		facebookButton.font = Font.create("Lato", 16, Font.NORMAL); 
-		bottomLayout.addChild(facebookButton);
-		this.facebookButton = facebookButton;
-		var emailLayout = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		flexlayout7.addChild(emailLayout);
-		this.emailLayout = emailLayout;
-		var divider = new FlexLayout({
-			height: 1,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(32, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		flexlayout7.addChild(divider);
-		this.divider = divider;
-		var passwordlayout_1 = new FlexLayout({
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 1,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			borderRadius: 10,
-			visible: true
-		}); 
-		flexlayout7.addChild(passwordlayout_1);
-		this.passwordlayout_1 = passwordlayout_1;
-		var divider2 = new FlexLayout({
-			height: 1,
-			alignContent: FlexLayout.AlignContent.STRETCH,
-			alignItems: FlexLayout.AlignItems.STRETCH,
-			justifyContent: FlexLayout.JustifyContent.FLEX_START,
-			flexWrap: FlexLayout.FlexWrap.NOWRAP,
-			flexGrow: 0,
-			flexDirection: FlexLayout.FlexDirection.ROW,
-			positionType: FlexLayout.PositionType.RELATIVE,
-			alignSelf: FlexLayout.AlignSelf.STRETCH,
-			backgroundColor: Color.create(32, 0, 0, 0),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			visible: true
-		}); 
-		flexlayout7.addChild(divider2);
-		this.divider2 = divider2;
-		var emailTextBox = new TextBox({
-			positionType: FlexLayout.PositionType.RELATIVE,
-			flexGrow: 1,
-			marginLeft: 20,
-			marginRight: 20,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			textColor: Color.create(25500, 0, 0, 0),
-			textAlignment: TextAlignment.MIDLEFT,
-			visible: true,
-		});
-		emailTextBox.font = Font.create("Lato", 14, Font.NORMAL); 
-		emailLayout.addChild(emailTextBox);
-		this.emailTextBox = emailTextBox;
-		var passwordTextBox = new TextBox({
-			positionType: FlexLayout.PositionType.RELATIVE,
-			flexGrow: 1,
-			marginLeft: 20,
-			marginRight: 20,
-			backgroundColor: Color.create(0, 255, 255, 255),
-			alpha: 1,
-			borderColor: Color.create(25500, 0, 0, 0),
-			borderWidth: 0,
-			textColor: Color.create(25500, 0, 0, 0),
-			textAlignment: TextAlignment.MIDLEFT,
-			borderRadius: 0,
-			visible: true,
-		});
-		passwordTextBox.font = Font.create("Lato", 14, Font.NORMAL); 
-		passwordlayout_1.addChild(passwordTextBox);
-		this.passwordTextBox = passwordTextBox;
+		var flexlayout3 = new FlexLayout(flexlayout3Style);
+		inputLayout.addChild(flexlayout3);
 		
+		const btnSignInStyle = getCombinedStyle(".flexLayout", {
+			backgroundColor: Color.create(0, 255, 255, 255),
+			left: 0,
+			top: 0,
+			width: 220,
+			height: 50,
+			borderColor: Color.create(77, 255, 255, 255),
+			borderWidth: null,
+			marginTop: 40,
+			positionType: FlexLayout.PositionType.RELATIVE,
+			alignSelf: FlexLayout.AlignSelf.CENTER
+		});
+		var btnSignIn = new BtnTransparent(btnSignInStyle, "pgLogin");
+		bottomlayout.addChild(btnSignIn);
+		this.btnSignIn = btnSignIn;
+
+		const loadingImageStyle = getCombinedStyle(".imageView", {
+			imageFillType: ImageFillType.ASPECTFIT,
+			left: 0,
+			right: 0,
+			top: 40,
+			height: 50,
+			width: null,
+			visible: false,
+			positionType: FlexLayout.PositionType.ABSOLUTE
+		});
+		var loadingImage = new ImageView(loadingImageStyle);
+		bottomlayout.addChild(loadingImage);
+		this.loadingImage = loadingImage;
+
+		const emailTextBoxStyle = getCombinedStyle(".textBox", {
+			width: null,
+			height: null,
+			marginLeft: 20,
+			marginRight: 20,
+			text: "",
+			flexGrow: 1
+		});
+		var emailTextBox = new TextBox(emailTextBoxStyle);
+		flexlayout3.addChild(emailTextBox);
+		this.emailTextBox = emailTextBox;
+
+		const horizontalDividerStyle = getCombinedStyle(".flexLayout", {
+			left: 0,
+			top: 0,
+			width: null,
+			height: 1,
+			backgroundColor: Color.create(255, 0, 0, 0),
+			alpha: 0.1,
+			flexGrow: null,
+			positionType: FlexLayout.PositionType.RELATIVE
+		});
+		var horizontalDivider = new HorizontalDivider(horizontalDividerStyle, "pgLogin");
+		flexlayout3.addChild(horizontalDivider);
+		
+		const passwordTextBoxStyle = getCombinedStyle(".textBox", {
+			width: null,
+			height: null,
+			marginLeft: 20,
+			marginRight: 20,
+			text: "",
+			isPassword: true,
+			flexGrow: 1
+		});
+		var passwordTextBox = new TextBox(passwordTextBoxStyle);
+		flexlayout3.addChild(passwordTextBox);
+		this.passwordTextBox = passwordTextBox;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
-			rootLayout: rootLayout
+			rootlayout: rootlayout
 		});
 		
-		//assign the children of rootLayout
-		rootLayout.children =  Object.assign({}, {
+		//assign the children of rootlayout
+		rootlayout.children = Object.assign({}, {
 			spriteLayout: spriteLayout,
-			mainLayout: mainLayout
+			mainlayout: mainlayout
 		});
 		
-		//assign the children of mainLayout
-		mainLayout.children =  Object.assign({}, {
-			imageLayout: imageLayout,
+		//assign the children of mainlayout
+		mainlayout.children = Object.assign({}, {
+			imagelayout: imagelayout,
 			inputLayout: inputLayout,
-			bottomLayout: bottomLayout
+			bottomlayout: bottomlayout
 		});
 		
-		//assign the children of imageLayout
-		imageLayout.children =  Object.assign({}, {
-			imageview1: imageview1
+		//assign the children of imagelayout
+		imagelayout.children = Object.assign({}, {
+			imageview4: imageview4
 		});
 		
 		//assign the children of inputLayout
-		inputLayout.children =  Object.assign({}, {
-			flexlayout7: flexlayout7
+		inputLayout.children = Object.assign({}, {
+			flexlayout3: flexlayout3
 		});
 		
-		//assign the children of bottomLayout
-		bottomLayout.children =  Object.assign({}, {
-			loginButton: loginButton,
-			facebookButton: facebookButton
+		//assign the children of bottomlayout
+		bottomlayout.children = Object.assign({}, {
+			btnSignIn: btnSignIn,
+			loadingImage: loadingImage
 		});
 		
-		//assign the children of flexlayout7
-		flexlayout7.children =  Object.assign({}, {
-			emailLayout: emailLayout,
-			divider: divider,
-			passwordlayout_1: passwordlayout_1,
-			divider2: divider2
-		});
-		
-		//assign the children of emailLayout
-		emailLayout.children =  Object.assign({}, {
-			emailTextBox: emailTextBox
-		});
-		
-		//assign the children of passwordlayout_1
-		passwordlayout_1.children =  Object.assign({}, {
+		//assign the children of flexlayout3
+		flexlayout3.children = Object.assign({}, {
+			emailTextBox: emailTextBox,
+			horizontalDivider: horizontalDivider,
 			passwordTextBox: passwordTextBox
 		});
+		
+	});
 
-});
+// Page.onShow -> This event is called when a page appears on the screen (everytime).
+function onShow() {
+  //StatusBar props
+  const statusBarStyle = getCombinedStyle(".statusBar", {});
+	
+	Object.assign(this.statusBar, statusBarStyle);
+	
+	if(statusBarStyle.color)
+	  this.statusBar.android && (this.statusBar.android.color = statusBarStyle.color);
+	if(statusBarStyle.style)
+	  this.statusBar.ios && (this.statusBar.ios.style = statusBarStyle.style);
 
+  //HeaderBar props
+  const headerBarStyle = getCombinedStyle(".headerBar", {
+		title: "newPage001",
+		visible: false,
+		backgroundColor: Color.create(0, 157, 27, 85)
+	});
+	
+	Object.assign(this.headerBar,	headerBarStyle);
+	
+}
+
+// Page.onLoad -> This event is called once when page is created.
 function onLoad() { 
 
-  this.headerBar.title = "newPage001";
-  this.headerBar.titleColor = Color.create("#000000");
-  this.headerBar.backgroundColor = Color.create("#FFFFFF");
-  this.headerBar.visible = false;
-  this.statusBar.visible = false;
-  this.layout.alignContent = FlexLayout.AlignContent.STRETCH;
-  this.layout.alignItems = FlexLayout.AlignItems.STRETCH;
-  this.layout.direction = FlexLayout.Direction.INHERIT;
-  this.layout.flexDirection = FlexLayout.FlexDirection.COLUMN;
-  this.layout.flexWrap = FlexLayout.FlexWrap.NOWRAP;
-  this.layout.justifyContent = FlexLayout.JustifyContent.FLEX_START;
-  this.layout.backgroundColor = Color.create("#FFFFFF");
-
+  const pageStyle = getCombinedStyle(".page", {
+		backgroundColor: Color.create(255, 0, 0, 0)
+	});
+	
+	Object.assign(this.layout, pageStyle);
+	
 }
 
 module && (module.exports = PgLogin_);

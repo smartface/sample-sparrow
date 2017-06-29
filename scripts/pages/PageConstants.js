@@ -7,5 +7,6 @@ PageConstants.PAGE_PRODUCT_DETAIL = "productDetail";
 PageConstants.PAGE_SHOPPING_CART = "shoppingCart"; 
 PageConstants.PAGE_SHIPPING = "shipping"; 
 PageConstants.PAGE_PAYMENT = "payment"; 
+PageConstants.PAGE_PAYMENT_RESULT = "paymentResult";
 
 module.exports = PageConstants;
