@@ -10,6 +10,8 @@ SMF.i18n.defineLanguage('en', {
 	"pgLogin.username"		: "Username",
 	"pgLogin.password"		: "Password",
 	"pgLogin.signin"		: "SIGN IN",
+	"pgLogin.inputs.username.error" 	: "Username can not be empty.",
+	"pgLogin.inputs.password.error" 	: "Password can not be empty.",
 	"pgCategories.title"	: "Categories",
 	"pgProductDetail.title"	: "Product Detail",
 	"pgProductList.title"	: "Product List",

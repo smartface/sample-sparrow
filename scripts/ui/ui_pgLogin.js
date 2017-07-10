@@ -92,15 +92,16 @@ const PgLogin_ = extend(Page)(
 		mainlayout.addChild(bottomlayout);
 		this.bottomlayout = bottomlayout;
 
-		const imageview4Style = getCombinedStyle(".imageView", {
+		const imageviewLogoStyle = getCombinedStyle(".imageView", {
 			height: 150,
 			image: Image.createFromFile("images://sparrow_logo.png"),
 			imageFillType: ImageFillType.ASPECTFIT,
 			width: 200
 		});
-		var imageview4 = new ImageView(imageview4Style);
-		imagelayout.addChild(imageview4);
-		
+		var imageviewLogo = new ImageView(imageviewLogoStyle);
+		imagelayout.addChild(imageviewLogo);
+		this.imageviewLogo = imageviewLogo;
+
 		const flexlayout3Style = getCombinedStyle(".flexLayout", {
 			left: 10,
 			top: 10,
@@ -205,7 +206,7 @@ const PgLogin_ = extend(Page)(
 		
 		//assign the children of imagelayout
 		imagelayout.children = Object.assign({}, {
-			imageview4: imageview4
+			imageviewLogo: imageviewLogo
 		});
 		
 		//assign the children of inputLayout

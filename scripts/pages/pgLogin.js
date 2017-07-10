@@ -1,3 +1,5 @@
+/*global lang*/
+
 const extend            = require("js-base/core/extend");
 const SpriteView        = require("sf-extension-spriteview");
 const ActionKeyType     = require("sf-core/ui/actionkeytype");
@@ -12,15 +14,13 @@ const Router            = require("sf-core/ui/router");
 const AlertView         = require('sf-core/ui/alertview');
 const Network           = require('sf-core/device/network');
 const Application       = require("sf-core/application");
-const Data              = require('sf-core/data');
+const System              = require('sf-core/device/system');
 const Animator          = require('sf-core/ui/animator');
 const Config            = require("../config.js");
 const PageDesign        = require("../ui/ui_pgLogin");
-
-const LoginCredentials = {
-    email: "test",
-    password: "password"
-};
+const AlertUtil = require("lib/util/alert");
+const FingerPrintLib = require("lib/util/fingerprint");
+const Data = require("sf-core/data");
 
 
 const Page_ = extend(PageDesign)(
@@ -38,14 +38,14 @@ function onShow(parentOnShow) {
     this.emailTextBox.hint = lang["pgLogin.username"];
     this.emailTextBox.actionKeyType = ActionKeyType.NEXT;
     this.emailTextBox.onActionButtonPress = function(e) {
-        this.passwordTextBox.showKeyboard();
-    }
+        this.passwordTextBox.requestFocus();
+    }.bind(this);
     this.passwordTextBox.hint = lang["pgLogin.password"];
     this.passwordTextBox.actionKeyType = ActionKeyType.GO;
     this.passwordTextBox.onActionButtonPress = function(e) {
-        this.passwordTextBox.hideKeyboard();
-        login();
-    }
+        this.passwordTextBox.removeFocus();
+        login(this);
+    }.bind(this);
     this.emailTextBox.ios.clearButtonEnabled = true; 
     this.passwordTextBox.ios.clearButtonEnabled = true;
     this.emailTextBox.text = ""; 
@@ -73,6 +73,16 @@ function onLoad(parentOnLoad) {
     this.btnSignIn.button1.onPress = function() {
         login(this);
     }.bind(this);
+    this.btnSignIn.button1.onLongPress = function() {
+        Data.removeVariable("isUserAuthenticated");
+		Data.removeVariable("userName");
+		Data.removeVariable("password");
+		Data.removeVariable("isRejectedFingerprint");
+		Data.removeVariable("isVerifiedFingerprint");
+		Data.removeVariable("isAuthenticated");
+		Data.removeVariable("isAllowedFingerprint");
+	    Application.restart();
+    }.bind(this);
     
     var imageView = new ImageView();
             imageView.positionType = FlexLayout.PositionType.ABSOLUTE;
@@ -83,7 +93,12 @@ function onLoad(parentOnLoad) {
             imageView.id = 100;
             imageView.touchEnabled = false;
             imageView.alpha = 1;
-    this.bottomlayout.addChild(imageView);        
+    this.bottomlayout.addChild(imageView);     
+    
+    this.imageviewLogo.onTouchEnded = function(){
+	    this.emailTextBox.text = "anthony.bell@smartcompany.email";
+        this.passwordTextBox.text = "123456";
+	}.bind(this);
 }
 
 function setBackgroundSprite(spriteLayout) {
@@ -106,6 +121,87 @@ function setBackgroundSprite(spriteLayout) {
 };
 
 function login(page) {
+    if(page.emailTextBox.text === ""){
+        AlertUtil.showAlert(lang["pgLogin.inputs.username.error"]);
+		return;
+    }
+    
+    if(!Data.getBooleanVariable('isNotFirstLogin')){
+        if (page.passwordTextBox.text === "") {
+            // Validate fingerPrint
+    		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
+    		return; 
+    	}
+    }
+    
+	if(FingerPrintLib.isUserVerifiedFingerprint){
+		// Second+ logging. No need to register fingerprint user already do it before.
+		if (page.passwordTextBox.text !== "") {
+            // Validate fingerPrint
+    		loading(page);
+    	}
+		else{
+		    FingerPrintLib.validateFingerPrint(function(){
+		        loading(page);
+		    }, function() {
+		        if (page.passwordTextBox.text === "") {
+	                // Validate fingerPrint
+	        		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
+	        		return; 
+	        	}
+	        	loading(page);
+		    });
+		    return;
+		}
+	}
+	else if(FingerPrintLib.isFingerprintAvailable){
+	    if(FingerPrintLib.isUserAllowedFingerprint){
+	    	// Second+ logging. But user not registered fingerprint. But password supplied skip fingerprint
+			if (page.passwordTextBox.text !== "") {
+	            // Validate fingerPrint
+	    		loading(page);
+	    	}
+			else{
+		        FingerPrintLib.validateFingerPrint(function(){
+	    	        loading(page);
+	    	    }, function(){
+	    	        AlertUtil.showAlert("Fingerprint failed to validate.");
+		            if (page.passwordTextBox.text === "") {
+	                    // Validate fingerPrint
+	            		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
+	            		return; 
+	            	}
+	            	loading(page);
+	    	    });
+	    	    return;
+			}
+	    }
+	    // first logging and ask user to register fingerprint
+	    else if(!FingerPrintLib.isUserRejectedFingerprint){
+	        FingerPrintLib.registerFingerPrint(function(){
+    	        loading(page);
+    	    }, function(){
+    	        AlertUtil.showAlert("Fingerprint failed to register.");
+	            if (page.passwordTextBox.text === "") {
+                    // Validate fingerPrint
+            		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
+            		return; 
+            	}
+            	loading(page);
+    	    });
+    	    return;
+	    }
+	    
+	}
+	
+	if (page.passwordTextBox.text === "") {
+        // Validate fingerPrint
+		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
+		return; 
+	}
+    
+    
+    
     loading(page);
     /*if (uiComponents.passwordTextBox.text.toLowerCase() === LoginCredentials.password.toLowerCase() &&
         uiComponents.emailTextBox.text.toLowerCase() === LoginCredentials.email.toLowerCase()) {
@@ -131,7 +227,7 @@ function loading(page) {
     //uiComponents.facebookButton.text = "";
 
     var layout;
-    if (Device.deviceOS == 'Android') {
+    if (System.OS == 'Android') {
         layout = page.bottomLayout;
     }
     else {
@@ -141,7 +237,7 @@ function loading(page) {
     Animator.animate(page.layout, 100, function() {
         
         page.btnSignIn.width = 50;
-        if (Device.deviceOS == 'Android') {
+        if (System.OS == 'Android') {
 
         }
         else {
@@ -158,7 +254,7 @@ function loading(page) {
         Animator.animate(page.layout, 300, function() {
             page.inputLayout.height = 0;
             page.loadingImage.alpha = 1;
-            if (Device.deviceOS == 'Android') {
+            if (System.OS == 'Android') {
 
             }
             else {
@@ -172,7 +268,7 @@ function loading(page) {
 
 function rotateImage(imageView, page) {
     var image;
-    if (Device.deviceOS == "Android") {
+    if (System.OS == "Android") {
         const AndroidUnitConverter = require('sf-core/util/Android/unitconverter');
         var pixel = AndroidUnitConverter.dpToPixel(50);
         image = Image.createFromFile("images://loading.png").resize(pixel, pixel);
@@ -206,7 +302,7 @@ function restartPage(page) {
     //uiComponents.facebookButton.width = 0;
 
     var layout;
-    if (Device.deviceOS == 'Android') {
+    if (System.OS == 'Android') {
         layout = page.bottomLayout;
     }
     else {

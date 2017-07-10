@@ -13,14 +13,10 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.3.19",
 			"props": {
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"orientation": "PORTRAIT",
-				"children": [
-					"statusBar",
-					"headerBar",
-					"rootlayout"
-				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -29,21 +25,13 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"children": [
+					"statusBar",
+					"headerBar",
+					"rootlayout"
+				],
 				"parent": null,
 				"name": "pgLogin",
-				"layout": {
-					"width": 93.75,
-					"height": 166.75
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
-				"font": {},
 				"width": 187.5,
 				"height": 333.5
 			}
@@ -67,12 +55,6 @@
 				"parent": "pgLogin",
 				"isRemovable": false,
 				"name": "statusBar",
-				"layout": {
-					"height": 10
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
 				"height": 20
 			}
 		},
@@ -93,19 +75,13 @@
 			"className": ".headerBar",
 			"props": {
 				"title": "newPage001",
-				"titleColor": "#FFFFFF",
+				"titleColor": "#000000",
 				"visible": false,
 				"backgroundColor": "rgba( 157, 27, 85, 0 )",
 				"children": [],
 				"parent": "pgLogin",
 				"isRemovable": false,
 				"name": "headerBar",
-				"layout": {
-					"height": 22
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
 				"height": 44
 			}
 		},
@@ -135,10 +111,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"spriteLayout",
-					"mainlayout"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -150,21 +122,12 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"spriteLayout",
+					"mainlayout"
+				],
 				"name": "rootlayout",
-				"parent": "pgLogin",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {}
+				"parent": "pgLogin"
 			}
 		},
 		{
@@ -204,7 +167,6 @@
 				"top": 0,
 				"right": 0,
 				"bottom": 0,
-				"children": [],
 				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -218,26 +180,9 @@
 					"right": 0,
 					"bottom": 0
 				},
+				"children": [],
 				"name": "spriteLayout",
-				"parent": "rootlayout",
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 0,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 0,
-					"bottom": 0
-				},
-				"font": {}
+				"parent": "rootlayout"
 			}
 		},
 		{
@@ -267,11 +212,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"imagelayout",
-					"inputLayout",
-					"bottomlayout"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -283,21 +223,13 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"imagelayout",
+					"inputLayout",
+					"bottomlayout"
+				],
 				"name": "mainlayout",
-				"parent": "rootlayout",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {}
+				"parent": "rootlayout"
 			}
 		},
 		{
@@ -328,9 +260,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"imageview4"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -342,21 +271,11 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"imageviewLogo"
+				],
 				"name": "imagelayout",
-				"parent": "mainlayout",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {}
+				"parent": "mainlayout"
 			}
 		},
 		{
@@ -390,9 +309,6 @@
 				"borderWidth": 0,
 				"marginLeft": 20,
 				"marginRight": 20,
-				"children": [
-					"flexlayout3"
-				],
 				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
@@ -405,24 +321,11 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
+				"children": [
+					"flexlayout3"
+				],
 				"name": "inputLayout",
-				"parent": "mainlayout",
-				"layout": {
-					"marginLeft": 10,
-					"marginRight": 10,
-					"height": 75,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": null
-				},
-				"font": {}
+				"parent": "mainlayout"
 			}
 		},
 		{
@@ -452,10 +355,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [
-					"btnSignIn",
-					"loadingImage"
-				],
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -467,22 +367,12 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"btnSignIn",
+					"loadingImage"
+				],
 				"name": "bottomlayout",
-				"parent": "mainlayout",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {},
-				"usePageVariable": true
+				"parent": "mainlayout"
 			}
 		},
 		{
@@ -494,11 +384,7 @@
 				"image": "sparrow_logo.png",
 				"imageFillType": "ASPECTFIT",
 				"width": 200,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"usePageVariable": true
 			},
 			"className": ".imageView",
 			"props": {
@@ -512,23 +398,15 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"image": "sparrow_logo.png",
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
-				"name": "imageview4",
+				"children": [],
+				"name": "imageviewLogo",
 				"parent": "imagelayout",
-				"layout": {
-					"width": 100,
-					"height": 75,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.04661047439341326"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sample-sparro/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.45589390492430315",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -571,11 +449,6 @@
 				"right": 10,
 				"bottom": 10,
 				"borderRadius": 10,
-				"children": [
-					"emailTextBox",
-					"horizontalDivider",
-					"passwordTextBox"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -588,27 +461,13 @@
 					"right": 10,
 					"bottom": 10
 				},
+				"children": [
+					"emailTextBox",
+					"horizontalDivider",
+					"passwordTextBox"
+				],
 				"name": "flexlayout3",
-				"parent": "inputLayout",
-				"layout": {
-					"right": 5,
-					"bottom": 5,
-					"left": 5,
-					"top": 5,
-					"borderWidth": 0.5,
-					"borderRadius": 5
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 10,
-					"bottom": 10
-				},
-				"font": {}
+				"parent": "inputLayout"
 			}
 		},
 		{
@@ -637,7 +496,7 @@
 				"touchEnabled": true,
 				"text": "",
 				"visible": true,
-				"backgroundColor": "#00FFFFFF",
+				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
@@ -645,7 +504,6 @@
 				"textAlignment": "MIDLEFT",
 				"marginLeft": 20,
 				"marginRight": 20,
-				"children": [],
 				"usePageVariable": true,
 				"font": {
 					"size": 16,
@@ -658,17 +516,9 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "emailTextBox",
-				"parent": "flexlayout3",
-				"layout": {
-					"marginLeft": 10,
-					"marginRight": 10,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "flexlayout3"
 			}
 		},
 		{
@@ -698,7 +548,7 @@
 				"touchEnabled": true,
 				"text": "",
 				"visible": true,
-				"backgroundColor": "#00FFFFFF",
+				"backgroundColor": "#FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
@@ -707,7 +557,6 @@
 				"marginLeft": 20,
 				"marginRight": 20,
 				"isPassword": true,
-				"children": [],
 				"usePageVariable": true,
 				"font": {
 					"size": 16,
@@ -720,17 +569,9 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "passwordTextBox",
-				"parent": "flexlayout3",
-				"layout": {
-					"marginLeft": 10,
-					"marginRight": 10,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "flexlayout3"
 			}
 		},
 		{
@@ -767,7 +608,6 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"children": [],
 				"left": 0,
 				"right": 0,
 				"top": 40,
@@ -777,20 +617,9 @@
 					"positionType": "ABSOLUTE",
 					"right": 0
 				},
+				"children": [],
 				"name": "loadingImage",
-				"parent": "bottomlayout",
-				"layout": {
-					"right": 0,
-					"left": 0,
-					"top": 20,
-					"height": 25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 0
-				},
-				"font": {}
+				"parent": "bottomlayout"
 			}
 		},
 		{
@@ -833,7 +662,6 @@
 				"borderWidth": 0,
 				"left": 0,
 				"top": 0,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -845,24 +673,9 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": null
-				},
+				"children": [],
 				"name": "horizontalDivider",
-				"parent": "flexlayout3",
-				"layout": {
-					"left": 0,
-					"top": 0,
-					"height": 0.5,
-					"borderWidth": 0
-				},
-				"font": {}
+				"parent": "flexlayout3"
 			}
 		},
 		{
@@ -907,9 +720,6 @@
 				"borderWidth": null,
 				"left": 0,
 				"top": 0,
-				"children": [
-					"button1"
-				],
 				"marginTop": 40,
 				"usePageVariable": true,
 				"flexProps": {
@@ -922,25 +732,11 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"flex": {
-					"alignSelf": 2,
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0
-				},
+				"children": [
+					"button1"
+				],
 				"name": "btnSignIn",
-				"parent": "bottomlayout",
-				"layout": {
-					"marginTop": 20,
-					"left": 0,
-					"top": 0,
-					"width": 110,
-					"height": 25
-				},
-				"font": {}
+				"parent": "bottomlayout"
 			}
 		},
 		{
@@ -982,7 +778,6 @@
 				"textAlignment": "MIDCENTER",
 				"borderRadius": 22,
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -994,16 +789,9 @@
 					"alignSelf": "AUTO",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "button1",
-				"parent": "btnSignIn",
-				"layout": {
-					"borderWidth": 0.5,
-					"borderRadius": 11
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "btnSignIn"
 			}
 		}
 	]
