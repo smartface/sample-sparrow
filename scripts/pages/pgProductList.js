@@ -15,7 +15,7 @@ const Shopify		 = require("sf-extension-shopify");
 const Product  	     = require('../objects/Category');
 const ItemProductList		= require("../components/ItemProductList");
 const ShoppingCart		= require("../objects/ShoppingCart");
-
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 const Page_ = extend(PageDesign)(
 	function(_super){
@@ -49,6 +49,7 @@ function onShow(parentOnShow,params) {
     initHeaderBar(this.customHeaderBar);
 
     Router.sliderDrawer.enabled = false;
+    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
     
     if (params && params.id) {
         Timer.setTimeout({

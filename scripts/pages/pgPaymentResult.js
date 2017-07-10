@@ -5,13 +5,15 @@ const PageDesign = require("../ui/ui_pgPaymentResult");
 const Router = require("sf-core/ui/router")
 const PageConstants = require('pages/PageConstants');
 const Image          = require('sf-core/ui/image');
-
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
 		_super(this, {
-		    
+		    onShow: function(){
+    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+		    }
 		});
 		Router.sliderDrawer.enabled = false;
 		this.resultText.text = lang["pgPaymentResult.accepted"];

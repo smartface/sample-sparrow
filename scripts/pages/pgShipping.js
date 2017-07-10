@@ -10,11 +10,16 @@ const AlertView         = require('sf-core/ui/alertview');
 const KeyboardType		= require('sf-core/ui/keyboardtype');
 const System			= require('sf-core/device/system');
 const ActionKeyType 	= require('sf-core/ui/actionkeytype');
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
-		_super(this);
+		_super(this, {
+		    onShow: function(){
+    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+		    }
+		});
 		
 		initTextes.call(this);
 		

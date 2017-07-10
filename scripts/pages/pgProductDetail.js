@@ -21,6 +21,7 @@ const System         = require('sf-core/device/system');
 const Screen         = require('sf-core/device/screen');
 const ShoppingCart   = require("../objects/ShoppingCart");
 const TextAlignment  = require('sf-core/ui/textalignment');
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 
 const Page_ = extend(PageDesign)(
@@ -54,6 +55,7 @@ function onShow(parentOnShow,params) {
     parentOnShow();
     Router.sliderDrawer.enabled = false;
     initHeaderBar(this.customHeaderBar);
+    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 
     if (params && params.id) {
         Shopify.Product.getProduct(params.id).exec(function(response) {

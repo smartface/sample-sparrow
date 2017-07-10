@@ -9,13 +9,15 @@ const ItemCart				= require("../components/ItemCart");
 const ListView      		= require('sf-core/ui/listview');
 const ListViewItem  		= require('sf-core/ui/listviewitem');
 const ShoppingCart			= require("../objects/ShoppingCart");
-
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
 		_super(this, {
-		    
+		    onShow: function(){
+    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+		    }
 		});
 		this.inputPromoCode.hint = lang["pgShoppingCart.promocode"]
 		this.btnCheckout.button1.onPress = function(){
