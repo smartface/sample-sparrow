@@ -20,6 +20,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgShoppingCart.title"	: "Shopping Cart",
 	"pgShoppingCart.checkout": "CHECKOUT",
 	"pgShoppingCart.promocode": "Enter Promo Code",
+	"pgShoppingCart.checkout.error": "Shopping cart is empty",
 	"pgPayment.title"		: "Payment",
 	"pgPayment.pay"			: "PAY",
 	"pgSliderDrawer.signout"	  : "Sign out",

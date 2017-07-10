@@ -14,13 +14,13 @@ const Router            = require("sf-core/ui/router");
 const AlertView         = require('sf-core/ui/alertview');
 const Network           = require('sf-core/device/network');
 const Application       = require("sf-core/application");
-const System              = require('sf-core/device/system');
+const System            = require('sf-core/device/system');
 const Animator          = require('sf-core/ui/animator');
 const Config            = require("../config.js");
 const PageDesign        = require("../ui/ui_pgLogin");
-const AlertUtil = require("lib/util/alert");
-const FingerPrintLib = require("lib/util/fingerprint");
-const Data = require("sf-core/data");
+const AlertUtil         = require("lib/util/alert");
+const FingerPrintLib    = require("lib/util/fingerprint");
+const Data              = require("sf-core/data");
 
 
 const Page_ = extend(PageDesign)(

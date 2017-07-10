@@ -9,19 +9,28 @@ const ItemCart				= require("../components/ItemCart");
 const ListView      		= require('sf-core/ui/listview');
 const ListViewItem  		= require('sf-core/ui/listviewitem');
 const ShoppingCart			= require("../objects/ShoppingCart");
-const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
+const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
+const ActionKeyType         = require('sf-core/ui/actionkeytype');
+const AlertUtil             = require("lib/util/alert");
 
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
-		_super(this, {
-		    onShow: function(){
-    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-		    }
-		});
-		this.inputPromoCode.hint = lang["pgShoppingCart.promocode"]
+		_super(this);
+
+		this.inputPromoCode.hint = lang["pgShoppingCart.promocode"];
+		this.inputPromoCode.actionKeyType = ActionKeyType.SEND;
+		this.inputPromoCode.onActionButtonPress = function() {
+		    this.inputPromoCode.removeFocus();
+		}.bind(this);
+		
 		this.btnCheckout.button1.onPress = function(){
-		    Router.go(PageConstants.PAGE_SHIPPING,undefined,true);
+		    if(ShoppingCart.getTotal() > 0){
+		        Router.go(PageConstants.PAGE_SHIPPING,undefined,true);
+		    }
+		    else{
+		        AlertUtil.showAlert(lang["pgShoppingCart.checkout.error"]);
+		    }
         }
         this.customHeaderBar.headerTitle.text = lang["pgShoppingCart.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
@@ -49,6 +58,7 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
+    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 }
 
 function initListView(page,listView) {

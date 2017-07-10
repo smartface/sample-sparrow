@@ -10,11 +10,7 @@ const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
-		_super(this, {
-		    onShow: function(){
-    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-		    }
-		});
+		_super(this);
 		Router.sliderDrawer.enabled = false;
 		this.resultText.text = lang["pgPaymentResult.accepted"];
 		this.customHeaderBar.headerTitle.text = lang["pgPaymentResult.title"];
@@ -24,7 +20,18 @@ const Page_ = extend(PageDesign)(
 		this.btnContinueShopping.button1.onPress = function(){
 		    Router.go(PageConstants.PAGE_CATEGORIES,undefined,true);
         }
+        
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 });
 
+function onLoad(parentOnShow) {
+    parentOnShow();
+}
+
+function onShow(parentOnLoad) {
+    parentOnLoad();
+    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+}
 
 module && (module.exports = Page_);

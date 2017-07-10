@@ -15,12 +15,9 @@ const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
-		_super(this, {
-		    onShow: function(){
-    			this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-		    }
-		});
-		
+		_super(this);
+		this.onShow = onShow.bind(this, this.onShow.bind(this));
+		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));		
 		initTextes.call(this);
 		
 		var inputArr = [this.firstName,this.lastName,this.city,this.zip,this.phone,this.address,this.email];
@@ -57,6 +54,15 @@ const Page_ = extend(PageDesign)(
 		
 		updateInputProps(inputArr);
 });
+
+function onLoad(parentOnShow) {
+    parentOnShow();
+}
+
+function onShow(parentOnLoad) {
+    parentOnLoad();
+    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+}
 
 function autoFill(page)
 {
