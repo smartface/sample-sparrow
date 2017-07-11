@@ -157,6 +157,18 @@ const PgLogin_ = extend(Page)(
 			flexGrow: 1
 		});
 		var emailTextBox = new TextBox(emailTextBoxStyle);
+		if(emailTextBoxStyle.hintTextColor)
+			emailTextBox.android && (emailTextBox.android.hintTextColor = emailTextBoxStyle.hintTextColor);
+		if(emailTextBoxStyle.elevation)
+			emailTextBox.android && (emailTextBox.android.elevation = emailTextBoxStyle.elevation);
+		if(emailTextBoxStyle.keyboardAppearance)
+			emailTextBox.ios && (emailTextBox.ios.keyboardAppearance = emailTextBoxStyle.keyboardAppearance);
+		if(emailTextBoxStyle.clearButtonEnabled)
+			emailTextBox.ios && (emailTextBox.ios.clearButtonEnabled = emailTextBoxStyle.clearButtonEnabled);
+		if(emailTextBoxStyle.minimumFontSize)
+			emailTextBox.ios && (emailTextBox.ios.minimumFontSize = emailTextBoxStyle.minimumFontSize);
+		if(emailTextBoxStyle.adjustFontSizeToFit)
+			emailTextBox.ios && (emailTextBox.ios.adjustFontSizeToFit = emailTextBoxStyle.adjustFontSizeToFit);
 		flexlayout3.addChild(emailTextBox);
 		this.emailTextBox = emailTextBox;
 
@@ -183,6 +195,18 @@ const PgLogin_ = extend(Page)(
 			flexGrow: 1
 		});
 		var passwordTextBox = new TextBox(passwordTextBoxStyle);
+		if(passwordTextBoxStyle.hintTextColor)
+			passwordTextBox.android && (passwordTextBox.android.hintTextColor = passwordTextBoxStyle.hintTextColor);
+		if(passwordTextBoxStyle.elevation)
+			passwordTextBox.android && (passwordTextBox.android.elevation = passwordTextBoxStyle.elevation);
+		if(passwordTextBoxStyle.keyboardAppearance)
+			passwordTextBox.ios && (passwordTextBox.ios.keyboardAppearance = passwordTextBoxStyle.keyboardAppearance);
+		if(passwordTextBoxStyle.clearButtonEnabled)
+			passwordTextBox.ios && (passwordTextBox.ios.clearButtonEnabled = passwordTextBoxStyle.clearButtonEnabled);
+		if(passwordTextBoxStyle.minimumFontSize)
+			passwordTextBox.ios && (passwordTextBox.ios.minimumFontSize = passwordTextBoxStyle.minimumFontSize);
+		if(passwordTextBoxStyle.adjustFontSizeToFit)
+			passwordTextBox.ios && (passwordTextBox.ios.adjustFontSizeToFit = passwordTextBoxStyle.adjustFontSizeToFit);
 		flexlayout3.addChild(passwordTextBox);
 		this.passwordTextBox = passwordTextBox;
 

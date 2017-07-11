@@ -73,6 +73,8 @@ const PgPayment_ = extend(Page)(
 			alignSelf: FlexLayout.AlignSelf.STRETCH
 		});
 		var totalPrice = new Label(totalPriceStyle);
+		if(totalPriceStyle.scrollEnabled === false)
+			totalPrice.ios && (totalPrice.ios.scrollEnabled = false);
 		this.layout.addChild(totalPrice);
 		this.totalPrice = totalPrice;
 
@@ -115,6 +117,18 @@ const PgPayment_ = extend(Page)(
 			flexGrow: 1
 		});
 		var cardNumber = new TextBox(cardNumberStyle);
+		if(cardNumberStyle.hintTextColor)
+			cardNumber.android && (cardNumber.android.hintTextColor = cardNumberStyle.hintTextColor);
+		if(cardNumberStyle.elevation)
+			cardNumber.android && (cardNumber.android.elevation = cardNumberStyle.elevation);
+		if(cardNumberStyle.keyboardAppearance)
+			cardNumber.ios && (cardNumber.ios.keyboardAppearance = cardNumberStyle.keyboardAppearance);
+		if(cardNumberStyle.clearButtonEnabled)
+			cardNumber.ios && (cardNumber.ios.clearButtonEnabled = cardNumberStyle.clearButtonEnabled);
+		if(cardNumberStyle.minimumFontSize)
+			cardNumber.ios && (cardNumber.ios.minimumFontSize = cardNumberStyle.minimumFontSize);
+		if(cardNumberStyle.adjustFontSizeToFit)
+			cardNumber.ios && (cardNumber.ios.adjustFontSizeToFit = cardNumberStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(cardNumber);
 		this.cardNumber = cardNumber;
 
@@ -161,6 +175,18 @@ const PgPayment_ = extend(Page)(
 			flexGrow: 1
 		});
 		var nameOnCard = new TextBox(nameOnCardStyle);
+		if(nameOnCardStyle.hintTextColor)
+			nameOnCard.android && (nameOnCard.android.hintTextColor = nameOnCardStyle.hintTextColor);
+		if(nameOnCardStyle.elevation)
+			nameOnCard.android && (nameOnCard.android.elevation = nameOnCardStyle.elevation);
+		if(nameOnCardStyle.keyboardAppearance)
+			nameOnCard.ios && (nameOnCard.ios.keyboardAppearance = nameOnCardStyle.keyboardAppearance);
+		if(nameOnCardStyle.clearButtonEnabled)
+			nameOnCard.ios && (nameOnCard.ios.clearButtonEnabled = nameOnCardStyle.clearButtonEnabled);
+		if(nameOnCardStyle.minimumFontSize)
+			nameOnCard.ios && (nameOnCard.ios.minimumFontSize = nameOnCardStyle.minimumFontSize);
+		if(nameOnCardStyle.adjustFontSizeToFit)
+			nameOnCard.ios && (nameOnCard.ios.adjustFontSizeToFit = nameOnCardStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(nameOnCard);
 		this.nameOnCard = nameOnCard;
 
@@ -171,6 +197,18 @@ const PgPayment_ = extend(Page)(
 			flexGrow: 1
 		});
 		var expiryDate = new TextBox(expiryDateStyle);
+		if(expiryDateStyle.hintTextColor)
+			expiryDate.android && (expiryDate.android.hintTextColor = expiryDateStyle.hintTextColor);
+		if(expiryDateStyle.elevation)
+			expiryDate.android && (expiryDate.android.elevation = expiryDateStyle.elevation);
+		if(expiryDateStyle.keyboardAppearance)
+			expiryDate.ios && (expiryDate.ios.keyboardAppearance = expiryDateStyle.keyboardAppearance);
+		if(expiryDateStyle.clearButtonEnabled)
+			expiryDate.ios && (expiryDate.ios.clearButtonEnabled = expiryDateStyle.clearButtonEnabled);
+		if(expiryDateStyle.minimumFontSize)
+			expiryDate.ios && (expiryDate.ios.minimumFontSize = expiryDateStyle.minimumFontSize);
+		if(expiryDateStyle.adjustFontSizeToFit)
+			expiryDate.ios && (expiryDate.ios.adjustFontSizeToFit = expiryDateStyle.adjustFontSizeToFit);
 		flexlayout3.addChild(expiryDate);
 		this.expiryDate = expiryDate;
 
@@ -193,6 +231,18 @@ const PgPayment_ = extend(Page)(
 			flexGrow: 1
 		});
 		var securityCode = new TextBox(securityCodeStyle);
+		if(securityCodeStyle.hintTextColor)
+			securityCode.android && (securityCode.android.hintTextColor = securityCodeStyle.hintTextColor);
+		if(securityCodeStyle.elevation)
+			securityCode.android && (securityCode.android.elevation = securityCodeStyle.elevation);
+		if(securityCodeStyle.keyboardAppearance)
+			securityCode.ios && (securityCode.ios.keyboardAppearance = securityCodeStyle.keyboardAppearance);
+		if(securityCodeStyle.clearButtonEnabled)
+			securityCode.ios && (securityCode.ios.clearButtonEnabled = securityCodeStyle.clearButtonEnabled);
+		if(securityCodeStyle.minimumFontSize)
+			securityCode.ios && (securityCode.ios.minimumFontSize = securityCodeStyle.minimumFontSize);
+		if(securityCodeStyle.adjustFontSizeToFit)
+			securityCode.ios && (securityCode.ios.adjustFontSizeToFit = securityCodeStyle.adjustFontSizeToFit);
 		flexlayout3.addChild(securityCode);
 		this.securityCode = securityCode;
 

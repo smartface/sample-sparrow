@@ -195,6 +195,8 @@ const PgProductDetail_ = extend(Page)(
 			flexGrow: 1
 		});
 		var bodyText = new Label(bodyTextStyle);
+		if(bodyTextStyle.scrollEnabled === false)
+			bodyText.ios && (bodyText.ios.scrollEnabled = false);
 		flexlayout5_1.addChild(bodyText);
 		this.bodyText = bodyText;
 
@@ -234,6 +236,8 @@ const PgProductDetail_ = extend(Page)(
 			font: Font.create("Arial", 20, Font.NORMAL)
 		});
 		var priceText = new Label(priceTextStyle);
+		if(priceTextStyle.scrollEnabled === false)
+			priceText.ios && (priceText.ios.scrollEnabled = false);
 		flexlayout5.addChild(priceText);
 		this.priceText = priceText;
 

@@ -87,6 +87,8 @@ const PgShipping_ = extend(Page)(
 			alignSelf: FlexLayout.AlignSelf.STRETCH
 		});
 		var txtTotal = new Label(txtTotalStyle);
+		if(txtTotalStyle.scrollEnabled === false)
+			txtTotal.ios && (txtTotal.ios.scrollEnabled = false);
 		this.layout.addChild(txtTotal);
 		this.txtTotal = txtTotal;
 
@@ -102,6 +104,8 @@ const PgShipping_ = extend(Page)(
 			alignSelf: FlexLayout.AlignSelf.STRETCH
 		});
 		var totalPrice = new Label(totalPriceStyle);
+		if(totalPriceStyle.scrollEnabled === false)
+			totalPrice.ios && (totalPrice.ios.scrollEnabled = false);
 		this.layout.addChild(totalPrice);
 		this.totalPrice = totalPrice;
 
@@ -153,6 +157,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var address = new TextBox(addressStyle);
+		if(addressStyle.hintTextColor)
+			address.android && (address.android.hintTextColor = addressStyle.hintTextColor);
+		if(addressStyle.elevation)
+			address.android && (address.android.elevation = addressStyle.elevation);
+		if(addressStyle.keyboardAppearance)
+			address.ios && (address.ios.keyboardAppearance = addressStyle.keyboardAppearance);
+		if(addressStyle.clearButtonEnabled)
+			address.ios && (address.ios.clearButtonEnabled = addressStyle.clearButtonEnabled);
+		if(addressStyle.minimumFontSize)
+			address.ios && (address.ios.minimumFontSize = addressStyle.minimumFontSize);
+		if(addressStyle.adjustFontSizeToFit)
+			address.ios && (address.ios.adjustFontSizeToFit = addressStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(address);
 		this.address = address;
 
@@ -200,6 +216,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var phone = new TextBox(phoneStyle);
+		if(phoneStyle.hintTextColor)
+			phone.android && (phone.android.hintTextColor = phoneStyle.hintTextColor);
+		if(phoneStyle.elevation)
+			phone.android && (phone.android.elevation = phoneStyle.elevation);
+		if(phoneStyle.keyboardAppearance)
+			phone.ios && (phone.ios.keyboardAppearance = phoneStyle.keyboardAppearance);
+		if(phoneStyle.clearButtonEnabled)
+			phone.ios && (phone.ios.clearButtonEnabled = phoneStyle.clearButtonEnabled);
+		if(phoneStyle.minimumFontSize)
+			phone.ios && (phone.ios.minimumFontSize = phoneStyle.minimumFontSize);
+		if(phoneStyle.adjustFontSizeToFit)
+			phone.ios && (phone.ios.adjustFontSizeToFit = phoneStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(phone);
 		this.phone = phone;
 
@@ -223,6 +251,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var email = new TextBox(emailStyle);
+		if(emailStyle.hintTextColor)
+			email.android && (email.android.hintTextColor = emailStyle.hintTextColor);
+		if(emailStyle.elevation)
+			email.android && (email.android.elevation = emailStyle.elevation);
+		if(emailStyle.keyboardAppearance)
+			email.ios && (email.ios.keyboardAppearance = emailStyle.keyboardAppearance);
+		if(emailStyle.clearButtonEnabled)
+			email.ios && (email.ios.clearButtonEnabled = emailStyle.clearButtonEnabled);
+		if(emailStyle.minimumFontSize)
+			email.ios && (email.ios.minimumFontSize = emailStyle.minimumFontSize);
+		if(emailStyle.adjustFontSizeToFit)
+			email.ios && (email.ios.adjustFontSizeToFit = emailStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(email);
 		this.email = email;
 
@@ -233,6 +273,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var city = new TextBox(cityStyle);
+		if(cityStyle.hintTextColor)
+			city.android && (city.android.hintTextColor = cityStyle.hintTextColor);
+		if(cityStyle.elevation)
+			city.android && (city.android.elevation = cityStyle.elevation);
+		if(cityStyle.keyboardAppearance)
+			city.ios && (city.ios.keyboardAppearance = cityStyle.keyboardAppearance);
+		if(cityStyle.clearButtonEnabled)
+			city.ios && (city.ios.clearButtonEnabled = cityStyle.clearButtonEnabled);
+		if(cityStyle.minimumFontSize)
+			city.ios && (city.ios.minimumFontSize = cityStyle.minimumFontSize);
+		if(cityStyle.adjustFontSizeToFit)
+			city.ios && (city.ios.adjustFontSizeToFit = cityStyle.adjustFontSizeToFit);
 		flexlayout8_1.addChild(city);
 		this.city = city;
 
@@ -243,6 +295,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var firstName = new TextBox(firstNameStyle);
+		if(firstNameStyle.hintTextColor)
+			firstName.android && (firstName.android.hintTextColor = firstNameStyle.hintTextColor);
+		if(firstNameStyle.elevation)
+			firstName.android && (firstName.android.elevation = firstNameStyle.elevation);
+		if(firstNameStyle.keyboardAppearance)
+			firstName.ios && (firstName.ios.keyboardAppearance = firstNameStyle.keyboardAppearance);
+		if(firstNameStyle.clearButtonEnabled)
+			firstName.ios && (firstName.ios.clearButtonEnabled = firstNameStyle.clearButtonEnabled);
+		if(firstNameStyle.minimumFontSize)
+			firstName.ios && (firstName.ios.minimumFontSize = firstNameStyle.minimumFontSize);
+		if(firstNameStyle.adjustFontSizeToFit)
+			firstName.ios && (firstName.ios.adjustFontSizeToFit = firstNameStyle.adjustFontSizeToFit);
 		flexlayout8.addChild(firstName);
 		this.firstName = firstName;
 
@@ -277,6 +341,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var zip = new TextBox(zipStyle);
+		if(zipStyle.hintTextColor)
+			zip.android && (zip.android.hintTextColor = zipStyle.hintTextColor);
+		if(zipStyle.elevation)
+			zip.android && (zip.android.elevation = zipStyle.elevation);
+		if(zipStyle.keyboardAppearance)
+			zip.ios && (zip.ios.keyboardAppearance = zipStyle.keyboardAppearance);
+		if(zipStyle.clearButtonEnabled)
+			zip.ios && (zip.ios.clearButtonEnabled = zipStyle.clearButtonEnabled);
+		if(zipStyle.minimumFontSize)
+			zip.ios && (zip.ios.minimumFontSize = zipStyle.minimumFontSize);
+		if(zipStyle.adjustFontSizeToFit)
+			zip.ios && (zip.ios.adjustFontSizeToFit = zipStyle.adjustFontSizeToFit);
 		flexlayout8_1.addChild(zip);
 		this.zip = zip;
 
@@ -287,6 +363,18 @@ const PgShipping_ = extend(Page)(
 			flexGrow: 1
 		});
 		var lastName = new TextBox(lastNameStyle);
+		if(lastNameStyle.hintTextColor)
+			lastName.android && (lastName.android.hintTextColor = lastNameStyle.hintTextColor);
+		if(lastNameStyle.elevation)
+			lastName.android && (lastName.android.elevation = lastNameStyle.elevation);
+		if(lastNameStyle.keyboardAppearance)
+			lastName.ios && (lastName.ios.keyboardAppearance = lastNameStyle.keyboardAppearance);
+		if(lastNameStyle.clearButtonEnabled)
+			lastName.ios && (lastName.ios.clearButtonEnabled = lastNameStyle.clearButtonEnabled);
+		if(lastNameStyle.minimumFontSize)
+			lastName.ios && (lastName.ios.minimumFontSize = lastNameStyle.minimumFontSize);
+		if(lastNameStyle.adjustFontSizeToFit)
+			lastName.ios && (lastName.ios.adjustFontSizeToFit = lastNameStyle.adjustFontSizeToFit);
 		flexlayout8.addChild(lastName);
 		this.lastName = lastName;
 

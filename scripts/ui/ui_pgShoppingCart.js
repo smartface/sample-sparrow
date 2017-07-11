@@ -87,6 +87,8 @@ const PgShoppingCart_ = extend(Page)(
 			alignSelf: FlexLayout.AlignSelf.STRETCH
 		});
 		var txtTotal = new Label(txtTotalStyle);
+		if(txtTotalStyle.scrollEnabled === false)
+			txtTotal.ios && (txtTotal.ios.scrollEnabled = false);
 		this.layout.addChild(txtTotal);
 		this.txtTotal = txtTotal;
 
@@ -102,6 +104,8 @@ const PgShoppingCart_ = extend(Page)(
 			alignSelf: FlexLayout.AlignSelf.STRETCH
 		});
 		var totalAmount = new Label(totalAmountStyle);
+		if(totalAmountStyle.scrollEnabled === false)
+			totalAmount.ios && (totalAmount.ios.scrollEnabled = false);
 		this.layout.addChild(totalAmount);
 		this.totalAmount = totalAmount;
 
@@ -156,6 +160,18 @@ const PgShoppingCart_ = extend(Page)(
 			text: ""
 		});
 		var inputPromoCode = new TextBox(inputPromoCodeStyle);
+		if(inputPromoCodeStyle.hintTextColor)
+			inputPromoCode.android && (inputPromoCode.android.hintTextColor = inputPromoCodeStyle.hintTextColor);
+		if(inputPromoCodeStyle.elevation)
+			inputPromoCode.android && (inputPromoCode.android.elevation = inputPromoCodeStyle.elevation);
+		if(inputPromoCodeStyle.keyboardAppearance)
+			inputPromoCode.ios && (inputPromoCode.ios.keyboardAppearance = inputPromoCodeStyle.keyboardAppearance);
+		if(inputPromoCodeStyle.clearButtonEnabled)
+			inputPromoCode.ios && (inputPromoCode.ios.clearButtonEnabled = inputPromoCodeStyle.clearButtonEnabled);
+		if(inputPromoCodeStyle.minimumFontSize)
+			inputPromoCode.ios && (inputPromoCode.ios.minimumFontSize = inputPromoCodeStyle.minimumFontSize);
+		if(inputPromoCodeStyle.adjustFontSizeToFit)
+			inputPromoCode.ios && (inputPromoCode.ios.adjustFontSizeToFit = inputPromoCodeStyle.adjustFontSizeToFit);
 		flexlayout1.addChild(inputPromoCode);
 		this.inputPromoCode = inputPromoCode;
 
