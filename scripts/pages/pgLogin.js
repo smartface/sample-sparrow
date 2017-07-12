@@ -19,7 +19,7 @@ const Animator          = require('sf-core/ui/animator');
 const Config            = require("../config.js");
 const PageDesign        = require("../ui/ui_pgLogin");
 const AlertUtil         = require("lib/util/alert");
-const FingerPrintLib    = require("lib/util/fingerprint");
+const FingerPrintLib    = require("sf-extension-utils/fingerprint");
 const Data              = require("sf-core/data");
 
 

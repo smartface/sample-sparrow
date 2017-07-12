@@ -1,10 +1,8 @@
 const System = require('sf-core/device/system');
 const Data = require('sf-core/data');
-const TypeUtil = require('sf-core/util/type');
 const AlertView = require('sf-core/ui/alertview');
 
 const FingerPrintUtil = {};
-
 
 Object.defineProperties(FingerPrintUtil, {
     'isUserAuthenticated': {
