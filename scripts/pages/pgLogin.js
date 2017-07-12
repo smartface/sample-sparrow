@@ -20,6 +20,7 @@ const Config            = require("../config.js");
 const PageDesign        = require("../ui/ui_pgLogin");
 const AlertUtil         = require("lib/util/alert");
 const FingerPrintLib    = require("sf-extension-utils/fingerprint");
+const RauLib    = require("sf-extension-utils/rau");
 const Data              = require("sf-core/data");
 
 
@@ -61,6 +62,7 @@ function onShow(parentOnShow) {
     
 
     checkInternet();
+    RauLib.checkUpdate();
 }
 
 function onLoad(parentOnLoad) {
@@ -208,7 +210,7 @@ function login(page) {
 function loading(page) {
     page.btnSignIn.button1.text = "";
     //uiComponents.facebookButton.text = "";
-
+    Data.setBooleanVariable('isNotFirstLogin', true);
     var layout;
     if (System.OS == 'Android') {
         layout = page.bottomLayout;

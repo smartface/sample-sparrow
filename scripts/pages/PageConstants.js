@@ -8,5 +8,6 @@ PageConstants.PAGE_SHOPPING_CART = "shoppingCart";
 PageConstants.PAGE_SHIPPING = "shipping"; 
 PageConstants.PAGE_PAYMENT = "payment"; 
 PageConstants.PAGE_PAYMENT_RESULT = "paymentResult";
+PageConstants.PAGE_SETTINGS = "settings";
 
 module.exports = PageConstants;

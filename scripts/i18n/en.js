@@ -29,4 +29,6 @@ SMF.i18n.defineLanguage('en', {
 	"pgPaymentResult.title"			: "PAYMENT",
 	"pgPaymentResult.accepted"			: "Payment Accepted",
 	"pgPaymentResult.continue"			: "CONTINUE SHOPPING",
+	"pgSettings.title"		: "Settings",
+
 });

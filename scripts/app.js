@@ -49,6 +49,7 @@ Router.add(PageConstants.PAGE_PRODUCT_DETAIL, require("./pages/pgProductDetail")
 Router.add(PageConstants.PAGE_PRODUCT_LIST, require("./pages/pgProductList"));
 Router.add(PageConstants.PAGE_CATEGORIES, require("./pages/pgCategories"));
 Router.add(PageConstants.PAGE_LOGIN, require("./pages/pgLogin"));
+Router.add(PageConstants.PAGE_SETTINGS, require("./pages/pgSettings"));
 Router.go(PageConstants.PAGE_LOGIN);
 
 initSliderDrawer()
@@ -57,7 +58,8 @@ function initSliderDrawer()
 {
     
     var iconCatalog    = Image.createFromFile("images://icon_catalog.png");
-    var iconcart    = Image.createFromFile("images://cart.png");
+    var iconcart       = Image.createFromFile("images://cart.png");
+    var iconSettings   = Image.createFromFile("images://ic_settings.png");
     
     var myDataSet = [
         { 
@@ -71,7 +73,12 @@ function initSliderDrawer()
             icon: iconcart,
             tag : PageConstants.PAGE_SHOPPING_CART
         }
-        
+        ,
+        { 
+            title: lang["pgSettings.title"], 
+            icon: iconSettings,
+            tag : PageConstants.PAGE_SETTINGS
+        }
     ]
     
     var mainContainer = new FlexLayout();

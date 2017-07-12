@@ -1,18 +1,15 @@
 const extend				= require('js-base/core/extend');
-const Page					= require('sf-core/ui/page');
-const Color 				= require('sf-core/ui/color');
 const PageDesign			= require("../ui/ui_pgShoppingCart");
-const Router				= require("sf-core/ui/router")
+const Router				= require("sf-core/ui/router");
 const PageConstants 		= require('pages/PageConstants');
 const Image         		= require('sf-core/ui/image');
 const ItemCart				= require("../components/ItemCart");
-const FlexLayout      		= require('sf-core/ui/flexlayout');
 const ListViewItem  		= require('sf-core/ui/listviewitem');
 const ShoppingCart			= require("../objects/ShoppingCart");
 const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
 const ActionKeyType         = require('sf-core/ui/actionkeytype');
 const AlertUtil             = require("lib/util/alert");
-const Label                 = require("sf-core/ui/label");
+const System                = require("sf-core/device/system");
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -24,6 +21,9 @@ const Page_ = extend(PageDesign)(
 		this.inputPromoCode.onActionButtonPress = function() {
 		    this.inputPromoCode.removeFocus();
 		}.bind(this);
+		this.inputPromoCode.onEditEnds = function(e1,e2) {
+		    this.inputPromoCode.text = this.inputPromoCode.text.toLocaleUpperCase();
+        }.bind(this);
 		
 		this.btnCheckout.button1.onPress = function(){
 		    if(ShoppingCart.getTotal() > 0){

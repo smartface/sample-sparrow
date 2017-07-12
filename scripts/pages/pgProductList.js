@@ -113,5 +113,4 @@ function initListView(listView, dataHolder) {
     
 }
 
-
 module && (module.exports = Page_);
