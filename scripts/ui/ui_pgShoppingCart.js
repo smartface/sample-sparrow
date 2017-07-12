@@ -13,9 +13,10 @@ const ImageFillType = require('sf-core/ui/imagefilltype');
 const Image = require('sf-core/ui/image');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
+const TextBox = require('sf-core/ui/textbox');
+const Font = require('sf-core/ui/font');
 const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
-const TextBox = require('sf-core/ui/textbox');
 
 const CustomHeaderBar = require("../components/CustomHeaderBar");
 const BtnTransparent = require("../components/BtnTransparent");
@@ -126,20 +127,14 @@ const PgShoppingCart_ = extend(Page)(
 		this.layout.addChild(btnCheckout);
 		this.btnCheckout = btnCheckout;
 
-		const listViewStyle = getCombinedStyle(".listView", {
-			height: null,
+		const flexLayoutWrapperStyle = getCombinedStyle(".flexLayout", {
 			width: null,
-			rowHeight: 60,
-			marginLeft: 5,
-			marginRight: 5,
-			marginTop: 5,
+			height: null,
 			flexGrow: 1
 		});
-		var listView = new ListView(listViewStyle);
-		listView.onRowCreate = function(){ return new ListViewItem(); };
-		flexlayout1.addChild(listView);
-		this.listView = listView;
-
+		var flexLayoutWrapper = new FlexLayout(flexLayoutWrapperStyle);
+		flexlayout1.addChild(flexLayoutWrapper);
+		
 		const horizontalDividerStyle = getCombinedStyle(".flexLayout", {
 			left: 0,
 			top: 0,
@@ -157,7 +152,9 @@ const PgShoppingCart_ = extend(Page)(
 			width: null,
 			height: 60,
 			textAlignment: TextAlignment.MIDCENTER,
-			text: ""
+			text: "",
+			textColor: Color.create(255, 0, 0, 0),
+			font: Font.create("Arial", 16, Font.NORMAL)
 		});
 		var inputPromoCode = new TextBox(inputPromoCodeStyle);
 		if(inputPromoCodeStyle.hintTextColor)
@@ -175,6 +172,31 @@ const PgShoppingCart_ = extend(Page)(
 		flexlayout1.addChild(inputPromoCode);
 		this.inputPromoCode = inputPromoCode;
 
+		const listViewStyle = getCombinedStyle(".listView", {
+			width: null,
+			height: null,
+			visible: true,
+			flexGrow: 1
+		});
+		var listView = new ListView(listViewStyle);
+		listView.onRowCreate = function(){ return new ListViewItem(); };
+		flexLayoutWrapper.addChild(listView);
+		this.listView = listView;
+
+		const labelEmptyStyle = getCombinedStyle(".label", {
+			width: null,
+			height: null,
+			textAlignment: TextAlignment.MIDCENTER,
+			textColor: Color.create(128, 0, 0, 0),
+			flexGrow: 0,
+			font: Font.create("Arial", 16, Font.ITALIC)
+		});
+		var labelEmpty = new Label(labelEmptyStyle);
+		if(labelEmptyStyle.scrollEnabled === false)
+			labelEmpty.ios && (labelEmpty.ios.scrollEnabled = false);
+		flexLayoutWrapper.addChild(labelEmpty);
+		this.labelEmpty = labelEmpty;
+
 		//assign the children to page 
 		this.children = Object.assign({}, {
 			customHeaderBar: customHeaderBar,
@@ -187,9 +209,15 @@ const PgShoppingCart_ = extend(Page)(
 		
 		//assign the children of flexlayout1
 		flexlayout1.children = Object.assign({}, {
-			listView: listView,
+			flexLayoutWrapper: flexLayoutWrapper,
 			horizontalDivider: horizontalDivider,
 			inputPromoCode: inputPromoCode
+		});
+		
+		//assign the children of flexLayoutWrapper
+		flexLayoutWrapper.children = Object.assign({}, {
+			listView: listView,
+			labelEmpty: labelEmpty
 		});
 		
 	});

@@ -139,6 +139,7 @@ function login(page) {
 		if (page.passwordTextBox.text !== "") {
             // Validate fingerPrint
     		loading(page);
+    		return;
     	}
 		else{
 		    FingerPrintLib.validateFingerPrint(function(){
@@ -160,6 +161,7 @@ function login(page) {
 			if (page.passwordTextBox.text !== "") {
 	            // Validate fingerPrint
 	    		loading(page);
+    		    return;
 	    	}
 			else{
 		        FingerPrintLib.validateFingerPrint(function(){
@@ -200,29 +202,10 @@ function login(page) {
 		return; 
 	}
     
-    
-    
     loading(page);
-    /*if (uiComponents.passwordTextBox.text.toLowerCase() === LoginCredentials.password.toLowerCase() &&
-        uiComponents.emailTextBox.text.toLowerCase() === LoginCredentials.email.toLowerCase()) {
-        loading(uiComponents);
-    }
-    else {
-        var alertView = new AlertView({
-            title: "Invalid Credentials",
-            message: "Email: test\nPassword: password"
-        });
-        alertView.addButton({
-            index: AlertView.ButtonType.POSITIVE,
-            text: "OK"
-        });
-        alertView.show();
-    }
-    */
 }
 
 function loading(page) {
-
     page.btnSignIn.button1.text = "";
     //uiComponents.facebookButton.text = "";
 
