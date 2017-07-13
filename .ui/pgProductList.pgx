@@ -12,15 +12,9 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.0",
 			"props": {
 				"orientation": "PORTRAIT",
-				"children": [
-					"statusBar",
-					"headerBar",
-					"customHeaderBar",
-					"listViewContainer"
-				],
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -34,23 +28,18 @@
 					"endColor": "#D9595B",
 					"direction": "DIAGONAL_LEFT"
 				},
+				"children": [
+					"statusBar",
+					"headerBar",
+					"customHeaderBar",
+					"listViewContainer"
+				],
 				"parent": null,
 				"name": "pgProductList",
-				"layout": {
-					"width": 103.84615384615384,
-					"height": 166.3653846153846
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 0
-				},
-				"font": {},
-				"width": 207.69230769230768,
-				"height": 332.7307692307692
-			}
+				"width": 187.5,
+				"height": 333.5
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -72,13 +61,7 @@
 				"parent": "pgProductList",
 				"isRemovable": false,
 				"name": "statusBar",
-				"layout": {
-					"height": 12.5
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"height": 25
+				"height": 20
 			}
 		},
 		{
@@ -104,13 +87,7 @@
 				"parent": "pgProductList",
 				"isRemovable": false,
 				"name": "headerBar",
-				"layout": {
-					"height": 28.3
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"height": 56.6
+				"height": 44
 			}
 		},
 		{
@@ -145,10 +122,6 @@
 				"marginLeft": 10,
 				"marginRight": 10,
 				"marginTop": 5,
-				"children": [
-					"loaderContainer",
-					"listView"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -160,24 +133,12 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [
+					"loaderContainer",
+					"listView"
+				],
 				"name": "listViewContainer",
-				"parent": "pgProductList",
-				"layout": {
-					"marginLeft": 5,
-					"marginTop": 2.5,
-					"marginRight": 5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {}
+				"parent": "pgProductList"
 			}
 		},
 		{
@@ -211,32 +172,24 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "listView",
-				"parent": "listViewContainer",
-				"layout": {
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				},
-				"font": {}
+				"parent": "listViewContainer"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "dd97d081",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "e8440217"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"left": null,
@@ -248,7 +201,7 @@
 				"paddingTop": 5,
 				"paddingRight": 5,
 				"paddingBottom": 5,
-				"marginTop": 20,
+				"marginTop": null,
 				"usePageVariable": true,
 				"marginRight": 5,
 				"flexProps": {
@@ -260,10 +213,7 @@
 				"flex": {
 					"flexDirection": 2,
 					"positionType": 0
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -281,14 +231,9 @@
 				"paddingTop": 5,
 				"paddingRight": 5,
 				"paddingBottom": 5,
-				"marginTop": 20,
+				"marginTop": null,
 				"usePageVariable": true,
 				"marginRight": 5,
-				"children": [
-					"leftImage",
-					"headerTitle",
-					"rightContainer"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -300,91 +245,65 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 0,
-					"flexGrow": null
-				},
+				"children": [
+					"leftImage",
+					"headerTitle",
+					"rightContainer"
+				],
 				"name": "customHeaderBar",
-				"parent": "pgProductList",
-				"layout": {
-					"marginTop": 10,
-					"marginRight": 2.5,
-					"height": 22,
-					"paddingBottom": 2.5,
-					"paddingLeft": 2.5,
-					"paddingTop": 2.5,
-					"paddingRight": 2.5,
-					"borderWidth": 0
-				},
-				"font": {}
+				"parent": "pgProductList"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "1753fdad",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
-				"height": 30,
-				"width": 30,
-				"imageFillType": "NORMAL",
+				"height": 25,
+				"width": 25,
+				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"image": null,
+				"top": null,
 				"flexProps": {
 					"alignSelf": "AUTO"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".imageView",
 			"props": {
-				"width": 30,
-				"height": 30,
+				"width": 25,
+				"height": 25,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "NORMAL",
+				"imageFillType": "ASPECTFIT",
 				"backgroundColor": "rgba(0,0,0,0)",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
 				"image": null,
-				"children": [],
+				"top": null,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
+				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"layout": {
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.34693735499955447"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "274c8c4b",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"height": null,
@@ -394,6 +313,7 @@
 				"usePageVariable": true,
 				"marginRight": 50,
 				"marginLeft": 20,
+				"text": "Label",
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"
@@ -423,7 +343,6 @@
 				"usePageVariable": true,
 				"marginRight": 50,
 				"marginLeft": 20,
-				"children": [],
 				"font": {
 					"size": 18,
 					"bold": true,
@@ -435,27 +354,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "headerTitle",
-				"parent": "customHeaderBar",
-				"layout": {
-					"marginLeft": 10,
-					"marginRight": 25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignSelf": 4,
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "customHeaderBar"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "830dd5fa",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 30,
@@ -467,14 +377,11 @@
 				"left": null,
 				"top": 7,
 				"visible": true,
+				"paddingTop": null,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 5
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -491,10 +398,7 @@
 				"right": 5,
 				"left": null,
 				"top": 7,
-				"children": [
-					"rightImage",
-					"count"
-				],
+				"paddingTop": null,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -506,34 +410,21 @@
 					"positionType": "ABSOLUTE",
 					"right": 5
 				},
+				"children": [
+					"rightImage",
+					"count"
+				],
 				"name": "rightContainer",
-				"parent": "customHeaderBar",
-				"layout": {
-					"right": 2.5,
-					"top": 3.5,
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 5
-				},
-				"font": {}
+				"parent": "customHeaderBar"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "018315a1",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 30,
@@ -564,35 +455,24 @@
 				"borderWidth": 0,
 				"image": null,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "STRETCH",
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
+				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"layout": {
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignSelf": 4,
-					"positionType": 0,
-					"flexGrow": null
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.34693735499955447"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "457c1ba4",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 25,
@@ -638,7 +518,6 @@
 				"top": 0,
 				"bottom": 5,
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 10,
 					"bold": false,
@@ -651,32 +530,19 @@
 					"right": 0,
 					"bottom": 5
 				},
+				"children": [],
 				"name": "count",
-				"parent": "rightContainer",
-				"layout": {
-					"right": 0,
-					"bottom": 2.5,
-					"left": 3.5,
-					"top": 0,
-					"width": 12.5,
-					"height": 12.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 0,
-					"bottom": 5
-				}
+				"parent": "rightContainer"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "d7b0052e",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "6077510c"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"left": 0,
@@ -719,9 +585,6 @@
 				"right": 0,
 				"bottom": 0,
 				"usePageVariable": true,
-				"children": [
-					"activityIndicator"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -735,36 +598,20 @@
 					"right": 0,
 					"bottom": 0
 				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 1,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"flexGrow": null,
-					"right": 0,
-					"bottom": 0
-				},
+				"children": [
+					"activityIndicator"
+				],
 				"name": "loaderContainer",
-				"parent": "listViewContainer",
-				"layout": {
-					"right": 0,
-					"bottom": 0,
-					"left": 0,
-					"top": 0,
-					"borderWidth": 0
-				},
-				"font": {}
+				"parent": "listViewContainer"
 			}
 		},
 		{
 			"type": "ActivityIndicator",
 			"id": "94ddb0d5",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -775,7 +622,13 @@
 				"flex": {},
 				"font": {},
 				"flexProps": {},
-				"defaults": {}
+				"defaults": {},
+				"input": {
+					"height": 21,
+					"width": 21
+				},
+				"minHeight": 21,
+				"minWidth": 21
 			},
 			"className": ".activityIndicator",
 			"props": {
@@ -792,28 +645,17 @@
 				"minWidth": 21,
 				"id": 1005,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"positionType": "RELATIVE",
 					"alignSelf": "AUTO"
 				},
-				"name": "activityIndicator",
-				"parent": "loaderContainer",
-				"layout": {
-					"width": 21,
-					"height": 21,
-					"minWidth": 10.5,
-					"minHeight": 10.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
 				"input": {
 					"height": 21,
 					"width": 21
-				}
+				},
+				"children": [],
+				"name": "activityIndicator",
+				"parent": "loaderContainer"
 			}
 		}
 	]

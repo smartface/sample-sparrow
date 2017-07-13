@@ -3,8 +3,8 @@
 		"theme": {
 			"currentTheme": "Defaults",
 			"themes": [
-				"ThemeBlue",
-				"Defaults"
+				"Defaults",
+				"ThemeBlue"
 			]
 		},
 		"version": "6.4.0"

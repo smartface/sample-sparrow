@@ -35,9 +35,11 @@ SMF.i18n.defineLanguage('en', {
 	"pgSettings.theme"				: "Theme",
 	"pgSettings.fingerprint"		: "Fingerprint",
 	"pgSettings.notification"		: "Notifications",
+	"pgSettings.update"				: "Check Update",
+	"pgSettings.noupdate"			: "No new updates were found.",
 	"pgSettings.about"				: "About",
 	"pgSettings.aboutDesc"			: "This is a general purpose e-commerce app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment.",
 	"alertView.confirmation"			: "Confirmation",
 	"pgSettings.themeChangeMessage"		: "Do you really want to change the theme of the application? This will cause the application to restart.",
-
+	"pgSetting.fingerprint.alert"		: "The next sign in will be fingerprinted."
 });

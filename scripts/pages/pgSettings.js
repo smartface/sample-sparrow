@@ -6,7 +6,8 @@ const FingerPrintLib    = require("sf-extension-utils/fingerprint");
 const Data              = require('sf-core/data');
 const Application       = require('sf-core/application');
 const AlertView         = require('sf-core/ui/alertview');
-
+const AlertUtil         = require("lib/util/alert");
+const RauLib			= require("sf-extension-utils/rau");
 // Get generetad UI code
 var PgSettingsDesign = require("../ui/ui_pgSettings");
 
@@ -30,6 +31,7 @@ const PgSettings = extend(PgSettingsDesign)(
         this.labelTheme.text = lang["pgSettings.theme"];
         this.labelFingerprint.text = lang["pgSettings.fingerprint"];
         this.labelNotification.text = lang["pgSettings.notification"];
+        this.labelCheckUpdate.text = lang["pgSettings.update"];
         this.txtAbout.text = lang["pgSettings.about"] + " v" + Application.version;
         this.txtAboutDesc.text = lang["pgSettings.aboutDesc"];
         
@@ -47,12 +49,14 @@ const PgSettings = extend(PgSettingsDesign)(
 		    this.horizontalDivider.visible = false;
 		}
 		else{
-	        this.switchFingerprint.toggle = (FingerPrintLib.isUserRejectedFingerprint === false) ;
+	        this.switchFingerprint.toggle = ((FingerPrintLib.isUserRejectedFingerprint === false) && (FingerPrintLib.isUserVerifiedFingerprint === true)) ;
 		}
 		this.switchFingerprint.onToggleChanged = function( ){
 		    FingerPrintLib.isUserRejectedFingerprint = (this.switchFingerprint.toggle === false);
-		    this.switchFingerprint.toggle ? restoreAuthPreferences() : resetAuthPreferences();
-		    
+		    if(this.switchFingerprint.toggle){
+		    	AlertUtil.showAlert(lang["pgSetting.fingerprint.alert"]);
+		    }
+
 		}.bind(this);
 		this.switchNotification.onToggleChanged = function( ){
 		    Data.setBooleanVariable("isNotificationAllowed", this.switchNotification.toggle);
@@ -60,10 +64,26 @@ const PgSettings = extend(PgSettingsDesign)(
 		
 		this.themeBlue.onTouchEnded = function() {
 		    changeTheme("ThemeBlue");
-		}
+		};
 		
 		this.themeDefaults.onTouchEnded = function() {
 		    changeTheme("Defaults");
+		};
+		
+		this.checkUpdateRow.onTouchEnded = function() {
+			RauLib.checkUpdate({
+				showProgressCheck: true,
+				showProgressErrorAlert: true
+			});
+			
+			Application.checkUpdate(function(err, result) {
+		        if (err) {
+		            
+		        }
+		        else{
+		        	RauLib.checkUpdate();
+		        }
+			});
 		}
 		
     });

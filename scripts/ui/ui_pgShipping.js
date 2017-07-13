@@ -42,7 +42,7 @@ const PgShipping_ = extend(Page)(
 			paddingTop: 5,
 			paddingRight: 5,
 			paddingBottom: 5,
-			marginTop: 20,
+			marginTop: null,
 			marginRight: 5,
 			flexDirection: FlexLayout.FlexDirection.ROW,
 			positionType: FlexLayout.PositionType.RELATIVE

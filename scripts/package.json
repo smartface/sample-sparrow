@@ -6,6 +6,6 @@
         "sf-extension-shopify": "0.0.2",
         "sf-extension-spriteview": "1.0.1",
         "sf-plugin-facebook": "1.2.0",
-        "sf-extension-utils": "^1.0.3"
+        "sf-extension-utils": "^1.0.5"
     }
 }

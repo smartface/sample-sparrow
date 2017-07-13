@@ -169,7 +169,6 @@ function login(page) {
 		        FingerPrintLib.validateFingerPrint(function(){
 	    	        loading(page);
 	    	    }, function(){
-	    	        AlertUtil.showAlert("Fingerprint failed to validate.");
 		            if (page.passwordTextBox.text === "") {
 	                    // Validate fingerPrint
 	            		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
@@ -185,7 +184,6 @@ function login(page) {
 	        FingerPrintLib.registerFingerPrint(function(){
     	        loading(page);
     	    }, function(){
-    	        AlertUtil.showAlert("Fingerprint failed to register.");
 	            if (page.passwordTextBox.text === "") {
                     // Validate fingerPrint
             		AlertUtil.showAlert(lang["pgLogin.inputs.password.error"]);
