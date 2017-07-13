@@ -35,6 +35,6 @@ SMF.i18n.defineLanguage('en', {
 	"pgSettings.fingerprint"		: "Fingerprint",
 	"pgSettings.notification"		: "Notifications",
 	"pgSettings.about"				: "About",
-	"pgSettings.aboutDesc"			: "This is a general purpose e-commerse app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment."
+	"pgSettings.aboutDesc"			: "This is a general purpose e-commerce app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment."
 
 });
