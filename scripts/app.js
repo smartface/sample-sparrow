@@ -15,7 +15,7 @@ const ListView          = require('sf-core/ui/listview');
 const ListViewItem      = require("sf-core/ui/listviewitem");
 const SliderDrawer      = require('sf-core/ui/sliderdrawer');
 const PageConstants     = require('pages/PageConstants');
-const System            = require("sf-core/device/system");
+const Data              = require("sf-core/data");
 const Shopify           = require("sf-extension-shopify");
 const Config            = require("config.js");
 const AlertView         = require('sf-core/ui/alertview');
@@ -34,7 +34,9 @@ Application.onUnhandledError = function(e) {
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
-stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
+if (Data.getStringVariable("theme") === null)
+    Data.setStringVariable("theme", settings.config.theme.currentTheme);
+stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
 
 Shopify.Authentication.setAPIKey(Config.SHOPIFY_APIKey);
 Shopify.Authentication.setPassword(Config.SHOPIFY_PASSWORD);

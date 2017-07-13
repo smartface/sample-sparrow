@@ -948,17 +948,13 @@
 			"userProps": {
 				"height": 30,
 				"width": 30,
-				"imageFillType": "NORMAL",
+				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"image": null,
 				"top": null,
 				"flexProps": {
 					"alignSelf": "AUTO"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".imageView",
 			"props": {
@@ -966,7 +962,7 @@
 				"height": 30,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "NORMAL",
+				"imageFillType": "ASPECTFIT",
 				"backgroundColor": "rgba(0,0,0,0)",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
@@ -1906,11 +1902,7 @@
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 5
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -2178,7 +2170,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout1",
+					"flexLayout2",
 					"imageView1"
 				],
 				"name": "productImage",
@@ -2240,9 +2232,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator11"
+					"activityIndicator6"
 				],
-				"name": "flexLayout1",
+				"name": "flexLayout2",
 				"parent": "productImage"
 			}
 		},
@@ -2292,8 +2284,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator11",
-				"parent": "flexLayout1"
+				"name": "activityIndicator6",
+				"parent": "flexLayout2"
 			}
 		},
 		{
@@ -2404,7 +2396,7 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator12"
+					"activityIndicator7"
 				],
 				"name": "flexlayout8",
 				"parent": "itemCategory"
@@ -2459,7 +2451,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator12",
+				"name": "activityIndicator7",
 				"parent": "flexlayout8"
 			}
 		},
@@ -2521,7 +2513,7 @@
 					"positionType": "ABSOLUTE"
 				},
 				"children": [
-					"activityIndicator13"
+					"activityIndicator8"
 				],
 				"name": "loader",
 				"parent": "thmbContainer"
@@ -2576,7 +2568,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator13",
+				"name": "activityIndicator8",
 				"parent": "loader"
 			}
 		},

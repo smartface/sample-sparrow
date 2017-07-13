@@ -34,8 +34,8 @@
 					"flexLayoutContainer"
 				],
 				"name": "pgSettings",
-				"width": 187.5,
-				"height": 333.5
+				"width": 375,
+				"height": 667
 			},
 			"initialized": true
 		},
@@ -131,6 +131,8 @@
 				"name": "flexLayoutContainer",
 				"parent": "pgSettings",
 				"children": [
+					"themeRow",
+					"horizontalDivider1",
 					"fingerprintRow",
 					"horizontalDivider",
 					"notificationRow",
@@ -537,6 +539,280 @@
 		},
 		{
 			"type": "FlexLayout",
+			"id": "9ba279be",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": 60,
+				"usePageVariable": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginRight": null,
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignItems": "CENTER"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 60,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"usePageVariable": true,
+				"marginRight": null,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"name": "themeRow",
+				"parent": "flexLayoutContainer",
+				"children": [
+					"labelTheme",
+					"themeDefaults",
+					"themeBlue"
+				]
+			}
+		},
+		{
+			"type": "Label",
+			"id": "9bddc8ec",
+			"themeProps": {},
+			"userProps": {
+				"height": 60,
+				"width": null,
+				"text": "Theme",
+				"textColor": "rgba( 0, 0, 0, 1 )",
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 60,
+				"touchEnabled": true,
+				"text": "Theme",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#00FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 0, 0, 0, 1 )",
+				"textAlignment": "MIDLEFT",
+				"usePageVariable": true,
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "labelTheme",
+				"parent": "themeRow",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "cc5d6c11",
+			"themeProps": {},
+			"userProps": {
+				"width": 35,
+				"height": 35,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderWidth": 1,
+				"usePageVariable": true
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 35,
+				"width": 35,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"borderWidth": 1,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"name": "themeDefaults",
+				"parent": "themeRow",
+				"children": [
+					"flexLayout2"
+				],
+				"usePageVariable": true
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "eb4a8e3e",
+			"themeProps": {},
+			"userProps": {
+				"width": 35,
+				"height": 35,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 35,
+				"width": 35,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"borderWidth": 0,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"name": "themeBlue",
+				"parent": "themeRow",
+				"children": [
+					"flexLayout1"
+				]
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "6e127e7d",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 6,
+				"backgroundColor": "rgba( 3, 45, 70, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 3, 45, 70, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 6,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "flexLayout1",
+				"parent": "themeBlue",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "9a58cbe9",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 8,
+				"backgroundColor": "rgba( 157, 27, 84, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 157, 27, 84, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 8,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "flexLayout2",
+				"parent": "themeDefaults",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
 			"id": "62fea076",
 			"hiddenComponent": false,
 			"source": {
@@ -625,17 +901,13 @@
 			"userProps": {
 				"height": 30,
 				"width": 30,
-				"imageFillType": "NORMAL",
+				"imageFillType": "STRETCH",
 				"usePageVariable": true,
 				"image": null,
 				"top": null,
 				"flexProps": {
 					"alignSelf": "AUTO"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".imageView",
 			"props": {
@@ -643,7 +915,7 @@
 				"height": 30,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "NORMAL",
+				"imageFillType": "STRETCH",
 				"backgroundColor": "rgba(0,0,0,0)",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
@@ -658,7 +930,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -745,11 +1017,7 @@
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 5
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -831,7 +1099,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -941,6 +1209,7 @@
 				"borderWidth": 0,
 				"left": 0,
 				"top": 0,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -954,8 +1223,62 @@
 				},
 				"children": [],
 				"name": "horizontalDivider",
-				"parent": "flexLayoutContainer",
-				"usePageVariable": true
+				"parent": "flexLayoutContainer"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "7f150150",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"id": "8e9568d2"
+			},
+			"themeProps": {},
+			"userProps": {
+				"left": 0,
+				"top": 0,
+				"width": null,
+				"height": 1,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"alpha": 0.1,
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": null,
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"flexGrow": 1,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 1,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"alpha": 0.1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": null
+				},
+				"children": [],
+				"name": "horizontalDivider1",
+				"parent": "flexLayoutContainer"
 			}
 		}
 	]

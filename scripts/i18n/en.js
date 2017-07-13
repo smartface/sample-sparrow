@@ -32,9 +32,12 @@ SMF.i18n.defineLanguage('en', {
 	"pgPaymentResult.notification.alertBody"	: "Your order has received, will be shipped soon.",
 	"pgPaymentResult.notification.alertAction"	: "Product Shipping",
 	"pgSettings.title"				: "Settings",
+	"pgSettings.theme"				: "Theme",
 	"pgSettings.fingerprint"		: "Fingerprint",
 	"pgSettings.notification"		: "Notifications",
 	"pgSettings.about"				: "About",
-	"pgSettings.aboutDesc"			: "This is a general purpose e-commerce app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment."
+	"pgSettings.aboutDesc"			: "This is a general purpose e-commerce app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment.",
+	"alertView.confirmation"			: "Confirmation",
+	"pgSettings.themeChangeMessage"		: "Do you really want to change the theme of the application? This will cause the application to restart.",
 
 });

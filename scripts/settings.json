@@ -3,6 +3,7 @@
 		"theme": {
 			"currentTheme": "Defaults",
 			"themes": [
+				"ThemeBlue",
 				"Defaults"
 			]
 		},

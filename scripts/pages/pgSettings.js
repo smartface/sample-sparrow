@@ -27,6 +27,7 @@ const PgSettings = extend(PgSettingsDesign)(
 			Router.goBack();
 		}
         
+        this.labelTheme.text = lang["pgSettings.theme"];
         this.labelFingerprint.text = lang["pgSettings.fingerprint"];
         this.labelNotification.text = lang["pgSettings.notification"];
         this.txtAbout.text = lang["pgSettings.about"] + " v" + Application.version;
@@ -50,12 +51,20 @@ const PgSettings = extend(PgSettingsDesign)(
 		}
 		this.switchFingerprint.onToggleChanged = function( ){
 		    FingerPrintLib.isUserRejectedFingerprint = (this.switchFingerprint.toggle === false);
-		    this.switchFingerprint.toggle ? resetAuthPreferences() : restoreAuthPreferences();
+		    this.switchFingerprint.toggle ? restoreAuthPreferences() : resetAuthPreferences();
 		    
 		}.bind(this);
 		this.switchNotification.onToggleChanged = function( ){
 		    Data.setBooleanVariable("isNotificationAllowed", this.switchNotification.toggle);
 		}.bind(this);
+		
+		this.themeBlue.onTouchEnded = function() {
+		    changeTheme("ThemeBlue");
+		}
+		
+		this.themeDefaults.onTouchEnded = function() {
+		    changeTheme("Defaults");
+		}
 		
     });
 
@@ -79,6 +88,16 @@ function onShow(parentOnLoad) {
 	    password: Data.getStringVariable("password"),
 	    isNotFirstLogin: Data.getBooleanVariable("isNotFirstLogin")
 	}
+	
+	switch (Data.getStringVariable("theme")) {
+		case 'ThemeBlue':
+			this.themeBlue.borderWidth = 1;
+			this.themeDefaults.borderWidth = 0;
+			break;
+		default:
+			this.themeBlue.borderWidth = 0;
+			this.themeDefaults.borderWidth = 1;
+	}
 }
 
 function resetAuthPreferences(){
@@ -96,5 +115,29 @@ function restoreAuthPreferences(){
     Data.setStringVariable("userName",savedStateApplication.userName);
     Data.setStringVariable("password",savedStateApplication.password);
     Data.setBooleanVariable("isNotFirstLogin",savedStateApplication.isNotFirstLogin);
+}
+
+function changeTheme(styleName) {
+	if (Data.getStringVariable("theme") === styleName) {
+		return;
+	}
+
+	var confirmationAlert = new AlertView({
+		title: lang["alertView.confirmation"],
+		message: lang["pgSettings.themeChangeMessage"]
+	});
+	confirmationAlert.addButton({
+		text: lang["ok"],
+		type: AlertView.Android.ButtonType.POSITIVE,
+		onClick: function() {
+			Data.setStringVariable("theme", styleName);
+    		Application.restart();
+		}
+	});
+	confirmationAlert.addButton({
+		text: lang["cancel"],
+		type: AlertView.Android.ButtonType.NEGATIVE
+	});
+	confirmationAlert.show();
 }
 module && (module.exports = PgSettings);
