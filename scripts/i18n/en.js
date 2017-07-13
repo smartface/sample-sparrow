@@ -29,6 +29,12 @@ SMF.i18n.defineLanguage('en', {
 	"pgPaymentResult.title"			: "PAYMENT",
 	"pgPaymentResult.accepted"			: "Payment Accepted",
 	"pgPaymentResult.continue"			: "CONTINUE SHOPPING",
-	"pgSettings.title"		: "Settings",
+	"pgPaymentResult.notification.alertBody"	: "Your order has received, will be shipped soon.",
+	"pgPaymentResult.notification.alertAction"	: "Product Shipping",
+	"pgSettings.title"				: "Settings",
+	"pgSettings.fingerprint"		: "Fingerprint",
+	"pgSettings.notification"		: "Notifications",
+	"pgSettings.about"				: "About",
+	"pgSettings.aboutDesc"			: "This is a general purpose e-commerse app with the following functions: Product Categories, Product List, Product Detail, Shopping Cart and Payment."
 
 });

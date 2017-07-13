@@ -6,6 +6,8 @@ const Router = require("sf-core/ui/router")
 const PageConstants = require('pages/PageConstants');
 const Image          = require('sf-core/ui/image');
 const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
+const Data    = require('sf-core/data');
+const Notifications = require("sf-core/notifications");
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -32,6 +34,16 @@ function onLoad(parentOnShow) {
 function onShow(parentOnLoad) {
     parentOnLoad();
     this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
+    
+    
+	if(Data.getBooleanVariable("isNotificationAllowed") !== false){
+		var notification = new Notifications.LocalNotification();
+		notification.alertAction = lang["pgPaymentResult.notification.alertAction"];
+		notification.alertBody = lang["pgPaymentResult.notification.alertBody"];
+		notification.android.vibrate = true;
+		notification.ios.hasAction = true;
+		notification.present();
+	}
 }
 
 module && (module.exports = Page_);
