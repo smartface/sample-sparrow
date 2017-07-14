@@ -48,18 +48,16 @@
 			"id": "fca98bd3",
 			"themeProps": {},
 			"userProps": {
-				"color": "rgba( 157, 27, 85, 1 )",
 				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 157, 27, 85, 1 )",
+				"color": "#9D1B55",
 				"visible": true,
 				"children": [],
 				"parent": "pgProductDetail",
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 20,
 				"style": "LIGHTCONTENT"
 			}
 		},
@@ -688,7 +686,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -854,7 +852,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1210,7 +1208,7 @@
 				"children": [],
 				"name": "imageview2",
 				"parent": "itemPicker1",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1332,7 +1330,7 @@
 				},
 				"children": [
 					"label1",
-					"imageView4"
+					"imageView14"
 				],
 				"name": "itemPicker2",
 				"parent": "pickerContainer"
@@ -1431,9 +1429,9 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"name": "imageView4",
+				"name": "imageView14",
 				"parent": "itemPicker2",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1821,8 +1819,8 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout3",
-					"imageView5"
+					"flexLayout9",
+					"imageView15"
 				],
 				"name": "itemSmallThumb2",
 				"parent": "flexlayout6"
@@ -1883,9 +1881,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator5"
+					"activityIndicator11"
 				],
-				"name": "flexLayout3",
+				"name": "flexLayout9",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -1935,8 +1933,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator5",
-				"parent": "flexLayout3"
+				"name": "activityIndicator11",
+				"parent": "flexLayout9"
 			}
 		},
 		{
@@ -1979,7 +1977,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView5",
+				"name": "imageView15",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -2039,8 +2037,8 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout4",
-					"imageView6"
+					"flexLayout10",
+					"imageView16"
 				],
 				"name": "itemSmallThumb3",
 				"parent": "flexlayout6"
@@ -2101,9 +2099,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator6"
+					"activityIndicator12"
 				],
-				"name": "flexLayout4",
+				"name": "flexLayout10",
 				"parent": "itemSmallThumb3"
 			}
 		},
@@ -2153,8 +2151,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator6",
-				"parent": "flexLayout4"
+				"name": "activityIndicator12",
+				"parent": "flexLayout10"
 			}
 		},
 		{
@@ -2197,7 +2195,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView6",
+				"name": "imageView16",
 				"parent": "itemSmallThumb3"
 			}
 		},

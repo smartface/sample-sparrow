@@ -46,12 +46,11 @@
 			"id": "fca98bd3",
 			"themeProps": {},
 			"userProps": {
-				"color": "rgba( 157, 27, 85, 1 )",
 				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 157, 27, 85, 1 )",
+				"color": "#9D1B55",
 				"visible": true,
 				"children": [],
 				"parent": "pgProductList",

@@ -380,7 +380,6 @@ const PgProductDetail_ = extend(Page)(
 function onShow() {
   //StatusBar props
   const statusBarStyle = getCombinedStyle(".statusBar", {
-		color: Color.create(255, 157, 27, 85),
 		style: StatusBarStyle.LIGHTCONTENT
 	});
 	

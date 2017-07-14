@@ -3,10 +3,10 @@
 		"theme": {
 			"currentTheme": "Defaults",
 			"themes": [
-				"Defaults",
-				"ThemeBlue"
+				"ThemeGreen",
+				"ThemeBlue",
+				"Defaults"
 			]
-		},
-		"version": "6.4.0"
+		}
 	}
 }

@@ -28,8 +28,8 @@
 					"justifyContent": "CENTER"
 				},
 				"backgroundColor": {
-					"startColor": "#9D1B55",
-					"endColor": "#D9595B",
+					"startColor": "#3F4AB1",
+					"endColor": "#009DC4",
 					"direction": "DIAGONAL_LEFT"
 				},
 				"children": [
@@ -42,8 +42,8 @@
 				],
 				"parent": null,
 				"name": "pgPaymentResult",
-				"width": 187.5,
-				"height": 333.5
+				"width": 207.69230769230768,
+				"height": 332.03076923076924
 			},
 			"initialized": true
 		},
@@ -52,18 +52,16 @@
 			"id": "5ea292ea",
 			"themeProps": {},
 			"userProps": {
-				"color": "rgba( 157, 27, 85, 1 )",
 				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 157, 27, 85, 1 )",
+				"color": "#3F4AB1",
 				"visible": true,
 				"children": [],
 				"parent": "pgPaymentResult",
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 20,
 				"style": "LIGHTCONTENT"
 			}
 		},
@@ -90,7 +88,7 @@
 				"parent": "pgPaymentResult",
 				"isRemovable": false,
 				"name": "headerBar",
-				"height": 44
+				"height": 56.6
 			}
 		},
 		{
@@ -124,7 +122,7 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "pgPaymentResult",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/icon_check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.395720836334273"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/icon_check.png?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.359379440368367"
 			}
 		},
 		{
@@ -294,7 +292,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -460,7 +458,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{

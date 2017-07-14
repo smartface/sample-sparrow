@@ -56,7 +56,6 @@
 				"parent": "pgCategories",
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 20,
 				"style": "LIGHTCONTENT"
 			}
 		},
