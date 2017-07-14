@@ -49,11 +49,7 @@
 			"themeProps": {},
 			"userProps": {
 				"color": "rgba( 157, 27, 85, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
@@ -63,7 +59,8 @@
 				"parent": "pgProductDetail",
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 20
+				"height": 20,
+				"style": "LIGHTCONTENT"
 			}
 		},
 		{
@@ -657,20 +654,22 @@
 			},
 			"themeProps": {},
 			"userProps": {
-				"height": 25,
-				"width": 25,
+				"height": 30,
+				"width": 30,
 				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"image": null,
-				"top": null,
+				"top": 7,
+				"left": 5,
 				"flexProps": {
-					"alignSelf": "AUTO"
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
 				}
 			},
 			"className": ".imageView",
 			"props": {
-				"width": 25,
-				"height": 25,
+				"width": 30,
+				"height": 30,
 				"touchEnabled": true,
 				"visible": true,
 				"imageFillType": "ASPECTFIT",
@@ -680,10 +679,11 @@
 				"borderWidth": 0,
 				"usePageVariable": true,
 				"image": null,
-				"top": null,
+				"top": 7,
+				"left": 5,
 				"flexProps": {
 					"alignSelf": "AUTO",
-					"positionType": "RELATIVE"
+					"positionType": "ABSOLUTE"
 				},
 				"children": [],
 				"name": "leftImage",
@@ -705,8 +705,8 @@
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"marginRight": 50,
-				"marginLeft": 20,
+				"marginRight": 35,
+				"marginLeft": 35,
 				"text": "Label",
 				"flexProps": {
 					"flexGrow": 1,
@@ -715,10 +715,7 @@
 				"font": {
 					"bold": true,
 					"size": 18
-				},
-				"layout": {},
-				"flex": {},
-				"defaults": {}
+				}
 			},
 			"className": ".label",
 			"props": {
@@ -735,8 +732,8 @@
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"marginRight": 50,
-				"marginLeft": 20,
+				"marginRight": 35,
+				"marginLeft": 35,
 				"font": {
 					"size": 18,
 					"bold": true,
@@ -1335,7 +1332,7 @@
 				},
 				"children": [
 					"label1",
-					"imageView1"
+					"imageView4"
 				],
 				"name": "itemPicker2",
 				"parent": "pickerContainer"
@@ -1434,7 +1431,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"name": "imageView1",
+				"name": "imageView4",
 				"parent": "itemPicker2",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
@@ -1824,8 +1821,8 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout1",
-					"imageView2"
+					"flexLayout3",
+					"imageView5"
 				],
 				"name": "itemSmallThumb2",
 				"parent": "flexlayout6"
@@ -1886,9 +1883,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator3"
+					"activityIndicator5"
 				],
-				"name": "flexLayout1",
+				"name": "flexLayout3",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -1938,8 +1935,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator3",
-				"parent": "flexLayout1"
+				"name": "activityIndicator5",
+				"parent": "flexLayout3"
 			}
 		},
 		{
@@ -1982,7 +1979,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView2",
+				"name": "imageView5",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -2042,8 +2039,8 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout2",
-					"imageView3"
+					"flexLayout4",
+					"imageView6"
 				],
 				"name": "itemSmallThumb3",
 				"parent": "flexlayout6"
@@ -2104,9 +2101,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator4"
+					"activityIndicator6"
 				],
-				"name": "flexLayout2",
+				"name": "flexLayout4",
 				"parent": "itemSmallThumb3"
 			}
 		},
@@ -2156,8 +2153,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator4",
-				"parent": "flexLayout2"
+				"name": "activityIndicator6",
+				"parent": "flexLayout4"
 			}
 		},
 		{
@@ -2200,7 +2197,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView3",
+				"name": "imageView6",
 				"parent": "itemSmallThumb3"
 			}
 		},

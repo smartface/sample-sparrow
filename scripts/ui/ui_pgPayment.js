@@ -14,6 +14,7 @@ const Image = require('sf-core/ui/image');
 const Label = require('sf-core/ui/label');
 const TextAlignment = require('sf-core/ui/textalignment');
 const TextBox = require('sf-core/ui/textbox');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 const CustomHeaderBar = require("../components/CustomHeaderBar");
 const BtnTransparent = require("../components/BtnTransparent");
@@ -277,7 +278,8 @@ const PgPayment_ = extend(Page)(
 function onShow() {
   //StatusBar props
   const statusBarStyle = getCombinedStyle(".statusBar", {
-		color: Color.create(255, 157, 27, 85)
+		color: Color.create(255, 157, 27, 85),
+		style: StatusBarStyle.LIGHTCONTENT
 	});
 	
 	Object.assign(this.statusBar, statusBarStyle);

@@ -1,13 +1,13 @@
 {
-  ".switch": {
+  ".listView": {
+    "height": 200,
     "width": 200,
     "touchEnabled": true,
-    "toggle": false,
-    "thumbOnColor": "#9D1B55",
-    "thumbOffColor": "#2c0718",
-    "toggleOffColor": "#010101",
-    "toggleOnColor": "#CCCCCC",
+    "multiline": false,
+    "rowHeight": 60,
+    "itemCount": 3,
     "visible": true,
+    "backgroundColor": "#FFFFFF",
     "alpha": 1,
     "borderColor": "rgba(0,0,0,1)",
     "borderWidth": 0,
@@ -16,8 +16,6 @@
       "alignSelf": "AUTO",
       "positionType": "RELATIVE"
     },
-    "minHeight": 31,
-    "minWidth": 51,
     "&-small": {
       "width": 100
     },

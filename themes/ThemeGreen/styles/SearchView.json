@@ -1,23 +1,23 @@
 {
-  ".switch": {
-    "width": 200,
+  ".searchView": {
+    "text": "",
     "touchEnabled": true,
-    "toggle": false,
-    "thumbOnColor": "#9D1B55",
-    "thumbOffColor": "#2c0718",
-    "toggleOffColor": "#010101",
-    "toggleOnColor": "#CCCCCC",
+    "width": 200,
+    "height": 70,
     "visible": true,
     "alpha": 1,
     "borderColor": "rgba(0,0,0,1)",
     "borderWidth": 0,
+    "textAlignment": "MIDLEFT",
     "font": {},
     "flexProps": {
       "alignSelf": "AUTO",
       "positionType": "RELATIVE"
     },
-    "minHeight": 31,
-    "minWidth": 51,
+    "input": {
+      "height": 28
+    },
+    "minHeight": 30,
     "&-small": {
       "width": 100
     },

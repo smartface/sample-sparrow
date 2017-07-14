@@ -1,13 +1,11 @@
 {
-  ".switch": {
+  ".imageView": {
     "width": 200,
+    "height": 200,
     "touchEnabled": true,
-    "toggle": false,
-    "thumbOnColor": "#9D1B55",
-    "thumbOffColor": "#2c0718",
-    "toggleOffColor": "#010101",
-    "toggleOnColor": "#CCCCCC",
     "visible": true,
+    "imageFillType": "NORMAL",
+    "backgroundColor": "rgba(0,0,0,0)",
     "alpha": 1,
     "borderColor": "rgba(0,0,0,1)",
     "borderWidth": 0,
@@ -16,8 +14,6 @@
       "alignSelf": "AUTO",
       "positionType": "RELATIVE"
     },
-    "minHeight": 31,
-    "minWidth": 51,
     "&-small": {
       "width": 100
     },

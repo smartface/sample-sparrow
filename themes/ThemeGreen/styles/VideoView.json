@@ -1,14 +1,11 @@
 {
-  ".switch": {
+  ".videoView": {
+    "height": 200,
     "width": 200,
-    "touchEnabled": true,
-    "toggle": false,
-    "thumbOnColor": "#9D1B55",
-    "thumbOffColor": "#2c0718",
-    "toggleOffColor": "#010101",
-    "toggleOnColor": "#CCCCCC",
     "visible": true,
+    "backgroundColor": "#FFFFFF",
     "alpha": 1,
+    "touchEnabled": true,
     "borderColor": "rgba(0,0,0,1)",
     "borderWidth": 0,
     "font": {},
@@ -16,8 +13,6 @@
       "alignSelf": "AUTO",
       "positionType": "RELATIVE"
     },
-    "minHeight": 31,
-    "minWidth": 51,
     "&-small": {
       "width": 100
     },

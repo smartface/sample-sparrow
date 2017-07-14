@@ -36,7 +36,6 @@ function onShow(parentOnShow) {
     initHeaderBar(this.customHeaderBar);
 
     this.layout.applyLayout();
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 
     if (!this.shownBefore) {
         this.shownBefore = true;

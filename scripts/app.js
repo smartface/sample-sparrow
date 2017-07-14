@@ -242,7 +242,8 @@ function initSliderDrawer()
     sliderDrawer.onLoad = function()
     {
         //Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer_layout", {}));
-        sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#9D1B55"), endColor:Color.create("#D9595B"), direction: Color.GradientDirection.DIAGONAL_LEFT});
+        Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
+        // sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#9D1B55"), endColor:Color.create("#D9595B"), direction: Color.GradientDirection.DIAGONAL_LEFT});
 
         mainContainer.addChild(topContainer);      
         mainContainer.addChild(dividerTop)     

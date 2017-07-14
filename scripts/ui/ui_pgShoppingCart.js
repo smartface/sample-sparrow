@@ -17,6 +17,7 @@ const TextBox = require('sf-core/ui/textbox');
 const Font = require('sf-core/ui/font');
 const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 const CustomHeaderBar = require("../components/CustomHeaderBar");
 const BtnTransparent = require("../components/BtnTransparent");
@@ -226,7 +227,8 @@ const PgShoppingCart_ = extend(Page)(
 function onShow() {
   //StatusBar props
   const statusBarStyle = getCombinedStyle(".statusBar", {
-		color: Color.create(255, 157, 27, 85)
+		color: Color.create(255, 157, 27, 85),
+		style: StatusBarStyle.LIGHTCONTENT
 	});
 	
 	Object.assign(this.statusBar, statusBarStyle);

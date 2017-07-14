@@ -9,8 +9,8 @@
       "justifyContent": "FLEX_START"
     },
     "backgroundColor": { 
-		  "startColor": "#3F4AB1",
-			"endColor": "#009DC4",
+		  "startColor": "#006E60",
+			"endColor": "#08AF5A",
 			"direction": "DIAGONAL_LEFT"
 		},
     "font": {},

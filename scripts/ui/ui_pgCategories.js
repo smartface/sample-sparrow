@@ -10,6 +10,7 @@ const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const ListView = require('sf-core/ui/listview');
 const ListViewItem = require('sf-core/ui/listviewitem');
+const StatusBarStyle = require('sf-core/ui/statusbarstyle');
 
 const CustomHeaderBar = require("../components/CustomHeaderBar");
 const LoaderContainer = require("../components/LoaderContainer");
@@ -101,7 +102,7 @@ const PgCategories_ = extend(Page)(
 function onShow() {
   //StatusBar props
   const statusBarStyle = getCombinedStyle(".statusBar", {
-		color: Color.create(255, 157, 27, 85)
+		style: StatusBarStyle.LIGHTCONTENT
 	});
 	
 	Object.assign(this.statusBar, statusBarStyle);

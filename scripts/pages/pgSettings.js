@@ -66,6 +66,10 @@ const PgSettings = extend(PgSettingsDesign)(
 		    changeTheme("ThemeBlue");
 		};
 		
+		this.themeGreen.onTouchEnded = function() {
+		    changeTheme("ThemeGreen");
+		};
+		
 		this.themeDefaults.onTouchEnded = function() {
 		    changeTheme("Defaults");
 		};
@@ -74,15 +78,6 @@ const PgSettings = extend(PgSettingsDesign)(
 			RauLib.checkUpdate({
 				showProgressCheck: true,
 				showProgressErrorAlert: true
-			});
-			
-			Application.checkUpdate(function(err, result) {
-		        if (err) {
-		            
-		        }
-		        else{
-		        	RauLib.checkUpdate();
-		        }
 			});
 		}
 		
@@ -94,8 +89,7 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-    
+
     // Saving FingerprintLib state, because if user toggle off, we will remove but user could opent it.
 	savedStateFingerprint = {
 	    isUserAuthenticated:        FingerPrintLib.isUserAuthenticated,
@@ -112,10 +106,17 @@ function onShow(parentOnLoad) {
 	switch (Data.getStringVariable("theme")) {
 		case 'ThemeBlue':
 			this.themeBlue.borderWidth = 1;
+			this.themeGreen.borderWidth = 0;
+			this.themeDefaults.borderWidth = 0;
+			break;
+		case 'ThemeGreen':
+			this.themeBlue.borderWidth = 0;
+			this.themeGreen.borderWidth = 1;
 			this.themeDefaults.borderWidth = 0;
 			break;
 		default:
 			this.themeBlue.borderWidth = 0;
+			this.themeGreen.borderWidth = 0;
 			this.themeDefaults.borderWidth = 1;
 	}
 }

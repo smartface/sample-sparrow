@@ -33,8 +33,6 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-    
     
 	if(Data.getBooleanVariable("isNotificationAllowed") !== false){
 		var notification = new Notifications.LocalNotification();

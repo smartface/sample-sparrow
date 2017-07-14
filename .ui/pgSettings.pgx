@@ -34,8 +34,8 @@
 					"flexLayoutContainer"
 				],
 				"name": "pgSettings",
-				"width": 375,
-				"height": 667
+				"width": 187.5,
+				"height": 333.5
 			},
 			"initialized": true
 		},
@@ -44,12 +44,11 @@
 			"id": "622a8f8b",
 			"themeProps": {},
 			"userProps": {
-				"color": "rgba( 157, 27, 85, 1 )",
 				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 157, 27, 85, 1 )",
+				"color": "#9D1B55",
 				"visible": true,
 				"style": "LIGHTCONTENT",
 				"parent": "pgSettings",
@@ -240,23 +239,17 @@
 			"id": "705ee945",
 			"themeProps": {},
 			"userProps": {
-				"width": 61,
-				"minHeight": 31,
-				"minWidth": 51,
-				"height": null,
-				"thumbOnColor": "rgba( 205, 95, 196, 1 )",
-				"toggleOnColor": "rgba( 255, 0, 237, 0.43 )",
-				"thumbOffColor": "rgba( 229, 174, 225, 1 )",
-				"backgroundColor": "rgba( 0, 0, 0, 0 )",
-				"toggleOffColor": "rgba( 229, 174, 225, 0.54 )",
 				"toggle": false,
 				"usePageVariable": true,
-				"flexProps": {
-					"alignSelf": "CENTER"
-				},
+				"minHeight": 31,
+				"minWidth": 51,
+				"width": 61,
 				"input": {
 					"height": 31,
 					"width": 51
+				},
+				"flexProps": {
+					"alignSelf": "CENTER"
 				}
 			},
 			"className": ".switch",
@@ -264,18 +257,16 @@
 				"width": 61,
 				"touchEnabled": true,
 				"toggle": false,
-				"thumbOnColor": "rgba( 205, 95, 196, 1 )",
-				"thumbOffColor": "rgba( 229, 174, 225, 1 )",
-				"toggleOffColor": "rgba( 229, 174, 225, 0.54 )",
-				"toggleOnColor": "rgba( 255, 0, 237, 0.43 )",
+				"thumbOnColor": "#9D1B55",
+				"thumbOffColor": "#2c0718",
+				"toggleOffColor": "#010101",
+				"toggleOnColor": "#CCCCCC",
 				"visible": true,
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"minHeight": 31,
 				"minWidth": 51,
-				"height": null,
-				"backgroundColor": "rgba( 0, 0, 0, 0 )",
 				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "CENTER",
@@ -302,7 +293,8 @@
 				"marginLeft": 10,
 				"marginRight": 10,
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"alignItems": "STRETCH"
 				}
 			},
 			"className": ".flexLayout",
@@ -386,43 +378,37 @@
 			"id": "0986b661",
 			"themeProps": {},
 			"userProps": {
-				"width": 61,
+				"toggle": false,
+				"usePageVariable": true,
+				"height": null,
 				"minHeight": 31,
 				"minWidth": 51,
-				"height": null,
-				"thumbOnColor": "rgba( 205, 95, 196, 1 )",
-				"toggleOnColor": "rgba( 255, 0, 237, 0.43 )",
-				"thumbOffColor": "rgba( 229, 174, 225, 1 )",
-				"backgroundColor": "rgba( 0, 0, 0, 0 )",
-				"toggleOffColor": "rgba( 229, 174, 225, 0.54 )",
-				"toggle": true,
-				"usePageVariable": true,
-				"flexProps": {
-					"alignSelf": "CENTER"
-				},
+				"width": 61,
 				"input": {
 					"height": 31,
 					"width": 51
+				},
+				"flexProps": {
+					"alignSelf": "CENTER"
 				}
 			},
 			"className": ".switch",
 			"props": {
 				"width": 61,
 				"touchEnabled": true,
-				"toggle": true,
-				"thumbOnColor": "rgba( 205, 95, 196, 1 )",
-				"thumbOffColor": "rgba( 229, 174, 225, 1 )",
-				"toggleOffColor": "rgba( 229, 174, 225, 0.54 )",
-				"toggleOnColor": "rgba( 255, 0, 237, 0.43 )",
+				"toggle": false,
+				"thumbOnColor": "#9D1B55",
+				"thumbOffColor": "#2c0718",
+				"toggleOffColor": "#010101",
+				"toggleOnColor": "#CCCCCC",
 				"visible": true,
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"minHeight": 31,
 				"minWidth": 51,
-				"height": null,
-				"backgroundColor": "rgba( 0, 0, 0, 0 )",
 				"usePageVariable": true,
+				"height": null,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"positionType": "RELATIVE"
@@ -596,7 +582,8 @@
 				"children": [
 					"labelTheme",
 					"themeDefaults",
-					"themeBlue"
+					"themeBlue",
+					"themeGreen"
 				]
 			}
 		},
@@ -744,7 +731,7 @@
 				"marginBottom": 4,
 				"marginTop": 4,
 				"borderRadius": 6,
-				"backgroundColor": "rgba( 3, 45, 70, 1 )",
+				"backgroundColor": "rgba( 63, 74, 177, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				}
@@ -755,7 +742,7 @@
 				"width": null,
 				"touchEnabled": true,
 				"visible": true,
-				"backgroundColor": "rgba( 3, 45, 70, 1 )",
+				"backgroundColor": "rgba( 63, 74, 177, 1 )",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
@@ -920,6 +907,97 @@
 		},
 		{
 			"type": "FlexLayout",
+			"id": "5ace4ceb",
+			"themeProps": {},
+			"userProps": {
+				"width": 35,
+				"height": 35,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"usePageVariable": true
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 35,
+				"width": 35,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba( 195, 195, 195, 1 )",
+				"borderWidth": 0,
+				"marginLeft": 10,
+				"borderRadius": 8,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"name": "themeGreen",
+				"parent": "themeRow",
+				"children": [
+					"flexLayout1_1"
+				]
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "607438b7",
+			"themeProps": {},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 6,
+				"backgroundColor": "rgba( 0, 110, 96, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 0, 110, 96, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginLeft": 4,
+				"marginRight": 4,
+				"marginBottom": 4,
+				"marginTop": 4,
+				"borderRadius": 6,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "flexLayout1_1",
+				"parent": "themeGreen",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
 			"id": "62fea076",
 			"hiddenComponent": false,
 			"source": {
@@ -1040,7 +1118,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207?random=0.2253375936265576"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1206,7 +1284,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207?random=0.2253375936265576"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
 			}
 		},
 		{

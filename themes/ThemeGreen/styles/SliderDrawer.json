@@ -1,0 +1,11 @@
+{
+    ".sliderDrawer": {
+        ".layout": {
+            "backgroundColor": {
+                "startColor": "#006E60",
+                "endColor": "#08AF5A",
+                "direction": "DIAGONAL_LEFT"
+            }
+        }
+    }
+}

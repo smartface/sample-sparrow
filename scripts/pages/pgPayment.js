@@ -65,7 +65,6 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 }
 
 function autoFill(page)

@@ -55,7 +55,6 @@ function onShow(parentOnShow,params) {
     parentOnShow();
     Router.sliderDrawer.enabled = false;
     initHeaderBar(this.customHeaderBar);
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
 
     if (params && params.id) {
         Shopify.Product.getProduct(params.id).exec(function(response) {

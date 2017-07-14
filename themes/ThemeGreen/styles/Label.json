@@ -1,0 +1,62 @@
+{
+  ".label": {
+    "width": 250,
+    "height": 70,
+    "touchEnabled": true,
+    "text": "Label",
+    "visible": true,
+    "multiline": false,
+    "backgroundColor": "#00FFFFFF",
+    "alpha": 1,
+    "borderColor": "rgba(0,0,0,1)",
+    "borderWidth": 0,
+    "textColor": "#000000",
+    "textAlignment": "MIDLEFT",
+    "font": {
+      "size": 14,
+      "bold": false,
+      "italic": false,
+      "family": "Lato"
+    },
+    "flexProps": {
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE"
+    },
+    "&-small": {
+      "font": {
+        "size": 12
+      },
+      ".transparentWhite" : 
+      {
+        "textColor": "#FFFFFF",
+        "alpha" : 0.7
+      }
+    },
+    "&-medium": {
+      "width": 250
+    },
+    "&-large": {
+      "textColor": "#FFFFFF",
+      "font": {
+        "size": 36
+      }
+    },
+    "&-picker": {
+			"textSize": 14,
+			"textColor": "#000000",
+			".selected": {
+					"alpha" : 1
+			 },
+			 ".normal": {
+					"alpha" : 0.5
+			 }
+		},
+		"&-categoryItem": {
+			"textSize": 16,
+			"textAlignment": "MIDCENTER",
+			"textColor": "#FFFFFF",
+			"backgroundColor" : "#ABC324",
+			"width": 200
+		}
+  }
+}

@@ -49,8 +49,7 @@ function onShow(parentOnShow,params) {
     initHeaderBar(this.customHeaderBar);
 
     Router.sliderDrawer.enabled = false;
-    this.statusBar.ios.style = StatusBarStyle.LIGHTCONTENT;
-    
+
     if (params && params.id) {
         Timer.setTimeout({
             delay: 300,

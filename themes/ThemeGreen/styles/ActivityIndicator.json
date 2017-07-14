@@ -1,23 +1,21 @@
 {
-  ".switch": {
-    "width": 200,
+  ".activityIndicator": {
     "touchEnabled": true,
-    "toggle": false,
-    "thumbOnColor": "#9D1B55",
-    "thumbOffColor": "#2c0718",
-    "toggleOffColor": "#010101",
-    "toggleOnColor": "#CCCCCC",
+    "width": 42,
+    "height": 42,
+    "color": "#ADADAD",
     "visible": true,
+    "backgroundColor": "#FFFFFF",
     "alpha": 1,
     "borderColor": "rgba(0,0,0,1)",
     "borderWidth": 0,
     "font": {},
     "flexProps": {
-      "alignSelf": "AUTO",
-      "positionType": "RELATIVE"
+      "positionType": "RELATIVE",
+      "alignSelf": "AUTO"
     },
-    "minHeight": 31,
-    "minWidth": 51,
+    "minHeight": 21,
+    "minWidth": 21,
     "&-small": {
       "width": 100
     },
