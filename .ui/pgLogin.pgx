@@ -13,7 +13,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.19",
+			"version": "6.4.1",
 			"props": {
 				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"orientation": "PORTRAIT",
@@ -34,7 +34,8 @@
 				"name": "pgLogin",
 				"width": 187.5,
 				"height": 333.5
-			}
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
@@ -405,7 +406,7 @@
 				"children": [],
 				"name": "imageviewLogo",
 				"parent": "imagelayout",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sample-sparro/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.45589390492430315",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.23470398582379004",
 				"usePageVariable": true
 			}
 		},
@@ -625,11 +626,11 @@
 		{
 			"type": "FlexLayout",
 			"id": "f5a30d73",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"left": 0,
@@ -681,11 +682,11 @@
 		{
 			"type": "FlexLayout",
 			"id": "8fafdb6d",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "be65d4d0"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -742,10 +743,10 @@
 		{
 			"type": "Button",
 			"id": "1f85683b",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": null,

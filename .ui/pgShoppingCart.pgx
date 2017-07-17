@@ -3,7 +3,9 @@
 		{
 			"type": "Page",
 			"id": "1d523046",
-			"themeProps": {},
+			"themeProps": {
+				"Page": "Default"
+			},
 			"userProps": {
 				"flexProps": {
 					"alignItems": "AUTO",
@@ -15,7 +17,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.0",
+			"version": "6.4.1",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -51,7 +53,9 @@
 		{
 			"type": "StatusBar",
 			"id": "fca98bd3",
-			"themeProps": {},
+			"themeProps": {
+				"StatusBar": "Default"
+			},
 			"userProps": {
 				"style": "LIGHTCONTENT"
 			},
@@ -59,17 +63,20 @@
 			"props": {
 				"color": "#9D1B55",
 				"visible": true,
+				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "pgShoppingCart",
 				"isRemovable": false,
 				"name": "statusBar",
-				"style": "LIGHTCONTENT"
+				"height": 20
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "91245418",
-			"themeProps": {},
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
 			"userProps": {
 				"title": "newPage001",
 				"visible": false,
@@ -95,7 +102,9 @@
 		{
 			"type": "ImageView",
 			"id": "0b2c562c",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"imageFillType": "ASPECTFIT",
 				"image": "steps1.png",
@@ -126,13 +135,16 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "pgShoppingCart",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/steps1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.25867682704835526"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/steps1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9697993671010823"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "3b1c79bf",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -189,7 +201,8 @@
 			"type": "Label",
 			"id": "5c9d3f81",
 			"themeProps": {
-				"Sizes": "Large"
+				"Sizes": "Large",
+				"Types": "Default"
 			},
 			"userProps": {
 				"width": null,
@@ -243,7 +256,8 @@
 			"type": "Label",
 			"id": "9b51f984",
 			"themeProps": {
-				"Sizes": "SmallTransparentWhite"
+				"Sizes": "SmallTransparentWhite",
+				"Types": "Default"
 			},
 			"userProps": {
 				"textAlignment": "BOTTOMCENTER",
@@ -340,7 +354,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "680b5b5d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -380,7 +397,9 @@
 		{
 			"type": "ListView",
 			"id": "e8a30c98",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -417,7 +436,10 @@
 		{
 			"type": "Label",
 			"id": "b715ee39",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -471,7 +493,10 @@
 				"page": "__library__",
 				"id": "e8440217"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": null,
 				"top": null,
@@ -539,7 +564,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"height": 30,
 				"width": 30,
@@ -575,7 +602,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -585,7 +612,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -644,7 +674,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -703,7 +736,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -741,7 +776,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -751,7 +786,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 25,
 				"height": 25,
@@ -821,7 +859,10 @@
 				"page": "__library__",
 				"id": "be65d4d0"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 0,
@@ -880,7 +921,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -936,7 +980,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,

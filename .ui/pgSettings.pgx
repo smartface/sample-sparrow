@@ -3,14 +3,16 @@
 		{
 			"type": "Page",
 			"id": "d22e311e",
-			"themeProps": {},
+			"themeProps": {
+				"Page": "Default"
+			},
 			"userProps": {
 				"flexProps": {
 					"alignItems": "STRETCH"
 				}
 			},
 			"className": ".page",
-			"version": "6.4.0",
+			"version": "6.4.1",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -34,15 +36,17 @@
 					"flexLayoutContainer"
 				],
 				"name": "pgSettings",
-				"width": 207.69230769230768,
-				"height": 332.7307692307692
+				"width": 187.5,
+				"height": 333.5
 			},
 			"initialized": true
 		},
 		{
 			"type": "StatusBar",
 			"id": "622a8f8b",
-			"themeProps": {},
+			"themeProps": {
+				"StatusBar": "Default"
+			},
 			"userProps": {
 				"style": "LIGHTCONTENT"
 			},
@@ -55,13 +59,15 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 25
+				"height": 20
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "a4ab1a70",
-			"themeProps": {},
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
 			"userProps": {
 				"title": "Settings",
 				"backgroundColor": "rgba( 157, 27, 85, 1 )",
@@ -78,13 +84,16 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"height": 56.6
+				"height": 44
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "210857ae",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 400,
@@ -145,7 +154,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "46a4b03c",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 60,
@@ -193,7 +205,10 @@
 		{
 			"type": "Label",
 			"id": "dccecce9",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -238,16 +253,18 @@
 		{
 			"type": "Switch",
 			"id": "705ee945",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"toggle": false,
 				"usePageVariable": true,
-				"minHeight": 27,
-				"minWidth": 61,
+				"minHeight": 31,
+				"minWidth": 51,
 				"width": 61,
 				"input": {
-					"height": 27,
-					"width": 61
+					"height": 31,
+					"width": 51
 				},
 				"flexProps": {
 					"alignSelf": "CENTER"
@@ -266,16 +283,16 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"minHeight": 27,
-				"minWidth": 61,
+				"minHeight": 31,
+				"minWidth": 51,
 				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"positionType": "RELATIVE"
 				},
 				"input": {
-					"height": 27,
-					"width": 61
+					"height": 31,
+					"width": 51
 				},
 				"name": "switchFingerprint",
 				"parent": "fingerprintRow",
@@ -285,7 +302,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "d446a9f5",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 60,
@@ -332,7 +352,10 @@
 		{
 			"type": "Label",
 			"id": "5c35f1d5",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -377,17 +400,19 @@
 		{
 			"type": "Switch",
 			"id": "0986b661",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"toggle": false,
 				"usePageVariable": true,
 				"height": null,
-				"minHeight": 27,
-				"minWidth": 61,
+				"minHeight": 31,
+				"minWidth": 51,
 				"width": 61,
 				"input": {
-					"height": 27,
-					"width": 61
+					"height": 31,
+					"width": 51
 				},
 				"flexProps": {
 					"alignSelf": "CENTER"
@@ -406,8 +431,8 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"minHeight": 27,
-				"minWidth": 61,
+				"minHeight": 31,
+				"minWidth": 51,
 				"usePageVariable": true,
 				"height": null,
 				"flexProps": {
@@ -415,8 +440,8 @@
 					"positionType": "RELATIVE"
 				},
 				"input": {
-					"height": 27,
-					"width": 61
+					"height": 31,
+					"width": 51
 				},
 				"name": "switchNotification",
 				"parent": "notificationRow",
@@ -426,7 +451,10 @@
 		{
 			"type": "Label",
 			"id": "9d06ec51",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 50,
@@ -483,7 +511,10 @@
 		{
 			"type": "Label",
 			"id": "e11d5e3f",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 100,
@@ -542,7 +573,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "9ba279be",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 60,
@@ -591,7 +625,10 @@
 		{
 			"type": "Label",
 			"id": "9bddc8ec",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": 60,
 				"width": null,
@@ -636,7 +673,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "cc5d6c11",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 35,
 				"height": 35,
@@ -680,7 +720,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "eb4a8e3e",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 35,
 				"height": 35,
@@ -723,7 +766,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "6e127e7d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -771,7 +817,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "9a58cbe9",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -819,7 +868,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "ce99ea90",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 60,
@@ -864,7 +916,10 @@
 		{
 			"type": "Label",
 			"id": "845065cd",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -909,7 +964,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "5ace4ceb",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 35,
 				"height": 35,
@@ -952,7 +1010,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "607438b7",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -1005,7 +1066,10 @@
 				"page": "__library__",
 				"id": "e8440217"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": null,
 				"top": null,
@@ -1083,7 +1147,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"height": 30,
 				"width": 30,
@@ -1119,7 +1185,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.7952961295420555"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1129,7 +1195,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -1188,7 +1257,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -1247,7 +1319,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -1285,7 +1359,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.7952961295420555"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1295,7 +1369,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 25,
 				"height": 25,
@@ -1365,7 +1442,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -1420,7 +1500,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -1475,7 +1558,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,

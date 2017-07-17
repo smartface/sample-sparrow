@@ -8,7 +8,7 @@ const ListViewItem  		= require('sf-core/ui/listviewitem');
 const ShoppingCart			= require("../objects/ShoppingCart");
 const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
 const ActionKeyType         = require('sf-core/ui/actionkeytype');
-const AlertUtil             = require("lib/util/alert");
+const AlertUtil             = require("sf-extension-utils/alert");
 const System                = require("sf-core/device/system");
 
 const Page_ = extend(PageDesign)(

@@ -6,7 +6,7 @@ const FingerPrintLib    = require("sf-extension-utils/fingerprint");
 const Data              = require('sf-core/data');
 const Application       = require('sf-core/application');
 const AlertView         = require('sf-core/ui/alertview');
-const AlertUtil         = require("lib/util/alert");
+const AlertUtil         = require("sf-extension-utils/alert");
 const RauLib			= require("sf-extension-utils/rau");
 // Get generetad UI code
 var PgSettingsDesign = require("../ui/ui_pgSettings");
