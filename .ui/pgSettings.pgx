@@ -34,8 +34,8 @@
 					"flexLayoutContainer"
 				],
 				"name": "pgSettings",
-				"width": 187.5,
-				"height": 333.5
+				"width": 207.69230769230768,
+				"height": 332.7307692307692
 			},
 			"initialized": true
 		},
@@ -55,7 +55,7 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
-				"height": 20
+				"height": 25
 			}
 		},
 		{
@@ -78,7 +78,7 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"height": 44
+				"height": 56.6
 			}
 		},
 		{
@@ -135,6 +135,7 @@
 					"fingerprintRow",
 					"horizontalDivider",
 					"notificationRow",
+					"horizontalDivider_1",
 					"checkUpdateRow",
 					"txtAbout",
 					"txtAboutDesc"
@@ -241,12 +242,12 @@
 			"userProps": {
 				"toggle": false,
 				"usePageVariable": true,
-				"minHeight": 31,
-				"minWidth": 51,
+				"minHeight": 27,
+				"minWidth": 61,
 				"width": 61,
 				"input": {
-					"height": 31,
-					"width": 51
+					"height": 27,
+					"width": 61
 				},
 				"flexProps": {
 					"alignSelf": "CENTER"
@@ -265,16 +266,16 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"minHeight": 31,
-				"minWidth": 51,
+				"minHeight": 27,
+				"minWidth": 61,
 				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "CENTER",
 					"positionType": "RELATIVE"
 				},
 				"input": {
-					"height": 31,
-					"width": 51
+					"height": 27,
+					"width": 61
 				},
 				"name": "switchFingerprint",
 				"parent": "fingerprintRow",
@@ -381,12 +382,12 @@
 				"toggle": false,
 				"usePageVariable": true,
 				"height": null,
-				"minHeight": 31,
-				"minWidth": 51,
+				"minHeight": 27,
+				"minWidth": 61,
 				"width": 61,
 				"input": {
-					"height": 31,
-					"width": 51
+					"height": 27,
+					"width": 61
 				},
 				"flexProps": {
 					"alignSelf": "CENTER"
@@ -405,8 +406,8 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"minHeight": 31,
-				"minWidth": 51,
+				"minHeight": 27,
+				"minWidth": 61,
 				"usePageVariable": true,
 				"height": null,
 				"flexProps": {
@@ -414,8 +415,8 @@
 					"positionType": "RELATIVE"
 				},
 				"input": {
-					"height": 31,
-					"width": 51
+					"height": 27,
+					"width": 61
 				},
 				"name": "switchNotification",
 				"parent": "notificationRow",
@@ -1118,7 +1119,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.7952961295420555"
 			}
 		},
 		{
@@ -1284,7 +1285,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/sparrow-new/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.7952961295420555"
 			}
 		},
 		{
@@ -1463,6 +1464,61 @@
 				},
 				"children": [],
 				"name": "horizontalDivider1",
+				"parent": "flexLayoutContainer"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "3c0a83c3",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"id": "8e9568d2"
+			},
+			"themeProps": {},
+			"userProps": {
+				"left": 0,
+				"top": 0,
+				"width": null,
+				"height": 1,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"alpha": 0.1,
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": null,
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"flexGrow": 1,
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 1,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"alpha": 0.1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": null
+				},
+				"children": [],
+				"name": "horizontalDivider_1",
 				"parent": "flexLayoutContainer"
 			}
 		}
