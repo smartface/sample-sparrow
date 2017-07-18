@@ -56,6 +56,9 @@ Router.go(PageConstants.PAGE_LOGIN);
 
 initSliderDrawer()
 
+// Making workaround due to IOS-2306
+var currentPageTag = PageConstants.PAGE_CATEGORIES;
+
 function initSliderDrawer()
 {
     
@@ -154,8 +157,7 @@ function initSliderDrawer()
             
             var rowImage = listViewItem.findChildById(3)
             rowImage.image = myDataSet[index].icon;
-            
-            if(Router.getCurrent() == myDataSet[index].tag)
+            if(currentPageTag == myDataSet[index].tag)
             {
                 listViewItem.alpha = 1;
             }else
@@ -166,7 +168,7 @@ function initSliderDrawer()
             listViewItem.applyLayout();
         },
         onRowSelected: function(listViewItem, index) {
-            if(Router.getCurrent() !== myDataSet[index].tag)
+            if(currentPageTag !== myDataSet[index].tag)
             {
                 try {
                     Router.go(myDataSet[index].tag,{},false);
@@ -175,6 +177,7 @@ function initSliderDrawer()
                     Router.goBack(myDataSet[index].tag, false);
                     sliderDrawer.hide();
                 }
+                currentPageTag = myDataSet[index].tag; 
             }
             listView.refreshData();
             

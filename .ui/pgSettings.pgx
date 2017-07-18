@@ -96,7 +96,7 @@
 			},
 			"userProps": {
 				"width": null,
-				"height": 400,
+				"height": 500,
 				"borderRadius": 5,
 				"marginLeft": 10,
 				"marginRight": 10,
@@ -109,7 +109,7 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"height": 400,
+				"height": 500,
 				"width": null,
 				"touchEnabled": true,
 				"visible": true,
@@ -145,8 +145,7 @@
 					"horizontalDivider",
 					"notificationRow",
 					"horizontalDivider_1",
-					"checkUpdateRow",
-					"txtAbout",
+					"flexLayoutAbout",
 					"txtAboutDesc"
 				]
 			}
@@ -445,66 +444,6 @@
 				},
 				"name": "switchNotification",
 				"parent": "notificationRow",
-				"children": []
-			}
-		},
-		{
-			"type": "Label",
-			"id": "9d06ec51",
-			"themeProps": {
-				"Sizes": "Default",
-				"Types": "Default"
-			},
-			"userProps": {
-				"width": null,
-				"height": 50,
-				"left": null,
-				"right": null,
-				"top": null,
-				"textColor": "rgba( 74, 74, 74, 1 )",
-				"text": "About",
-				"usePageVariable": true,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"marginTop": 10,
-				"flexProps": {
-					"right": 10
-				}
-			},
-			"className": ".label",
-			"props": {
-				"width": null,
-				"height": 50,
-				"touchEnabled": true,
-				"text": "About",
-				"visible": true,
-				"multiline": false,
-				"backgroundColor": "#00FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba( 74, 74, 74, 1 )",
-				"textAlignment": "MIDLEFT",
-				"left": null,
-				"right": null,
-				"top": null,
-				"usePageVariable": true,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"marginTop": 10,
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Lato"
-				},
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"right": 10
-				},
-				"name": "txtAbout",
-				"parent": "flexLayoutContainer",
 				"children": []
 			}
 		},
@@ -867,102 +806,6 @@
 		},
 		{
 			"type": "FlexLayout",
-			"id": "ce99ea90",
-			"themeProps": {
-				"Sizes": "Default",
-				"Types": "Default"
-			},
-			"userProps": {
-				"width": null,
-				"height": 60,
-				"usePageVariable": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"marginLeft": 10,
-				"marginRight": 10,
-				"flexProps": {
-					"flexDirection": "ROW"
-				}
-			},
-			"className": ".flexLayout",
-			"props": {
-				"height": 60,
-				"width": null,
-				"touchEnabled": true,
-				"visible": true,
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"usePageVariable": true,
-				"marginLeft": 10,
-				"marginRight": 10,
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"direction": "INHERIT",
-					"alignContent": "STRETCH",
-					"alignItems": "STRETCH",
-					"justifyContent": "FLEX_START",
-					"flexWrap": "NOWRAP",
-					"flexDirection": "ROW",
-					"positionType": "RELATIVE"
-				},
-				"name": "checkUpdateRow",
-				"parent": "flexLayoutContainer",
-				"children": [
-					"labelCheckUpdate"
-				]
-			}
-		},
-		{
-			"type": "Label",
-			"id": "845065cd",
-			"themeProps": {
-				"Sizes": "Default",
-				"Types": "Default"
-			},
-			"userProps": {
-				"height": null,
-				"width": null,
-				"text": "Check Update",
-				"textColor": "rgba( 0, 0, 0, 1 )",
-				"usePageVariable": true,
-				"flexProps": {
-					"flexGrow": 1
-				}
-			},
-			"className": ".label",
-			"props": {
-				"width": null,
-				"height": null,
-				"touchEnabled": true,
-				"text": "Check Update",
-				"visible": true,
-				"multiline": false,
-				"backgroundColor": "#00FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba( 0, 0, 0, 1 )",
-				"textAlignment": "MIDLEFT",
-				"usePageVariable": true,
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Lato"
-				},
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"name": "labelCheckUpdate",
-				"parent": "checkUpdateRow",
-				"children": []
-			}
-		},
-		{
-			"type": "FlexLayout",
 			"id": "5ace4ceb",
 			"themeProps": {
 				"Sizes": "Default",
@@ -1055,6 +898,185 @@
 				},
 				"name": "flexLayout1_1",
 				"parent": "themeGreen",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a11ac18c",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 50,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"marginTop": 10,
+				"visible": true,
+				"flexProps": {
+					"flexDirection": "ROW"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 50,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"marginTop": 10,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"name": "flexLayoutAbout",
+				"parent": "flexLayoutContainer",
+				"children": [
+					"txtAbout",
+					"txtAboutVersion"
+				]
+			}
+		},
+		{
+			"type": "Label",
+			"id": "4a1c7a4e",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 50,
+				"left": null,
+				"right": null,
+				"top": null,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"text": "About",
+				"usePageVariable": true,
+				"marginLeft": null,
+				"marginRight": null,
+				"marginTop": null,
+				"flexProps": {
+					"right": 10,
+					"flexGrow": 1
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 50,
+				"touchEnabled": true,
+				"text": "About",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#00FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "MIDLEFT",
+				"left": null,
+				"right": null,
+				"top": null,
+				"usePageVariable": true,
+				"marginLeft": null,
+				"marginRight": null,
+				"marginTop": null,
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"right": 10,
+					"flexGrow": 1
+				},
+				"name": "txtAbout",
+				"parent": "flexLayoutAbout",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "5a5a1b9e",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 50,
+				"left": null,
+				"right": null,
+				"top": null,
+				"textColor": "rgba( 0, 0, 255, 1 )",
+				"text": "About",
+				"usePageVariable": true,
+				"marginLeft": null,
+				"marginRight": null,
+				"marginTop": null,
+				"textAlignment": "MIDRIGHT",
+				"multiline": true,
+				"visible": false,
+				"flexProps": {
+					"right": 10,
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 12
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 50,
+				"touchEnabled": true,
+				"text": "About",
+				"visible": false,
+				"multiline": true,
+				"backgroundColor": "#00FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 0, 0, 255, 1 )",
+				"textAlignment": "MIDRIGHT",
+				"left": null,
+				"right": null,
+				"top": null,
+				"usePageVariable": true,
+				"marginLeft": null,
+				"marginRight": null,
+				"marginTop": null,
+				"font": {
+					"size": 12,
+					"bold": false,
+					"italic": false,
+					"family": "Lato"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"right": 10,
+					"flexGrow": 1
+				},
+				"name": "txtAboutVersion",
+				"parent": "flexLayoutAbout",
 				"children": []
 			}
 		},

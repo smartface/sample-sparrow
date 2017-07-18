@@ -1,5 +1,4 @@
-const extend = require("js-base/core/extend");
-const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
+const extend			= require("js-base/core/extend");
 const Router			= require("sf-core/ui/router")
 const Image			    = require("sf-core/ui/image")
 const FingerPrintLib    = require("sf-extension-utils/fingerprint");
@@ -8,10 +7,14 @@ const Application       = require('sf-core/application');
 const AlertView         = require('sf-core/ui/alertview');
 const AlertUtil         = require("sf-extension-utils/alert");
 const RauLib			= require("sf-extension-utils/rau");
+const Timer 			= require("sf-core/timer");
+const TextAlignment 	= require('sf-core/ui/textalignment');
+
 // Get generetad UI code
 var PgSettingsDesign = require("../ui/ui_pgSettings");
 
 var savedStateFingerprint, savedStateApplication;
+var isNewUpdateAvailable = false;
 
 const PgSettings = extend(PgSettingsDesign)(
     function(_super) {
@@ -31,7 +34,6 @@ const PgSettings = extend(PgSettingsDesign)(
         this.labelTheme.text = lang["pgSettings.theme"];
         this.labelFingerprint.text = lang["pgSettings.fingerprint"];
         this.labelNotification.text = lang["pgSettings.notification"];
-        this.labelCheckUpdate.text = lang["pgSettings.update"];
         this.txtAbout.text = lang["pgSettings.about"] + " v" + Application.version;
         this.txtAboutDesc.text = lang["pgSettings.aboutDesc"];
         
@@ -74,13 +76,18 @@ const PgSettings = extend(PgSettingsDesign)(
 		    changeTheme("Defaults");
 		};
 		
-		this.checkUpdateRow.onTouchEnded = function() {
-			RauLib.checkUpdate({
-				showProgressCheck: true,
-				showProgressErrorAlert: true
-			});
+		this.txtAboutDesc.onTouchEnded = function(){
+			Application.restart();
 		}
 		
+		this.txtAboutVersion.onTouchEnded = function(){
+			if(isNewUpdateAvailable){
+				RauLib.checkUpdate({
+					showProgressCheck: true,
+					showProgressErrorAlert: true
+				});
+			}
+		}
     });
 
 function onLoad(parentOnShow) {
@@ -119,6 +126,12 @@ function onShow(parentOnLoad) {
 			this.themeGreen.borderWidth = 0;
 			this.themeDefaults.borderWidth = 1;
 	}
+	
+	// this.txtAboutVersion.visible = false;
+	var myTimer = Timer.setTimeout({
+        task: checkRAUVersion.bind(this),
+        delay: 200 
+    });
 }
 
 function resetAuthPreferences(){
@@ -161,4 +174,22 @@ function changeTheme(styleName) {
 	});
 	confirmationAlert.show();
 }
+
+function checkRAUVersion(){
+	Application.checkUpdate(function(err, result) {
+	    if (err) {
+	        console.log("check update error: " + err);
+	    } else {
+	    	isNewUpdateAvailable = true;
+	    	// HTML TEXT alignment not working on iOS
+	    	// this.txtAboutVersion.htmlText = '<span style="text-decoration: underline;font-size: 12px;color: #0000ff;text-align: right;">New version available</span>';
+	    	// this.txtAboutVersion.htmlText = '<a href="#" style="font-size: 12px; text-align: right;">New version available</a>';
+	    	// this.txtAboutVersion.htmlText = '<div style="display: table; width:100%;"><div style="display: table-cell; vertical-align: middle; "><a href="#" style="font-size: 12px;text-align: right;">New version available</a></div></div>';
+	    	this.txtAboutVersion.text = lang["pgSettings.updateAvailable"];
+	    	this.txtAboutVersion.textAlignment = TextAlignment.MIDRIGHT ;
+	    	this.txtAboutVersion.visible = true;
+	    }
+	}.bind(this));
+}
 module && (module.exports = PgSettings);
+

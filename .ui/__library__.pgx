@@ -3,7 +3,9 @@
 		{
 			"type": "Page",
 			"id": "98ca17e5",
-			"themeProps": {},
+			"themeProps": {
+				"Page": "Default"
+			},
 			"userProps": {
 				"layout": {},
 				"flex": {},
@@ -53,7 +55,9 @@
 		{
 			"type": "StatusBar",
 			"id": "f32f0528",
-			"themeProps": {},
+			"themeProps": {
+				"StatusBar": "Default"
+			},
 			"userProps": {
 				"layout": {},
 				"flex": {},
@@ -63,7 +67,7 @@
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "#00A1F1",
+				"color": "#9D1B55",
 				"visible": false,
 				"children": [],
 				"name": "statusBar",
@@ -75,7 +79,9 @@
 		{
 			"type": "HeaderBar",
 			"id": "09ac25ba",
-			"themeProps": {},
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
 			"userProps": {
 				"title": "__library__",
 				"layout": {},
@@ -104,7 +110,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 7.600006103515625,
 				"top": 55.79999923706055,
@@ -157,7 +166,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 10.4,
 				"top": 35.2,
@@ -204,7 +216,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": 173,
 				"width": null,
@@ -254,7 +269,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 60,
@@ -306,7 +324,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"text": "Tortoise Glass",
 				"width": null,
@@ -361,7 +382,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"text": "$25",
 				"width": null,
@@ -416,7 +440,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -462,7 +488,8 @@
 				"page": "__library__"
 			},
 			"themeProps": {
-				"Types": "ThumbSmallInActive"
+				"Types": "ThumbSmallInActive",
+				"Sizes": "Default"
 			},
 			"userProps": {
 				"left": -0.800000011920929,
@@ -510,7 +537,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -570,7 +600,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": 20,
@@ -620,7 +652,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -664,7 +698,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 243.19999999999996,
 				"top": 37.6,
@@ -720,7 +757,8 @@
 				"page": "__library__"
 			},
 			"themeProps": {
-				"Types": "PickerNormal"
+				"Types": "PickerNormal",
+				"Sizes": "Default"
 			},
 			"userProps": {
 				"height": null,
@@ -776,7 +814,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": 12,
 				"height": 12,
@@ -817,7 +857,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"alpha": 0.1,
@@ -860,7 +903,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 18,
@@ -921,7 +967,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"height": 30,
 				"width": 30,
@@ -949,6 +997,7 @@
 				"usePageVariable": true,
 				"image": null,
 				"top": 7,
+				"left": 5,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "ABSOLUTE"
@@ -956,8 +1005,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207",
-				"left": 5
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -966,7 +1014,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -1025,7 +1076,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 91,
@@ -1070,7 +1124,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -1125,7 +1182,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 6,
 				"top": 109,
@@ -1179,7 +1239,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": 75,
 				"width": null,
@@ -1187,14 +1250,10 @@
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"id": 101,
 				"usePageVariable": true,
-				"marginRight": 5,
+				"marginRight": 10,
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1209,7 +1268,7 @@
 				"marginLeft": 10,
 				"id": 101,
 				"usePageVariable": true,
-				"marginRight": 5,
+				"marginRight": 10,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1235,22 +1294,20 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 75,
-				"marginRight": 1,
+				"marginRight": 5,
 				"borderWidth": 0.5,
 				"borderRadius": 5,
 				"borderColor": "rgba( 0, 0, 0, 0.2 )",
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"usePageVariable": true,
-				"id": 102,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"id": 102
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -1262,7 +1319,7 @@
 				"alpha": 1,
 				"borderColor": "rgba( 0, 0, 0, 0.2 )",
 				"borderWidth": 0.5,
-				"marginRight": 1,
+				"marginRight": 5,
 				"borderRadius": 5,
 				"usePageVariable": true,
 				"id": 102,
@@ -1291,7 +1348,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -1346,7 +1406,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -1403,7 +1466,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 25,
@@ -1458,7 +1524,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 25,
@@ -1512,7 +1581,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 25,
@@ -1568,7 +1640,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 94,
 				"top": 118,
@@ -1617,7 +1692,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"id": 1005,
@@ -1670,7 +1747,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 24,
 				"top": 233,
@@ -1719,7 +1799,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -1781,7 +1863,8 @@
 				"page": "__library__"
 			},
 			"themeProps": {
-				"Types": "CategoryItem"
+				"Types": "CategoryItem",
+				"Sizes": "Default"
 			},
 			"userProps": {
 				"bottom": 20,
@@ -1846,7 +1929,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -1905,7 +1991,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -1953,7 +2041,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 25,
 				"height": 25,
@@ -2023,7 +2114,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -2082,7 +2176,8 @@
 				"id": "0a525ddc"
 			},
 			"themeProps": {
-				"Types": "ThumbSmallInActive"
+				"Types": "ThumbSmallInActive",
+				"Sizes": "Default"
 			},
 			"userProps": {
 				"left": 0,
@@ -2093,15 +2188,13 @@
 				"borderWidth": 0.5,
 				"usePageVariable": true,
 				"id": 100,
+				"marginLeft": 5,
 				"flex": {
 					"positionType": 0
 				},
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -2118,6 +2211,7 @@
 				"top": 0,
 				"usePageVariable": true,
 				"id": 100,
+				"marginLeft": 5,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2129,8 +2223,8 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout1",
-					"imageView1"
+					"flexLayout8",
+					"imageView12"
 				],
 				"name": "productImage",
 				"parent": "itemCart"
@@ -2143,7 +2237,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -2191,9 +2288,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator6"
+					"activityIndicator21"
 				],
-				"name": "flexLayout1",
+				"name": "flexLayout8",
 				"parent": "productImage"
 			}
 		},
@@ -2204,7 +2301,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": 20,
@@ -2243,8 +2342,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator6",
-				"parent": "flexLayout1"
+				"name": "activityIndicator21",
+				"parent": "flexLayout8"
 			}
 		},
 		{
@@ -2254,7 +2353,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -2287,7 +2388,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView1",
+				"name": "imageView12",
 				"parent": "productImage"
 			}
 		},
@@ -2299,7 +2400,10 @@
 				"page": "__library__",
 				"id": "6077510c"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -2355,7 +2459,7 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator7"
+					"activityIndicator22"
 				],
 				"name": "flexlayout8",
 				"parent": "itemCategory"
@@ -2368,7 +2472,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"id": 1005,
@@ -2410,7 +2516,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator7",
+				"name": "activityIndicator22",
 				"parent": "flexlayout8"
 			}
 		},
@@ -2422,7 +2528,10 @@
 				"page": "__library__",
 				"id": "6077510c"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -2472,7 +2581,7 @@
 					"positionType": "ABSOLUTE"
 				},
 				"children": [
-					"activityIndicator8"
+					"activityIndicator23"
 				],
 				"name": "loader",
 				"parent": "thmbContainer"
@@ -2485,7 +2594,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"id": 1005,
@@ -2527,7 +2638,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator8",
+				"name": "activityIndicator23",
 				"parent": "loader"
 			}
 		},
@@ -2539,7 +2650,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -2592,7 +2706,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": null,
