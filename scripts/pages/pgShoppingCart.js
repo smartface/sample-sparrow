@@ -59,6 +59,8 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
+    var page = this;
+    changeLookByCartCount(page)
 }
 
 function initListView(page,listView) {
@@ -67,8 +69,6 @@ function initListView(page,listView) {
     listView.refreshEnabled = false;
     listView.verticalScrollBarEnabled = false;
     if(ShoppingCart.products.length > 0){
-        page.labelEmpty.parent.removeChild(page.labelEmpty);
-        listView.parent.applyLayout();
         listView.itemCount = ShoppingCart.products.length;
         
         listView.onRowCreate = function() {
@@ -87,25 +87,38 @@ function initListView(page,listView) {
                 page.refreshList();
             };
             listViewItem.item.btnMinus.onTouch = function() { // minus
-                if (ShoppingCart.products[index].amount > 1) {
-                    ShoppingCart.products[index].amount -= 1;
-                    page.refreshList();
+                // if (ShoppingCart.products[index].amount > 1) {
+                ShoppingCart.products[index].amount -= 1;
+                if(ShoppingCart.products[index].amount === 0){
+                    ShoppingCart.products.splice(index,1);
                 }
+                page.refreshList();
+                // }
             };
         };
     }
+}
+
+function changeLookByCartCount(page) {
+    if(ShoppingCart.products.length > 0){
+        hideElement(page.layoutLabel);
+        showElement(page.layoutListView);
+    }
     else{
-        listView.parent.removeChild(listView);
-        page.labelEmpty.flexGrow = 1;
+        hideElement(page.layoutListView);
+        showElement(page.layoutLabel);
         page.labelEmpty.text = "Your Shopping Cart is Empty";
-        page.labelEmpty.parent.applyLayout();
     }
 }
 
 function refreshList() {
+    var page = this;
 	this.listView.itemCount = ShoppingCart.products.length;
     this.listView.refreshData();
     this.updateFields();
+    if(ShoppingCart.products.length === 0){
+        changeLookByCartCount(page);
+    }
 };
 
 function updateFields() {
@@ -121,5 +134,21 @@ function updateFields() {
     this.totalAmount.text = "$" + ShoppingCart.getTotal().toFixed(2);
 };
 
+function showElement(element){
+    element.flexGrow = 1;
+    element.minHeight = NaN;
+    element.minWidth = NaN;
+    element.visible = true;
+    element.parent.applyLayout();
+}
+
+function hideElement(element){
+    element.flexGrow = 0;
+    element.minHeight = 0;
+    // element.height = 0;
+    element.minWidth = 0;
+    element.visible = false;
+    element.parent.applyLayout();
+}
 
 module && (module.exports = Page_);
