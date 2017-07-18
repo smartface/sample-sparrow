@@ -61,6 +61,7 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
+    this.firstName.removeFocus();
 }
 
 function autoFill(page)

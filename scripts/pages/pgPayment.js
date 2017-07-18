@@ -65,6 +65,7 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
+    this.cardNumber.removeFocus();
 }
 
 function autoFill(page)

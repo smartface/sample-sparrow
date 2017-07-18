@@ -61,7 +61,8 @@ function onLoad(parentOnShow) {
 function onShow(parentOnLoad) {
     parentOnLoad();
     var page = this;
-    changeLookByCartCount(page)
+    changeLookByCartCount(page);
+    this.inputPromoCode.removeFocus();
 }
 
 function initListView(page,listView) {
