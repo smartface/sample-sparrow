@@ -1,6 +1,7 @@
 SMF.i18n.defineLanguage('en', {
 	"appName"				: "Sparrow",
 	"ok"					: "OK",
+	"delete"				: "Delete",
 	"cancel"				: "Cancel",
 	"yes"					: "Yes",
 	"no"					: "No",
@@ -20,6 +21,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgShoppingCart.title"	: "Shopping Cart",
 	"pgShoppingCart.checkout": "CHECKOUT",
 	"pgShoppingCart.promocode": "Enter Promo Code",
+	"pgShoppingCart.delete": "Are you sure to delete this product from your shopping cart?",
 	"pgShoppingCart.checkout.error": "Shopping cart is empty",
 	"pgPayment.title"		: "Payment",
 	"pgPayment.pay"			: "PAY",

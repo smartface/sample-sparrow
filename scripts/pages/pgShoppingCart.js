@@ -10,6 +10,7 @@ const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
 const ActionKeyType         = require('sf-core/ui/actionkeytype');
 const AlertUtil             = require("sf-extension-utils/alert");
 const System                = require("sf-core/device/system");
+const AlertView         = require('sf-core/ui/alertview');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -88,12 +89,29 @@ function initListView(page,listView) {
             };
             listViewItem.item.btnMinus.onTouch = function() { // minus
                 // if (ShoppingCart.products[index].amount > 1) {
-                ShoppingCart.products[index].amount -= 1;
-                if(ShoppingCart.products[index].amount === 0){
-                    ShoppingCart.products.splice(index,1);
+                if (ShoppingCart.products[index].amount > 1){
+                    ShoppingCart.products[index].amount -= 1;
+                    page.refreshList();
                 }
-                page.refreshList();
-                // }
+                else{
+                    var confirmationAlert = new AlertView({
+                		title: lang["alertView.confirmation"],
+                		message: lang["pgShoppingCart.delete"]
+                	});
+                	confirmationAlert.addButton({
+                		text: lang["delete"],
+                		type: AlertView.Android.ButtonType.POSITIVE,
+                		onClick: function() {
+                    		ShoppingCart.products.splice(index,1);
+                    		page.refreshList();
+                		}
+                	});
+                	confirmationAlert.addButton({
+                		text: lang["cancel"],
+                		type: AlertView.Android.ButtonType.NEGATIVE
+                	});
+                	confirmationAlert.show();
+                }
             };
         };
     }
