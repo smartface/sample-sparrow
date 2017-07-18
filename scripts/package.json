@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "sf-core": "sf-core v1.1.14-beta.0",
+        "sf-core": "sf-core v1.1.15-beta.2",
         "js-base": "^1.0.0",
         "@smartface/styler": "^1.0.0",
         "sf-extension-shopify": "0.0.2",

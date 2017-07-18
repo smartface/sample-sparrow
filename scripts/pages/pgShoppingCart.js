@@ -10,6 +10,7 @@ const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
 const ActionKeyType         = require('sf-core/ui/actionkeytype');
 const AlertUtil             = require("sf-extension-utils/alert");
 const System                = require("sf-core/device/system");
+const AlertView         = require('sf-core/ui/alertview');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -27,18 +28,20 @@ const Page_ = extend(PageDesign)(
 		
 		this.btnCheckout.button1.onPress = function(){
 		    if(ShoppingCart.getTotal() > 0){
+		        this.inputPromoCode.removeFocus();
 		        Router.go(PageConstants.PAGE_SHIPPING,undefined,true);
 		    }
 		    else{
 		        AlertUtil.showAlert(lang["pgShoppingCart.checkout.error"]);
 		    }
-        }
+        }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgShoppingCart.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouch = function()
 		{
+		    this.inputPromoCode.removeFocus();
 			Router.goBack();
-		}
+		}.bind(this);
 		
 		this.btnCheckout.button1.text = lang["pgShoppingCart.checkout"];
 		Router.sliderDrawer.enabled = false;
@@ -59,6 +62,9 @@ function onLoad(parentOnShow) {
 
 function onShow(parentOnLoad) {
     parentOnLoad();
+    var page = this;
+    changeLookByCartCount(page);
+    this.inputPromoCode.removeFocus();
 }
 
 function initListView(page,listView) {
@@ -67,8 +73,6 @@ function initListView(page,listView) {
     listView.refreshEnabled = false;
     listView.verticalScrollBarEnabled = false;
     if(ShoppingCart.products.length > 0){
-        page.labelEmpty.parent.removeChild(page.labelEmpty);
-        listView.parent.applyLayout();
         listView.itemCount = ShoppingCart.products.length;
         
         listView.onRowCreate = function() {
@@ -87,25 +91,55 @@ function initListView(page,listView) {
                 page.refreshList();
             };
             listViewItem.item.btnMinus.onTouch = function() { // minus
-                if (ShoppingCart.products[index].amount > 1) {
+                // if (ShoppingCart.products[index].amount > 1) {
+                if (ShoppingCart.products[index].amount > 1){
                     ShoppingCart.products[index].amount -= 1;
                     page.refreshList();
+                }
+                else{
+                    var confirmationAlert = new AlertView({
+                		title: lang["alertView.confirmation"],
+                		message: lang["pgShoppingCart.delete"]
+                	});
+                	confirmationAlert.addButton({
+                		text: lang["delete"],
+                		type: AlertView.Android.ButtonType.POSITIVE,
+                		onClick: function() {
+                    		ShoppingCart.products.splice(index,1);
+                    		page.refreshList();
+                		}
+                	});
+                	confirmationAlert.addButton({
+                		text: lang["cancel"],
+                		type: AlertView.Android.ButtonType.NEGATIVE
+                	});
+                	confirmationAlert.show();
                 }
             };
         };
     }
+}
+
+function changeLookByCartCount(page) {
+    if(ShoppingCart.products.length > 0){
+        hideElement(page.layoutLabel);
+        showElement(page.layoutListView);
+    }
     else{
-        listView.parent.removeChild(listView);
-        page.labelEmpty.flexGrow = 1;
+        hideElement(page.layoutListView);
+        showElement(page.layoutLabel);
         page.labelEmpty.text = "Your Shopping Cart is Empty";
-        page.labelEmpty.parent.applyLayout();
     }
 }
 
 function refreshList() {
+    var page = this;
 	this.listView.itemCount = ShoppingCart.products.length;
     this.listView.refreshData();
     this.updateFields();
+    if(ShoppingCart.products.length === 0){
+        changeLookByCartCount(page);
+    }
 };
 
 function updateFields() {
@@ -121,5 +155,21 @@ function updateFields() {
     this.totalAmount.text = "$" + ShoppingCart.getTotal().toFixed(2);
 };
 
+function showElement(element){
+    element.flexGrow = 1;
+    element.minHeight = NaN;
+    element.minWidth = NaN;
+    element.visible = true;
+    element.parent.applyLayout();
+}
+
+function hideElement(element){
+    element.flexGrow = 0;
+    element.minHeight = 0;
+    // element.height = 0;
+    element.minWidth = 0;
+    element.visible = false;
+    element.parent.applyLayout();
+}
 
 module && (module.exports = Page_);

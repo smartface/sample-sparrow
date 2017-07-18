@@ -135,7 +135,7 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "pgShoppingCart",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/steps1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.9697993671010823"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/steps1.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.3155511090065455"
 			}
 		},
 		{
@@ -389,14 +389,60 @@
 				"name": "flexLayoutWrapper",
 				"parent": "flexlayout1",
 				"children": [
-					"listView",
-					"labelEmpty"
+					"layoutListView",
+					"layoutLabel"
+				]
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "646a57cc",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"visible": true,
+				"flexProps": {
+					"flexGrow": 1,
+					"positionType": "RELATIVE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "layoutListView",
+				"parent": "flexLayoutWrapper",
+				"children": [
+					"listView"
 				]
 			}
 		},
 		{
 			"type": "ListView",
-			"id": "e8a30c98",
+			"id": "1bf7125d",
 			"themeProps": {
 				"Sizes": "Default"
 			},
@@ -429,13 +475,58 @@
 					"flexGrow": 1
 				},
 				"name": "listView",
-				"parent": "flexLayoutWrapper",
+				"parent": "layoutListView",
 				"children": []
 			}
 		},
 		{
+			"type": "FlexLayout",
+			"id": "df6ecab6",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"visible": false,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"usePageVariable": true,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "layoutLabel",
+				"parent": "flexLayoutWrapper",
+				"children": [
+					"labelEmpty"
+				]
+			}
+		},
+		{
 			"type": "Label",
-			"id": "b715ee39",
+			"id": "9f5dccd7",
 			"themeProps": {
 				"Sizes": "Default",
 				"Types": "Default"
@@ -447,7 +538,7 @@
 				"usePageVariable": true,
 				"textColor": "rgba( 0, 0, 0, 0.5 )",
 				"flexProps": {
-					"flexGrow": 0
+					"flexGrow": 1
 				},
 				"font": {
 					"size": 16,
@@ -478,10 +569,10 @@
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE",
-					"flexGrow": 0
+					"flexGrow": 1
 				},
 				"name": "labelEmpty",
-				"parent": "flexLayoutWrapper",
+				"parent": "layoutLabel",
 				"children": []
 			}
 		},

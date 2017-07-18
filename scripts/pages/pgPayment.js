@@ -27,6 +27,7 @@ const Page_ = extend(PageDesign)(
 		this.btnPay.button1.onPress = function(){
 			if(checkFields(inputArr))
 			{
+    			this.cardNumber.removeFocus();
 				Router.go(PageConstants.PAGE_PAYMENT_RESULT,undefined,true);
 			}else
 			{
@@ -41,13 +42,14 @@ const Page_ = extend(PageDesign)(
 		        alertView.show();
 			}
 			
-        }
+        }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgPayment.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouch = function()
 		{
+    		this.cardNumber.removeFocus();
 			Router.goBack();
-		}
+		}.bind(this);
 		this.btnPay.button1.text = lang["pgPayment.pay"];
 		Router.sliderDrawer.enabled = false;
 		

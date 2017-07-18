@@ -25,6 +25,7 @@ const Page_ = extend(PageDesign)(
 		this.btnPayment.button1.onPress = function(){
 			if(checkFields(inputArr))
 			{
+    			this.firstName.removeFocus();
 				Router.go(PageConstants.PAGE_PAYMENT,undefined,true);
 			}else
 			{
@@ -38,13 +39,14 @@ const Page_ = extend(PageDesign)(
 		        });
 		        alertView.show();
 			}
-        }
+        }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgShipping.title"];
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouch = function()
 		{
+    		this.firstName.removeFocus();
 			Router.goBack();
-		}
+		}.bind(this);
 		Router.sliderDrawer.enabled = false;
 		
 		this.totalPrice.onTouchEnded = function()
