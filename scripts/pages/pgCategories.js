@@ -14,6 +14,7 @@ const Category  	    = require('../objects/Category');
 const Button  	        = require('sf-core/ui/button');
 const SliderDrawer      = require('sf-core/ui/sliderdrawer')
 const ShoppingCart		= require("../objects/ShoppingCart");
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 
 const Page_ = extend(PageDesign)(

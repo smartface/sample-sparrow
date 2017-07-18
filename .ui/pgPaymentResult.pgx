@@ -16,17 +16,9 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.3.9",
+			"version": "6.4.1",
 			"props": {
 				"orientation": "PORTRAIT",
-				"children": [
-					"statusBar",
-					"headerBar",
-					"imageview1",
-					"resultText",
-					"customHeaderBar",
-					"btnContinueShopping"
-				],
 				"flexProps": {
 					"alignContent": "CENTER",
 					"alignItems": "CENTER",
@@ -36,55 +28,42 @@
 					"justifyContent": "CENTER"
 				},
 				"backgroundColor": {
-					"startColor": "#9D1B55",
-					"endColor": "#D9595B",
+					"startColor": "#3F4AB1",
+					"endColor": "#009DC4",
 					"direction": "DIAGONAL_LEFT"
 				},
+				"children": [
+					"statusBar",
+					"headerBar",
+					"imageview1",
+					"resultText",
+					"customHeaderBar",
+					"btnContinueShopping"
+				],
 				"parent": null,
 				"name": "pgPaymentResult",
-				"layout": {
-					"width": 103.84615384615384,
-					"height": 166.3653846153846
-				},
-				"flex": {
-					"alignContent": 2,
-					"alignItems": 2,
-					"flexDirection": 0,
-					"flexWrap": 0,
-					"justifyContent": 1
-				},
-				"font": {},
-				"width": 207.69230769230768,
-				"height": 332.7307692307692
-			}
+				"width": 187.5,
+				"height": 333.5
+			},
+			"initialized": true
 		},
 		{
 			"type": "StatusBar",
 			"id": "5ea292ea",
 			"themeProps": {},
 			"userProps": {
-				"color": "rgba( 157, 27, 85, 1 )",
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "rgba( 157, 27, 85, 1 )",
+				"color": "#3F4AB1",
 				"visible": true,
 				"children": [],
 				"parent": "pgPaymentResult",
 				"isRemovable": false,
 				"name": "statusBar",
-				"layout": {
-					"height": 12.5
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"height": 25
+				"style": "LIGHTCONTENT",
+				"height": 20
 			}
 		},
 		{
@@ -110,13 +89,7 @@
 				"parent": "pgPaymentResult",
 				"isRemovable": false,
 				"name": "headerBar",
-				"layout": {
-					"height": 28.3
-				},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"height": 56.6
+				"height": 44
 			}
 		},
 		{
@@ -128,12 +101,7 @@
 				"height": 60,
 				"image": "icon_check.png",
 				"imageFillType": "ASPECTFIT",
-				"marginBottom": 20,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {}
+				"marginBottom": 20
 			},
 			"className": ".imageView",
 			"props": {
@@ -148,24 +116,14 @@
 				"borderWidth": 0,
 				"image": "icon_check.png",
 				"marginBottom": 20,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
+				"children": [],
 				"name": "imageview1",
 				"parent": "pgPaymentResult",
-				"layout": {
-					"marginBottom": 10,
-					"width": 30,
-					"height": 30,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/icon_check.png?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.21225944067503688"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/icon_check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.6784771884574861"
 			}
 		},
 		{
@@ -200,7 +158,6 @@
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 22,
 					"bold": false,
@@ -211,30 +168,23 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
+				"children": [],
 				"name": "resultText",
-				"parent": "pgPaymentResult",
-				"layout": {
-					"width": 125,
-					"height": 35,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				}
+				"parent": "pgPaymentResult"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "0e298f03",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "e8440217"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"left": 0,
-				"top": 20,
+				"top": null,
 				"width": null,
 				"height": 44,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -251,7 +201,7 @@
 					"alignContent": "STRETCH",
 					"alignItems": "CENTER",
 					"positionType": "ABSOLUTE",
-					"right": 0
+					"right": 5
 				},
 				"flex": {
 					"flexDirection": 2,
@@ -259,10 +209,7 @@
 					"alignContent": 4,
 					"alignItems": 2,
 					"positionType": 0
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -275,7 +222,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"left": 0,
-				"top": 20,
+				"top": null,
 				"paddingLeft": null,
 				"paddingTop": null,
 				"paddingRight": null,
@@ -283,11 +230,6 @@
 				"usePageVariable": true,
 				"marginTop": null,
 				"right": 5,
-				"children": [
-					"leftImage",
-					"headerTitle",
-					"rightContainer"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -297,50 +239,37 @@
 					"flexWrap": "NOWRAP",
 					"flexDirection": "ROW",
 					"positionType": "ABSOLUTE",
-					"right": 0
+					"right": 5
 				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 2,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 2,
-					"positionType": 1,
-					"right": 0
-				},
+				"children": [
+					"leftImage",
+					"headerTitle",
+					"rightContainer"
+				],
 				"name": "customHeaderBar",
-				"parent": "pgPaymentResult",
-				"layout": {
-					"right": 2.5,
-					"left": 0,
-					"top": 10,
-					"height": 22,
-					"borderWidth": 0
-				},
-				"font": {}
+				"parent": "pgPaymentResult"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "1753fdad",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"height": 30,
 				"width": 30,
-				"imageFillType": "NORMAL",
+				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"image": null,
+				"top": 7,
+				"left": 5,
 				"flexProps": {
-					"alignSelf": "AUTO"
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				}
 			},
 			"className": ".imageView",
 			"props": {
@@ -348,39 +277,32 @@
 				"height": 30,
 				"touchEnabled": true,
 				"visible": true,
-				"imageFillType": "NORMAL",
+				"imageFillType": "ASPECTFIT",
 				"backgroundColor": "rgba(0,0,0,0)",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"usePageVariable": true,
 				"image": null,
-				"children": [],
+				"top": 7,
+				"left": 5,
 				"flexProps": {
 					"alignSelf": "AUTO",
-					"positionType": "RELATIVE"
+					"positionType": "ABSOLUTE"
 				},
+				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"layout": {
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 0
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.34693735499955447"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "274c8c4b",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"height": null,
@@ -388,8 +310,9 @@
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"marginRight": 50,
-				"marginLeft": 20,
+				"marginRight": 35,
+				"marginLeft": 35,
+				"text": "Label",
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"
@@ -397,10 +320,7 @@
 				"font": {
 					"bold": true,
 					"size": 18
-				},
-				"layout": {},
-				"flex": {},
-				"defaults": {}
+				}
 			},
 			"className": ".label",
 			"props": {
@@ -417,9 +337,8 @@
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
-				"marginRight": 50,
-				"marginLeft": 20,
-				"children": [],
+				"marginRight": 35,
+				"marginLeft": 35,
 				"font": {
 					"size": 18,
 					"bold": true,
@@ -431,27 +350,18 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "headerTitle",
-				"parent": "customHeaderBar",
-				"layout": {
-					"marginLeft": 10,
-					"marginRight": 25,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignSelf": 4,
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "customHeaderBar"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "830dd5fa",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 30,
@@ -463,14 +373,11 @@
 				"left": null,
 				"top": 7,
 				"visible": true,
+				"paddingTop": null,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"right": 5
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -487,10 +394,7 @@
 				"right": 5,
 				"left": null,
 				"top": 7,
-				"children": [
-					"rightImage",
-					"count"
-				],
+				"paddingTop": null,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -502,34 +406,21 @@
 					"positionType": "ABSOLUTE",
 					"right": 5
 				},
+				"children": [
+					"rightImage",
+					"count"
+				],
 				"name": "rightContainer",
-				"parent": "customHeaderBar",
-				"layout": {
-					"right": 2.5,
-					"top": 3.5,
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 5
-				},
-				"font": {}
+				"parent": "customHeaderBar"
 			}
 		},
 		{
 			"type": "ImageView",
 			"id": "018315a1",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 30,
@@ -560,35 +451,24 @@
 				"borderWidth": 0,
 				"image": null,
 				"usePageVariable": true,
-				"children": [],
 				"flexProps": {
 					"alignSelf": "STRETCH",
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
+				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"layout": {
-					"width": 15,
-					"height": 15,
-					"borderWidth": 0
-				},
-				"flex": {
-					"alignSelf": 4,
-					"positionType": 0,
-					"flexGrow": null
-				},
-				"font": {},
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface4433/sparrow/ui-editor/img/null?os=Android&osVersion=7&density=423&densityRatio=0.3846153846153846&zoomLevel=0.5&brandModel=Nexus%205X&resourceFolderOrder=drawable-xxhdpi%2Cdrawable-xxxhdpi%2Cdrawable-xhdpi%2Cdrawable-hdpi%2Cdrawable-mdpi%2Cdrawable-ldpi%2Cdrawable?random=0.34693735499955447"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "457c1ba4",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": 25,
@@ -634,7 +514,6 @@
 				"top": 0,
 				"bottom": 5,
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 10,
 					"bold": false,
@@ -647,32 +526,19 @@
 					"right": 0,
 					"bottom": 5
 				},
+				"children": [],
 				"name": "count",
-				"parent": "rightContainer",
-				"layout": {
-					"right": 0,
-					"bottom": 2.5,
-					"left": 3.5,
-					"top": 0,
-					"width": 12.5,
-					"height": 12.5,
-					"borderWidth": 0
-				},
-				"flex": {
-					"positionType": 1,
-					"right": 0,
-					"bottom": 5
-				}
+				"parent": "rightContainer"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "61a7ef10",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
 				"id": "be65d4d0"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
@@ -693,10 +559,7 @@
 					"positionType": "ABSOLUTE",
 					"right": 50,
 					"bottom": 30
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -714,9 +577,6 @@
 				"bottom": 30,
 				"right": 50,
 				"usePageVariable": true,
-				"children": [
-					"button1"
-				],
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -729,34 +589,20 @@
 					"right": 50,
 					"bottom": 30
 				},
-				"flex": {
-					"alignContent": 4,
-					"alignItems": 4,
-					"justifyContent": 0,
-					"flexWrap": 0,
-					"flexDirection": 0,
-					"positionType": 1,
-					"right": 50,
-					"bottom": 30
-				},
+				"children": [
+					"button1"
+				],
 				"name": "btnContinueShopping",
-				"parent": "pgPaymentResult",
-				"layout": {
-					"right": 25,
-					"bottom": 15,
-					"left": 25,
-					"height": 22.5
-				},
-				"font": {}
+				"parent": "pgPaymentResult"
 			}
 		},
 		{
 			"type": "Button",
 			"id": "1f85683b",
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"hiddenComponent": false,
 			"themeProps": {},
 			"userProps": {
 				"width": null,
@@ -789,7 +635,6 @@
 				"textAlignment": "MIDCENTER",
 				"borderRadius": 22,
 				"usePageVariable": true,
-				"children": [],
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -801,16 +646,9 @@
 					"alignSelf": "AUTO",
 					"flexGrow": 1
 				},
+				"children": [],
 				"name": "button1",
-				"parent": "btnContinueShopping",
-				"layout": {
-					"borderWidth": 0.5,
-					"borderRadius": 11
-				},
-				"flex": {
-					"positionType": 0,
-					"flexGrow": 1
-				}
+				"parent": "btnContinueShopping"
 			}
 		}
 	]

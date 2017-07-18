@@ -9,7 +9,7 @@
       "justifyContent": "FLEX_START"
     },
     "backgroundColor": { 
-			"startColor": "#9D1B55",
+		  "startColor": "#9D1B55",
 			"endColor": "#D9595B",
 			"direction": "DIAGONAL_LEFT"
 		},

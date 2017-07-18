@@ -5,7 +5,7 @@
             "hashType": "md5",
             "profileKey": "myAppKey-Secret",
             "revision": 1,
-            "channels": ["production", "test"],
+            "channels": ["production"],
             "meta": {
                 "whatIsWritten in data": "as data object in here",
                 "also": "it can be null or missing",

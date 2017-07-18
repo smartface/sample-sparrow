@@ -1,10 +1,11 @@
 {
     "dependencies": {
-        "sf-core": "^1.0.0",
+        "sf-core": "sf-core v1.1.14-beta.0",
         "js-base": "^1.0.0",
         "@smartface/styler": "^1.0.0",
         "sf-extension-shopify": "0.0.2",
         "sf-extension-spriteview": "1.0.1",
-        "sf-plugin-facebook": "1.2.0"
+        "sf-plugin-facebook": "1.2.0",
+        "sf-extension-utils": "^1.1.4"
     }
 }

@@ -15,7 +15,7 @@ const Shopify		 = require("sf-extension-shopify");
 const Product  	     = require('../objects/Category');
 const ItemProductList		= require("../components/ItemProductList");
 const ShoppingCart		= require("../objects/ShoppingCart");
-
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 const Page_ = extend(PageDesign)(
 	function(_super){
@@ -49,7 +49,7 @@ function onShow(parentOnShow,params) {
     initHeaderBar(this.customHeaderBar);
 
     Router.sliderDrawer.enabled = false;
-    
+
     if (params && params.id) {
         Timer.setTimeout({
             delay: 300,
@@ -111,6 +111,5 @@ function initListView(listView, dataHolder) {
     };
     
 }
-
 
 module && (module.exports = Page_);

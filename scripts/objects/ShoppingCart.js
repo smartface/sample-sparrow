@@ -36,12 +36,17 @@ ShoppingCart.updateBasket = function(headerBar)
 {
     if (ShoppingCart.products.length > 0) 
     {
-        if(ShoppingCart.products.length > 10)
+        var count = 0;
+        ShoppingCart.products.forEach(function(product) {
+           count += product.amount; 
+        });
+        
+        if(count > 10)
         {
             headerBar.count.text = "9+";
         }else
         {
-            headerBar.count.text = ShoppingCart.products.length;
+            headerBar.count.text = count;
         }
     }else
     {

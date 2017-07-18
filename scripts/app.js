@@ -15,7 +15,7 @@ const ListView          = require('sf-core/ui/listview');
 const ListViewItem      = require("sf-core/ui/listviewitem");
 const SliderDrawer      = require('sf-core/ui/sliderdrawer');
 const PageConstants     = require('pages/PageConstants');
-const System            = require("sf-core/device/system");
+const Data              = require("sf-core/data");
 const Shopify           = require("sf-extension-shopify");
 const Config            = require("config.js");
 const AlertView         = require('sf-core/ui/alertview');
@@ -34,7 +34,9 @@ Application.onUnhandledError = function(e) {
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
-stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
+if (Data.getStringVariable("theme") === null)
+    Data.setStringVariable("theme", settings.config.theme.currentTheme);
+stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
 
 Shopify.Authentication.setAPIKey(Config.SHOPIFY_APIKey);
 Shopify.Authentication.setPassword(Config.SHOPIFY_PASSWORD);
@@ -49,15 +51,20 @@ Router.add(PageConstants.PAGE_PRODUCT_DETAIL, require("./pages/pgProductDetail")
 Router.add(PageConstants.PAGE_PRODUCT_LIST, require("./pages/pgProductList"));
 Router.add(PageConstants.PAGE_CATEGORIES, require("./pages/pgCategories"));
 Router.add(PageConstants.PAGE_LOGIN, require("./pages/pgLogin"));
+Router.add(PageConstants.PAGE_SETTINGS, require("./pages/pgSettings"));
 Router.go(PageConstants.PAGE_LOGIN);
 
 initSliderDrawer()
+
+// Making workaround due to IOS-2306
+var currentPageTag = PageConstants.PAGE_CATEGORIES;
 
 function initSliderDrawer()
 {
     
     var iconCatalog    = Image.createFromFile("images://icon_catalog.png");
-    var iconcart    = Image.createFromFile("images://cart.png");
+    var iconcart       = Image.createFromFile("images://cart.png");
+    var iconSettings   = Image.createFromFile("images://ic_settings.png");
     
     var myDataSet = [
         { 
@@ -71,7 +78,12 @@ function initSliderDrawer()
             icon: iconcart,
             tag : PageConstants.PAGE_SHOPPING_CART
         }
-        
+        ,
+        { 
+            title: lang["pgSettings.title"], 
+            icon: iconSettings,
+            tag : PageConstants.PAGE_SETTINGS
+        }
     ]
     
     var mainContainer = new FlexLayout();
@@ -145,8 +157,7 @@ function initSliderDrawer()
             
             var rowImage = listViewItem.findChildById(3)
             rowImage.image = myDataSet[index].icon;
-            
-            if(Router.getCurrent() == myDataSet[index].tag)
+            if(currentPageTag == myDataSet[index].tag)
             {
                 listViewItem.alpha = 1;
             }else
@@ -157,7 +168,7 @@ function initSliderDrawer()
             listViewItem.applyLayout();
         },
         onRowSelected: function(listViewItem, index) {
-            if(Router.getCurrent() !== myDataSet[index].tag)
+            if(currentPageTag !== myDataSet[index].tag)
             {
                 try {
                     Router.go(myDataSet[index].tag,{},false);
@@ -166,6 +177,7 @@ function initSliderDrawer()
                     Router.goBack(myDataSet[index].tag, false);
                     sliderDrawer.hide();
                 }
+                currentPageTag = myDataSet[index].tag; 
             }
             listView.refreshData();
             
@@ -233,7 +245,8 @@ function initSliderDrawer()
     sliderDrawer.onLoad = function()
     {
         //Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer_layout", {}));
-        sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#9D1B55"), endColor:Color.create("#D9595B"), direction: Color.GradientDirection.DIAGONAL_LEFT});
+        Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
+        // sliderDrawer.layout.backgroundColor = Color.createGradient({startColor: Color.create("#9D1B55"), endColor:Color.create("#D9595B"), direction: Color.GradientDirection.DIAGONAL_LEFT});
 
         mainContainer.addChild(topContainer);      
         mainContainer.addChild(dividerTop)     

@@ -5,14 +5,14 @@ const PageDesign = require("../ui/ui_pgPaymentResult");
 const Router = require("sf-core/ui/router")
 const PageConstants = require('pages/PageConstants');
 const Image          = require('sf-core/ui/image');
-
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
+const Data    = require('sf-core/data');
+const Notifications = require("sf-core/notifications");
 
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
-		_super(this, {
-		    
-		});
+		_super(this);
 		Router.sliderDrawer.enabled = false;
 		this.resultText.text = lang["pgPaymentResult.accepted"];
 		this.customHeaderBar.headerTitle.text = lang["pgPaymentResult.title"];
@@ -22,7 +22,26 @@ const Page_ = extend(PageDesign)(
 		this.btnContinueShopping.button1.onPress = function(){
 		    Router.go(PageConstants.PAGE_CATEGORIES,undefined,true);
         }
+        
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 });
 
+function onLoad(parentOnShow) {
+    parentOnShow();
+}
+
+function onShow(parentOnLoad) {
+    parentOnLoad();
+    
+	if(Data.getBooleanVariable("isNotificationAllowed") !== false){
+		var notification = new Notifications.LocalNotification();
+		notification.alertAction = lang["pgPaymentResult.notification.alertAction"];
+		notification.alertBody = lang["pgPaymentResult.notification.alertBody"];
+		notification.android.vibrate = true;
+		notification.ios.hasAction = true;
+		notification.present();
+	}
+}
 
 module && (module.exports = Page_);

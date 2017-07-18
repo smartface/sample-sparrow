@@ -21,6 +21,7 @@ const System         = require('sf-core/device/system');
 const Screen         = require('sf-core/device/screen');
 const ShoppingCart   = require("../objects/ShoppingCart");
 const TextAlignment  = require('sf-core/ui/textalignment');
+const StatusBarStyle    = require('sf-core/ui/statusbarstyle');
 
 
 const Page_ = extend(PageDesign)(
@@ -66,7 +67,6 @@ function onShow(parentOnShow,params) {
         this.customHeaderBar.headerTitle.text = params.title;
         this.btnAddToCart.button1.text = lang["pgProductDetail.addToCart"]
     }
-  
 }
 
 function onLoad(parentOnLoad) {
@@ -103,37 +103,39 @@ function initProduct(page,product) {
     page.btnAddToCart.button1.onPress = function() {
         ShoppingCart.addProduct(product);
         resetEffectImage(page)
-        page.effectImage.visible = true;
-        var animationRootView = page.layout;//System.OS === "iOS" ? page.layout : page.image.parent;
-                Animator.animate(animationRootView, 200, function() {
-                    page.effectImage.height = 60;
-                    page.effectImage.top = 40;
-                    page.effectImage.left = Screen.width/2;
+        ShoppingCart.updateBasket(page.customHeaderBar);
+        var animationRootView = page.layout;
+        if (System.OS === "iOS") {
+            Animator.animate(animationRootView, 200, function() {
+                page.customHeaderBar.rightContainer.width = 40;
+                page.customHeaderBar.rightContainer.height = 40;
                 }).then(200, function() {
-                    page.effectImage.height = 30;
-                    page.effectImage.top = 20;
-                    page.effectImage.left = Screen.width;
-                    if (Device.deviceOS === "iOS") 
-                    {
-                        page.effectImage.alpha = 0;
-                    } else {
-                        page.effectImage.visible = false;
-                    }
-                }).then(200, function() {
-                    ShoppingCart.updateBasket(page.customHeaderBar);
-                    if (Device.deviceOS === "iOS") {
-                        Animator.animate(animationRootView, 200, function() {
-                            page.customHeaderBar.rightContainer.width = 40;
-                            page.customHeaderBar.rightContainer.height = 40;
-                            }).then(200, function() {
-                                page.customHeaderBar.rightContainer.width = 30;
-                                page.customHeaderBar.rightContainer.height = 30;
-                            })
-                    }
-                     
-                }).complete(function() {
-                    resetEffectImage(page);
+                    page.customHeaderBar.rightContainer.width = 30;
+                    page.customHeaderBar.rightContainer.height = 30;
                 });
+        }
+        // page.effectImage.visible = true;
+        // var animationRootView = page.layout;//System.OS === "iOS" ? page.layout : page.image.parent;
+        //         Animator.animate(animationRootView, 200, function() {
+        //             page.effectImage.height = 60;
+        //             page.effectImage.top = 40;
+        //             page.effectImage.left = Screen.width/2;
+        //         }).then(200, function() {
+        //             page.effectImage.height = 30;
+        //             page.effectImage.top = 20;
+        //             page.effectImage.left = Screen.width;
+        //             if (Device.deviceOS === "iOS") 
+        //             {
+        //                 page.effectImage.alpha = 0;
+        //             } else {
+        //                 page.effectImage.visible = false;
+        //             }
+        //         }).then(200, function() {
+                    
+                     
+        //         }).complete(function() {
+        //             resetEffectImage(page);
+        //         });
     };
     
 function resetEffectImage(page)   
