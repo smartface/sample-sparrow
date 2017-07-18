@@ -28,18 +28,20 @@ const Page_ = extend(PageDesign)(
 		
 		this.btnCheckout.button1.onPress = function(){
 		    if(ShoppingCart.getTotal() > 0){
+		        this.inputPromoCode.removeFocus();
 		        Router.go(PageConstants.PAGE_SHIPPING,undefined,true);
 		    }
 		    else{
 		        AlertUtil.showAlert(lang["pgShoppingCart.checkout.error"]);
 		    }
-        }
+        }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgShoppingCart.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouch = function()
 		{
+		    this.inputPromoCode.removeFocus();
 			Router.goBack();
-		}
+		}.bind(this);
 		
 		this.btnCheckout.button1.text = lang["pgShoppingCart.checkout"];
 		Router.sliderDrawer.enabled = false;
