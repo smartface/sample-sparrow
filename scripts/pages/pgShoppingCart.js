@@ -10,7 +10,9 @@ const StatusBarStyle        = require('sf-core/ui/statusbarstyle');
 const ActionKeyType         = require('sf-core/ui/actionkeytype');
 const AlertUtil             = require("sf-extension-utils/alert");
 const System                = require("sf-core/device/system");
-const AlertView         = require('sf-core/ui/alertview');
+const Color                 = require("sf-core/ui/color");
+const AlertView             = require('sf-core/ui/alertview');
+const Direction             = require('sf-core/ui/listview/direction');
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -73,6 +75,7 @@ function initListView(page,listView) {
     listView.refreshEnabled = false;
     listView.verticalScrollBarEnabled = false;
     if(ShoppingCart.products.length > 0){
+        listView.ios.rightToLeftSwipeEnabled = true;
         listView.itemCount = ShoppingCart.products.length;
         
         listView.onRowCreate = function() {
@@ -96,26 +99,43 @@ function initListView(page,listView) {
                     ShoppingCart.products[index].amount -= 1;
                     page.refreshList();
                 }
-                else{
-                    var confirmationAlert = new AlertView({
-                		title: lang["alertView.confirmation"],
-                		message: lang["pgShoppingCart.delete"]
-                	});
-                	confirmationAlert.addButton({
-                		text: lang["delete"],
-                		type: AlertView.Android.ButtonType.POSITIVE,
-                		onClick: function() {
-                    		ShoppingCart.products.splice(index,1);
-                    		page.refreshList();
-                		}
-                	});
-                	confirmationAlert.addButton({
-                		text: lang["cancel"],
-                		type: AlertView.Android.ButtonType.NEGATIVE
-                	});
-                	confirmationAlert.show();
-                }
             };
+            if(System.OS === "Android"){
+                const NativeView = requireClass("android.view.View");
+                listViewItem.nativeObject.setOnLongClickListener(NativeView.OnLongClickListener.implement({
+                    onLongClick : function(view){
+                        var confirmationAlert = new AlertView({
+                    		title: lang["alertView.confirmation"],
+                    		message: lang["pgShoppingCart.delete"]
+                    	});
+                    	confirmationAlert.addButton({
+                    		text: lang["delete"],
+                    		type: AlertView.Android.ButtonType.POSITIVE,
+                    		onClick: function() {
+                        		ShoppingCart.products.splice(index,1);
+                        		page.refreshList();
+                    		}
+                    	});
+                    	confirmationAlert.addButton({
+                    		text: lang["cancel"],
+                    		type: AlertView.Android.ButtonType.NEGATIVE
+                    	});
+                    	confirmationAlert.show();
+                        return true; // Returns always true to solve AND-2713 bug.
+                    }
+                }));
+            }
+        };
+        listView.ios.onRowSwiped = function(direction,expansionSettings){
+            if (direction == Direction.RIGHTTOLEFT){
+                expansionSettings.fillOnTrigger = true;  //if true the button fills the cell on trigger, else it bounces back to its initial position
+                expansionSettings.threshold = 1.5;  //Size proportional threshold to trigger the expansion button. Default value 1.5
+                var deleteAction = new listView.ios.swipeItem("Delete",Color.RED,15,function(e) { 
+            		ShoppingCart.products.splice(e.index,1);
+            		page.refreshList();
+                });
+                return [deleteAction];
+            }
         };
     }
 }
