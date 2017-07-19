@@ -1399,7 +1399,7 @@
 				},
 				"children": [
 					"label1",
-					"imageView14"
+					"imageView25"
 				],
 				"name": "itemPicker2",
 				"parent": "pickerContainer"
@@ -1501,7 +1501,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [],
-				"name": "imageView14",
+				"name": "imageView25",
 				"parent": "itemPicker2",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/arrows.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
@@ -1644,15 +1644,16 @@
 				"borderColor": "rgba( 0, 0, 0, 0.1 )",
 				"marginRight": 10,
 				"usePageVariable": true,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flex": {
 					"positionType": 0
 				},
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -1669,6 +1670,10 @@
 				"top": 0,
 				"marginRight": 10,
 				"usePageVariable": true,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1870,15 +1875,16 @@
 				"marginRight": 10,
 				"usePageVariable": true,
 				"visible": false,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flex": {
 					"positionType": 0
 				},
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -1906,11 +1912,15 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout9",
-					"imageView15"
+					"flexLayout17",
+					"imageView26"
 				],
 				"name": "itemSmallThumb2",
-				"parent": "flexlayout6"
+				"parent": "flexlayout6",
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2
 			}
 		},
 		{
@@ -1971,9 +1981,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator11"
+					"activityIndicator35"
 				],
-				"name": "flexLayout9",
+				"name": "flexLayout17",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -2025,8 +2035,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator11",
-				"parent": "flexLayout9"
+				"name": "activityIndicator35",
+				"parent": "flexLayout17"
 			}
 		},
 		{
@@ -2071,7 +2081,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView15",
+				"name": "imageView26",
 				"parent": "itemSmallThumb2"
 			}
 		},
@@ -2096,15 +2106,16 @@
 				"marginRight": 10,
 				"usePageVariable": true,
 				"visible": false,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flex": {
 					"positionType": 0
 				},
 				"flexProps": {
 					"positionType": "RELATIVE"
-				},
-				"layout": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -2132,11 +2143,15 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout10",
-					"imageView16"
+					"flexLayout18",
+					"imageView27"
 				],
 				"name": "itemSmallThumb3",
-				"parent": "flexlayout6"
+				"parent": "flexlayout6",
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2
 			}
 		},
 		{
@@ -2197,9 +2212,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator12"
+					"activityIndicator36"
 				],
-				"name": "flexLayout10",
+				"name": "flexLayout18",
 				"parent": "itemSmallThumb3"
 			}
 		},
@@ -2251,8 +2266,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator12",
-				"parent": "flexLayout10"
+				"name": "activityIndicator36",
+				"parent": "flexLayout18"
 			}
 		},
 		{
@@ -2297,7 +2312,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView16",
+				"name": "imageView27",
 				"parent": "itemSmallThumb3"
 			}
 		},

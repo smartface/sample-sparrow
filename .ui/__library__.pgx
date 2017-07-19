@@ -496,7 +496,10 @@
 				"top": 0.800000011920929,
 				"width": 42,
 				"height": 40,
-				"usePageVariable": true
+				"usePageVariable": true,
+				"paddingLeft": null,
+				"paddingRight": null,
+				"paddingBottom": 10
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -512,6 +515,9 @@
 				"left": -0.800000011920929,
 				"top": 0.800000011920929,
 				"usePageVariable": true,
+				"paddingLeft": null,
+				"paddingRight": null,
+				"paddingBottom": 10,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2189,6 +2195,10 @@
 				"usePageVariable": true,
 				"id": 100,
 				"marginLeft": 5,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flex": {
 					"positionType": 0
 				},
@@ -2223,11 +2233,15 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout8",
-					"imageView12"
+					"flexLayout20",
+					"imageView30"
 				],
 				"name": "productImage",
-				"parent": "itemCart"
+				"parent": "itemCart",
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2
 			}
 		},
 		{
@@ -2288,9 +2302,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator21"
+					"activityIndicator41"
 				],
-				"name": "flexLayout8",
+				"name": "flexLayout20",
 				"parent": "productImage"
 			}
 		},
@@ -2342,8 +2356,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator21",
-				"parent": "flexLayout8"
+				"name": "activityIndicator41",
+				"parent": "flexLayout20"
 			}
 		},
 		{
@@ -2388,7 +2402,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView12",
+				"name": "imageView30",
 				"parent": "productImage"
 			}
 		},
@@ -2459,7 +2473,7 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator22"
+					"activityIndicator42"
 				],
 				"name": "flexlayout8",
 				"parent": "itemCategory"
@@ -2516,7 +2530,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator22",
+				"name": "activityIndicator42",
 				"parent": "flexlayout8"
 			}
 		},
@@ -2581,7 +2595,7 @@
 					"positionType": "ABSOLUTE"
 				},
 				"children": [
-					"activityIndicator23"
+					"activityIndicator43"
 				],
 				"name": "loader",
 				"parent": "thmbContainer"
@@ -2638,7 +2652,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator23",
+				"name": "activityIndicator43",
 				"parent": "loader"
 			}
 		},
