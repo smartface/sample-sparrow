@@ -260,7 +260,7 @@
 				"usePageVariable": true,
 				"minHeight": 31,
 				"minWidth": 51,
-				"width": 61,
+				"width": null,
 				"input": {
 					"height": 31,
 					"width": 51
@@ -271,7 +271,7 @@
 			},
 			"className": ".switch",
 			"props": {
-				"width": 61,
+				"width": null,
 				"touchEnabled": true,
 				"toggle": false,
 				"thumbOnColor": "#9D1B55",
@@ -408,7 +408,7 @@
 				"height": null,
 				"minHeight": 31,
 				"minWidth": 51,
-				"width": 61,
+				"width": null,
 				"input": {
 					"height": 31,
 					"width": 51
@@ -419,7 +419,7 @@
 			},
 			"className": ".switch",
 			"props": {
-				"width": 61,
+				"width": null,
 				"touchEnabled": true,
 				"toggle": false,
 				"thumbOnColor": "#9D1B55",

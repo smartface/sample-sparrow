@@ -31,12 +31,12 @@ const Page_ = extend(PageDesign)(
 
 function initHeaderBar(headerBar) {
 	headerBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
-	headerBar.leftImage.onTouch = function()
+	headerBar.leftImage.onTouchEnded = function()
 	{
 		Router.goBack();
 	}
 	headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
-	headerBar.rightContainer.onTouch = function()
+	headerBar.rightContainer.onTouchEnded = function()
 	{
 		Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
 	}

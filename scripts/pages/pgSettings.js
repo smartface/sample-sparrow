@@ -26,7 +26,7 @@ const PgSettings = extend(PgSettingsDesign)(
 		
 		this.customHeaderBar.headerTitle.text = lang["pgSettings.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
-		this.customHeaderBar.leftImage.onTouch = function()
+		this.customHeaderBar.leftImage.onTouchEnded = function()
 		{
 			Router.goBack();
 		}

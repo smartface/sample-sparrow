@@ -70,7 +70,7 @@ function onLoad(parentOnLoad) {
 
 function initHeaderBar(headerBar) {
 	headerBar.leftImage.image = Image.createFromFile("images://icon_menu.png");
-	headerBar.leftImage.onTouch = function()
+	headerBar.leftImage.onTouchEnded = function()
 	{
 	    if(Router.sliderDrawer.state === SliderDrawer.State.OPEN){
 	        		Router.sliderDrawer.hide();
@@ -81,7 +81,7 @@ function initHeaderBar(headerBar) {
 	    }
 	}
 	headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
-	headerBar.rightContainer.onTouch = function()
+	headerBar.rightContainer.onTouchEnded = function()
 	{
 		Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
 	}
