@@ -39,7 +39,7 @@ const Page_ = extend(PageDesign)(
         }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgShoppingCart.title"]
         this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
-		this.customHeaderBar.leftImage.onTouch = function()
+		this.customHeaderBar.leftImage.onTouchEnded = function()
 		{
 		    this.inputPromoCode.removeFocus();
 			Router.goBack();
