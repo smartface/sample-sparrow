@@ -3,6 +3,7 @@
 		{
 			"type": "Page",
 			"id": "98ca17e5",
+			"initialized": true,
 			"themeProps": {
 				"Page": "Default"
 			},
@@ -14,7 +15,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.2-rc.3",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -49,8 +50,7 @@
 				"parent": null,
 				"width": 187.5,
 				"height": 333.5
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
@@ -499,7 +499,8 @@
 				"usePageVariable": true,
 				"paddingLeft": null,
 				"paddingRight": null,
-				"paddingBottom": 10
+				"paddingBottom": 10,
+				"id": 300
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
@@ -533,7 +534,8 @@
 					"imageSmall"
 				],
 				"name": "itemSmallThumb",
-				"parent": "__library__"
+				"parent": "__library__",
+				"id": 300
 			}
 		},
 		{
@@ -555,17 +557,14 @@
 				"top": 0,
 				"bottom": 0,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"id": 302,
 				"flexProps": {
 					"positionType": "ABSOLUTE",
 					"alignItems": "CENTER",
 					"justifyContent": "CENTER",
 					"right": 0,
 					"bottom": 0
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -597,7 +596,8 @@
 					"activityindicator2"
 				],
 				"name": "flexlayout1",
-				"parent": "itemSmallThumb"
+				"parent": "itemSmallThumb",
+				"id": 302
 			}
 		},
 		{
@@ -615,11 +615,7 @@
 				"height": 20,
 				"minWidth": 21,
 				"minHeight": 21,
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"flexProps": {},
-				"defaults": {},
+				"id": 400,
 				"input": {
 					"height": 21,
 					"width": 21
@@ -648,7 +644,8 @@
 				},
 				"children": [],
 				"name": "activityindicator2",
-				"parent": "flexlayout1"
+				"parent": "flexlayout1",
+				"id": 400
 			}
 		},
 		{
@@ -667,13 +664,10 @@
 				"imageFillType": "ASPECTFIT",
 				"usePageVariable": true,
 				"visible": true,
+				"id": 301,
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".imageView",
 			"props": {
@@ -694,7 +688,8 @@
 				},
 				"children": [],
 				"name": "imageSmall",
-				"parent": "itemSmallThumb"
+				"parent": "itemSmallThumb",
+				"id": 301
 			}
 		},
 		{
@@ -2222,6 +2217,10 @@
 				"usePageVariable": true,
 				"id": 100,
 				"marginLeft": 5,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingBottom": 2,
+				"paddingTop": 2,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -2233,15 +2232,11 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"flexLayout20",
-					"imageView30"
+					"flexLayout1",
+					"imageView1"
 				],
 				"name": "productImage",
-				"parent": "itemCart",
-				"paddingLeft": 2,
-				"paddingRight": 2,
-				"paddingBottom": 2,
-				"paddingTop": 2
+				"parent": "itemCart"
 			}
 		},
 		{
@@ -2302,9 +2297,9 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator41"
+					"activityIndicator3"
 				],
-				"name": "flexLayout20",
+				"name": "flexLayout1",
 				"parent": "productImage"
 			}
 		},
@@ -2356,8 +2351,8 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator41",
-				"parent": "flexLayout20"
+				"name": "activityIndicator3",
+				"parent": "flexLayout1"
 			}
 		},
 		{
@@ -2402,7 +2397,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "imageView30",
+				"name": "imageView1",
 				"parent": "productImage"
 			}
 		},
@@ -2473,7 +2468,7 @@
 					"bottom": 0
 				},
 				"children": [
-					"activityIndicator42"
+					"activityIndicator4"
 				],
 				"name": "flexlayout8",
 				"parent": "itemCategory"
@@ -2530,7 +2525,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator42",
+				"name": "activityIndicator4",
 				"parent": "flexlayout8"
 			}
 		},
@@ -2595,7 +2590,7 @@
 					"positionType": "ABSOLUTE"
 				},
 				"children": [
-					"activityIndicator43"
+					"activityIndicator5"
 				],
 				"name": "loader",
 				"parent": "thmbContainer"
@@ -2652,7 +2647,7 @@
 					"width": 21
 				},
 				"children": [],
-				"name": "activityIndicator43",
+				"name": "activityIndicator5",
 				"parent": "loader"
 			}
 		},
