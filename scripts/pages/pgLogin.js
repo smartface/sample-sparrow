@@ -23,23 +23,24 @@ const FingerPrintLib    = require("sf-extension-utils/fingerprint");
 const RauLib            = require("sf-extension-utils/rau");
 const Data              = require("sf-core/data");
 
-
+var parentOnShow;
+var parentOnLoad;
 const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super){
 		_super(this);
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+		parentOnShow = this.onShow.bind(this);
+		parentOnLoad = this.onLoad.bind(this);
+		this.onShow = onShow.bind(this);
+		this.onLoad = onLoad.bind(this);
 		setBackgroundSprite.call(this, this.spriteLayout);
 });
 
-function onShow(parentOnShow) {
+function onShow(parameters) {
     parentOnShow();
-    Router.sliderDrawer.enabled = false;
     
     initTextFields.call(this);
     
-
     this.bottomlayout.findChildById(100).visible = false;//loading image
 
     this.birdSprite.play(3000);
@@ -48,12 +49,19 @@ function onShow(parentOnShow) {
     this.headerBar.visible = false;
     this.statusBar.visible = false;
     
-
     checkInternet();
     RauLib.checkUpdate();
+    
+    if(Data.getBooleanVariable('isNotFirstLogin') && FingerPrintLib.isFingerprintAvailable && !FingerPrintLib.isUserRejectedFingerprint && !parameters){
+        // this.txtAboutVersion.visible = false;
+    	var myTimer = Timer.setTimeout({
+            task: login(this),
+            delay: 500 
+        });
+    }
 }
 
-function onLoad(parentOnLoad) {
+function onLoad() {
     parentOnLoad();
     this.btnSignIn.button1.text = lang["pgLogin.signin"];
     this.btnSignIn.alpha = 0;
@@ -111,14 +119,6 @@ function initTextFields(){
     
     if(Data.getStringVariable("userName")){
         this.emailTextBox.text = Data.getStringVariable("userName");
-    }
-    
-    if(Data.getBooleanVariable('isNotFirstLogin') && FingerPrintLib.isFingerprintAvailable && !FingerPrintLib.isUserRejectedFingerprint){
-        // this.txtAboutVersion.visible = false;
-    	var myTimer = Timer.setTimeout({
-            task: login(this),
-            delay: 500 
-        });
     }
 }
 

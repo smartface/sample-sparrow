@@ -213,7 +213,8 @@ function initSliderDrawer()
             index: AlertView.ButtonType.POSITIVE,
             text: lang["ok"],
             onClick: function() {
-                Router.goBack(PageConstants.PAGE_LOGIN);
+                // Wait until fixed COR-1506
+                Router.goBack(PageConstants.PAGE_LOGIN, {isSignOut: true}, true);
                 Router.sliderDrawer.hide();
                 
                 if (global.facebookEnabled) {
