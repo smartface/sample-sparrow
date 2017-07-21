@@ -41,7 +41,7 @@ ShoppingCart.updateBasket = function(headerBar)
            count += product.amount; 
         });
         
-        if(count > 10)
+        if(count > 9)
         {
             headerBar.count.text = "9+";
         }else
