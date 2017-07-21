@@ -3,7 +3,7 @@
         "name": "M-Commerce",
         "company": "Smartface User",
         "webSite": "https://www.smartface.io",
-        "version": "2.1.12",
+        "version": "2.1.19",
         "runtimeVersion": "1100",
         "description": "This is Smartface's default empty project. You can click to Run on Device button to see it on your device."
     },
@@ -68,7 +68,7 @@
                         "active": true
                     }
                 },
-                "playerPath": null
+                "playerPath": "players/iOS/player-6.4.0-beta.120.zip"
             },
             "android": {
                 "scripts": "scripts",

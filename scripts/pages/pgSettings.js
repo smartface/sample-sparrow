@@ -76,10 +76,6 @@ const PgSettings = extend(PgSettingsDesign)(
 		    changeTheme("Defaults");
 		};
 		
-		this.txtAboutDesc.onTouchEnded = function(){
-			Application.restart();
-		}
-		
 		this.txtAboutVersion.onTouchEnded = function(){
 			if(isNewUpdateAvailable){
 				RauLib.checkUpdate({
