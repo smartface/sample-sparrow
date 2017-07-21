@@ -20,7 +20,7 @@ const Config            = require("../config.js");
 const PageDesign        = require("../ui/ui_pgLogin");
 const AlertUtil         = require("sf-extension-utils/alert");
 const FingerPrintLib    = require("sf-extension-utils/fingerprint");
-const RauLib    = require("sf-extension-utils/rau");
+const RauLib            = require("sf-extension-utils/rau");
 const Data              = require("sf-core/data");
 
 
@@ -36,21 +36,9 @@ const Page_ = extend(PageDesign)(
 function onShow(parentOnShow) {
     parentOnShow();
     Router.sliderDrawer.enabled = false;
-    this.emailTextBox.hint = lang["pgLogin.username"];
-    this.emailTextBox.actionKeyType = ActionKeyType.NEXT;
-    this.emailTextBox.onActionButtonPress = function(e) {
-        this.passwordTextBox.requestFocus();
-    }.bind(this);
-    this.passwordTextBox.hint = lang["pgLogin.password"];
-    this.passwordTextBox.actionKeyType = ActionKeyType.GO;
-    this.passwordTextBox.onActionButtonPress = function(e) {
-        this.passwordTextBox.removeFocus();
-        login(this);
-    }.bind(this);
-    this.emailTextBox.ios.clearButtonEnabled = true; 
-    this.passwordTextBox.ios.clearButtonEnabled = true;
-    this.emailTextBox.text = ""; 
-    this.passwordTextBox.text = ""; 
+    
+    initTextFields.call(this);
+    
 
     this.bottomlayout.findChildById(100).visible = false;//loading image
 
@@ -101,6 +89,37 @@ function onLoad(parentOnLoad) {
 	    this.emailTextBox.text = "anthony.bell@smartcompany.email";
         this.passwordTextBox.text = "123456";
 	}.bind(this);
+}
+
+function initTextFields(){
+    this.emailTextBox.hint = lang["pgLogin.username"];
+    this.emailTextBox.actionKeyType = ActionKeyType.NEXT;
+    this.emailTextBox.onActionButtonPress = function(e) {
+        this.passwordTextBox.requestFocus();
+    }.bind(this);
+    
+    this.passwordTextBox.hint = lang["pgLogin.password"];
+    this.passwordTextBox.actionKeyType = ActionKeyType.GO;
+    this.passwordTextBox.onActionButtonPress = function(e) {
+        this.passwordTextBox.removeFocus();
+        login(this);
+    }.bind(this);
+    this.emailTextBox.ios.clearButtonEnabled = true; 
+    this.passwordTextBox.ios.clearButtonEnabled = true;
+    this.emailTextBox.text = ""; 
+    this.passwordTextBox.text = ""; 
+    
+    if(Data.getStringVariable("userName")){
+        this.emailTextBox.text = Data.getStringVariable("userName");
+    }
+    
+    if(Data.getBooleanVariable('isNotFirstLogin') && FingerPrintLib.isFingerprintAvailable && !FingerPrintLib.isUserRejectedFingerprint){
+        // this.txtAboutVersion.visible = false;
+    	var myTimer = Timer.setTimeout({
+            task: login(this),
+            delay: 500 
+        });
+    }
 }
 
 function setBackgroundSprite(spriteLayout) {
@@ -207,8 +226,14 @@ function login(page) {
 
 function loading(page) {
     page.btnSignIn.button1.text = "";
-    //uiComponents.facebookButton.text = "";
-    Data.setBooleanVariable('isNotFirstLogin', true);
+
+    if(!Data.getBooleanVariable('isNotFirstLogin')){
+        Data.setStringVariable("userName", page.emailTextBox.text);
+    	Data.setStringVariable("password", page.passwordTextBox.text);
+        Data.setBooleanVariable('isUserAuthenticated', true);
+        Data.setBooleanVariable('isNotFirstLogin', true);
+    }
+
     var layout;
     if (System.OS == 'Android') {
         layout = page.bottomLayout;
