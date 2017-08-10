@@ -15,7 +15,8 @@
 		"Switch": ".switch",
 		"TextBox": ".textBox",
 		"VideoView": ".videoView",
-		"WebView": ".webView"
+		"WebView": ".webView",
+		"ScrollView": ".scrollView"
 	},
 	"Components": {
 		"ActivityIndicator": {
@@ -76,7 +77,7 @@
 			"Types": {
 				"PickerSelected": ".label-picker.selected",
 				"PickerNormal": ".label-picker.normal",
-				"CategoryItem" : ".label-categoryItem"
+				"CategoryItem": ".label-categoryItem"
 			}
 		},
 		"ListView": {
@@ -152,6 +153,14 @@
 				"Small": ".webView-small",
 				"Medium": ".webView-medium",
 				"Large": ".webView-large"
+			}
+		},
+		"ScrollView": {
+			"Sizes": {
+				"Default": ".scrollView",
+				"Small": ".scrollView-small",
+				"Medium": ".scrollView-medium",
+				"Large": ".scrollView-large"
 			}
 		}
 	}

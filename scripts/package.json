@@ -1,11 +1,13 @@
 {
-    "dependencies": {
-        "sf-core": "sf-core v1.1.15-beta.3",
-        "js-base": "^1.0.0",
-        "@smartface/styler": "^1.0.0",
-        "sf-extension-shopify": "0.0.2",
-        "sf-extension-spriteview": "1.0.1",
-        "sf-plugin-facebook": "1.2.0",
-        "sf-extension-utils": "^1.0.0"
-    }
+  "dependencies": {
+    "@smartface/styler": "^1.0.0",
+    "creditcardutils": "^1.0.0",
+    "google-libphonenumber": "^3.0.0",
+    "js-base": "^1.0.0",
+    "sf-core": "^1.1.15-beta.7",
+    "sf-extension-shopify": "0.0.2",
+    "sf-extension-spriteview": "1.0.1",
+    "sf-extension-utils": "^1.0.0",
+    "sf-plugin-facebook": "1.2.0"
+  }
 }

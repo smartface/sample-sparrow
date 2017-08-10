@@ -3,7 +3,10 @@
 		{
 			"type": "Page",
 			"id": "422c270e",
-			"themeProps": {},
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
 			"userProps": {
 				"layout": {},
 				"flex": {},
@@ -12,7 +15,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.1",
+			"version": "6.4.3",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -24,8 +27,8 @@
 					"justifyContent": "FLEX_START"
 				},
 				"backgroundColor": {
-					"startColor": "#006E60",
-					"endColor": "#08AF5A",
+					"startColor": "#9D1B55",
+					"endColor": "#D9595B",
 					"direction": "DIAGONAL_LEFT"
 				},
 				"children": [
@@ -41,32 +44,35 @@
 				"name": "pgPayment",
 				"width": 187.5,
 				"height": 333.5
-			},
-			"initialized": true
+			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "cd93ba59",
-			"themeProps": {},
+			"themeProps": {
+				"StatusBar": "Default"
+			},
 			"userProps": {
 				"style": "LIGHTCONTENT"
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "#006E60",
+				"color": "#9D1B55",
 				"visible": true,
+				"style": "LIGHTCONTENT",
 				"children": [],
 				"parent": "pgPayment",
 				"isRemovable": false,
 				"name": "statusBar",
-				"style": "LIGHTCONTENT",
 				"height": 20
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "9d49305c",
-			"themeProps": {},
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
 			"userProps": {
 				"title": "newPage002",
 				"visible": false,
@@ -92,7 +98,9 @@
 		{
 			"type": "ImageView",
 			"id": "653469eb",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"imageFillType": "ASPECTFIT",
 				"image": "steps3.png",
@@ -123,14 +131,15 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "pgPayment",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.2771755712969617"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7351369565870884"
 			}
 		},
 		{
 			"type": "Label",
 			"id": "87740b5b",
 			"themeProps": {
-				"Sizes": "Large"
+				"Sizes": "Large",
+				"Types": "Default"
 			},
 			"userProps": {
 				"width": null,
@@ -191,7 +200,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "1caf9288",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -299,7 +311,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "192ebfe9",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -498,7 +513,10 @@
 				"page": "__library__",
 				"id": "e8440217"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": null,
 				"top": null,
@@ -566,7 +584,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"height": 30,
 				"width": 30,
@@ -602,7 +622,7 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "customHeaderBar",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -612,7 +632,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"height": null,
 				"width": null,
@@ -671,7 +694,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -730,7 +756,9 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": 30,
 				"height": 30,
@@ -768,7 +796,7 @@
 				"children": [],
 				"name": "rightImage",
 				"parent": "rightContainer",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -778,7 +806,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": 25,
 				"height": 25,
@@ -848,7 +879,10 @@
 				"page": "__library__",
 				"id": "be65d4d0"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 0,
@@ -910,7 +944,10 @@
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -966,7 +1003,10 @@
 				"page": "__library__",
 				"id": "0da4e426"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"alpha": 0.1,
@@ -1019,7 +1059,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -1075,7 +1118,10 @@
 				"page": "__library__",
 				"id": "8e9568d2"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
