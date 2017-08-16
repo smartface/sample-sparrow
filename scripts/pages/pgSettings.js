@@ -35,7 +35,7 @@ const PgSettings = extend(PgSettingsDesign)(
 		this.txtAbout.text = lang["pgSettings.about"] + " v" + Application.version;
 		this.txtAboutDesc.text = lang["pgSettings.aboutDesc"];
 
-		this.switchNotification.toggle = Data.getBooleanVariable("isNotificationAllowed") !== false;
+		this.switchNotification.toggle = Data.getBooleanVariable("isNotificationAllowed");
 
 		if (!System.isFingerprintAvailable) {
 			// this.switchFingerprint.enabled = false;

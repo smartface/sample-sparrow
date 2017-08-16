@@ -3,7 +3,10 @@
 		{
 			"type": "Page",
 			"id": "2b77-70a1-891c-0d4f",
-			"themeProps": {},
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"layout": {},
@@ -15,8 +18,8 @@
 			"className": ".page",
 			"version": "6.4.5",
 			"props": {
-				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"orientation": "PORTRAIT",
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
 				"flexProps": {
 					"alignContent": "STRETCH",
 					"alignItems": "STRETCH",
@@ -32,15 +35,16 @@
 				],
 				"parent": null,
 				"name": "pgLogin",
-				"width": 187.5,
-				"height": 333.5
-			},
-			"initialized": true
+				"width": 131.25,
+				"height": 233.45
+			}
 		},
 		{
 			"type": "StatusBar",
 			"id": "cc0b-41c5-7ff1-b770",
-			"themeProps": {},
+			"themeProps": {
+				"StatusBar": "Default"
+			},
 			"userProps": {
 				"layout": {},
 				"flex": {},
@@ -50,19 +54,20 @@
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "#00A1F1",
+				"color": "#9D1B55",
 				"visible": true,
 				"children": [],
 				"parent": "2b77-70a1-891c-0d4f",
 				"isRemovable": false,
-				"name": "statusBar",
-				"height": 20
+				"name": "statusBar"
 			}
 		},
 		{
 			"type": "HeaderBar",
 			"id": "28ba-f59b-db80-2c58",
-			"themeProps": {},
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
 			"userProps": {
 				"title": "newPage001",
 				"visible": false,
@@ -76,20 +81,22 @@
 			"className": ".headerBar",
 			"props": {
 				"title": "newPage001",
-				"titleColor": "#000000",
+				"titleColor": "#FFFFFF",
 				"visible": false,
 				"backgroundColor": "rgba( 157, 27, 85, 0 )",
 				"children": [],
 				"parent": "2b77-70a1-891c-0d4f",
 				"isRemovable": false,
-				"name": "headerBar",
-				"height": 44
+				"name": "headerBar"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "7298-965e-b434-67ee",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": null,
@@ -134,7 +141,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "cc94-5aeb-b2f5-fcdd",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 0,
@@ -190,18 +200,18 @@
 			"type": "FlexLayout",
 			"id": "5a55-0784-21b9-0d48",
 			"hiddenComponent": false,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"width": null,
 				"height": null,
+				"usePageVariable": true,
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -213,6 +223,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -236,7 +247,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "53aa-4070-df97-7a45",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -282,7 +296,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "cc82-5b01-6f86-273d",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": 150,
@@ -332,7 +349,10 @@
 		{
 			"type": "FlexLayout",
 			"id": "f44d-4712-2aaa-43f0",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -379,7 +399,9 @@
 		{
 			"type": "ImageView",
 			"id": "757f-1266-63b1-6e81",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"height": 150,
 				"image": "sparrow_logo.png",
@@ -399,6 +421,7 @@
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
 				"image": "sparrow_logo.png",
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -406,14 +429,16 @@
 				"children": [],
 				"name": "imageviewLogo",
 				"parent": "53aa-4070-df97-7a45",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.23470398582379004",
-				"usePageVariable": true
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/sparrow_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207?random=0.15567135837603074"
 			}
 		},
 		{
 			"type": "FlexLayout",
 			"id": "5bb3-6e56-fc27-4e1e",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 10,
 				"top": 10,
@@ -474,7 +499,9 @@
 		{
 			"type": "TextBox",
 			"id": "c13d-b1cf-7616-20fe",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -482,13 +509,10 @@
 				"marginRight": 20,
 				"text": "",
 				"usePageVariable": true,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".textBox",
 			"props": {
@@ -497,11 +521,11 @@
 				"touchEnabled": true,
 				"text": "",
 				"visible": true,
-				"backgroundColor": "#FFFFFF",
+				"backgroundColor": "#00FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDLEFT",
 				"marginLeft": 20,
 				"marginRight": 20,
@@ -525,7 +549,9 @@
 		{
 			"type": "TextBox",
 			"id": "eb94-494e-658d-2cb5",
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -534,13 +560,10 @@
 				"text": "",
 				"isPassword": true,
 				"usePageVariable": true,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				}
 			},
 			"className": ".textBox",
 			"props": {
@@ -549,11 +572,11 @@
 				"touchEnabled": true,
 				"text": "",
 				"visible": true,
-				"backgroundColor": "#FFFFFF",
+				"backgroundColor": "#00FFFFFF",
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDLEFT",
 				"marginLeft": 20,
 				"marginRight": 20,
@@ -579,7 +602,9 @@
 			"type": "ImageView",
 			"id": "3f89-0ce4-dd2d-dff5",
 			"hiddenComponent": true,
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default"
+			},
 			"userProps": {
 				"imageFillType": "ASPECTFIT",
 				"left": 0,
@@ -631,7 +656,10 @@
 				"page": "__library__",
 				"id": "bda3-39fd-b88c-a98f"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"left": 0,
 				"top": 0,
@@ -687,7 +715,10 @@
 				"page": "__library__",
 				"id": "4d2b-34c6-83c6-cdc1"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"left": 0,
@@ -734,7 +765,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"c84d-3b2d-cdf5-1c16"
+					"9a6e-2944-5ff8-a136"
 				],
 				"name": "btnSignIn",
 				"parent": "f44d-4712-2aaa-43f0"
@@ -742,12 +773,15 @@
 		},
 		{
 			"type": "Button",
-			"id": "c84d-3b2d-cdf5-1c16",
+			"id": "9a6e-2944-5ff8-a136",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
-			"themeProps": {},
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
 			"userProps": {
 				"width": null,
 				"height": null,
@@ -791,7 +825,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "button1",
+				"name": "inenrButton",
 				"parent": "3469-2986-1aac-2d86"
 			}
 		}

@@ -27,10 +27,12 @@ const Page_ = extend(PageDesign)(
             this.inputPromoCode.text = this.inputPromoCode.text.toLocaleUpperCase();
         }.bind(this);
 
-        this.btnCheckout.button1.onPress = function() {
+        this.btnCheckout.inenrButton.onPress = function() {
             if (ShoppingCart.getTotal() > 0) {
                 this.inputPromoCode.removeFocus();
-                Router.go(PageConstants.PAGE_SHIPPING, undefined, true);
+                Router.go(PageConstants.PAGE_SHIPPING, {
+                    fillLocation: true
+                }, true);
             }
             else {
                 alert(lang["pgShoppingCart.checkout.error"]);
@@ -43,7 +45,7 @@ const Page_ = extend(PageDesign)(
             Router.goBack();
         }.bind(this);
 
-        this.btnCheckout.button1.text = lang["pgShoppingCart.checkout"];
+        this.btnCheckout.inenrButton.text = lang["pgShoppingCart.checkout"];
         Router.sliderDrawer.enabled = false;
 
         this.onShow = onShow.bind(this, this.onShow.bind(this));
@@ -128,7 +130,7 @@ function initListView(page, listView) {
             if (direction == Direction.RIGHTTOLEFT) {
                 expansionSettings.fillOnTrigger = true; //if true the button fills the cell on trigger, else it bounces back to its initial position
                 expansionSettings.threshold = 1.5; //Size proportional threshold to trigger the expansion button. Default value 1.5
-                var deleteAction = new listView.ios.swipeItem("Delete", Color.RED, 15, function(e) {
+                var deleteAction = new listView.ios.swipeItem(lang.delete, Color.RED, 15, function(e) {
                     ShoppingCart.products.splice(e.index, 1);
                     page.refreshList();
                 });
@@ -146,7 +148,7 @@ function changeLookByCartCount(page) {
     else {
         hideElement(page.layoutListView);
         showElement(page.layoutLabel);
-        page.labelEmpty.text = "Your Shopping Cart is Empty";
+        page.labelEmpty.text = lang["pgShoppingCart.empty"];
     }
 }
 

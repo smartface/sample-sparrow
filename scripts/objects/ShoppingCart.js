@@ -4,12 +4,13 @@ ShoppingCart.products = [];
 ShoppingCart.addProduct = function(product) {
     var storedProduct = ShoppingCart.products.reduce(
         function(acc, element, index, array) {
-            return (element.id === product.id)? element : acc;
+            return (element.id === product.id) ? element : acc;
         }, null);
-    
+
     if (storedProduct) {
         storedProduct.amount += 1;
-    } else {
+    }
+    else {
         ShoppingCart.products.push({
             id: product.id,
             title: product.title,
@@ -22,36 +23,33 @@ ShoppingCart.addProduct = function(product) {
 
 ShoppingCart.getTotal = function() {
     var total = 0;
-    ShoppingCart.products.forEach(function(product){
+    ShoppingCart.products.forEach(function(product) {
         total += (product.unit_price * product.amount);
     });
     return total;
-}
+};
 
 ShoppingCart.clearProducts = function() {
     ShoppingCart.products = [];
 };
 
-ShoppingCart.updateBasket = function(headerBar)
-{
-    if (ShoppingCart.products.length > 0) 
-    {
+ShoppingCart.updateBasket = function(headerBar) {
+    if (ShoppingCart.products.length > 0) {
         var count = 0;
         ShoppingCart.products.forEach(function(product) {
-           count += product.amount; 
+            count += product.amount;
         });
-        
-        if(count > 9)
-        {
+
+        if (count > 9) {
             headerBar.count.text = "9+";
-        }else
-        {
+        }
+        else {
             headerBar.count.text = count;
         }
-    }else
-    {
-        headerBar.count.text = ""
     }
-}
+    else {
+        headerBar.count.text = "";
+    }
+};
 
-module.exports = ShoppingCart;
+module.exports = exports = ShoppingCart;

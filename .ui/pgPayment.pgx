@@ -42,8 +42,8 @@
 				],
 				"parent": null,
 				"name": "pgPayment",
-				"width": 187.5,
-				"height": 333.5
+				"width": 131.25,
+				"height": 233.45
 			}
 		},
 		{
@@ -63,8 +63,7 @@
 				"children": [],
 				"parent": "ba4c-4892-13e8-d143",
 				"isRemovable": false,
-				"name": "statusBar",
-				"height": 20
+				"name": "statusBar"
 			}
 		},
 		{
@@ -91,8 +90,7 @@
 				"children": [],
 				"parent": "ba4c-4892-13e8-d143",
 				"isRemovable": false,
-				"name": "headerBar",
-				"height": 44
+				"name": "headerBar"
 			}
 		},
 		{
@@ -131,7 +129,7 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "ba4c-4892-13e8-d143",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.7351369565870884"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -248,7 +246,7 @@
 					"flexGrow": 1
 				},
 				"children": [
-					"8a8f-6098-da20-390a",
+					"f9d2-28f6-e46c-ee70",
 					"0191-35bd-cb87-ca94",
 					"faeb-740c-b714-c369",
 					"8384-f4d7-2516-703c",
@@ -256,56 +254,6 @@
 				],
 				"name": "flexlayout1",
 				"parent": "ba4c-4892-13e8-d143"
-			}
-		},
-		{
-			"type": "TextBox",
-			"id": "8a8f-6098-da20-390a",
-			"themeProps": {
-				"Sizes": "Centered"
-			},
-			"userProps": {
-				"width": null,
-				"height": null,
-				"textAlignment": "MIDCENTER",
-				"text": "",
-				"usePageVariable": true,
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
-			},
-			"className": ".textBox .textBox-centered",
-			"props": {
-				"height": null,
-				"width": null,
-				"touchEnabled": true,
-				"text": "",
-				"visible": true,
-				"backgroundColor": "#00FFFFFF",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
-				"textAlignment": "MIDCENTER",
-				"usePageVariable": true,
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Arial"
-				},
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"positionType": "RELATIVE",
-					"flexGrow": 1
-				},
-				"children": [],
-				"name": "cardNumber",
-				"parent": "bd4a-9f5a-92fa-a0d3"
 			}
 		},
 		{
@@ -371,10 +319,9 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				"font": {
+					"size": 18
+				}
 			},
 			"className": ".textBox .textBox-centered",
 			"props": {
@@ -391,7 +338,7 @@
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 16,
+					"size": 18,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -420,10 +367,9 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				"font": {
+					"size": 18
+				}
 			},
 			"className": ".textBox .textBox-centered",
 			"props": {
@@ -440,7 +386,7 @@
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 16,
+					"size": 18,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -470,10 +416,9 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"layout": {},
-				"flex": {},
-				"font": {},
-				"defaults": {}
+				"font": {
+					"size": 18
+				}
 			},
 			"className": ".textBox .textBox-centered",
 			"props": {
@@ -490,7 +435,7 @@
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 16,
+					"size": 18,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -503,6 +448,142 @@
 				"children": [],
 				"name": "nameOnCard",
 				"parent": "bd4a-9f5a-92fa-a0d3"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "f9d2-28f6-e46c-ee70",
+			"themeProps": {
+				"Sizes": "Default",
+				"Types": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "flCreditCard",
+				"parent": "bd4a-9f5a-92fa-a0d3",
+				"children": [
+					"cf2c-67c4-1882-952f",
+					"30d9-7afa-57d0-af56"
+				]
+			}
+		},
+		{
+			"type": "TextBox",
+			"id": "30d9-7afa-57d0-af56",
+			"themeProps": {
+				"Sizes": "Centered"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"textAlignment": "MIDCENTER",
+				"text": "",
+				"usePageVariable": true,
+				"left": null,
+				"top": null,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 18
+				}
+			},
+			"className": ".textBox .textBox-centered",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"text": "",
+				"visible": true,
+				"backgroundColor": "#00FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba(0,0,0,1)",
+				"textAlignment": "MIDCENTER",
+				"usePageVariable": true,
+				"left": null,
+				"top": null,
+				"font": {
+					"size": 18,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"children": [],
+				"name": "cardNumber",
+				"parent": "f9d2-28f6-e46c-ee70"
+			}
+		},
+		{
+			"type": "ImageView",
+			"id": "cf2c-67c4-1882-952f",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"width": 48,
+				"height": null,
+				"bottom": 0,
+				"top": 0,
+				"left": 5,
+				"imageFillType": "ASPECTFIT"
+			},
+			"className": ".imageView",
+			"props": {
+				"width": 48,
+				"height": null,
+				"touchEnabled": true,
+				"visible": true,
+				"imageFillType": "ASPECTFIT",
+				"backgroundColor": "rgba(0,0,0,0)",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"usePageVariable": true,
+				"bottom": 0,
+				"top": 0,
+				"left": 5,
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"name": "imgCreditCard",
+				"parent": "f9d2-28f6-e46c-ee70",
+				"children": []
 			}
 		},
 		{
@@ -569,9 +650,9 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"e3c6-962b-824b-ce40",
-					"4aa3-a807-b7cc-cee0",
-					"6240-5f15-2d95-cd90"
+					"d479-af7d-ad1a-63e3",
+					"940a-e6e4-ab71-75b4",
+					"e09b-894c-dfd7-01e7"
 				],
 				"name": "customHeaderBar",
 				"parent": "ba4c-4892-13e8-d143"
@@ -579,7 +660,7 @@
 		},
 		{
 			"type": "ImageView",
-			"id": "e3c6-962b-824b-ce40",
+			"id": "d479-af7d-ad1a-63e3",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -622,12 +703,12 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "9392-6f3d-8683-8aa5",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "4aa3-a807-b7cc-cee0",
+			"id": "940a-e6e4-ab71-75b4",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -689,7 +770,7 @@
 		},
 		{
 			"type": "FlexLayout",
-			"id": "6240-5f15-2d95-cd90",
+			"id": "e09b-894c-dfd7-01e7",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -742,8 +823,8 @@
 					"right": 5
 				},
 				"children": [
-					"c4ad-5ae8-5cc6-6ba7",
-					"013d-3109-ccca-cedb"
+					"7dc3-8078-96ea-824f",
+					"8a1c-b247-d701-bd04"
 				],
 				"name": "rightContainer",
 				"parent": "9392-6f3d-8683-8aa5"
@@ -751,7 +832,7 @@
 		},
 		{
 			"type": "ImageView",
-			"id": "c4ad-5ae8-5cc6-6ba7",
+			"id": "7dc3-8078-96ea-824f",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -795,13 +876,13 @@
 				},
 				"children": [],
 				"name": "rightImage",
-				"parent": "6240-5f15-2d95-cd90",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
+				"parent": "e09b-894c-dfd7-01e7",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "013d-3109-ccca-cedb",
+			"id": "8a1c-b247-d701-bd04",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -868,7 +949,7 @@
 				},
 				"children": [],
 				"name": "count",
-				"parent": "6240-5f15-2d95-cd90"
+				"parent": "e09b-894c-dfd7-01e7"
 			}
 		},
 		{
@@ -931,7 +1012,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"dca2-077a-c605-ad40"
+					"93ad-1723-2f76-2c88"
 				],
 				"name": "btnPay",
 				"parent": "ba4c-4892-13e8-d143"
@@ -939,7 +1020,7 @@
 		},
 		{
 			"type": "Button",
-			"id": "dca2-077a-c605-ad40",
+			"id": "93ad-1723-2f76-2c88",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -991,7 +1072,7 @@
 					"flexGrow": 1
 				},
 				"children": [],
-				"name": "button1",
+				"name": "inenrButton",
 				"parent": "265b-7529-a4db-27fd"
 			}
 		},

@@ -70,6 +70,7 @@ dividerTop.backgroundColor = Color.create('#20FFFFFF');
 
 var listView = new ListView({
     itemCount: myDataSet.length,
+    refreshEnabled: false,
     rowHeight: 60,
     flexGrow: 2,
     backgroundColor: Color.TRANSPARENT,
@@ -193,8 +194,11 @@ Router.goBack = function(tag, animated) {
     Router._superGoBack(tag, animated);
     listView.refreshData();
 };
-
+var sliderDrawerLoaded = false;
 sliderDrawer.onLoad = function() {
+    if(sliderDrawerLoaded)
+        return;
+    sliderDrawerLoaded = true;
     Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
 
     mainContainer.addChild(topContainer);

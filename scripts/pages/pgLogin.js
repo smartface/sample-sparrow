@@ -51,23 +51,13 @@ function onShow(parameters) {
 
 function onLoad() {
     parentOnLoad();
-    this.btnSignIn.button1.text = lang["pgLogin.signin"];
+    this.btnSignIn.inenrButton.text = lang["pgLogin.signin"];
     this.btnSignIn.alpha = 0;
     this.inputLayout.height = 0;
     this.inputLayout.alpha = 0;
     this.layout.applyLayout();
-    this.btnSignIn.button1.onPress = function() {
+    this.btnSignIn.inenrButton.onPress = function() {
         login(this);
-    }.bind(this);
-    this.btnSignIn.button1.onLongPress = function() {
-        Data.removeVariable("isUserAuthenticated");
-        Data.removeVariable("userName");
-        Data.removeVariable("password");
-        Data.removeVariable("isRejectedFingerprint");
-        Data.removeVariable("isVerifiedFingerprint");
-        Data.removeVariable("isAuthenticated");
-        Data.removeVariable("isAllowedFingerprint");
-        Application.restart();
     }.bind(this);
 
     var imageView = new ImageView();
@@ -168,7 +158,7 @@ function login(page) {
 }
 
 function loading(page, username, password, callback) {
-    page.btnSignIn.button1.text = "";
+    page.btnSignIn.inenrButton.text = "";
 
     if (!Data.getBooleanVariable('isNotFirstLogin')) {
         Data.setStringVariable("userName", page.emailTextBox.text);
@@ -179,7 +169,7 @@ function loading(page, username, password, callback) {
 
     var layout;
     if (System.OS == 'Android') {
-        layout = page.bottomLayout;
+        layout = page.mainlayout;
     }
     else {
         layout = page.layout;
@@ -248,13 +238,13 @@ function restartPage(page) {
     if (page.inputLayout.height == 150) {
         return;
     }
-    page.btnSignIn.button1.text = "";
+    page.btnSignIn.inenrButton.text = "";
     //uiComponents.facebookButton.text = "";
     //uiComponents.facebookButton.width = 0;
 
     var layout;
     if (System.OS == 'Android') {
-        layout = page.bottomLayout;
+        layout = page.mainlayout;
     }
     else {
         layout = page.layout;
@@ -269,7 +259,7 @@ function restartPage(page) {
         page.loadingImage.alpha = 0;
         page.btnSignIn.width = 180;
         page.btnSignIn.alpha = 1;
-        page.btnSignIn.button1.text = lang["pgLogin.signin"];
+        page.btnSignIn.inenrButton.text = lang["pgLogin.signin"];
 
         // Animator.animate(layout, 100, function() {
         //     page.btnSignIn.width = 180;
@@ -278,7 +268,7 @@ function restartPage(page) {
         //     //uiComponents.facebookButton.width = 180;
         //     //uiComponents.facebookButton.alpha = 1;
         // }).complete(function() {
-        //     page.btnSignIn.button1.text = lang["pgLogin.signin"];
+        //     page.btnSignIn.inenrButton.text = lang["pgLogin.signin"];
         //     //this.facebookButton.text = "Log in with Facebook";
         // });
     });
