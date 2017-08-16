@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"type": "Page",
-			"id": "ee9d4e33",
+			"id": "9397-5c76-1b6a-7fd4",
 			"initialized": true,
 			"themeProps": {
 				"Page": "Default"
@@ -19,7 +19,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.2-rc.3",
+			"version": "6.4.5",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -36,12 +36,12 @@
 					"direction": "DIAGONAL_LEFT"
 				},
 				"children": [
-					"statusBar",
-					"headerBar",
-					"customHeaderBar",
-					"imageview1",
-					"resultText",
-					"btnContinueShopping"
+					"a8c8-add2-9c29-f691",
+					"410f-49fc-8698-8a63",
+					"ba33-b9ea-fe2b-989d",
+					"f885-4cf3-fa45-a8e5",
+					"0ad9-76bb-c17a-93a7",
+					"663f-83ad-31dc-25e7"
 				],
 				"parent": null,
 				"name": "pgPaymentResult",
@@ -51,7 +51,7 @@
 		},
 		{
 			"type": "StatusBar",
-			"id": "5ea292ea",
+			"id": "a8c8-add2-9c29-f691",
 			"themeProps": {
 				"StatusBar": "Default"
 			},
@@ -64,7 +64,7 @@
 				"visible": true,
 				"style": "LIGHTCONTENT",
 				"children": [],
-				"parent": "pgPaymentResult",
+				"parent": "9397-5c76-1b6a-7fd4",
 				"isRemovable": false,
 				"name": "statusBar",
 				"height": 20
@@ -72,7 +72,7 @@
 		},
 		{
 			"type": "HeaderBar",
-			"id": "cf158d99",
+			"id": "410f-49fc-8698-8a63",
 			"themeProps": {
 				"HeaderBar": "Default"
 			},
@@ -92,7 +92,7 @@
 				"visible": false,
 				"backgroundColor": "#9D1B55",
 				"children": [],
-				"parent": "pgPaymentResult",
+				"parent": "9397-5c76-1b6a-7fd4",
 				"isRemovable": false,
 				"name": "headerBar",
 				"height": 44
@@ -100,7 +100,7 @@
 		},
 		{
 			"type": "ImageView",
-			"id": "42c8da39",
+			"id": "f885-4cf3-fa45-a8e5",
 			"themeProps": {
 				"Sizes": "Default"
 			},
@@ -130,13 +130,13 @@
 				},
 				"children": [],
 				"name": "imageview1",
-				"parent": "pgPaymentResult",
+				"parent": "9397-5c76-1b6a-7fd4",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/icon_check.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207?random=0.09931476182123244"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "9d863933",
+			"id": "0ad9-76bb-c17a-93a7",
 			"themeProps": {
 				"Sizes": "Default",
 				"Types": "Default"
@@ -181,16 +181,16 @@
 				},
 				"children": [],
 				"name": "resultText",
-				"parent": "pgPaymentResult"
+				"parent": "9397-5c76-1b6a-7fd4"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "0e298f03",
+			"id": "ba33-b9ea-fe2b-989d",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
-				"id": "e8440217"
+				"id": "4c30-d181-b01f-cec4"
 			},
 			"themeProps": {
 				"Sizes": "Default",
@@ -257,17 +257,17 @@
 					"right": 5
 				},
 				"children": [
-					"leftImage",
-					"headerTitle",
-					"rightContainer"
+					"e0b4-11e9-d4f4-cc05",
+					"cdcc-6634-fedd-ca18",
+					"09a7-1673-e7ee-d834"
 				],
 				"name": "customHeaderBar",
-				"parent": "pgPaymentResult"
+				"parent": "9397-5c76-1b6a-7fd4"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "1753fdad",
+			"id": "e0b4-11e9-d4f4-cc05",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -309,13 +309,13 @@
 				},
 				"children": [],
 				"name": "leftImage",
-				"parent": "customHeaderBar",
+				"parent": "ba33-b9ea-fe2b-989d",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "274c8c4b",
+			"id": "cdcc-6634-fedd-ca18",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -372,12 +372,12 @@
 				},
 				"children": [],
 				"name": "headerTitle",
-				"parent": "customHeaderBar"
+				"parent": "ba33-b9ea-fe2b-989d"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "830dd5fa",
+			"id": "09a7-1673-e7ee-d834",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -430,16 +430,16 @@
 					"right": 5
 				},
 				"children": [
-					"rightImage",
-					"count"
+					"9608-2114-62f2-d659",
+					"6d6c-222c-ab47-3c66"
 				],
 				"name": "rightContainer",
-				"parent": "customHeaderBar"
+				"parent": "ba33-b9ea-fe2b-989d"
 			}
 		},
 		{
 			"type": "ImageView",
-			"id": "018315a1",
+			"id": "9608-2114-62f2-d659",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -483,13 +483,13 @@
 				},
 				"children": [],
 				"name": "rightImage",
-				"parent": "rightContainer",
+				"parent": "09a7-1673-e7ee-d834",
 				"imageURL": "https://dispatcher.r0.smartface.io/smartface3217/m-commerce/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.5&brandModel=iPhone%207"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "457c1ba4",
+			"id": "6d6c-222c-ab47-3c66",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -556,16 +556,16 @@
 				},
 				"children": [],
 				"name": "count",
-				"parent": "rightContainer"
+				"parent": "09a7-1673-e7ee-d834"
 			}
 		},
 		{
 			"type": "FlexLayout",
-			"id": "61a7ef10",
+			"id": "663f-83ad-31dc-25e7",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__",
-				"id": "be65d4d0"
+				"id": "4d2b-34c6-83c6-cdc1"
 			},
 			"themeProps": {
 				"Sizes": "Default",
@@ -621,15 +621,15 @@
 					"bottom": 30
 				},
 				"children": [
-					"button1"
+					"e821-8eab-7b24-aa6a"
 				],
 				"name": "btnContinueShopping",
-				"parent": "pgPaymentResult"
+				"parent": "9397-5c76-1b6a-7fd4"
 			}
 		},
 		{
 			"type": "Button",
-			"id": "1f85683b",
+			"id": "e821-8eab-7b24-aa6a",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -682,7 +682,7 @@
 				},
 				"children": [],
 				"name": "button1",
-				"parent": "btnContinueShopping"
+				"parent": "663f-83ad-31dc-25e7"
 			}
 		}
 	]
