@@ -42,8 +42,8 @@
 				],
 				"parent": null,
 				"name": "pgPayment",
-				"width": 131.25,
-				"height": 233.45
+				"width": 146.25,
+				"height": 260.13
 			}
 		},
 		{
@@ -129,7 +129,7 @@
 				"children": [],
 				"name": "imageview1",
 				"parent": "ba4c-4892-13e8-d143",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/steps3.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.39&brandModel=iPhone%207?random=0.8010832316020096"
 			}
 		},
 		{
@@ -316,11 +316,12 @@
 				"height": null,
 				"text": "",
 				"usePageVariable": true,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				},
 				"font": {
-					"size": 18
+					"size": 20
 				}
 			},
 			"className": ".textBox .textBox-centered",
@@ -334,11 +335,11 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 18,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -364,11 +365,12 @@
 				"height": null,
 				"text": "",
 				"usePageVariable": true,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				},
 				"font": {
-					"size": 18
+					"size": 20
 				}
 			},
 			"className": ".textBox .textBox-centered",
@@ -382,11 +384,11 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 18,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -413,11 +415,12 @@
 				"textAlignment": "MIDCENTER",
 				"text": "",
 				"usePageVariable": true,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				},
 				"font": {
-					"size": 18
+					"size": 20
 				}
 			},
 			"className": ".textBox .textBox-centered",
@@ -431,11 +434,11 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"font": {
-					"size": 18,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -508,11 +511,12 @@
 				"usePageVariable": true,
 				"left": null,
 				"top": null,
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				},
 				"font": {
-					"size": 18
+					"size": 20
 				}
 			},
 			"className": ".textBox .textBox-centered",
@@ -526,13 +530,13 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
-				"textColor": "rgba(0,0,0,1)",
+				"textColor": "rgba( 51, 51, 51, 1 )",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true,
 				"left": null,
 				"top": null,
 				"font": {
-					"size": 18,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "Arial"
@@ -650,9 +654,9 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"d479-af7d-ad1a-63e3",
-					"940a-e6e4-ab71-75b4",
-					"e09b-894c-dfd7-01e7"
+					"3cf1-1f38-4e60-d784",
+					"721e-4d5e-4b33-7ed7",
+					"c3ae-451a-2878-f863"
 				],
 				"name": "customHeaderBar",
 				"parent": "ba4c-4892-13e8-d143"
@@ -660,7 +664,7 @@
 		},
 		{
 			"type": "ImageView",
-			"id": "d479-af7d-ad1a-63e3",
+			"id": "3cf1-1f38-4e60-d784",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -703,12 +707,12 @@
 				"children": [],
 				"name": "leftImage",
 				"parent": "9392-6f3d-8683-8aa5",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207?random=0.8394615926428963"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "940a-e6e4-ab71-75b4",
+			"id": "721e-4d5e-4b33-7ed7",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -770,7 +774,7 @@
 		},
 		{
 			"type": "FlexLayout",
-			"id": "e09b-894c-dfd7-01e7",
+			"id": "c3ae-451a-2878-f863",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -823,8 +827,8 @@
 					"right": 5
 				},
 				"children": [
-					"7dc3-8078-96ea-824f",
-					"8a1c-b247-d701-bd04"
+					"1cc0-1d20-29cc-301a",
+					"3a8e-85b6-e586-5069"
 				],
 				"name": "rightContainer",
 				"parent": "9392-6f3d-8683-8aa5"
@@ -832,7 +836,7 @@
 		},
 		{
 			"type": "ImageView",
-			"id": "7dc3-8078-96ea-824f",
+			"id": "1cc0-1d20-29cc-301a",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -876,13 +880,13 @@
 				},
 				"children": [],
 				"name": "rightImage",
-				"parent": "e09b-894c-dfd7-01e7",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.35&brandModel=iPhone%207"
+				"parent": "c3ae-451a-2878-f863",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/sparrow/ui-editor/img/null?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=undefined&brandModel=iPhone%207?random=0.8394615926428963"
 			}
 		},
 		{
 			"type": "Label",
-			"id": "8a1c-b247-d701-bd04",
+			"id": "3a8e-85b6-e586-5069",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
@@ -949,7 +953,7 @@
 				},
 				"children": [],
 				"name": "count",
-				"parent": "e09b-894c-dfd7-01e7"
+				"parent": "c3ae-451a-2878-f863"
 			}
 		},
 		{
@@ -1012,7 +1016,7 @@
 					"positionType": "RELATIVE"
 				},
 				"children": [
-					"93ad-1723-2f76-2c88"
+					"5586-15f7-b50d-12f8"
 				],
 				"name": "btnPay",
 				"parent": "ba4c-4892-13e8-d143"
@@ -1020,7 +1024,7 @@
 		},
 		{
 			"type": "Button",
-			"id": "93ad-1723-2f76-2c88",
+			"id": "5586-15f7-b50d-12f8",
 			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
