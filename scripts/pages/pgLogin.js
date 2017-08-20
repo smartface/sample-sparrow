@@ -46,7 +46,9 @@ function onShow(parameters) {
     this.statusBar.visible = false;
 
     checkInternet();
-    rau.checkUpdate();
+    rau.checkUpdate({
+        url: "https://smf.to/mcommerce"
+    });
 }
 
 function onLoad() {
@@ -75,10 +77,28 @@ function onLoad() {
         this.emailTextBox.text = "anthony.bell@smartcompany.email";
         this.passwordTextBox.text = "123456";
     }.bind(this);
-
+    
+    const page = this;
+    
     fingerprint.init({
         userNameTextBox: this.emailTextBox,
-        passwordTextBox: this.passwordTextBox
+        passwordTextBox: this.passwordTextBox,
+        autoLogin: true,
+        callback: function(err, fingerprintResult) {
+            var password;
+            if (err)
+                password = page.passwordTextBox.text;
+            else
+                password = fingerprintResult.password;
+            if (!password)
+                return alert(lang["pgLogin.inputs.password.error"]);
+            loading(page, page.emailTextBox.text, password, function(err) {
+                if (err)
+                    return alert(lang.loginErrorInvalid, lang.loginErrorTitle);
+                fingerprintResult && fingerprintResult.success(); //Important!
+                Router.go(PageConstants.PAGE_CATEGORIES, null, true);
+            });
+        }
     });
 }
 
@@ -130,31 +150,11 @@ function login(page) {
         return;
     }
 
-    var isValid = true;
-
     if (!page.emailTextBox.text) {
-        isValid = false;
         return alert(lang["pgLogin.inputs.username.error"]);
     }
-    var password;
-    isValid && fingerprint.loginWithFingerprint(function(err, fingerprintResult) {
-        if (err)
-            password = page.passwordTextBox.text;
-        else
-            password = fingerprintResult.password;
-        if (!password)
-            isValid = false;
-        !isValid && alert(lang["pgLogin.inputs.password.error"]);
-        loading(page, page.emailTextBox.text, password, function(err) {
-            if (err)
-                return alert(lang.loginErrorInvalid, lang.loginErrorTitle);
-            fingerprintResult && fingerprintResult.success(); //Important!
-            Router.go(PageConstants.PAGE_CATEGORIES, null, true);
 
-        });
-
-    });
-    !isValid && alert(lang["pgLogin.inputs.username.error"]);
+    fingerprint.loginWithFingerprint();
 }
 
 function loading(page, username, password, callback) {

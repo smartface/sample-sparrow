@@ -78,7 +78,8 @@ const PgSettings = extend(PgSettingsDesign)(
 			if (isNewUpdateAvailable) {
 				rau.checkUpdate({
 					showProgressCheck: true,
-					showProgressErrorAlert: true
+					showProgressErrorAlert: true,
+					url: "https://smf.to/mcommerce"
 				});
 			}
 		};
