@@ -68,75 +68,7 @@ dividerTop.height = 1;
 dividerTop.backgroundColor = Color.create('#20FFFFFF');
 
 
-var listView = new ListView({
-    itemCount: myDataSet.length,
-    refreshEnabled: false,
-    rowHeight: 60,
-    flexGrow: 2,
-    backgroundColor: Color.TRANSPARENT,
-    onRowCreate: function() {
-        var rowImage = new ImageView({
-            id: 3,
-            width: 50,
-            imageFillType: ImageView.FillType.ASPECTFIT,
-            margin: 10,
-        });
-
-        var rowTitle = new Label();
-        rowTitle.flexGrow = 1;
-        rowTitle.flexBasis = 1;
-        rowTitle.minWidth = 150;
-        rowTitle.id = 4;
-        rowTitle.font = Font.create("Lato", 18, Font.NORMAL);
-        rowTitle.backgroundColor = Color.TRANSPARENT;
-        rowTitle.textColor = Color.WHITE;
-        rowTitle.textAlignment = TextAlignment.MIDLEFT;
-        rowTitle.alignSelf = FlexLayout.AlignSelf.CENTER;
-
-        var rowTemplate = new ListViewItem({});
-        rowTemplate.alignItems = FlexLayout.AlignItems.STRETCH;
-        rowTemplate.flexDirection = FlexLayout.FlexDirection.ROW;
-        rowTemplate.paddingLeft = 10;
-        rowTemplate.paddingTop = 5;
-        rowTemplate.paddingBottom = 5;
-
-        rowTemplate.alpha = 0.5;
-        rowTemplate.addChild(rowImage);
-        rowTemplate.addChild(rowTitle);
-
-        return rowTemplate;
-    },
-    onRowBind: function(listViewItem, index) {
-        var rowTitle = listViewItem.findChildById(4);
-        rowTitle.text = myDataSet[index].title;
-
-        var rowImage = listViewItem.findChildById(3);
-        rowImage.image = myDataSet[index].icon;
-        if (currentPageTag == myDataSet[index].tag) {
-            listViewItem.alpha = 1;
-        }
-        else {
-            listViewItem.alpha = 0.5;
-        }
-
-        listViewItem.applyLayout();
-    },
-    onRowSelected: function(listViewItem, index) {
-        if (currentPageTag !== myDataSet[index].tag) {
-            try {
-                Router.go(myDataSet[index].tag, {}, false);
-                sliderDrawer.hide();
-            }
-            catch (e) {
-                Router.goBack(myDataSet[index].tag, false);
-                sliderDrawer.hide();
-            }
-            currentPageTag = myDataSet[index].tag;
-        }
-        listView.refreshData();
-
-    }
-});
+var listView;
 
 var dividerBottom = new FlexLayout();
 dividerBottom.height = 1;
@@ -148,7 +80,7 @@ btnSignOut.font = Font.create("Lato", 16, Font.NORMAL);
 btnSignOut.backgroundColor = Color.TRANSPARENT;
 btnSignOut.textColor = Color.WHITE;
 btnSignOut.textAlignment = TextAlignment.MIDLEFT;
-btnSignOut.text = "Sign out";
+btnSignOut.text = lang["pgSliderDrawer.signout"];
 btnSignOut.alpha = 0.5;
 btnSignOut.marginLeft = 30;
 btnSignOut.touchEnabled = true;
@@ -187,18 +119,89 @@ Router._superGoBack = Router.goBack;
 
 Router.go = function(tag, parameters, animated) {
     Router._superGo(tag, parameters, animated);
-    listView.refreshData();
+    listView && listView.refreshData();
 };
 
 Router.goBack = function(tag, animated) {
     Router._superGoBack(tag, animated);
-    listView.refreshData();
+    listView && listView.refreshData();
 };
 var sliderDrawerLoaded = false;
 sliderDrawer.onLoad = function() {
-    if(sliderDrawerLoaded)
+    if (sliderDrawerLoaded)
         return;
     sliderDrawerLoaded = true;
+
+    listView = new ListView({
+        itemCount: myDataSet.length,
+        refreshEnabled: false,
+        rowHeight: 60,
+        flexGrow: 2,
+        backgroundColor: Color.TRANSPARENT,
+        onRowCreate: function() {
+            var rowImage = new ImageView({
+                id: 3,
+                width: 50,
+                imageFillType: ImageView.FillType.ASPECTFIT,
+                margin: 10,
+            });
+
+            var rowTitle = new Label();
+            rowTitle.flexGrow = 1;
+            rowTitle.flexBasis = 1;
+            rowTitle.minWidth = 150;
+            rowTitle.id = 4;
+            rowTitle.font = Font.create("Lato", 18, Font.NORMAL);
+            rowTitle.backgroundColor = Color.TRANSPARENT;
+            rowTitle.textColor = Color.WHITE;
+            rowTitle.textAlignment = TextAlignment.MIDLEFT;
+            rowTitle.alignSelf = FlexLayout.AlignSelf.CENTER;
+
+            var rowTemplate = new ListViewItem({});
+            rowTemplate.alignItems = FlexLayout.AlignItems.STRETCH;
+            rowTemplate.flexDirection = FlexLayout.FlexDirection.ROW;
+            rowTemplate.paddingLeft = 10;
+            rowTemplate.paddingTop = 5;
+            rowTemplate.paddingBottom = 5;
+
+            rowTemplate.alpha = 0.5;
+            rowTemplate.addChild(rowImage);
+            rowTemplate.addChild(rowTitle);
+
+            return rowTemplate;
+        },
+        onRowBind: function(listViewItem, index) {
+            var rowTitle = listViewItem.findChildById(4);
+            rowTitle.text = myDataSet[index].title;
+
+            var rowImage = listViewItem.findChildById(3);
+            rowImage.image = myDataSet[index].icon;
+            if (currentPageTag == myDataSet[index].tag) {
+                listViewItem.alpha = 1;
+            }
+            else {
+                listViewItem.alpha = 0.5;
+            }
+
+            listViewItem.applyLayout();
+        },
+        onRowSelected: function(listViewItem, index) {
+            if (currentPageTag !== myDataSet[index].tag) {
+                try {
+                    Router.go(myDataSet[index].tag, {}, false);
+                    sliderDrawer.hide();
+                }
+                catch (e) {
+                    Router.goBack(myDataSet[index].tag, false);
+                    sliderDrawer.hide();
+                }
+                currentPageTag = myDataSet[index].tag;
+            }
+            listView.refreshData();
+
+        }
+    });
+
     Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
 
     mainContainer.addChild(topContainer);

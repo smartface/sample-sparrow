@@ -10,7 +10,6 @@ const Config = require("config.js");
 const System = require("sf-core/device/system");
 require("sf-extension-utils"); //performs util setup
 
-
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
 Application.onUnhandledError = function(e) {

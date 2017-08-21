@@ -37,7 +37,7 @@ const PgSettings = extend(PgSettingsDesign)(
 
 		this.switchNotification.toggle = Data.getBooleanVariable("isNotificationAllowed");
 
-		if (!System.isFingerprintAvailable) {
+		if (!System.fingerPrintAvailable) {
 			// this.switchFingerprint.enabled = false;
 			this.fingerprintRow.height = Number.NaN;
 			this.fingerprintRow.maxHeight = 0;

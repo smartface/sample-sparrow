@@ -15,7 +15,6 @@ const Application = require("sf-core/application");
 const System = require('sf-core/device/system');
 const Animator = require('sf-core/ui/animator');
 const pgLoginDesign = require("../ui/ui_pgLogin");
-const Data = require("sf-core/data");
 const rau = require("sf-extension-utils").rau;
 const fingerprint = require("sf-extension-utils").fingerprint;
 
@@ -59,6 +58,7 @@ function onLoad() {
     this.inputLayout.alpha = 0;
     this.layout.applyLayout();
     this.btnSignIn.inenrButton.onPress = function() {
+        this.btnSignIn.inenrButton.enabled = false;
         login(this);
     }.bind(this);
 
@@ -77,26 +77,32 @@ function onLoad() {
         this.emailTextBox.text = "anthony.bell@smartcompany.email";
         this.passwordTextBox.text = "123456";
     }.bind(this);
-    
+
     const page = this;
-    
+
     fingerprint.init({
         userNameTextBox: this.emailTextBox,
         passwordTextBox: this.passwordTextBox,
         autoLogin: true,
         callback: function(err, fingerprintResult) {
             var password;
-            if (err)
+            if (err) {
                 password = page.passwordTextBox.text;
-            else
+            }
+            else {
                 password = fingerprintResult.password;
-            if (!password)
+            }
+            if (!password) {
+                page.btnSignIn.inenrButton.enabled = true;
                 return alert(lang["pgLogin.inputs.password.error"]);
+            }
             loading(page, page.emailTextBox.text, password, function(err) {
+                page.btnSignIn.inenrButton.enabled = true;
                 if (err)
                     return alert(lang.loginErrorInvalid, lang.loginErrorTitle);
                 fingerprintResult && fingerprintResult.success(); //Important!
                 Router.go(PageConstants.PAGE_CATEGORIES, null, true);
+                page.passwordTextBox.text = "";
             });
         }
     });
@@ -119,10 +125,6 @@ function initTextFields() {
     this.passwordTextBox.ios.clearButtonEnabled = true;
     this.emailTextBox.text = "";
     this.passwordTextBox.text = "";
-
-    if (Data.getStringVariable("userName")) {
-        this.emailTextBox.text = Data.getStringVariable("userName");
-    }
 }
 
 function setBackgroundSprite(spriteLayout) {
@@ -145,12 +147,8 @@ function setBackgroundSprite(spriteLayout) {
 }
 
 function login(page) {
-    if (page.emailTextBox.text === "") {
-        alert(lang["pgLogin.inputs.username.error"]);
-        return;
-    }
-
     if (!page.emailTextBox.text) {
+        page.btnSignIn.inenrButton.enabled = true;
         return alert(lang["pgLogin.inputs.username.error"]);
     }
 
@@ -159,14 +157,6 @@ function login(page) {
 
 function loading(page, username, password, callback) {
     page.btnSignIn.inenrButton.text = "";
-
-    if (!Data.getBooleanVariable('isNotFirstLogin')) {
-        Data.setStringVariable("userName", page.emailTextBox.text);
-        Data.setStringVariable("password", page.passwordTextBox.text);
-        Data.setBooleanVariable('isUserAuthenticated', true);
-        Data.setBooleanVariable('isNotFirstLogin', true);
-    }
-
     var layout;
     if (System.OS == 'Android') {
         layout = page.mainlayout;
