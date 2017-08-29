@@ -26,6 +26,9 @@ const Page_ = extend(PageDesign)(
         this.inputPromoCode.onEditEnds = function(e1, e2) {
             this.inputPromoCode.text = this.inputPromoCode.text.toLocaleUpperCase();
         }.bind(this);
+        this.inputPromoCode.onTextChanged = function(e1, e2) {
+            this.inputPromoCode.text = this.inputPromoCode.text.toLocaleUpperCase();
+        }.bind(this);
 
         this.btnCheckout.inenrButton.onPress = function() {
             if (ShoppingCart.getTotal() > 0) {
@@ -132,7 +135,8 @@ function initListView(page, listView) {
                 expansionSettings.threshold = 1.5; //Size proportional threshold to trigger the expansion button. Default value 1.5
                 var deleteAction = new listView.ios.swipeItem(lang.delete, Color.RED, 15, function(e) {
                     ShoppingCart.products.splice(e.index, 1);
-                    page.refreshList();
+                    listView.itemCount = ShoppingCart.products.length;
+                    listView.deleteRow(e.index);
                 });
                 return [deleteAction];
             }
