@@ -67,7 +67,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgSettings.update": "Check Update",
 	"pgSettings.noupdate": "No new updates were found.",
 	"pgSettings.about": "About",
-	"pgSettings.aboutDesc": "This is a general purpose mobile commerce (shopping) app consuming services from Shoppify.",
+	"pgSettings.aboutDesc": "This is a general purpose mobile commerce (shopping) app consuming services from Shopify.",
 	"alertView.confirmation": "Confirmation",
 	"pgSettings.themeChangeMessage": "Do you really want to change the theme of the application? This will cause the application to restart.",
 	"pgSetting.fingerprint.alert": "The next sign in will be fingerprinted.",
