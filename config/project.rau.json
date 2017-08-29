@@ -3,15 +3,15 @@
         "rau": {
             "formatVersion": "1.0.0",
             "hashType": "md5",
-            "profileKey": "ALtDz316r8GuEJ64wfH2seoB2zj61n2O",
+            "profileKey": "n9hJ8f9IwlcsIAhNbgYTreYwBuIENhUc",
             "revision": 1,
-            "channels": ["production"],
+            "channels": ["demo"],
             "meta": {
                 "isMandatory": false,
                 "url": "https://smf.to/mcommerce"
             },
             "minimumSupportedVersion": "1.0.0",
-            "currentReleaseChannel": "test"
+            "currentReleaseChannel": "demo"
         }
     }
 }
