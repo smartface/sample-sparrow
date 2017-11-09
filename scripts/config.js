@@ -1,10 +1,10 @@
 const Config = {};
 
-Config.FACEBOOK_APPLICATION_ID = '761978560643760'; 
-Config.FACEBOOK_APPLICATION_NAME = '761978560643760'; 
+Config.FACEBOOK_APPLICATION_ID = '*'; 
+Config.FACEBOOK_APPLICATION_NAME = '*'; 
 
-Config.SHOPIFY_APIKey = "5db8d31100a1bc548efd02a4e72aa2e0";
-Config.SHOPIFY_PASSWORD = "f427b12c8568bba3033e1ab2db34aefa";
-Config.SHOPIFY_STORENAME = "smartfacebags";
+Config.SHOPIFY_APIKey = "*";
+Config.SHOPIFY_PASSWORD = "*";
+Config.SHOPIFY_STORENAME = "*";
 
 module.exports = Config;

@@ -19,7 +19,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgProductList.title": "Product List",
 	"pgShipping.title": "Shipping",
 	"pgShipping.payment": "PAYMENT",
-	"pgShipping.firstName": "Fisrt Name",
+	"pgShipping.firstName": "First Name",
 	"pgShipping.lastName": "Last Name",
 	"pgShipping.address": "Address",
 	"pgShipping.city": "City",

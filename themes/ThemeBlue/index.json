@@ -76,7 +76,7 @@
 			"Types": {
 				"PickerSelected": ".label-picker.selected",
 				"PickerNormal": ".label-picker.normal",
-				"CategoryItem" : ".label-categoryItem"
+				"CategoryItem": ".label-categoryItem"
 			}
 		},
 		"ListView": {
@@ -154,5 +154,6 @@
 				"Large": ".webView-large"
 			}
 		}
-	}
+	},
+	"childTheme": true
 }

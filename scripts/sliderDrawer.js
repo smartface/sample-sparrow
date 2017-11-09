@@ -46,7 +46,7 @@ mainContainer.right = 0;
 mainContainer.bottom = 0;
 mainContainer.top = 0;
 mainContainer.positionType = FlexLayout.PositionType.ABSOLUTE;
-//mainContainer.backgroundColor = Color.create("#FF9900")
+// mainContainer.backgroundColor = Color.create("#FF9900")
 
 var topContainer = new FlexLayout();
 topContainer.flexGrow = 1;
@@ -186,15 +186,16 @@ sliderDrawer.onLoad = function() {
             listViewItem.applyLayout();
         },
         onRowSelected: function(listViewItem, index) {
+            console.log("currenpagetag = " + currentPageTag + " my data tag = " + myDataSet[index].tag )
             if (currentPageTag !== myDataSet[index].tag) {
-                try {
+                //try {
                     Router.go(myDataSet[index].tag, {}, false);
                     sliderDrawer.hide();
-                }
-                catch (e) {
-                    Router.goBack(myDataSet[index].tag, false);
-                    sliderDrawer.hide();
-                }
+                // }
+                // catch (e) {
+                //     Router.goBack(myDataSet[index].tag, false);
+                //     sliderDrawer.hide();
+                // }
                 currentPageTag = myDataSet[index].tag;
             }
             listView.refreshData();

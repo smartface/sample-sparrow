@@ -16,7 +16,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.6",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"backgroundColor": "rgba( 0, 0, 0, 1 )",
@@ -764,9 +764,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"9a6e-2944-5ff8-a136"
-				],
+				"children": [],
 				"name": "btnSignIn",
 				"parent": "f44d-4712-2aaa-43f0"
 			}

@@ -14,7 +14,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.5",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -672,11 +672,7 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"children": [
-					"f19b-fa9a-6014-f2df",
-					"5253-21d0-d3ff-506b",
-					"f085-28df-19bc-427b"
-				],
+				"children": [],
 				"name": "customHeaderBar",
 				"parent": "888d-f6c3-3c0e-6cb4"
 			}
@@ -1034,9 +1030,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"f02f-b0f5-3b0c-98e1"
-				],
+				"children": [],
 				"name": "btnAddToCart",
 				"parent": "888d-f6c3-3c0e-6cb4"
 			}
@@ -1165,10 +1159,7 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"children": [
-					"01a3-8605-b0f0-055d",
-					"d7cf-5a3e-92ba-9d20"
-				],
+				"children": [],
 				"name": "itemPicker1",
 				"parent": "3a64-11ed-26c6-6eaa"
 			}
@@ -1397,10 +1388,7 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"children": [
-					"71d3-5652-086b-7870",
-					"d0b2-198f-3f7c-c610"
-				],
+				"children": [],
 				"name": "itemPicker2",
 				"parent": "3a64-11ed-26c6-6eaa"
 			}
@@ -1684,10 +1672,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"d27e-752e-00bc-c382",
-					"fa21-3633-4ada-221c"
-				],
+				"children": [],
 				"name": "itemSmallThumb1",
 				"parent": "3474-e943-0fb8-611a"
 			}
@@ -1911,10 +1896,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"cd85-0a73-2f91-5b49",
-					"15cf-ab73-2fd1-979c"
-				],
+				"children": [],
 				"name": "itemSmallThumb2",
 				"parent": "3474-e943-0fb8-611a",
 				"paddingLeft": 2,
@@ -2142,10 +2124,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"cf17-c425-2101-86da",
-					"fb57-5d24-448e-83f4"
-				],
+				"children": [],
 				"name": "itemSmallThumb3",
 				"parent": "3474-e943-0fb8-611a",
 				"paddingLeft": 2,
@@ -2378,9 +2357,7 @@
 					"right": 0,
 					"bottom": 0
 				},
-				"children": [
-					"278b-bc85-f8c4-fe92"
-				],
+				"children": [],
 				"name": "loaderContainer",
 				"parent": "4d13-b07d-db6f-0a0a"
 			}

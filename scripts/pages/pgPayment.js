@@ -74,6 +74,12 @@ const Page_ = extend(PageDesign)(
 			this.cardNumber.removeFocus();
 			Router.goBack();
 		}.bind(this);
+		
+		this.totalPrice.onTouchEnded = function() {
+ 				
+  			autoFill(this);	
+  			assignCreditCardImage.call(this);
+  		}.bind(this);
 
 		this.btnPay.inenrButton.text = lang["pgPayment.pay"];
 		Router.sliderDrawer.enabled = false;
@@ -82,12 +88,12 @@ const Page_ = extend(PageDesign)(
 		updateInputProps(inputArr);
 	});
 
-function onLoad(parentOnShow) {
-	parentOnShow();
+function onLoad(parentOnLoad) {
+	parentOnLoad();
 }
 
-function onShow(parentOnLoad) {
-	parentOnLoad();
+function onShow(parentOnShow) {
+	parentOnShow();
 }
 
 
@@ -167,6 +173,13 @@ function assignCreditCardImage() {
 		Image.createFromFile("images://" + creditCardType + ".png") :
 		null;
 	this.imgCreditCard.image = creaditCardImage;
+}
+
+function autoFill(page) {
+  	page.cardNumber.text = "5555555555554444";
+  	page.expiryDate.text = "05/20";	
+  	page.securityCode.text = "889";		 
+  	page.nameOnCard.text = "Darrell Gray";		  	
 }
 
 

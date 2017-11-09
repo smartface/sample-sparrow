@@ -15,7 +15,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.6",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -2229,10 +2229,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"7040-9cb9-afa4-584f",
-					"4e20-11df-4ac8-9724"
-				],
+				"children": [],
 				"name": "productImage",
 				"parent": "c8c6-579d-6d0d-0cd9"
 			}
@@ -2458,9 +2455,7 @@
 					"right": 0,
 					"bottom": 0
 				},
-				"children": [
-					"be53-c50d-458d-0b18"
-				],
+				"children": [],
 				"name": "flexlayout8",
 				"parent": "403b-b17c-d063-6e29"
 			}
@@ -2580,9 +2575,7 @@
 					"flexDirection": "COLUMN",
 					"positionType": "ABSOLUTE"
 				},
-				"children": [
-					"1604-a7c2-edcd-d7ff"
-				],
+				"children": [],
 				"name": "loader",
 				"parent": "7dd6-1ec2-dc9e-8045"
 			}

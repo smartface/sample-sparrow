@@ -19,7 +19,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.5",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -256,11 +256,7 @@
 					"positionType": "ABSOLUTE",
 					"right": 5
 				},
-				"children": [
-					"e0b4-11e9-d4f4-cc05",
-					"cdcc-6634-fedd-ca18",
-					"09a7-1673-e7ee-d834"
-				],
+				"children": [],
 				"name": "customHeaderBar",
 				"parent": "9397-5c76-1b6a-7fd4"
 			}
@@ -620,9 +616,7 @@
 					"right": 50,
 					"bottom": 30
 				},
-				"children": [
-					"e821-8eab-7b24-aa6a"
-				],
+				"children": [],
 				"name": "btnContinueShopping",
 				"parent": "9397-5c76-1b6a-7fd4"
 			}

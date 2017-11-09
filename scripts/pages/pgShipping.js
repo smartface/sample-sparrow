@@ -80,50 +80,53 @@ const Page_ = extend(PageDesign)(
 		updateInputProps(inputArr);
 	});
 
-function onLoad(parentOnShow) {
-	parentOnShow();
+function onLoad(parentOnLoad) {
+	parentOnLoad();
 }
 
-function onShow(parentOnLoad, data) {
+function onShow(parentOnShow, data) {
 	const page = this;
-	parentOnLoad();
-	if (data) {
-		if (data.fillLocation) {
-			location.getLocation(function(err, location) {
-				if (err) {
-					console.log("location err");
-					return;
-				}
-				var requestOptions = {
-					'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
-					'method': 'GET'
-				};
-				Http.request(requestOptions,
-					function(response) {
-						if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("application/json") > -1) {
-							var locationResponse = JSON.parse(response.body.toString());
-							if (locationResponse.status === "OK" && locationResponse.results &&
-								locationResponse.results[0]
-							) {
-								var result = locationResponse.results[0];
-								var zip = lookupAddressComponent(result.address_components, "postal_code");
-								var city = lookupAddressComponent(result.address_components, "locality") ||
-									lookupAddressComponent(result.address_components, "administrative_area_level_1");
-								var fullAddress = result.formatted_address;
+	parentOnShow();
+	this.headerBar.visible = false;
+	//EBTEMPORARY
+	// if (data) {
+	// 	if (data.fillLocation) {
+	// 		location.getLocation(function(err, location) {
+	// 			if (err) {
+	// 				console.log("location err");
+	// 				return;
+	// 			}
+	// 			var requestOptions = {
+	// 				'url': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.latitude + ',' + location.longitude + '&sensor=true',
+	// 				'method': 'GET'
+	// 			};
+	// 			var http = new Http();
+	// 			http.request(requestOptions,
+	// 				function(response) {
+	// 					if (response.headers["Content-Type"] && response.headers["Content-Type"].indexOf("application/json") > -1) {
+	// 						var locationResponse = JSON.parse(response.body.toString());
+	// 						if (locationResponse.status === "OK" && locationResponse.results &&
+	// 							locationResponse.results[0]
+	// 						) {
+	// 							var result = locationResponse.results[0];
+	// 							var zip = lookupAddressComponent(result.address_components, "postal_code");
+	// 							var city = lookupAddressComponent(result.address_components, "locality") ||
+	// 								lookupAddressComponent(result.address_components, "administrative_area_level_1");
+	// 							var fullAddress = result.formatted_address;
 
-								page.city.text = page.city.text || city;
-								page.zip.text = page.zip.text || zip;
-								page.address.text = page.address.text || fullAddress;
-							}
-						}
-					},
-					function() {
-						console.log("failure http");
-					}
-				);
-			});
-		}
-	}
+	// 							page.city.text = page.city.text || city;
+	// 							page.zip.text = page.zip.text || zip;
+	// 							page.address.text = page.address.text || fullAddress;
+	// 						}
+	// 					}
+	// 				},
+	// 				function() {
+	// 					console.log("failure http");
+	// 				}
+	// 			);
+	// 		});
+	// 	}
+	// }
 }
 
 function autoFill(page) {

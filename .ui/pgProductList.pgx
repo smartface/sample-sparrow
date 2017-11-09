@@ -12,7 +12,7 @@
 				"defaults": {}
 			},
 			"className": ".page",
-			"version": "6.4.5",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -241,11 +241,7 @@
 					"positionType": "RELATIVE",
 					"flexGrow": null
 				},
-				"children": [
-					"ed78-117b-7ed6-ff78",
-					"3fdd-d8b1-6087-62e3",
-					"6cb3-9b95-75f5-61e5"
-				],
+				"children": [],
 				"name": "customHeaderBar",
 				"parent": "6954-a911-fb59-9f00"
 			}
@@ -594,9 +590,7 @@
 					"right": 0,
 					"bottom": 0
 				},
-				"children": [
-					"71b0-4ade-52a6-46a4"
-				],
+				"children": [],
 				"name": "loaderContainer",
 				"parent": "1f75-77c2-14fc-a349"
 			}

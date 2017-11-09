@@ -12,7 +12,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.4.5",
+			"version": "6.5.2",
 			"props": {
 				"orientation": "PORTRAIT",
 				"flexProps": {
@@ -1153,11 +1153,7 @@
 					"flexDirection": "ROW",
 					"positionType": "RELATIVE"
 				},
-				"children": [
-					"2f06-404f-cacf-42a0",
-					"b45d-1d8b-2920-ee70",
-					"2219-036a-3098-f0cf"
-				],
+				"children": [],
 				"name": "customHeaderBar",
 				"parent": "2ca3-9e47-1f03-b381"
 			}
