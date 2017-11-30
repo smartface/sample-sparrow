@@ -3,7 +3,7 @@
         "name": "M-Commerce",
         "company": "Smartface, Inc.",
         "webSite": "https://www.smartface.io",
-        "version": "1.2.6",
+        "version": "1.2.10",
         "runtimeVersion": "1100",
         "description": "Sample e-commerce project with Shopify extension."
     },
@@ -65,10 +65,10 @@
                     "facebookios": {
                         "url": "",
                         "path": "plugins/iOS/facebookios.zip",
-                        "active": true
+                        "active": false
                     }
                 },
-                "playerPath": null
+                "playerPath": "players/iOS/player-6.5.3-beta.219.zip"
             },
             "android": {
                 "scripts": "scripts",
@@ -91,10 +91,10 @@
                     "facebookandroid": {
                         "url": "",
                         "path": "plugins/Android/FacebookAndroid.zip",
-                        "active": true
+                        "active": false
                     }
                 },
-                "playerPath": null
+                "playerPath": "players/android/player-6.5.3-beta.3.zip"
             },
             "keys": {
                 "project3DesKey": "VGPSoPZiufzsFAQiL+a4QjGP/ZT+K2Oe",
