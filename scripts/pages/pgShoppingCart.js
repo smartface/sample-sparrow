@@ -12,6 +12,7 @@ const System = require("sf-core/device/system");
 const Color = require("sf-core/ui/color");
 const AlertView = require('sf-core/ui/alertview');
 const Direction = require('sf-core/ui/listview/direction');
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const Page_ = extend(PageDesign)(
     // Constructor
@@ -82,11 +83,18 @@ function initListView(page, listView) {
         listView.itemCount = ShoppingCart.products.length;
 
         listView.onRowCreate = function() {
+            var itemIndex = 0;
             var myListViewItem = new ListViewItem();
             var item = new ItemCart();
             item.id = 200;
             myListViewItem.item = item;
-            myListViewItem.addChild(item);
+
+            this.dispatch(addChild("item" + (++itemIndex), myListViewItem));
+            myListViewItem.addChild(item, "item", "", function(style) {
+                style.width = null;
+                return style;
+            });
+
             return myListViewItem;
         };
         listView.onRowBind = function(listViewItem, index) {

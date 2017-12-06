@@ -11,6 +11,7 @@ const ListViewItem = require('sf-core/ui/listviewitem');
 const Category = require('../objects/Category');
 const SliderDrawer = require('sf-core/ui/sliderdrawer');
 const ShoppingCart = require("../objects/ShoppingCart");
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 
 const Page_ = extend(PageDesign)(
@@ -86,6 +87,7 @@ function initHeaderBar(headerBar) {
 
 
 function initListView(page, listView, dataHolder) {
+    var itemIndex = 0;
     listView.rowHeight = 180;
     listView.itemCount = dataHolder.data.length;
     listView.refreshEnabled = false;
@@ -96,7 +98,12 @@ function initListView(page, listView, dataHolder) {
         item.id = 200;
         item.page = page;
         myListViewItem.item = item;
-        myListViewItem.addChild(item);
+
+        this.dispatch(addChild("item" + (++itemIndex), myListViewItem));
+        myListViewItem.addChild(item, "item", "", function(style) {
+            style.width = null;
+            return style;
+        });
         return myListViewItem;
     };
     listView.onRowBind = function(listViewItem, index) {
