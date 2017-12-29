@@ -164,6 +164,7 @@ function changeTheme(themeName) {
 			this.dispatch({
 				type: "invalidate"
 			});
+			this.layout.applyLayout();
 
 			Data.setStringVariable("theme", themeName);
 			initCurrentTheme.call(this);
