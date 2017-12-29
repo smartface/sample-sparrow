@@ -14,6 +14,7 @@ const SliderDrawer = require('sf-core/ui/sliderdrawer');
 const PageConstants = require('pages/PageConstants');
 const AlertView = require('sf-core/ui/alertview');
 const stylerBuilder = require("library/styler-builder");
+const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
 // Making workaround due to IOS-2306
 var currentPageTag = PageConstants.PAGE_CATEGORIES;
 
@@ -203,15 +204,22 @@ sliderDrawer.onLoad = function() {
         }
     });
 
-    Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
-
+    //Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
     mainContainer.addChild(topContainer);
     mainContainer.addChild(dividerTop);
     mainContainer.addChild(listView);
     mainContainer.addChild(dividerBottom);
     mainContainer.addChild(btnSignOut);
     sliderDrawer.layout.addChild(mainContainer);
+    componentContextPatch(sliderDrawer, "sliderDrawer");
+    sliderDrawer.dispatch({
+        type: "pushClassNames",
+        classNames:".sliderDrawer.layout"
+    });
 };
+sliderDrawer.onShow= function() {
+        console.log("sliderDrawer is shown");
+    };
 Router.sliderDrawer = sliderDrawer;
 Router.sliderDrawer.enabled = false;
 

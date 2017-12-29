@@ -37,7 +37,7 @@ const PgSettings = extend(PgSettingsDesign)(
 
 		//EBTEMPORARY
 		var isNotificationAllowed = Data.getBooleanVariable("isNotificationAllowed");
-		if(isNotificationAllowed == null) isNotificationAllowed = false;
+		if (isNotificationAllowed == null) isNotificationAllowed = false;
 		this.switchNotification.toggle = isNotificationAllowed;
 
 		if (!System.fingerPrintAvailable) {
@@ -65,17 +65,11 @@ const PgSettings = extend(PgSettingsDesign)(
 			Data.setBooleanVariable("isNotificationAllowed", this.switchNotification.toggle);
 		}.bind(this);
 
-		this.themeBlue.onTouchEnded = function() {
-			changeTheme("ThemeBlue");
-		};
+		this.themeBlue.onTouchEnded = changeThemeHelper.bind(this, "ThemeBlue");
 
-		this.themeGreen.onTouchEnded = function() {
-			changeTheme("ThemeGreen");
-		};
+		this.themeGreen.onTouchEnded = changeThemeHelper.bind(this, "ThemeGreen");
 
-		this.themeDefaults.onTouchEnded = function() {
-			changeTheme("Defaults");
-		};
+		this.themeDefaults.onTouchEnded = changeThemeHelper.bind(this, "defaultTheme");
 
 		this.txtAboutVersion.onTouchEnded = function() {
 			if (isNewUpdateAvailable) {
@@ -87,6 +81,10 @@ const PgSettings = extend(PgSettingsDesign)(
 			}
 		};
 	});
+
+function changeThemeHelper(themeName){
+	changeTheme.call(this, themeName);
+}
 
 function onLoad(parentOnShow) {
 	parentOnShow();
@@ -113,12 +111,13 @@ function onShow(parentOnLoad) {
 	}
 
 	// this.txtAboutVersion.visible = false;
-	Timer.setTimeout({
+	/*Timer.setTimeout({
 		task: checkRAUVersion.bind(this),
 		delay: 200
 	});
+	*/
 }
-
+/*
 function changeTheme(styleName) {
 	if (Data.getStringVariable("theme") === styleName) {
 		return;
@@ -141,6 +140,63 @@ function changeTheme(styleName) {
 		type: AlertView.Android.ButtonType.NEGATIVE
 	});
 	confirmationAlert.show();
+}
+*/
+
+function changeTheme(themeName) {
+	if (Data.getStringVariable("theme") === themeName) {
+		return;
+	}
+
+	var confirmationAlert = new AlertView({
+		title: lang["alertView.confirmation"],
+		message: lang["pgSettings.themeChangeMessage"]
+	});
+	confirmationAlert.addButton({
+		text: lang["ok"],
+		type: AlertView.Android.ButtonType.POSITIVE,
+		onClick: () => {
+			this.themeContext({
+				type: "changeTheme",
+				theme: themeName
+			});
+
+			this.dispatch({
+				type: "invalidate"
+			});
+
+			Data.setStringVariable("theme", themeName);
+			initCurrentTheme.call(this);
+		}
+	});
+
+	confirmationAlert.addButton({
+		text: lang["cancel"],
+		type: AlertView.Android.ButtonType.NEGATIVE
+	});
+
+	confirmationAlert.show();
+}
+
+function initCurrentTheme() {
+	this.themeBlue.dispatch({
+		type: "updateUserStyle",
+		userStyle: {
+			borderWidth: Data.getStringVariable("theme") == "ThemeBlue" ? 1 : 0
+		}
+	});
+	this.themeGreen.dispatch({
+		type: "updateUserStyle",
+		userStyle: {
+			borderWidth: Data.getStringVariable("theme") == "ThemeGreen" ? 1 : 0
+		}
+	});
+	this.themeDefaults.dispatch({
+		type: "updateUserStyle",
+		userStyle: {
+			borderWidth: Data.getStringVariable("theme") == "defaultTheme" ? 1 : 0
+		}
+	});
 }
 
 function checkRAUVersion() {

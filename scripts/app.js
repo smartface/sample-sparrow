@@ -1,4 +1,4 @@
-require("./theme");
+
 
 /* globals lang */
 require("i18n/i18n.js"); // Generates global lang object
@@ -6,7 +6,6 @@ require("i18n/i18n.js"); // Generates global lang object
 const Application = require("sf-core/application");
 const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
-const Data = require("sf-core/data");
 const Shopify = require("sf-extension-shopify");
 const Config = require("config.js");
 const System = require("sf-core/device/system");
@@ -20,20 +19,20 @@ Application.onUnhandledError = function(e) {
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
-
+require("./theme");
 var sliderDrawer;
 
 if (System.OS === "iOS") {
     sliderDrawer = require("./sliderDrawer");
     Router.sliderDrawer = sliderDrawer;
 }
-
+/*
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
     Data.setStringVariable("theme", settings.config.theme.currentTheme);
 stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
-
+*/
 Shopify.Authentication.setAPIKey(Config.SHOPIFY_APIKey);
 Shopify.Authentication.setPassword(Config.SHOPIFY_PASSWORD);
 Shopify.Authentication.setStoreName(Config.SHOPIFY_STORENAME);
