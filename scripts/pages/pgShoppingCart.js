@@ -81,9 +81,8 @@ function initListView(page, listView) {
     if (ShoppingCart.products.length > 0) {
         listView.ios.rightToLeftSwipeEnabled = true;
         listView.itemCount = ShoppingCart.products.length;
-
+        var itemIndex = 0;
         listView.onRowCreate = function() {
-            var itemIndex = 0;
             var myListViewItem = new ListViewItem();
             var item = new ItemCart();
             item.id = 200;
@@ -98,13 +97,14 @@ function initListView(page, listView) {
             return myListViewItem;
         };
         listView.onRowBind = function(listViewItem, index) {
-            listViewItem.item.product = ShoppingCart.products[index];
+            var item = listViewItem.findChildById(200);
+            item.product = ShoppingCart.products[index];
 
-            listViewItem.item.btnPlus.onTouchEnded = function() { // plus
+            item.btnPlus.onTouchEnded = function() { // plus
                 ShoppingCart.products[index].amount += 1;
                 page.refreshList();
             };
-            listViewItem.item.btnMinus.onTouch = function() { // minus
+            item.btnMinus.onTouch = function() { // minus
                 // if (ShoppingCart.products[index].amount > 1) {
                 if (ShoppingCart.products[index].amount > 1) {
                     ShoppingCart.products[index].amount -= 1;

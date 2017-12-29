@@ -1,3 +1,5 @@
+require("./theme");
+
 /* globals lang */
 require("i18n/i18n.js"); // Generates global lang object
 
@@ -29,7 +31,6 @@ if (System.OS === "iOS") {
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
-if (Data.getStringVariable("theme") === null)
     Data.setStringVariable("theme", settings.config.theme.currentTheme);
 stylerBuilder.setActiveTheme(Data.getStringVariable("theme") || settings.config.theme.currentTheme);
 
