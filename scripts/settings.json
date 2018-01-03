@@ -1,0 +1,15 @@
+{
+	"config": {
+		"theme": {
+			"currentTheme": "workspaceTheme",
+			"baseTheme": "workspaceTheme",
+			"themes": [
+				"ThemeBlue",
+				"ThemeGreen",
+				"defaultTheme",
+				"workspaceTheme"
+			]
+		},
+		"version": "6.5.4-rc.8"
+	}
+}

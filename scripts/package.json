@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@smartface/contx": "1.0.0-rc.19",
+    "@smartface/contx": "^1.0.0-rc.19",
     "@smartface/styler": "*",
     "creditcardutils": "^1.0.0",
     "google-libphonenumber": "^3.0.0",

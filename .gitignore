@@ -10,6 +10,6 @@ plugin/*
 !plugin/iOS/README.md
 scripts/node_modules
 scripts/ui
-scripts/settings.json
+!scripts/settings.json
 scripts/themes
 .templates
