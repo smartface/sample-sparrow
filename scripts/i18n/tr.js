@@ -69,7 +69,7 @@ SMF.i18n.defineLanguage('tr', {
 	"pgSettings.about": "Hakkında",
 	"pgSettings.aboutDesc": "Bu genel amaçlı mobil ticaret (alışveriş) uygulamasıdır, arkada Shopify servislerini kullanır.",
 	"alertView.confirmation": "Onay",
-	"pgSettings.themeChangeMessage": "Uygulamanın görünümnü değiştirmek istiyor musun? Bu işlem uygulamayı yeni baştan başlatacaktır.",
+	"pgSettings.themeChangeMessage": "Uygulamanın görünümünü değiştirmek istiyor musun?",
 	"pgSetting.fingerprint.alert": "Sonraki oturum açmalar parmak izi ile olacak.",
 	"pgSettings.updateAvailable": "Yeni sürüm hazır",
 
