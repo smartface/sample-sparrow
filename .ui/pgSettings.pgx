@@ -9,7 +9,7 @@
 				}
 			},
 			"className": ".page",
-			"version": "6.5.4",
+			"version": "6.6.0",
 			"props": {
 				"orientation": "PORTRAIT",
 				"parent": null,
@@ -147,8 +147,8 @@
 			},
 			"className": ".switch",
 			"props": {
-				"toggle": false,
 				"usePageVariable": true,
+				"toggle": false,
 				"name": "switchFingerprint",
 				"parent": "311c-914b-1e97-0599",
 				"children": []
@@ -217,8 +217,8 @@
 			},
 			"className": ".switch",
 			"props": {
-				"toggle": false,
 				"usePageVariable": true,
+				"toggle": false,
 				"name": "switchNotification",
 				"parent": "059c-600b-5b94-25d6",
 				"children": []
@@ -566,69 +566,6 @@
 				"children": [],
 				"name": "customHeaderBar",
 				"parent": "2ca3-9e47-1f03-b381"
-			}
-		},
-		{
-			"type": "ImageView",
-			"id": "83b8-0769-ed69-9d62",
-			"hiddenComponent": false,
-			"source": {
-				"page": "__library__"
-			},
-			"userProps": {
-				"width": 30,
-				"height": 30,
-				"imageFillType": "ASPECTFIT",
-				"usePageVariable": true,
-				"flexProps": {
-					"flexGrow": null,
-					"alignSelf": "STRETCH",
-					"positionType": "RELATIVE"
-				}
-			},
-			"className": ".imageView",
-			"props": {
-				"usePageVariable": true,
-				"children": [],
-				"name": "rightImage",
-				"parent": "2219-036a-3098-f0cf"
-			}
-		},
-		{
-			"type": "Label",
-			"id": "f505-53d4-9823-6dff",
-			"hiddenComponent": false,
-			"source": {
-				"page": "__library__"
-			},
-			"userProps": {
-				"width": 25,
-				"height": 25,
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"text": "",
-				"textAlignment": "MIDCENTER",
-				"marginBottom": null,
-				"left": 7,
-				"right": 0,
-				"top": 0,
-				"bottom": 5,
-				"usePageVariable": true,
-				"font": {
-					"size": 10
-				},
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 5
-				}
-			},
-			"className": ".label",
-			"props": {
-				"text": "",
-				"usePageVariable": true,
-				"children": [],
-				"name": "count",
-				"parent": "2219-036a-3098-f0cf"
 			}
 		},
 		{

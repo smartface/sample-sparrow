@@ -8,7 +8,7 @@
 				"flexProps": {}
 			},
 			"className": ".page",
-			"version": "6.5.4",
+			"version": "6.6.0",
 			"props": {
 				"name": "__library__",
 				"children": [
@@ -49,8 +49,8 @@
 			},
 			"className": ".headerBar",
 			"props": {
-				"name": "headerBar",
 				"title": "__library__",
+				"name": "headerBar",
 				"children": [],
 				"parent": "ff85-aa1f-3834-58e1",
 				"isRemovable": false
@@ -128,8 +128,8 @@
 			"className": ".flexLayout",
 			"props": {
 				"id": 1002,
-				"name": "thmbContainer",
 				"usePageVariable": true,
+				"name": "thmbContainer",
 				"children": [
 					"2d0e-7863-ccf9-ed89",
 					"f336-5cfc-69b5-4af5"
@@ -158,8 +158,8 @@
 			"className": ".flexLayout",
 			"props": {
 				"id": 1003,
-				"name": "infoContainer",
 				"usePageVariable": true,
+				"name": "infoContainer",
 				"children": [
 					"105d-2ba0-2fed-4584",
 					"d385-fdcc-c7f3-3e63"
@@ -187,10 +187,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 10032,
-				"name": "title",
 				"text": "Tortoise Glass",
+				"id": 10032,
 				"usePageVariable": true,
+				"name": "title",
 				"children": [],
 				"parent": "2e2b-bcc3-ecc9-6705"
 			}
@@ -217,10 +217,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 10031,
-				"name": "price",
 				"text": "$25",
+				"id": 10031,
 				"usePageVariable": true,
+				"name": "price",
 				"children": [],
 				"parent": "2e2b-bcc3-ecc9-6705"
 			}
@@ -244,8 +244,8 @@
 			"className": ".imageView",
 			"props": {
 				"id": 10022,
-				"name": "thumb",
 				"usePageVariable": true,
+				"name": "thumb",
 				"children": [],
 				"parent": "7dd6-1ec2-dc9e-8045"
 			}
@@ -354,9 +354,9 @@
 			},
 			"className": ".imageView",
 			"props": {
+				"usePageVariable": true,
 				"id": 301,
 				"name": "imageSmall",
-				"usePageVariable": true,
 				"children": [],
 				"parent": "3a39-1981-b2e7-3fa9"
 			}
@@ -414,9 +414,9 @@
 			},
 			"className": ".label .label-picker.normal",
 			"props": {
-				"name": "pickerLabel",
 				"text": "Color",
 				"usePageVariable": true,
+				"name": "pickerLabel",
 				"children": [],
 				"parent": "349e-12c7-77fc-f1a7"
 			}
@@ -519,8 +519,8 @@
 			},
 			"className": ".imageView",
 			"props": {
-				"name": "leftImage",
 				"usePageVariable": true,
+				"name": "leftImage",
 				"children": [],
 				"parent": "4c30-d181-b01f-cec4"
 			}
@@ -551,9 +551,9 @@
 			},
 			"className": ".label",
 			"props": {
-				"name": "headerTitle",
-				"text": "Label",
 				"usePageVariable": true,
+				"text": "Label",
+				"name": "headerTitle",
 				"children": [],
 				"parent": "4c30-d181-b01f-cec4"
 			}
@@ -604,9 +604,9 @@
 			},
 			"className": ".button",
 			"props": {
+				"usePageVariable": true,
 				"name": "inenrButton",
 				"text": "Button",
-				"usePageVariable": true,
 				"children": [],
 				"parent": "4d2b-34c6-83c6-cdc1"
 			}
@@ -664,8 +664,8 @@
 			"className": ".flexLayout",
 			"props": {
 				"id": 101,
-				"name": "flexlayout6",
 				"usePageVariable": true,
+				"name": "flexlayout6",
 				"children": [
 					"fa86-f94c-4ddd-77ca",
 					"8308-68f6-ce74-8af5"
@@ -692,9 +692,9 @@
 			},
 			"className": ".flexLayout",
 			"props": {
+				"usePageVariable": true,
 				"id": 102,
 				"name": "flexlayout7",
-				"usePageVariable": true,
 				"children": [
 					"6e7a-8cd7-25e0-1be7",
 					"b842-bf67-3804-a612",
@@ -724,10 +724,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 1011,
-				"name": "productTitle",
 				"text": "Label",
 				"usePageVariable": true,
+				"id": 1011,
+				"name": "productTitle",
 				"children": [],
 				"parent": "484c-e72b-2409-d974"
 			}
@@ -755,10 +755,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 1012,
-				"name": "productPrice",
 				"text": "$25",
 				"usePageVariable": true,
+				"id": 1012,
+				"name": "productPrice",
 				"children": [],
 				"parent": "484c-e72b-2409-d974"
 			}
@@ -785,10 +785,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 1021,
-				"name": "btnPlus",
 				"text": "+",
 				"usePageVariable": true,
+				"id": 1021,
+				"name": "btnPlus",
 				"children": [],
 				"parent": "04e4-5b75-8a7a-a384"
 			}
@@ -814,10 +814,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 1022,
-				"name": "counter",
 				"text": "0",
 				"usePageVariable": true,
+				"id": 1022,
+				"name": "counter",
 				"children": [],
 				"parent": "04e4-5b75-8a7a-a384"
 			}
@@ -844,10 +844,10 @@
 			},
 			"className": ".label",
 			"props": {
-				"id": 1023,
-				"name": "btnMinus",
 				"text": "-",
 				"usePageVariable": true,
+				"id": 1023,
+				"name": "btnMinus",
 				"children": [],
 				"parent": "04e4-5b75-8a7a-a384"
 			}
@@ -899,8 +899,8 @@
 			"className": ".activityIndicator",
 			"props": {
 				"id": 1005,
-				"name": "activityIndicator",
 				"usePageVariable": true,
+				"name": "activityIndicator",
 				"children": [],
 				"parent": "5bd3-b943-8f1f-711b"
 			}
@@ -961,8 +961,8 @@
 			"className": ".imageView",
 			"props": {
 				"id": 1002,
-				"name": "categoryImage",
 				"usePageVariable": true,
+				"name": "categoryImage",
 				"children": [],
 				"parent": "403b-b17c-d063-6e29"
 			}
@@ -991,10 +991,10 @@
 			},
 			"className": ".label .label-categoryItem",
 			"props": {
-				"id": 1001,
-				"name": "categoryTitle",
 				"text": "CLOTHING",
+				"id": 1001,
 				"usePageVariable": true,
+				"name": "categoryTitle",
 				"children": [],
 				"parent": "403b-b17c-d063-6e29"
 			}
@@ -1024,8 +1024,8 @@
 			},
 			"className": ".flexLayout",
 			"props": {
-				"name": "rightContainer",
 				"usePageVariable": true,
+				"name": "rightContainer",
 				"children": [
 					"6b12-fd69-bc50-f12e",
 					"dfb0-942e-0ebd-a8db"
@@ -1053,8 +1053,8 @@
 			},
 			"className": ".imageView",
 			"props": {
-				"name": "rightImage",
 				"usePageVariable": true,
+				"name": "rightImage",
 				"children": [],
 				"parent": "1609-cfe3-daa4-ef76"
 			}
@@ -1089,9 +1089,9 @@
 			},
 			"className": ".label",
 			"props": {
-				"name": "count",
 				"text": "",
 				"usePageVariable": true,
+				"name": "count",
 				"children": [],
 				"parent": "1609-cfe3-daa4-ef76"
 			}
@@ -1153,34 +1153,11 @@
 			},
 			"className": ".flexLayout .flexLayout-smallThumb.inactive",
 			"props": {
+				"usePageVariable": true,
 				"id": 100,
 				"name": "productImage",
-				"usePageVariable": true,
 				"children": [],
 				"parent": "c8c6-579d-6d0d-0cd9"
-			}
-		},
-		{
-			"type": "ActivityIndicator",
-			"id": "f24c-5271-39ef-0d3e",
-			"hiddenComponent": false,
-			"source": {
-				"page": "__library__"
-			},
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"width": 20,
-				"height": 20,
-				"minWidth": 21,
-				"minHeight": 21,
-				"id": 400
-			},
-			"className": ".activityIndicator",
-			"props": {
-				"id": 400,
-				"name": "activityIndicator7",
-				"children": [],
-				"parent": "7040-9cb9-afa4-584f"
 			}
 		},
 		{
@@ -1212,8 +1189,8 @@
 			"className": ".flexLayout",
 			"props": {
 				"id": 1003,
-				"name": "flexlayout8",
 				"usePageVariable": true,
+				"name": "flexlayout8",
 				"children": [],
 				"parent": "403b-b17c-d063-6e29"
 			}
@@ -1244,8 +1221,8 @@
 			"className": ".flexLayout",
 			"props": {
 				"id": 1004,
-				"name": "loader",
 				"usePageVariable": true,
+				"name": "loader",
 				"children": [],
 				"parent": "7dd6-1ec2-dc9e-8045"
 			}

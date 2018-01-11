@@ -8,7 +8,7 @@
 				"flexProps": {}
 			},
 			"className": ".page",
-			"version": "6.5.4",
+			"version": "6.6.0",
 			"props": {
 				"orientation": "PORTRAIT",
 				"children": [
@@ -328,69 +328,6 @@
 				"children": [],
 				"name": "customHeaderBar",
 				"parent": "ba4c-4892-13e8-d143"
-			}
-		},
-		{
-			"type": "ImageView",
-			"id": "50a9-1eff-ad12-f6ac",
-			"hiddenComponent": false,
-			"source": {
-				"page": "__library__"
-			},
-			"userProps": {
-				"width": 30,
-				"height": 30,
-				"imageFillType": "ASPECTFIT",
-				"usePageVariable": true,
-				"flexProps": {
-					"flexGrow": null,
-					"alignSelf": "STRETCH",
-					"positionType": "RELATIVE"
-				}
-			},
-			"className": ".imageView",
-			"props": {
-				"usePageVariable": true,
-				"children": [],
-				"name": "rightImage",
-				"parent": "f8f9-dbea-a5e6-05dd"
-			}
-		},
-		{
-			"type": "Label",
-			"id": "7e07-17c9-a088-3dfb",
-			"hiddenComponent": false,
-			"source": {
-				"page": "__library__"
-			},
-			"userProps": {
-				"width": 25,
-				"height": 25,
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"text": "",
-				"textAlignment": "MIDCENTER",
-				"marginBottom": null,
-				"left": 7,
-				"right": 0,
-				"top": 0,
-				"bottom": 5,
-				"usePageVariable": true,
-				"font": {
-					"size": 10
-				},
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"right": 0,
-					"bottom": 5
-				}
-			},
-			"className": ".label",
-			"props": {
-				"text": "",
-				"usePageVariable": true,
-				"children": [],
-				"name": "count",
-				"parent": "f8f9-dbea-a5e6-05dd"
 			}
 		},
 		{
