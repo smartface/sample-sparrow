@@ -65,7 +65,7 @@
                     "facebookios": {
                         "url": "",
                         "path": "plugins/iOS/facebookios.zip",
-                        "active": false
+                        "active": true
                     }
                 },
                 "playerPath": ""
@@ -91,7 +91,7 @@
                     "facebookandroid": {
                         "url": "",
                         "path": "plugins/Android/FacebookAndroid.zip",
-                        "active": false
+                        "active": true
                     }
                 },
                 "playerPath": ""

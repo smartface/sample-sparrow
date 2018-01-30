@@ -12,6 +12,7 @@ SMF.i18n.defineLanguage('tr', {
 	"pgLogin.username": "Kullanıcı Adı",
 	"pgLogin.password": "Şifre",
 	"pgLogin.signin": "OUTURUM AÇ",
+	"pgLogin.facebookSignin": "FACEBOOK İLE BAĞLAN",
 	"pgLogin.inputs.username.error": "Kullanıcı adı boş olamaz.",
 	"pgLogin.inputs.password.error": "Şifre boş olamaz.",
 	"pgCategories.title": "Kategoriler",
