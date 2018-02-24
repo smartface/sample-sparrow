@@ -64,6 +64,7 @@ const Page_ = extend(PageDesign)(
 
 function onLoad(parentOnShow) {
     parentOnShow();
+    this.ios.safeAreaLayoutMode = true;
 }
 
 function onShow(parentOnLoad) {

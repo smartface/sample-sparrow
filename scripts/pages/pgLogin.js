@@ -57,7 +57,7 @@ function onLoad() {
     parentOnLoad();
     const page = this;
     this.btnSignIn.inenrButton.text = lang["pgLogin.signin"];
-    this.btnFacebook.inenrButton.text = lang["pgLogin.facebookSignin"];
+    this.facebookText.text = lang["pgLogin.facebookSignin"];
     this.btnSignIn.alpha = 0;
     this.inputLayout.height = 0;
     this.inputLayout.alpha = 0;
@@ -78,7 +78,7 @@ function onLoad() {
     imageView.alpha = 1;
     this.bottomlayout.addChild(imageView);
 
-    this.btnFacebook.inenrButton.onPress = onPress_FacebookBtn.bind(this);
+    this.facebookBtnfl.onTouch = onPress_FacebookBtn.bind(this);
 
     this.imageviewLogo.onTouchEnded = function() {
         this.emailTextBox.text = "anthony.bell@smartcompany.email";
@@ -111,6 +111,7 @@ function onLoad() {
             });
         }
     });
+    this.ios.safeAreaLayoutMode = true;
 }
 
 function initTextFields() {
@@ -287,9 +288,7 @@ function checkInternet() {
 var grantedReadPermissions, grantedPublishPermissions;
 var deniedReadPermissions, deniedPublishPermissions;
 var accessToken;
-
 function onPress_FacebookBtn() {
-    console.log("in face on press");
     var page = this;
     Facebook.logInWithReadPermissions({
         page: page,
@@ -298,6 +297,7 @@ function onPress_FacebookBtn() {
             grantedReadPermissions = data.grantedPermissions;
             deniedReadPermissions = data.deniedPermissions;
             accessToken = data.accessToken;
+            global.facebookEnabled = true;
             Router.go(PageConstants.PAGE_CATEGORIES, null, true);
         },
         onFailure: function(e) {

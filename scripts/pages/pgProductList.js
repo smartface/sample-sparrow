@@ -69,6 +69,7 @@ function onShow(parentOnShow, params) {
 
 function onLoad(parentOnLoad, params) {
     parentOnLoad();
+    this.ios.safeAreaLayoutMode = true; 
 }
 
 function initListView(listView, dataHolder) {

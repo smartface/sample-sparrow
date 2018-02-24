@@ -103,6 +103,7 @@ btnSignOut.onTouchEnded = function() {
 
                     if (global.facebookEnabled) {
                         const Facebook = require("sf-plugin-facebook");
+                        console.log("in condition facebook is " + global.facebookEnabled);
                         Facebook.logOut();
                     }
                 }
