@@ -1,15 +1,16 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "workspaceTheme",
-			"baseTheme": "workspaceTheme",
+			"currentTheme": "m-commerceTheme",
 			"themes": [
 				"ThemeBlue",
 				"ThemeGreen",
 				"defaultTheme",
+				"m-commerceTheme",
 				"workspaceTheme"
-			]
+			],
+			"baseTheme": "m-commerceTheme"
 		},
-		"version": "6.6.2"
+		"version": "6.6.3"
 	}
 }
