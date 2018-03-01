@@ -63,7 +63,6 @@ function onShow(parentOnShow) {
 
 function onLoad(parentOnLoad) {
     parentOnLoad();
-    this.ios.safeAreaLayoutMode = true; 
 }
 
 function initHeaderBar(headerBar) {

@@ -17,16 +17,18 @@
 				],
 				"name": "pgShoppingCart",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
 			"userProps": {
 				"flexProps": {
 					"alignItems": "AUTO",
 					"alignContent": "CENTER"
-				}
+				},
+				"safeAreaEnabled": true
 			},
-			"version": "6.6.1"
+			"version": "6.6.2"
 		},
 		{
 			"className": ".statusBar",

@@ -13,15 +13,17 @@
 				],
 				"name": "pgSettings",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
 			"userProps": {
 				"flexProps": {
 					"alignItems": "STRETCH"
-				}
+				},
+				"safeAreaEnabled": true
 			},
-			"version": "6.6.1"
+			"version": "6.6.2"
 		},
 		{
 			"className": ".statusBar",
@@ -558,7 +560,6 @@
 				"marginBottom": null,
 				"marginLeft": null,
 				"marginRight": 5,
-				"marginTop": 20,
 				"paddingBottom": 5,
 				"paddingLeft": 5,
 				"paddingRight": 5,

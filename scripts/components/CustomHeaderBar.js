@@ -11,7 +11,7 @@ const CustomHeaderBar = extend(CustomHeaderBarDesign)(
 			this.dispatch({
 				type: "updateUserStyle",
 				userStyle: {
-					"marginTop": System.OS === "iOS" ? 20 : 0
+					"marginTop": System.OS === "iOS" ? System.OSVersion.split(".")[0] < 11 ? 20 : 0 : 0
 				}
 			});
 			this.parent.applyLayout();

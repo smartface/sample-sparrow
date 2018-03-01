@@ -88,7 +88,6 @@ function changeThemeHelper(themeName){
 
 function onLoad(parentOnShow) {
 	parentOnShow();
-	this.ios.safeAreaLayoutMode = true; 
 }
 
 function onShow(parentOnLoad) {

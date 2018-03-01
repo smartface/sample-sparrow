@@ -15,7 +15,8 @@
 				],
 				"name": "pgPaymentResult",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
 			"userProps": {
@@ -23,9 +24,10 @@
 					"alignItems": "CENTER",
 					"alignContent": "CENTER",
 					"justifyContent": "CENTER"
-				}
+				},
+				"safeAreaEnabled": true
 			},
-			"version": "6.6.1"
+			"version": "6.6.2"
 		},
 		{
 			"className": ".statusBar",

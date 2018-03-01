@@ -58,7 +58,6 @@ function onShow(parentOnShow, params) {
 
 function onLoad(parentOnLoad) {
     parentOnLoad();
-    this.ios.safeAreaLayoutMode = true; 
 }
 
 function initProduct(page, product) {

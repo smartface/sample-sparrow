@@ -111,7 +111,6 @@ function onLoad() {
             });
         }
     });
-    this.ios.safeAreaLayoutMode = true;
 }
 
 function initTextFields() {

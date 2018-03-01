@@ -16,13 +16,15 @@
 				],
 				"name": "pgPayment",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
 			"userProps": {
-				"flexProps": {}
+				"flexProps": {},
+				"safeAreaEnabled": true
 			},
-			"version": "6.6.1"
+			"version": "6.6.2"
 		},
 		{
 			"className": ".statusBar",
