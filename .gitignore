@@ -13,3 +13,5 @@ scripts/ui
 !scripts/settings.json
 scripts/themes
 .templates
+node_modules
+package.json
