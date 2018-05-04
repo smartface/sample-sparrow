@@ -1,0 +1,133 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "403b-b17c-d063-6e29",
+			"props": {
+				"children": [
+					"99ad-ddfe-31bf-7da0",
+					"7010-f972-791a-d344",
+					"27e2-aa6b-f641-473c"
+				],
+				"id": 100,
+				"name": "itemCategory",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"height": 170,
+				"id": 100,
+				"left": 24,
+				"top": 233,
+				"width": 307
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "99ad-ddfe-31bf-7da0",
+			"props": {
+				"children": [],
+				"id": 1003,
+				"name": "flexlayout8",
+				"parent": "403b-b17c-d063-6e29",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"id": "5bd3-b943-8f1f-711b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": null,
+				"id": 1003,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "7010-f972-791a-d344",
+			"props": {
+				"children": [],
+				"id": 1002,
+				"name": "categoryImage",
+				"parent": "403b-b17c-d063-6e29",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"backgroundColor": "rgba( 0, 0, 0, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0,
+					"alignSelf": "AUTO"
+				},
+				"height": null,
+				"id": 1002,
+				"imageFillType": "STRETCH",
+				"left": 5,
+				"marginLeft": null,
+				"marginRight": null,
+				"right": 5,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label .label-categoryItem",
+			"id": "27e2-aa6b-f641-473c",
+			"props": {
+				"children": [],
+				"id": 1001,
+				"name": "categoryTitle",
+				"parent": "403b-b17c-d063-6e29",
+				"text": "CLOTHING",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"bottom": 20,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"bottom": 20
+				},
+				"font": {},
+				"height": 40,
+				"id": 1001,
+				"left": 0,
+				"marginLeft": 5,
+				"text": "CLOTHING",
+				"top": 110,
+				"usePageVariable": true,
+				"width": 150
+			}
+		}
+	]
+}

@@ -1,0 +1,115 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout .flexLayout-smallThumb.inactive",
+			"hiddenComponent": true,
+			"id": "3a39-1981-b2e7-3fa9",
+			"props": {
+				"children": [
+					"ae93-dc8f-b162-3d23",
+					"ca18-09d9-20b0-8700"
+				],
+				"id": 300,
+				"name": "itemSmallThumb",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"height": 40,
+				"id": 300,
+				"left": -0.800000011920929,
+				"paddingBottom": 10,
+				"paddingLeft": null,
+				"paddingRight": null,
+				"top": 0.800000011920929,
+				"width": 42
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "ae93-dc8f-b162-3d23",
+			"props": {
+				"children": [
+					"04e9-5e89-86e2-2900"
+				],
+				"id": 302,
+				"name": "flexlayout1",
+				"parent": "3a39-1981-b2e7-3fa9"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": null,
+				"id": 302,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".activityIndicator",
+			"id": "04e9-5e89-86e2-2900",
+			"props": {
+				"children": [],
+				"id": 400,
+				"name": "activityindicator2",
+				"parent": "ae93-dc8f-b162-3d23"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"height": 20,
+				"id": 400,
+				"minHeight": 21,
+				"minWidth": 21,
+				"width": 20
+			}
+		},
+		{
+			"className": ".imageView",
+			"hiddenComponent": false,
+			"id": "ca18-09d9-20b0-8700",
+			"props": {
+				"children": [],
+				"id": 301,
+				"name": "imageSmall",
+				"parent": "3a39-1981-b2e7-3fa9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"id": 301,
+				"imageFillType": "ASPECTFIT",
+				"usePageVariable": true,
+				"visible": true,
+				"width": null
+			}
+		}
+	]
+}

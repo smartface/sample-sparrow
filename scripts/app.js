@@ -1,14 +1,11 @@
 /* globals lang */
 require("i18n/i18n.js"); // Generates global lang object
-
 const Application = require("sf-core/application");
 const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
 const Shopify = require("sf-extension-shopify");
 const Config = require("config.js");
 const System = require("sf-core/device/system");
-require("sf-extension-utils"); //performs util setup
-
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
 Application.onUnhandledError = function(e) {
@@ -17,6 +14,7 @@ Application.onUnhandledError = function(e) {
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
+require("sf-extension-utils"); //performs util setup
 require("./theme");
 var sliderDrawer;
 

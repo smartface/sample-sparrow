@@ -1,0 +1,50 @@
+{
+	"components": [
+		{
+			"className": ".page",
+			"id": "ff85-aa1f-3834-58e1",
+			"initialized": true,
+			"props": {
+				"children": [
+					"3578-76cc-9363-fae9",
+					"bb24-cbbb-72da-800f"
+				],
+				"name": "__library__",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {
+				"flexProps": {}
+			},
+			"version": "6.7.1"
+		},
+		{
+			"className": ".statusBar",
+			"id": "3578-76cc-9363-fae9",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".headerBar",
+			"id": "bb24-cbbb-72da-800f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "ff85-aa1f-3834-58e1",
+				"title": "__library__"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "__library__"
+			}
+		}
+	]
+}

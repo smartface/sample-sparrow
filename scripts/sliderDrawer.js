@@ -15,6 +15,9 @@ const PageConstants = require('pages/PageConstants');
 const AlertView = require('sf-core/ui/alertview');
 const stylerBuilder = require("library/styler-builder");
 const componentContextPatch = require("@smartface/contx/lib/smartface/componentContextPatch");
+
+const addChild = require("@smartface/contx/lib/smartface/action/addChild");
+
 // Making workaround due to IOS-2306
 var currentPageTag = PageConstants.PAGE_CATEGORIES;
 
@@ -133,7 +136,8 @@ sliderDrawer.onLoad = function() {
     if (sliderDrawerLoaded)
         return;
     sliderDrawerLoaded = true;
-
+    
+    var itemIndex = 0;
     listView = new ListView({
         itemCount: myDataSet.length,
         refreshEnabled: false,
@@ -157,9 +161,8 @@ sliderDrawer.onLoad = function() {
             rowTitle.backgroundColor = Color.TRANSPARENT;
             rowTitle.textColor = Color.WHITE;
             rowTitle.textAlignment = TextAlignment.MIDLEFT;
-            rowTitle.alignSelf = FlexLayout.AlignSelf.CENTER;
 
-            var rowTemplate = new ListViewItem({});
+            var rowTemplate = new ListViewItem();
             rowTemplate.alignItems = FlexLayout.AlignItems.STRETCH;
             rowTemplate.flexDirection = FlexLayout.FlexDirection.ROW;
             rowTemplate.paddingLeft = 10;
@@ -167,17 +170,22 @@ sliderDrawer.onLoad = function() {
             rowTemplate.paddingBottom = 5;
 
             rowTemplate.alpha = 0.5;
-            rowTemplate.addChild(rowImage);
-            rowTemplate.addChild(rowTitle);
-
+            rowTemplate.image = rowImage;
+            listView.dispatch(addChild(`item${++itemIndex}`, rowTemplate));
+            rowTemplate.addChild(rowImage, "rowImage", "", function(style) {
+                return style;
+            });
+            rowTemplate.title = rowTitle;
+            rowTemplate.addChild(rowTitle, "rowTitle", "", function(style) {
+                return style;
+            });
             return rowTemplate;
         },
         onRowBind: function(listViewItem, index) {
-            var rowTitle = listViewItem.findChildById(4);
-            rowTitle.text = myDataSet[index].title;
+            listViewItem.title.text = myDataSet[index].title;
 
             var rowImage = listViewItem.findChildById(3);
-            rowImage.image = myDataSet[index].icon;
+            listViewItem.image.image = myDataSet[index].icon;
             if (currentPageTag == myDataSet[index].tag) {
                 listViewItem.alpha = 1;
             }
@@ -206,13 +214,16 @@ sliderDrawer.onLoad = function() {
     });
 
     //Object.assign(sliderDrawer.layout, stylerBuilder.getCombinedStyle(".sliderDrawer.layout", {}));
+    
+    componentContextPatch(sliderDrawer, "sliderDrawer");
+    sliderDrawer.layout.addChild(mainContainer,"mainContainer");
+    
     mainContainer.addChild(topContainer);
     mainContainer.addChild(dividerTop);
-    mainContainer.addChild(listView);
+    mainContainer.addChild(listView,"listView");
     mainContainer.addChild(dividerBottom);
     mainContainer.addChild(btnSignOut);
-    sliderDrawer.layout.addChild(mainContainer);
-    componentContextPatch(sliderDrawer, "sliderDrawer");
+    
     sliderDrawer.dispatch({
         type: "pushClassNames",
         classNames:".sliderDrawer.layout"

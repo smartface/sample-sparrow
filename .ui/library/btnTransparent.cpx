@@ -1,0 +1,57 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "4d2b-34c6-83c6-cdc1",
+			"props": {
+				"children": [
+					"661b-a29e-b034-c499"
+				],
+				"name": "btnTransparent",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 255, 255, 255, 0.3 )",
+				"borderWidth": null,
+				"height": 45,
+				"left": 91,
+				"top": 170,
+				"width": 180
+			}
+		},
+		{
+			"className": ".button",
+			"id": "661b-a29e-b034-c499",
+			"props": {
+				"children": [],
+				"name": "inenrButton",
+				"parent": "4d2b-34c6-83c6-cdc1",
+				"text": "Button",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"backgroundColor": "rgba( 0, 161, 241, 0 )",
+				"borderColor": "rgba( 255, 255, 255, 0.3 )",
+				"borderRadius": 22,
+				"borderWidth": 1,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {},
+				"height": null,
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}

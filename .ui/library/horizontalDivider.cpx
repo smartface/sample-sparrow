@@ -1,0 +1,29 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "bda3-39fd-b88c-a98f",
+			"props": {
+				"children": [],
+				"name": "horizontalDivider",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 0.1,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": 1,
+				"left": 10.4,
+				"top": 35.2,
+				"width": 100
+			}
+		}
+	]
+}

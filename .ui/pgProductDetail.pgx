@@ -23,7 +23,7 @@
 				"flexProps": {},
 				"safeAreaEnabled": true
 			},
-			"version": "6.6.4"
+			"version": "6.7.1"
 		},
 		{
 			"className": ".statusBar",
@@ -185,7 +185,7 @@
 				"text": "",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"flexGrow": 1
@@ -235,7 +235,7 @@
 				"text": "",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {},
 				"font": {

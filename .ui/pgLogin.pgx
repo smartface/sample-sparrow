@@ -21,7 +21,7 @@
 				"flexProps": {},
 				"safeAreaEnabled": true
 			},
-			"version": "6.6.4"
+			"version": "6.7.1"
 		},
 		{
 			"className": ".statusBar",
@@ -437,7 +437,7 @@
 				"text": "Login With Facebook",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {

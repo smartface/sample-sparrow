@@ -23,7 +23,7 @@
 				},
 				"safeAreaEnabled": true
 			},
-			"version": "6.6.4"
+			"version": "6.7.1"
 		},
 		{
 			"className": ".statusBar",
@@ -123,7 +123,7 @@
 				"text": "Fingerprint",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"flexGrow": 1
@@ -192,7 +192,7 @@
 				"text": "Notifications",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"flexGrow": 1
@@ -236,7 +236,7 @@
 				"text": "About",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"positionType": "RELATIVE",
@@ -295,7 +295,7 @@
 				"text": "Theme",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"flexGrow": 1
@@ -477,7 +477,7 @@
 				"text": "About",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"right": 10,
@@ -506,7 +506,7 @@
 				"text": "About",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
 				"flexProps": {
 					"right": 10,

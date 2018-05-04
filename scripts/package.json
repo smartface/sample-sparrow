@@ -1,14 +1,15 @@
 {
   "dependencies": {
-    "@smartface/contx": "^1.0.2",
+    "@smartface/contx": "^1.3.0",
+    "@smartface/html-to-text": "^1.0.7",
     "@smartface/styler": "^1.3.15",
     "creditcardutils": "^1.0.0",
     "google-libphonenumber": "^3.0.0",
-    "js-base": "*",
-    "sf-core": "*",
+    "js-base": "1.0.4",
+    "sf-core": "3.0.0",
     "sf-extension-shopify": "https://github.com/smartface/sf-extension-shopify.git",
     "sf-extension-spriteview": "*",
-    "sf-extension-utils": "*",
+    "sf-extension-utils": "^3.5.0",
     "sf-plugin-facebook": "1.2.0"
   }
 }

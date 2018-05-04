@@ -1,9 +1,10 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "workspaceTheme",
-			"baseTheme": "workspaceTheme",
+			"currentTheme": "670sparrowTheme",
+			"baseTheme": "670sparrowTheme",
 			"themes": [
+				"670sparrowTheme",
 				"ThemeBlue",
 				"ThemeGreen",
 				"defaultTheme",
@@ -11,6 +12,15 @@
 				"workspaceTheme"
 			]
 		},
-		"version": "6.6.4"
+		"paths": {
+			"pgxFolder": ".ui",
+			"uiFolder": "scripts/ui",
+			"pagesFolder": "scripts/pages",
+			"libraryUiFolder": "scripts/node_modules/library",
+			"libraryUserFolder": "scripts/components",
+			"themesFolder": "themes",
+			"themesDistFolder": "scripts/themes"
+		},
+		"version": "6.7.1"
 	}
 }

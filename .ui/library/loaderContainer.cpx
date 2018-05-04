@@ -1,0 +1,57 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "5bd3-b943-8f1f-711b",
+			"props": {
+				"children": [
+					"2a3f-7143-2614-b7b1"
+				],
+				"id": 1004,
+				"name": "loaderContainer",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				},
+				"height": 104,
+				"id": 1004,
+				"left": 94,
+				"top": 118,
+				"width": 102
+			}
+		},
+		{
+			"className": ".activityIndicator",
+			"id": "2a3f-7143-2614-b7b1",
+			"props": {
+				"children": [],
+				"id": 1005,
+				"name": "activityIndicator",
+				"parent": "5bd3-b943-8f1f-711b",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"color": "rgba( 211, 210, 210, 1 )",
+				"flexProps": {},
+				"id": 1005,
+				"minHeight": 21,
+				"minWidth": 21,
+				"usePageVariable": true
+			}
+		}
+	]
+}

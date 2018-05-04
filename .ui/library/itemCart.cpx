@@ -1,0 +1,313 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "c8c6-579d-6d0d-0cd9",
+			"props": {
+				"children": [
+					"9fdc-5418-1338-040b",
+					"484c-e72b-2409-d974",
+					"04e4-5b75-8a7a-a384",
+					"a45e-9bf0-f8bb-e2de"
+				],
+				"name": "itemCart",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "CENTER",
+					"alignContent": "CENTER",
+					"alignItems": "CENTER"
+				},
+				"height": 100,
+				"left": 6,
+				"top": 109,
+				"width": 354
+			}
+		},
+		{
+			"className": ".flexLayout .flexLayout-smallThumb.inactive",
+			"hiddenComponent": false,
+			"id": "9fdc-5418-1338-040b",
+			"props": {
+				"children": [],
+				"id": 100,
+				"name": "productImage",
+				"parent": "c8c6-579d-6d0d-0cd9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"id": "3a39-1981-b2e7-3fa9"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"borderColor": "rgba( 0, 0, 0, 0.2 )",
+				"borderWidth": 0.5,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"height": 75,
+				"id": 100,
+				"left": 0,
+				"marginLeft": 5,
+				"paddingBottom": 2,
+				"paddingLeft": 2,
+				"paddingRight": 2,
+				"paddingTop": 2,
+				"top": 0,
+				"usePageVariable": true,
+				"width": 75
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "484c-e72b-2409-d974",
+			"props": {
+				"children": [
+					"fa86-f94c-4ddd-77ca",
+					"8308-68f6-ce74-8af5"
+				],
+				"id": 101,
+				"name": "flexlayout6",
+				"parent": "c8c6-579d-6d0d-0cd9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": 75,
+				"id": 101,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "fa86-f94c-4ddd-77ca",
+			"props": {
+				"children": [],
+				"id": 1011,
+				"name": "productTitle",
+				"parent": "484c-e72b-2409-d974",
+				"text": "Label",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {},
+				"height": null,
+				"id": 1011,
+				"multiline": false,
+				"text": "Label",
+				"textAlignment": "BOTTOMLEFT",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "8308-68f6-ce74-8af5",
+			"props": {
+				"children": [],
+				"id": 1012,
+				"name": "productPrice",
+				"parent": "484c-e72b-2409-d974",
+				"text": "$25",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"alpha": 0.5,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 12
+				},
+				"height": null,
+				"id": 1012,
+				"text": "$25",
+				"textAlignment": "MIDLEFT",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"id": "04e4-5b75-8a7a-a384",
+			"props": {
+				"children": [
+					"6e7a-8cd7-25e0-1be7",
+					"b842-bf67-3804-a612",
+					"9c10-f29f-0c62-b870"
+				],
+				"id": 102,
+				"name": "flexlayout7",
+				"parent": "c8c6-579d-6d0d-0cd9",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 0, 0, 0, 0.2 )",
+				"borderRadius": 5,
+				"borderWidth": 0.5,
+				"height": 75,
+				"id": 102,
+				"marginRight": 5,
+				"usePageVariable": true,
+				"width": 30
+			}
+		},
+		{
+			"className": ".label",
+			"id": "6e7a-8cd7-25e0-1be7",
+			"props": {
+				"children": [],
+				"id": 1021,
+				"name": "btnPlus",
+				"parent": "04e4-5b75-8a7a-a384",
+				"text": "+",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {},
+				"font": {
+					"size": 16,
+					"family": "Verdana"
+				},
+				"height": 25,
+				"id": 1021,
+				"text": "+",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 0, 0, 0, 0.2 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "b842-bf67-3804-a612",
+			"props": {
+				"children": [],
+				"id": 1022,
+				"name": "counter",
+				"parent": "04e4-5b75-8a7a-a384",
+				"text": "0",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {},
+				"font": {
+					"size": 14
+				},
+				"height": 25,
+				"id": 1022,
+				"text": "0",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 0, 0, 0, 1 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "9c10-f29f-0c62-b870",
+			"props": {
+				"children": [],
+				"id": 1023,
+				"name": "btnMinus",
+				"parent": "04e4-5b75-8a7a-a384",
+				"text": "-",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {},
+				"font": {
+					"size": 16,
+					"family": "Verdana"
+				},
+				"height": 25,
+				"id": 1023,
+				"text": "-",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 0, 0, 0, 0.2 )",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "a45e-9bf0-f8bb-e2de",
+			"props": {
+				"children": [],
+				"id": 104,
+				"name": "bottom_div",
+				"parent": "c8c6-579d-6d0d-0cd9"
+			},
+			"source": {
+				"page": "__library__",
+				"id": "bda3-39fd-b88c-a98f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 0.1,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"bottom": 0,
+				"flexProps": {
+					"flexGrow": 1,
+					"positionType": "ABSOLUTE",
+					"right": 0,
+					"bottom": 0
+				},
+				"height": 1,
+				"id": 104,
+				"left": 0,
+				"right": 0,
+				"top": null,
+				"width": null
+			}
+		}
+	]
+}

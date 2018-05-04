@@ -1,0 +1,85 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "349e-12c7-77fc-f1a7",
+			"props": {
+				"children": [
+					"6f9a-bf23-3b5e-9b5e",
+					"6043-fc97-c724-e556"
+				],
+				"name": "itemPickerSelector",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"alignContent": "CENTER"
+				},
+				"height": 41.6,
+				"left": 243.19999999999996,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"top": 37.6,
+				"width": 119.2
+			}
+		},
+		{
+			"className": ".label .label-picker.normal",
+			"hiddenComponent": false,
+			"id": "6f9a-bf23-3b5e-9b5e",
+			"props": {
+				"children": [],
+				"name": "pickerLabel",
+				"parent": "349e-12c7-77fc-f1a7",
+				"text": "Color",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
+				},
+				"font": {},
+				"height": null,
+				"text": "Color",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"hiddenComponent": false,
+			"id": "6043-fc97-c724-e556",
+			"props": {
+				"children": [],
+				"name": "imageview2",
+				"parent": "349e-12c7-77fc-f1a7"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {},
+				"height": 12,
+				"image": "arrows.png",
+				"imageFillType": "ASPECTFIT",
+				"width": 12
+			}
+		}
+	]
+}

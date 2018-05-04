@@ -1,0 +1,234 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": true,
+			"id": "5347-9ab8-f966-ef70",
+			"props": {
+				"children": [
+					"7dd6-1ec2-dc9e-8045",
+					"f10a-7b3b-1184-f0a4",
+					"2e2b-bcc3-ecc9-6705"
+				],
+				"id": 100,
+				"name": "itemProductList",
+				"parent": "ff85-aa1f-3834-58e1"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"borderRadius": 5,
+				"borderWidth": null,
+				"height": 230,
+				"id": 100,
+				"left": 7.600006103515625,
+				"top": 55.79999923706055,
+				"width": 170
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "7dd6-1ec2-dc9e-8045",
+			"props": {
+				"children": [
+					"2d0e-7863-ccf9-ed89",
+					"f336-5cfc-69b5-4af5"
+				],
+				"id": 1002,
+				"name": "thmbContainer",
+				"parent": "5347-9ab8-f966-ef70",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {},
+				"height": 173,
+				"id": 1002,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "2d0e-7863-ccf9-ed89",
+			"props": {
+				"children": [],
+				"id": 1004,
+				"name": "loader",
+				"parent": "7dd6-1ec2-dc9e-8045",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"id": "5bd3-b943-8f1f-711b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"positionType": "ABSOLUTE"
+				},
+				"height": 170,
+				"id": 1004,
+				"left": 0,
+				"right": 0,
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".imageView",
+			"id": "f336-5cfc-69b5-4af5",
+			"props": {
+				"children": [],
+				"id": 10022,
+				"name": "thumb",
+				"parent": "7dd6-1ec2-dc9e-8045",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"id": 10022,
+				"imageFillType": "ASPECTFIT",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "f10a-7b3b-1184-f0a4",
+			"props": {
+				"children": [],
+				"id": 1001,
+				"name": "dvd",
+				"parent": "5347-9ab8-f966-ef70"
+			},
+			"source": {
+				"page": "__library__",
+				"id": "bda3-39fd-b88c-a98f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"alpha": 0.1,
+				"backgroundColor": "rgba( 0, 0, 0, 1 )",
+				"flexProps": {
+					"flexGrow": null,
+					"positionType": "RELATIVE"
+				},
+				"height": 1,
+				"id": 1001,
+				"left": 0,
+				"top": 0,
+				"width": null
+			}
+		},
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "2e2b-bcc3-ecc9-6705",
+			"props": {
+				"children": [
+					"105d-2ba0-2fed-4584",
+					"d385-fdcc-c7f3-3e63"
+				],
+				"id": 1003,
+				"name": "infoContainer",
+				"parent": "5347-9ab8-f966-ef70",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"alignItems": "AUTO",
+					"justifyContent": "CENTER"
+				},
+				"height": 60,
+				"id": 1003,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "105d-2ba0-2fed-4584",
+			"props": {
+				"children": [],
+				"id": 10032,
+				"name": "title",
+				"parent": "2e2b-bcc3-ecc9-6705",
+				"text": "Tortoise Glass",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"flexProps": {},
+				"font": {},
+				"height": 20,
+				"id": 10032,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"text": "Tortoise Glass",
+				"textAlignment": "MIDCENTER",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".label",
+			"id": "d385-fdcc-c7f3-3e63",
+			"props": {
+				"children": [],
+				"id": 10031,
+				"name": "price",
+				"parent": "2e2b-bcc3-ecc9-6705",
+				"text": "$25",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"alpha": 0.7,
+				"backgroundColor": "rgba( 214, 35, 35, 0 )",
+				"flexProps": {
+					"alignSelf": "STRETCH"
+				},
+				"font": {},
+				"height": 20,
+				"id": 10031,
+				"text": "$25",
+				"textAlignment": "MIDCENTER",
+				"usePageVariable": true,
+				"width": null
+			}
+		}
+	]
+}
