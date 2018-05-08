@@ -69,7 +69,7 @@ const PgSettings = extend(PgSettingsDesign)(
 
 		this.themeGreen.onTouchEnded = changeThemeHelper.bind(this, "ThemeGreen");
 
-		this.themeDefaults.onTouchEnded = changeThemeHelper.bind(this, "defaultTheme");
+		this.themeDefaults.onTouchEnded = changeThemeHelper.bind(this, "ThemeRed");
 
 		this.txtAboutVersion.onTouchEnded = function() {
 			if (isNewUpdateAvailable) {
@@ -195,7 +195,7 @@ function initCurrentTheme() {
 	this.themeDefaults.dispatch({
 		type: "updateUserStyle",
 		userStyle: {
-			borderWidth: Data.getStringVariable("theme") == "defaultTheme" ? 1 : 0
+			borderWidth: Data.getStringVariable("theme") == "ThemeRed" ? 1 : 0
 		}
 	});
 }
