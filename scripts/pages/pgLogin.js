@@ -17,9 +17,18 @@ const Animator = require('sf-core/ui/animator');
 const pgLoginDesign = require("../ui/ui_pgLogin");
 const rau = require("sf-extension-utils").rau;
 const fingerprint = require("sf-extension-utils").fingerprint;
-const Facebook = require("sf-plugin-facebook");
-Facebook.applicationId = "148225102547918";
-Facebook.packageName = "sparrow";
+var Facebook = {};
+try {
+    Facebook = require("sf-plugin-facebook");
+    Facebook.applicationId = "148225102547918";
+    Facebook.packageName = "sparrow";
+}
+catch (ex) {
+    //emulator, or missing plugin
+    Facebook.logInWithReadPermissions = () => {
+        console.log("Facebook login not supported");
+    };
+}
 
 var parentOnShow;
 var parentOnLoad;
@@ -287,6 +296,7 @@ function checkInternet() {
 var grantedReadPermissions, grantedPublishPermissions;
 var deniedReadPermissions, deniedPublishPermissions;
 var accessToken;
+
 function onPress_FacebookBtn() {
     var page = this;
     Facebook.logInWithReadPermissions({
