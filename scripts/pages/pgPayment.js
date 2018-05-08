@@ -12,6 +12,7 @@ const ActionKeyType = require('sf-core/ui/actionkeytype');
 const knownCreditCardTypes = ["amex", "dinersclub", "discover", "jcb", "maestro", "mastercard", "mastercard", "visa", "visaelectron"];
 const validDateRegex = /([01][0-9])\/([0-9]{2})/;
 const creditcardutils = require('creditcardutils');
+const textBoxUtil = require("sf-extension-utils").textBox;
 
 const Page_ = extend(PageDesign)(
 	// Constructor
@@ -74,12 +75,12 @@ const Page_ = extend(PageDesign)(
 			this.cardNumber.removeFocus();
 			Router.goBack();
 		}.bind(this);
-		
+
 		this.totalPrice.onTouchEnded = function() {
- 				
-  			autoFill(this);	
-  			assignCreditCardImage.call(this);
-  		}.bind(this);
+
+			autoFill(this);
+			assignCreditCardImage.call(this);
+		}.bind(this);
 
 		this.btnPay.inenrButton.text = lang["pgPayment.pay"];
 		Router.sliderDrawer.enabled = false;
@@ -130,27 +131,28 @@ function initTextes() {
 	this.cardNumber.onActionButtonPress = function() {
 		this.expiryDate.requestFocus();
 	}.bind(this);
-	this.cardNumber.onTextChanged = function() {
+	textBoxUtil.setMaxtLenth(this.cardNumber, 19, function() {
 		this.cardNumber.text = creditcardutils.formatCardNumber(this.cardNumber.text);
 		assignCreditCardImage.call(this);
-	}.bind(this);
+	}.bind(this));
 
 
 
 	this.expiryDate.hint = lang["pgPayment.expiryDate"];
-	this.expiryDate.keyboardType = System.OS === "Android" ? KeyboardType.android.DATETIME : KeyboardType.DEFAULT;
+	this.expiryDate.keyboardType = System.OS === "Android" ? KeyboardType.android.DATETIME : KeyboardType.NUMBER;
 	this.expiryDate.actionKeyType = ActionKeyType.NEXT;
 	this.expiryDate.onActionButtonPress = function() {
 		this.securityCode.requestFocus();
 	}.bind(this);
-	this.expiryDate.onTextChanged = function(e) {
-		if (e.insertedText.length === 0 && this.expiryDate.text.indexOf("/") === -1) { // delete
-			this.expiryDate.text.substring(0, this.expiryDate.text.length - 1); //remove additional 1
-		}
-		else if (this.expiryDate.text.indexOf("/") === -1 && this.expiryDate.text.length >= 2) {
-			this.expiryDate.text = this.expiryDate.text.substr(0, 2) + "/" + this.expiryDate.text.substr(2);
-		}
-	}.bind(this);
+	textBoxUtil.setMaxtLenth(this.expiryDate, 5,
+		function(e) {
+			if (e.insertedText.length === 0 && this.expiryDate.text.indexOf("/") === -1) { // delete
+				this.expiryDate.text.substring(0, this.expiryDate.text.length - 1); //remove additional 1
+			}
+			else if (this.expiryDate.text.indexOf("/") === -1 && this.expiryDate.text.length >= 2) {
+				this.expiryDate.text = this.expiryDate.text.substr(0, 2) + "/" + this.expiryDate.text.substr(2);
+			}
+		}.bind(this));
 
 	this.securityCode.hint = lang["pgPayment.securityCode"];
 	this.securityCode.keyboardType = KeyboardType.NUMBER;
@@ -176,10 +178,10 @@ function assignCreditCardImage() {
 }
 
 function autoFill(page) {
-  	page.cardNumber.text = "5555555555554444";
-  	page.expiryDate.text = "05/20";	
-  	page.securityCode.text = "889";		 
-  	page.nameOnCard.text = "Darrell Gray";		  	
+	page.cardNumber.text = "5555 5555 5555 4444";
+	page.expiryDate.text = "05/20";
+	page.securityCode.text = "889";
+	page.nameOnCard.text = "Darrell Gray";
 }
 
 

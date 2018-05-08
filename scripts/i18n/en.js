@@ -50,7 +50,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgPayment.securityCode.message": "Please enter a valid security code for credit card",
 	"pgPayment.securityCode.title": "Invalid Security Code",
 	"pgPayment.cardNumber": "Card Number",
-	"pgPayment.expiryDate": "Expiry Date",
+	"pgPayment.expiryDate": "MM/YY",
 	"pgPayment.securityCode": "Security Code",
 	"pgPayment.nameOnCard": "Name on Card",
 	"pgSliderDrawer.signout": "Sign out",

@@ -36,7 +36,7 @@ SMF.i18n.defineLanguage('tr', {
 	"pgPayment.securityCode.message": "Lütfen geçerli bir güvenlik kodu girin",
 	"pgPayment.securityCode.title": "Geçersiz güvenlik kodu",
 	"pgPayment.cardNumber": "Kart numarası",
-	"pgPayment.expiryDate": "Son kullanma tarihi",
+	"pgPayment.expiryDate": "AA/YY",
 	"pgPayment.securityCode": "Güvenlik kodu",
 	"pgPayment.nameOnCard": "Kartın üzerindeki isim",
 	"pgShoppingCart.title": "Alışveriş Sepeti",
