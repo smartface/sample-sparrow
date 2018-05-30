@@ -125,12 +125,5 @@
 		<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 
 		<receiver android:name="io.smartface.android.notifications.LocalNotificationReceiver" />
-		
-		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="148225102547918"/>
-      
-		<provider android:authorities="com.facebook.app.FacebookContentProvider148225102547918"
-              android:name="com.facebook.FacebookContentProvider"
-              android:exported="true"/>
-
 	</application>
 </manifest>
