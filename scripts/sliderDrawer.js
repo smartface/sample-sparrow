@@ -230,8 +230,17 @@ sliderDrawer.onLoad = function() {
     });
 };
 sliderDrawer.onShow= function() {
-        console.log("sliderDrawer is shown");
-    };
+    console.log("sliderDrawer is shown");
+    if (Router.sliderDrawer.currentPage) {
+        Router.sliderDrawer.currentPage.layout.touchEnabled = false;
+    }
+};
+sliderDrawer.onHide= function() {
+    console.log("sliderDrawer is hidden");
+    if (Router.sliderDrawer.currentPage) {
+        Router.sliderDrawer.currentPage.layout.touchEnabled = true;
+    }
+};
 Router.sliderDrawer = sliderDrawer;
 Router.sliderDrawer.enabled = false;
 

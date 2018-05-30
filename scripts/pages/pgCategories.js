@@ -30,6 +30,7 @@ const Page_ = extend(PageDesign)(
 function onShow(parentOnShow) {
     parentOnShow();
     Router.sliderDrawer.enabled = true;
+    Router.sliderDrawer.currentPage = this;
     initHeaderBar(this.customHeaderBar);
 
     this.layout.applyLayout();
