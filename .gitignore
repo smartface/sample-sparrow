@@ -2,6 +2,7 @@
 .smf/*
 .npm/*
 .tmp/*
+.pm2/
 output/*
 plugin/*
 !output/Android/README.md
@@ -10,6 +11,7 @@ plugin/*
 !plugin/iOS/README.md
 scripts/node_modules
 scripts/ui
+scripts/themes
 !scripts/settings.json
 .templates
 node_modules
