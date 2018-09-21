@@ -34,15 +34,15 @@ Shopify.Authentication.setPassword(Config.SHOPIFY_PASSWORD);
 Shopify.Authentication.setStoreName(Config.SHOPIFY_STORENAME);
 
 // Define routes and go to initial page of application
-Router.add(PageConstants.PAGE_SHOPPING_CART, require("./pages/pgShoppingCart"));
-Router.add(PageConstants.PAGE_SHIPPING, require("./pages/pgShipping"));
-Router.add(PageConstants.PAGE_PAYMENT, require("./pages/pgPayment"));
-Router.add(PageConstants.PAGE_PAYMENT_RESULT, require("./pages/pgPaymentResult"));
-Router.add(PageConstants.PAGE_PRODUCT_DETAIL, require("./pages/pgProductDetail"));
-Router.add(PageConstants.PAGE_PRODUCT_LIST, require("./pages/pgProductList"));
-Router.add(PageConstants.PAGE_CATEGORIES, require("./pages/pgCategories"));
-Router.add(PageConstants.PAGE_LOGIN, require("./pages/pgLogin"));
-Router.add(PageConstants.PAGE_SETTINGS, require("./pages/pgSettings"));
+Router.add(PageConstants.PAGE_SHOPPING_CART, "pages/pgShoppingCart");
+Router.add(PageConstants.PAGE_SHIPPING, "pages/pgShipping");
+Router.add(PageConstants.PAGE_PAYMENT, "pages/pgPayment");
+Router.add(PageConstants.PAGE_PAYMENT_RESULT, "pages/pgPaymentResult");
+Router.add(PageConstants.PAGE_PRODUCT_DETAIL, "pages/pgProductDetail");
+Router.add(PageConstants.PAGE_PRODUCT_LIST, "pages/pgProductList");
+Router.add(PageConstants.PAGE_CATEGORIES, "pages/pgCategories");
+Router.add(PageConstants.PAGE_LOGIN, "pages/pgLogin");
+Router.add(PageConstants.PAGE_SETTINGS, "pages/pgSettings");
 Router.go(PageConstants.PAGE_LOGIN);
 
 if (System.OS === "Android") {
