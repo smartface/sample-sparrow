@@ -11,8 +11,21 @@ const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
 const ShoppingCart = require("../objects/ShoppingCart");
 const TextAlignment = require('sf-core/ui/textalignment');
-
-
+const Dialog = require("sf-core/ui/dialog");
+const ImageView = require('sf-core/ui/imageview');
+const Screen = require('sf-core/device/screen');
+var animationRootView;
+var myFlProd = new ImageView({
+    width: 400,
+    height: 250,
+    top: 70,
+    left: 10,
+});
+myFlProd.imageFillType = ImageView.FillType.ASPECTFIT;
+var myDialog = new Dialog({
+    isTransparent: true,
+});
+var shoppingCartPos;
 const pgProductDetail = extend(pgProductDetailDesign)(
     // Constructor
     function(_super) {
@@ -20,6 +33,9 @@ const pgProductDetail = extend(pgProductDetailDesign)(
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+        myDialog.layout.addChild(myFlProd);
+        animationRootView = System.OS === "iOS" ? myDialog.layout : myFlProd.parent;
+        myDialog.layout.applyLayout();
         //this.onHide = onHide(this);
     });
 
@@ -32,7 +48,7 @@ function initHeaderBar(headerBar) {
     headerBar.rightContainer.onTouchEnded = function() {
         Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
     };
-
+    shoppingCartPos = headerBar.rightContainer.getScreenLocation();
     headerBar.headerTitle.textAlignment = TextAlignment.MIDLEFT;
     ShoppingCart.updateBasket(headerBar);
 
@@ -65,7 +81,7 @@ function initProduct(page, product) {
     page.priceText.text = "$" + product.variants[0].price;
     page.bigImage.loadFromUrl(product.image.src);
     page.effectImage.loadFromUrl(product.image.src);
-
+    myFlProd.loadFromUrl(product.image.src);
     var smallImageContainers = [];
     smallImageContainers.push(page.itemSmallThumb1);
     smallImageContainers.push(page.itemSmallThumb2);
@@ -80,17 +96,34 @@ function initProduct(page, product) {
     initOptions(page, pickerContainers, product.options);
 
     page.btnAddToCart.inenrButton.onPress = function() {
-        ShoppingCart.addProduct(product);
-        resetEffectImage(page);
-        ShoppingCart.updateBasket(page.customHeaderBar);
-        var animationRootView = page.layout;
+        myDialog.show();
+        myFlProd.visible = true;
         if (System.OS === "iOS") {
-            Animator.animate(animationRootView, 200, function() {
-                page.customHeaderBar.rightContainer.width = 40;
-                page.customHeaderBar.rightContainer.height = 40;
-            }).then(200, function() {
-                page.customHeaderBar.rightContainer.width = 30;
-                page.customHeaderBar.rightContainer.height = 30;
+            myDialog.layout.backgroundColor = Color.TRANSPARENT;
+            animate();
+        }
+
+        function animate() {
+            Animator.animate(animationRootView, 400, function() {
+                myFlProd.top = 60;
+                myFlProd.left = 12;
+                myFlProd.width = 380;
+                myFlProd.height = 240;
+            }).then(1190, function() {
+                myFlProd.top = shoppingCartPos.y + 30;
+                myFlProd.left = shoppingCartPos.x + (Screen.width - 30);
+                myFlProd.width = 10;
+                myFlProd.height = 10;
+            }).complete(function() {
+                myFlProd.visible = false;
+                myDialog.hide();
+                ShoppingCart.addProduct(product);
+                resetEffectImage(page);
+                ShoppingCart.updateBasket(page.customHeaderBar);
+                myFlProd.width = 400;
+                myFlProd.height = 250;
+                myFlProd.top = 70;
+                myFlProd.left = 10;
             });
         }
     };
@@ -105,7 +138,6 @@ function initProduct(page, product) {
         page.layout.applyLayout();
     }
 
-
     function initSmallImages(page, containers, images) {
 
         for (var i = 0; i < images.length; i++) {
@@ -117,8 +149,6 @@ function initProduct(page, product) {
                 Animator.animate(page.layout, 300, function() {
                     if (System.OS === "iOS") {
                         page.bigImage.alpha = 0;
-                        //page.bigImage.image = new Image();
-
                     }
                     else {
                         page.bigImage.visible = false;
@@ -127,6 +157,7 @@ function initProduct(page, product) {
 
                     page.bigImage.loadFromUrl(param.image.src);
                     page.effectImage.loadFromUrl(param.image.src);
+                    myFlProd.loadFromUrl(param.image.src);
                     if (System.OS === "iOS") {
                         page.bigImage.alpha = 1;
                     }
@@ -139,8 +170,6 @@ function initProduct(page, product) {
         }
 
     }
-
-
 
     function initOptions(page, containers, options) {
         var actualOptionsCount = 0;

@@ -1,0 +1,29 @@
+{
+	"components": [
+		{
+			"className": ".imageView",
+			"id": "2ffa-d04f-1684-10fe",
+			"props": {
+				"children": [],
+				"name": "effectImage",
+				"parent": "888d-f6c3-3c0e-6cb4",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"right": 0
+				},
+				"height": 250,
+				"imageFillType": "ASPECTFIT",
+				"left": 0,
+				"right": 0,
+				"top": 70,
+				"usePageVariable": true,
+				"visible": false,
+				"width": null
+			}
+		}
+	]
+}

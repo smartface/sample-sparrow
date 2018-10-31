@@ -1,0 +1,36 @@
+{
+	"components": [
+		{
+			"className": ".flexLayout",
+			"hiddenComponent": false,
+			"id": "1170-be9b-1409-a08f",
+			"props": {
+				"children": [],
+				"name": "btnAddToCart",
+				"parent": "888d-f6c3-3c0e-6cb4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"id": "4d2b-34c6-83c6-cdc1"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 255, 255, 255, 0.3 )",
+				"borderWidth": null,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "CENTER"
+				},
+				"height": 45,
+				"left": 0,
+				"marginBottom": 20,
+				"marginTop": 10,
+				"top": null,
+				"usePageVariable": true,
+				"width": 240
+			}
+		}
+	]
+}
