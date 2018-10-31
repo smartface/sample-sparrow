@@ -15,13 +15,14 @@ const Dialog = require("sf-core/ui/dialog");
 const ImageView = require('sf-core/ui/imageview');
 const Screen = require('sf-core/device/screen');
 var animationRootView;
-var myFlProd = new ImageView({
+var flProd = new ImageView({
     width: 400,
     height: 250,
     top: 70,
     left: 10,
+    alpha: 0,
 });
-myFlProd.imageFillType = ImageView.FillType.ASPECTFIT;
+flProd.imageFillType = ImageView.FillType.ASPECTFIT;
 var myDialog = new Dialog({
     isTransparent: true,
 });
@@ -33,8 +34,8 @@ const pgProductDetail = extend(pgProductDetailDesign)(
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        myDialog.layout.addChild(myFlProd);
-        animationRootView = System.OS === "iOS" ? myDialog.layout : myFlProd.parent;
+        myDialog.layout.addChild(flProd);
+        animationRootView = System.OS === "iOS" ? myDialog.layout : flProd.parent;
         myDialog.layout.applyLayout();
         //this.onHide = onHide(this);
     });
@@ -58,7 +59,9 @@ function onShow(parentOnShow, params) {
     parentOnShow();
     Router.sliderDrawer.enabled = false;
     initHeaderBar(this.customHeaderBar);
-
+    myDialog.android.onShow = function() {
+        initProduct.animate();
+    };
     if (params && params.id) {
         Shopify.Product.getProduct(params.id).exec(function(response) {
             var productItem = new Product();
@@ -81,7 +84,7 @@ function initProduct(page, product) {
     page.priceText.text = "$" + product.variants[0].price;
     page.bigImage.loadFromUrl(product.image.src);
     page.effectImage.loadFromUrl(product.image.src);
-    myFlProd.loadFromUrl(product.image.src);
+    flProd.loadFromUrl(product.image.src);
     var smallImageContainers = [];
     smallImageContainers.push(page.itemSmallThumb1);
     smallImageContainers.push(page.itemSmallThumb2);
@@ -97,36 +100,47 @@ function initProduct(page, product) {
 
     page.btnAddToCart.inenrButton.onPress = function() {
         myDialog.show();
-        myFlProd.visible = true;
+        flProd.visible = true;
         if (System.OS === "iOS") {
             myDialog.layout.backgroundColor = Color.TRANSPARENT;
             animate();
         }
 
-        function animate() {
-            Animator.animate(animationRootView, 400, function() {
-                myFlProd.top = 60;
-                myFlProd.left = 12;
-                myFlProd.width = 380;
-                myFlProd.height = 240;
-            }).then(1190, function() {
-                myFlProd.top = shoppingCartPos.y + 30;
-                myFlProd.left = shoppingCartPos.x + (Screen.width - 30);
-                myFlProd.width = 10;
-                myFlProd.height = 10;
-            }).complete(function() {
-                myFlProd.visible = false;
-                myDialog.hide();
-                ShoppingCart.addProduct(product);
-                resetEffectImage(page);
-                ShoppingCart.updateBasket(page.customHeaderBar);
-                myFlProd.width = 400;
-                myFlProd.height = 250;
-                myFlProd.top = 70;
-                myFlProd.left = 10;
-            });
-        }
     };
+
+    function animate() {
+        Animator.animate(animationRootView, 400, function() {
+            flProd.alpha = 0.2;
+            flProd.top = 60;
+            flProd.left = 12;
+            flProd.width = 380;
+            flProd.height = 240;
+            flProd.alpha = 0.5;
+        }).then(1190, function() {
+            flProd.alpha = 1;
+            flProd.top = 30;
+            if (System.OS === "iOS") {
+                flProd.left = shoppingCartPos.x + (Screen.width - 15);  //15 = this.headerBar.rightContainer.width / 2
+            }
+            else {
+                flProd.left = shoppingCartPos.x + 15;
+
+            }
+            flProd.width = 10;
+            flProd.height = 10;
+        }).complete(function() {
+            flProd.visible = false;
+            myDialog.hide();
+            ShoppingCart.addProduct(product);
+            resetEffectImage(page);
+            ShoppingCart.updateBasket(page.customHeaderBar);
+            flProd.width = 400;
+            flProd.height = 250;
+            flProd.top = 70;
+            flProd.left = 10;
+        });
+    }
+    initProduct.animate = animate;
 
     function resetEffectImage(page) {
         page.effectImage.visible = false;
@@ -157,7 +171,7 @@ function initProduct(page, product) {
 
                     page.bigImage.loadFromUrl(param.image.src);
                     page.effectImage.loadFromUrl(param.image.src);
-                    myFlProd.loadFromUrl(param.image.src);
+                    flProd.loadFromUrl(param.image.src);
                     if (System.OS === "iOS") {
                         page.bigImage.alpha = 1;
                     }
