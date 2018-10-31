@@ -34,6 +34,7 @@ const pgProductDetail = extend(pgProductDetailDesign)(
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+        myDialog.layout.removeAll();
         myDialog.layout.addChild(flProd);
         animationRootView = System.OS === "iOS" ? myDialog.layout : flProd.parent;
         myDialog.layout.applyLayout();
@@ -61,7 +62,9 @@ function onShow(parentOnShow, params) {
     initHeaderBar(this.customHeaderBar);
     myDialog.android.onShow = function() {
         initProduct.animate();
+        flProd.imageFillType = ImageView.FillType.ASPECTFIT;
     };
+    
     if (params && params.id) {
         Shopify.Product.getProduct(params.id).exec(function(response) {
             var productItem = new Product();
@@ -110,12 +113,12 @@ function initProduct(page, product) {
 
     function animate() {
         Animator.animate(animationRootView, 400, function() {
-            flProd.alpha = 0.2;
+            flProd.alpha = 0.4;
             flProd.top = 60;
             flProd.left = 12;
             flProd.width = 380;
             flProd.height = 240;
-            flProd.alpha = 0.5;
+            flProd.alpha = 0.8;
         }).then(1190, function() {
             flProd.alpha = 1;
             flProd.top = 30;
