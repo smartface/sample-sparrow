@@ -44,12 +44,6 @@ const {
 const router = Router.of({
     path: "/",
     isRoot: true,
-    routeWillEnter: (rotuer, route, view) => {
-        if (System.OS === "iOS") {
-            sliderDrawer.router = rotuer;
-            Application.sliderDrawer = sliderDrawer;
-        }
-    },
     routes: [
         Route.of({
             path: "/login",
@@ -171,3 +165,6 @@ const router = Router.of({
 });
 
 router.push("/login");
+
+sliderDrawer.router = router;
+Application.sliderDrawer = sliderDrawer;
