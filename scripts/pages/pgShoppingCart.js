@@ -1,7 +1,7 @@
 /* globals lang, requireClass */
 const extend = require('js-base/core/extend');
+const Application = require("sf-core/application");
 const PageDesign = require("../ui/ui_pgShoppingCart");
-const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
 const Image = require('sf-core/ui/image');
 const ItemCart = require("../components/ItemCart");
@@ -34,23 +34,21 @@ const Page_ = extend(PageDesign)(
         this.btnCheckout.inenrButton.onPress = function() {
             if (ShoppingCart.getTotal() > 0) {
                 this.inputPromoCode.removeFocus();
-                Router.go(PageConstants.PAGE_SHIPPING, {
-                    fillLocation: true
-                }, true);
+                this.router.push("/stack/cartstack/shipping",{value:{fillLocation : true}});
             }
             else {
                 alert(lang["pgShoppingCart.checkout.error"]);
             }
         }.bind(this);
         this.customHeaderBar.headerTitle.text = lang["pgShoppingCart.title"];
-        this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
+        this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_down.png");
         this.customHeaderBar.leftImage.onTouchEnded = function() {
             this.inputPromoCode.removeFocus();
-            Router.goBack();
+            this.router.dismiss();
         }.bind(this);
 
         this.btnCheckout.inenrButton.text = lang["pgShoppingCart.checkout"];
-        Router.sliderDrawer.enabled = false;
+        Application.sliderDrawer.enabled = false;
 
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));

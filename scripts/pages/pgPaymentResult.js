@@ -1,7 +1,6 @@
 /* globals lang */
 const extend = require('js-base/core/extend');
 const PageDesign = require("../ui/ui_pgPaymentResult");
-const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
 const Data = require('sf-core/data');
 const Notifications = require("sf-core/notifications");
@@ -11,7 +10,6 @@ const Page_ = extend(PageDesign)(
 	// Constructor
 	function(_super) {
 		_super(this);
-		Router.sliderDrawer.enabled = false;
 		this.resultText.text = lang["pgPaymentResult.accepted"];
 		this.customHeaderBar.headerTitle.text = lang["pgPaymentResult.title"];
 
@@ -19,8 +17,8 @@ const Page_ = extend(PageDesign)(
 
 		this.btnContinueShopping.inenrButton.onPress = function() {
 			ShoppingCart.clearProducts();
-			Router.go(PageConstants.PAGE_CATEGORIES, null, true);
-		};
+			this.router.dismiss();
+		}.bind(this);
 
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));

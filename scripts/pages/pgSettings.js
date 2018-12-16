@@ -1,6 +1,5 @@
 /* globals lang*/
 const extend = require("js-base/core/extend");
-const Router = require("sf-core/ui/router");
 const Image = require("sf-core/ui/image");
 const Data = require('sf-core/data');
 const Application = require('sf-core/application');
@@ -24,10 +23,10 @@ const PgSettings = extend(PgSettingsDesign)(
 
 
 		this.customHeaderBar.headerTitle.text = lang["pgSettings.title"];
-		this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
+		this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_down.png");
 		this.customHeaderBar.leftImage.onTouchEnded = function() {
-			Router.goBack();
-		};
+			this.router.dismiss();
+		}.bind(this);
 
 		this.labelTheme.text = lang["pgSettings.theme"];
 		this.labelFingerprint.text = lang["pgSettings.fingerprint"];

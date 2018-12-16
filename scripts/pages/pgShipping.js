@@ -1,7 +1,7 @@
 /* globals lang */
 const extend = require('js-base/core/extend');
+const Application = require("sf-core/application");
 const PageDesign = require("../ui/ui_pgShipping");
-const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
 const Image = require('sf-core/ui/image');
 const ShoppingCart = require("../objects/ShoppingCart");
@@ -20,10 +20,11 @@ const Http = require("sf-core/net/http");
 const emailRegex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 const Page_ = extend(PageDesign)(
 	// Constructor
-	function(_super) {
-		_super(this);
+	function(_super, pageProps = {}, router, route) {
+		_super(this, pageProps);
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+		this.onShowData = route.getState().routeData.value;
 		initTextes.call(this);
 
 		var inputArr = [this.firstName, this.lastName, this.city, this.zip, this.phone, this.address, this.email];
@@ -57,20 +58,20 @@ const Page_ = extend(PageDesign)(
 					break;
 				default: //everything is OK!
 					this.firstName.removeFocus();
-					Router.go(PageConstants.PAGE_PAYMENT, null, true);
+					this.router.push("/stack/cartstack/payment");
 			}
 		}.bind(this);
 		this.customHeaderBar.headerTitle.text = lang["pgShipping.title"];
 		this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouchEnded = function() {
 			this.firstName.removeFocus();
-			Router.goBack();
+			this.router.goBack();
 		}.bind(this);
-		Router.sliderDrawer.enabled = false;
+		Application.sliderDrawer.enabled = false;
 
 		this.android.onBackButtonPressed = function() {
 			this.firstName.removeFocus();
-			Router.goBack();
+			this.router.goBack();
 		}.bind(this);
 
 		this.totalPrice.onTouchEnded = function() {

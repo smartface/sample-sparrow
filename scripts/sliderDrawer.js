@@ -1,6 +1,5 @@
 /* globals lang */
 
-const Router = require("sf-core/ui/router");
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Color = require('sf-core/ui/color');
 const ImageView = require('sf-core/ui/imageview');
@@ -19,7 +18,7 @@ const componentContextPatch = require("@smartface/contx/lib/smartface/componentC
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 // Making workaround due to IOS-2306
-var currentPageTag = PageConstants.PAGE_CATEGORIES;
+var currentPageTag = "/stack/categories";
 
 
 var iconCatalog = Image.createFromFile("images://icon_catalog.png");
@@ -29,18 +28,18 @@ var iconSettings = Image.createFromFile("images://ic_settings.png");
 var myDataSet = [{
         title: lang["pgCategories.title"],
         icon: iconCatalog,
-        tag: PageConstants.PAGE_CATEGORIES,
+        tag: "/stack/categories",
         singleton: true
     },
     {
         title: lang["pgShoppingCart.title"],
         icon: iconcart,
-        tag: PageConstants.PAGE_SHOPPING_CART
+        tag: "/stack/cartstack/shoppingcart"
     },
     {
         title: lang["pgSettings.title"],
         icon: iconSettings,
-        tag: PageConstants.PAGE_SETTINGS
+        tag: "/stack/settings/settings"
     }
 ];
 
@@ -101,9 +100,10 @@ btnSignOut.onTouchEnded = function() {
                 text: lang["ok"],
                 onClick: function() {
                     // Wait until fixed COR-1506
-                    Router.goBack(PageConstants.PAGE_LOGIN, { isSignOut: true }, true);
-                    Router.sliderDrawer.hide();
-
+                    sliderDrawer.hide();
+                    sliderDrawer.router.push("/login", {isSignOut : true});
+                    listView && listView.refreshData();
+                    
                     if (global.facebookEnabled) {
                         const Facebook = require("sf-plugin-facebook");
                         console.log("in condition facebook is " + global.facebookEnabled);
@@ -119,18 +119,7 @@ btnSignOut.onTouchEnded = function() {
 
 var sliderDrawer = new SliderDrawer();
 sliderDrawer.width = 250;
-Router._superGo = Router.go;
-Router._superGoBack = Router.goBack;
 
-Router.go = function(tag, parameters, animated) {
-    Router._superGo(tag, parameters, animated);
-    listView && listView.refreshData();
-};
-
-Router.goBack = function(tag, animated) {
-    Router._superGoBack(tag, animated);
-    listView && listView.refreshData();
-};
 var sliderDrawerLoaded = false;
 sliderDrawer.onLoad = function() {
     if (sliderDrawerLoaded)
@@ -198,15 +187,12 @@ sliderDrawer.onLoad = function() {
         onRowSelected: function(listViewItem, index) {
             console.log("currenpagetag = " + currentPageTag + " my data tag = " + myDataSet[index].tag )
             if (currentPageTag !== myDataSet[index].tag) {
-                //try {
-                    Router.go(myDataSet[index].tag, {}, false);
-                    sliderDrawer.hide();
-                // }
-                // catch (e) {
-                //     Router.goBack(myDataSet[index].tag, false);
-                //     sliderDrawer.hide();
-                // }
-                currentPageTag = myDataSet[index].tag;
+                if (myDataSet[index].tag === "/stack/categories") {
+                    currentPageTag = myDataSet[index].tag;
+                }
+                sliderDrawer.router.push(myDataSet[index].tag);
+                listView && listView.refreshData();
+                sliderDrawer.hide();
             }
             listView.refreshData();
 
@@ -231,18 +217,17 @@ sliderDrawer.onLoad = function() {
 };
 sliderDrawer.onShow= function() {
     console.log("sliderDrawer is shown");
-    if (Router.sliderDrawer.currentPage) {
-        Router.sliderDrawer.currentPage.layout.touchEnabled = false;
+    if (sliderDrawer.currentPage) {
+        sliderDrawer.currentPage.layout.touchEnabled = false;
     }
 };
 sliderDrawer.onHide= function() {
     console.log("sliderDrawer is hidden");
-    if (Router.sliderDrawer.currentPage) {
-        Router.sliderDrawer.currentPage.layout.touchEnabled = true;
+    if (sliderDrawer.currentPage) {
+        sliderDrawer.currentPage.layout.touchEnabled = true;
     }
 };
-Router.sliderDrawer = sliderDrawer;
-Router.sliderDrawer.enabled = false;
 
+sliderDrawer.enabled = false;
 
 module.exports = exports = sliderDrawer;

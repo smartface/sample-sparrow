@@ -16,3 +16,4 @@ scripts/themes
 .templates
 node_modules
 package.json
+sf_modules/

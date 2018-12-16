@@ -1,7 +1,6 @@
 /*globals lang*/
 const extend = require('js-base/core/extend');
 const PageDesign = require("../ui/ui_pgPayment");
-const Router = require("sf-core/ui/router");
 const PageConstants = require('pages/PageConstants');
 const Image = require('sf-core/ui/image');
 const ShoppingCart = require("../objects/ShoppingCart");
@@ -61,19 +60,19 @@ const Page_ = extend(PageDesign)(
 					break;
 				default:
 					this.cardNumber.removeFocus();
-					Router.go(PageConstants.PAGE_PAYMENT_RESULT, null, true);
+					this.router.push("/stack/cartstack/paymentresult");
 			}
 		}.bind(this);
 		this.customHeaderBar.headerTitle.text = lang["pgPayment.title"];
 		this.customHeaderBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
 		this.customHeaderBar.leftImage.onTouchEnded = function() {
 			this.cardNumber.removeFocus();
-			Router.goBack();
+			this.router.goBack();
 		}.bind(this);
 
 		this.android.onBackButtonPressed = function() {
 			this.cardNumber.removeFocus();
-			Router.goBack();
+			this.router.goBack();
 		}.bind(this);
 
 		this.totalPrice.onTouchEnded = function() {
@@ -83,8 +82,6 @@ const Page_ = extend(PageDesign)(
 		}.bind(this);
 
 		this.btnPay.inenrButton.text = lang["pgPayment.pay"];
-		Router.sliderDrawer.enabled = false;
-
 
 		updateInputProps(inputArr);
 	});

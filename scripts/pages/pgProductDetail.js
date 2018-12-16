@@ -3,7 +3,6 @@ const extend = require('js-base/core/extend');
 const pgProductDetailDesign = require("../ui/ui_pgProductDetail");
 const Color = require('sf-core/ui/color');
 const Image = require('sf-core/ui/image');
-const Router = require("sf-core/ui/router");
 const PageConstants = require("pages/PageConstants");
 const Shopify = require("sf-extension-shopify");
 const Product = require('../objects/Category');
@@ -14,6 +13,8 @@ const TextAlignment = require('sf-core/ui/textalignment');
 const Dialog = require("sf-core/ui/dialog");
 const ImageView = require('sf-core/ui/imageview');
 const Screen = require('sf-core/device/screen');
+const Application = require("sf-core/application");
+
 var animationRootView;
 var flProd = new ImageView({
     width: 400,
@@ -29,11 +30,12 @@ var myDialog = new Dialog({
 var shoppingCartPos;
 const pgProductDetail = extend(pgProductDetailDesign)(
     // Constructor
-    function(_super) {
-        _super(this);
+    function(_super, pageProps = {}, router, route) {
+        _super(this, pageProps);
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+        this.onShowData = route.getState().routeData.value;
         myDialog.layout.removeAll();
         myDialog.layout.addChild(flProd);
         animationRootView = System.OS === "iOS" ? myDialog.layout : flProd.parent;
@@ -41,14 +43,14 @@ const pgProductDetail = extend(pgProductDetailDesign)(
         //this.onHide = onHide(this);
     });
 
-function initHeaderBar(headerBar) {
+function initHeaderBar(page,headerBar) {
     headerBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
     headerBar.leftImage.onTouchEnded = function() {
-        Router.goBack();
+        page.router.goBack();
     };
     headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
     headerBar.rightContainer.onTouchEnded = function() {
-        Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
+        page.router.push("/stack/cartstack/shoppingcart");
     };
     shoppingCartPos = headerBar.rightContainer.getScreenLocation();
     headerBar.headerTitle.textAlignment = TextAlignment.MIDLEFT;
@@ -58,22 +60,24 @@ function initHeaderBar(headerBar) {
 
 function onShow(parentOnShow, params) {
     parentOnShow();
-    Router.sliderDrawer.enabled = false;
-    initHeaderBar(this.customHeaderBar);
+    
+    Application.sliderDrawer.enabled = false;
+    initHeaderBar(this, this.customHeaderBar);
     myDialog.android.onShow = function() {
         initProduct.animate();
         flProd.imageFillType = ImageView.FillType.ASPECTFIT;
     };
     
-    if (params && params.id) {
-        Shopify.Product.getProduct(params.id).exec(function(response) {
+    // if (params && params.id) {
+    if (this.onShowData && this.onShowData.id) {
+        Shopify.Product.getProduct(this.onShowData.id).exec(function(response) {
             var productItem = new Product();
             productItem = response.product;
             initProduct(this, productItem);
             this.layout.applyLayout();
         }.bind(this));
 
-        this.customHeaderBar.headerTitle.text = params.title;
+        this.customHeaderBar.headerTitle.text = this.onShowData.title;
         this.btnAddToCart.inenrButton.text = lang["pgProductDetail.addToCart"];
     }
 }

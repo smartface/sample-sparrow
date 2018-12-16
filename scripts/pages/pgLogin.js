@@ -8,7 +8,6 @@ const FlexLayout = require('sf-core/ui/flexlayout');
 const Image = require('sf-core/ui/image');
 const ImageView = require('sf-core/ui/imageview');
 const PageConstants = require('pages/PageConstants');
-const Router = require("sf-core/ui/router");
 const AlertView = require('sf-core/ui/alertview');
 const Network = require('sf-core/device/network');
 const Application = require("sf-core/application");
@@ -115,7 +114,7 @@ function onLoad() {
                 if (err)
                     return alert(lang.loginErrorInvalid, lang.loginErrorTitle);
                 fingerprintResult && fingerprintResult.success(); //Important!
-                Router.go(PageConstants.PAGE_CATEGORIES, null, true);
+                page.router.push("/stack/categories");
                 page.passwordTextBox.text = "";
             });
         }
@@ -307,7 +306,7 @@ function onPress_FacebookBtn() {
             deniedReadPermissions = data.deniedPermissions;
             accessToken = data.accessToken;
             global.facebookEnabled = true;
-            Router.go(PageConstants.PAGE_CATEGORIES, null, true);
+            page.router.push("/stack/categories");
         },
         onFailure: function(e) {
             alert("Failed to login: " + e);

@@ -3,7 +3,6 @@ const PageDesign = require("../ui/ui_pgProductList");
 const ListViewItem = require('sf-core/ui/listviewitem');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const Image = require('sf-core/ui/image');
-const Router = require("sf-core/ui/router");
 const PageConstants = require("pages/PageConstants");
 const Timer = require("sf-core/timer");
 const Shopify = require("sf-extension-shopify");
@@ -11,27 +10,28 @@ const Product = require('../objects/Category');
 const ItemProductList = require("../components/ItemProductList");
 const ShoppingCart = require("../objects/ShoppingCart");
 const addChild = require("@smartface/contx/lib/smartface/action/addChild");
+const Application = require("sf-core/application");
 
 const Page_ = extend(PageDesign)(
-    function(_super) {
-        _super(this);
+    function(_super, pageProps = {}, router, route) {
+        _super(this, pageProps);
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         this.productList = [];
         this.data = this.productList;
         initListView(this.listView, this);
-
+        this.onShowData = route.getState().routeData.value;
     });
 
-function initHeaderBar(headerBar) {
+function initHeaderBar(page, headerBar) {
     headerBar.leftImage.image = Image.createFromFile("images://arrow_left.png");
     headerBar.leftImage.onTouchEnded = function() {
-        Router.goBack();
+        page.router.goBack();
     }
     headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
     headerBar.rightContainer.onTouchEnded = function() {
-        Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
+        page.router.push("/stack/cartstack/shoppingcart");
     }
     ShoppingCart.updateBasket(headerBar);
 }
@@ -39,15 +39,15 @@ function initHeaderBar(headerBar) {
 
 function onShow(parentOnShow, params) {
     parentOnShow();
-    initHeaderBar(this.customHeaderBar);
+    initHeaderBar(this, this.customHeaderBar);
 
-    Router.sliderDrawer.enabled = false;
+    Application.sliderDrawer.enabled = false;
 
-    if (params && params.id) {
+    if (this.onShowData && this.onShowData.id) {
         Timer.setTimeout({
             delay: 300,
             task: function() {
-                Shopify.Product.getAllProducts().collectionID(params.id).fields(["id", "title", "variants", "image"]).exec(function(response) {
+                Shopify.Product.getAllProducts().collectionID(this.onShowData.id).fields(["id", "title", "variants", "image"]).exec(function(response) {
                     var arr = []
                     for (var i = 0; i < response.products.length; i++) {
                         var productItem = new Product();
@@ -62,7 +62,7 @@ function onShow(parentOnShow, params) {
                 }.bind(this));
             }.bind(this)
         });
-        this.customHeaderBar.headerTitle.text = params.title;
+        this.customHeaderBar.headerTitle.text = this.onShowData.title;
     }
 
 }
@@ -106,6 +106,9 @@ function initListView(listView, dataHolder) {
         return myListViewItem;
     };
     listView.onRowBind = function(listViewItem, index) {
+        listViewItem.leftItem.page = dataHolder;
+        listViewItem.rightItem.page = dataHolder;
+        
         listViewItem.leftItem.product = dataHolder.data[index * 2];
         listViewItem.rightItem.product = dataHolder.data[(index * 2) + 1];
     };

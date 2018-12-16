@@ -1,7 +1,6 @@
 /*globals lang */
 const extend = require('js-base/core/extend');
 const PageDesign = require("../ui/ui_pgCategories");
-const Router = require("sf-core/ui/router");
 const PageConstants = require("pages/PageConstants");
 const Image = require('sf-core/ui/image');
 const Shopify = require("sf-extension-shopify");
@@ -16,8 +15,8 @@ const addChild = require("@smartface/contx/lib/smartface/action/addChild");
 
 const Page_ = extend(PageDesign)(
     // Constructor
-    function(_super) {
-        _super(this);
+    function(_super, pageProps = {}, router, route) {
+        _super(this, pageProps);
         this.shownBefore = false;
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
@@ -29,9 +28,9 @@ const Page_ = extend(PageDesign)(
 
 function onShow(parentOnShow) {
     parentOnShow();
-    Router.sliderDrawer.enabled = true;
-    Router.sliderDrawer.currentPage = this;
-    initHeaderBar(this.customHeaderBar);
+    this.sliderDrawer.enabled = true;
+    this.sliderDrawer.currentPage = this;
+    initHeaderBar(this, this.customHeaderBar);
 
     this.layout.applyLayout();
 
@@ -66,21 +65,19 @@ function onLoad(parentOnLoad) {
     parentOnLoad();
 }
 
-function initHeaderBar(headerBar) {
+function initHeaderBar(page, headerBar) {
     headerBar.leftImage.image = Image.createFromFile("images://icon_menu.png");
     headerBar.leftImage.onTouchEnded = function() {
-        if (Router.sliderDrawer.state === SliderDrawer.State.OPEN) {
-            Router.sliderDrawer.hide();
-
+        if (page.sliderDrawer.state === SliderDrawer.State.OPEN) {
+            page.sliderDrawer.hide();
         }
-        else if (Router.sliderDrawer.state === SliderDrawer.State.CLOSED) {
-            Router.sliderDrawer.show();
-
+        else if (page.sliderDrawer.state === SliderDrawer.State.CLOSED) {
+            page.sliderDrawer.show();
         }
     };
     headerBar.rightImage.image = Image.createFromFile("images://icon_cart.png");
     headerBar.rightContainer.onTouchEnded = function() {
-        Router.go(PageConstants.PAGE_SHOPPING_CART, null, true);
+        page.router.push("/stack/cartstack/shoppingcart");
     };
     headerBar.headerTitle.text = lang["pgCategories.title"];
     ShoppingCart.updateBasket(headerBar);
@@ -112,7 +109,7 @@ function initListView(page, listView, dataHolder) {
     };
 
     listView.onRowSelected = function(listViewItem, index) {
-        Router.go(PageConstants.PAGE_PRODUCT_LIST, dataHolder.data[index], true);
+        page.router.push("/stack/productlist", {value : dataHolder.data[index]});
     };
 }
 
