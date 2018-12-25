@@ -1,6 +1,5 @@
 const extend = require('js-base/core/extend');
 const ItemProductListDesign = require('library/ItemProductList');
-const Router = require("sf-core/ui/router");
 const PageConstants = require("pages/PageConstants");
 
 const ItemProductList = extend(ItemProductListDesign)(
@@ -32,7 +31,7 @@ function invalidate(item) {
 		item.thumb.image = undefined;
 		item.thumb.loadFromUrl(item.product.image.src);
 		item.onTouchEnded = function() {
-			Router.go(PageConstants.PAGE_PRODUCT_DETAIL, this.product, true);
+			item.page.router.push("/stack/productdetail", {value : this.product});
 		}.bind({ product: item.product });
 	}
 }
